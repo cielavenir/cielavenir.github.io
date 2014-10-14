@@ -4,14 +4,171 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2014-10-14T17:42:35+09:00</updated>
+  <updated>2014-10-14T18:22:19+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Ciel Avenir]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Personal Stuff]]></title>
+    <link href="http://cielavenir.github.io/blog/2038/01/01/personal-stuff/"/>
+    <updated>2038-01-01T00:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2038/01/01/personal-stuff</id>
+    <content type="html"><![CDATA[<h3>Twitter</h3>
+
+<ul>
+<li><a href="https://twitter.com/cielavenir">https://twitter.com/cielavenir</a></li>
+<li><a href="http://twilog.org/cielavenir">http://twilog.org/cielavenir</a></li>
+<li><a href="http://twisave.com/cielavenir">http://twisave.com/cielavenir</a></li>
+</ul>
+
+
+<h3>CodeIQ出題</h3>
+
+<ul>
+<li><a href="https://github.com/cielavenir/codeiq_problems">https://github.com/cielavenir/codeiq_problems</a>
+
+<ul>
+<li>Restricted Words (Hello World)は挑戦者数542人を記録。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>競技プログラミング</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">Judge</th>
+<th style="text-align:left;">Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">TopCoder</td>
+<td style="text-align:left;">1048</td>
+</tr>
+<tr>
+<td style="text-align:left;">Codeforces</td>
+<td style="text-align:left;">1480</td>
+</tr>
+<tr>
+<td style="text-align:left;">HackerRank</td>
+<td style="text-align:left;">2020</td>
+</tr>
+<tr>
+<td style="text-align:left;">AtCoder</td>
+<td style="text-align:left;">1440</td>
+</tr>
+<tr>
+<td style="text-align:left;">AOJ</td>
+<td style="text-align:left;">547問</td>
+</tr>
+<tr>
+<td style="text-align:left;">POJ</td>
+<td style="text-align:left;">244問</td>
+</tr>
+<tr>
+<td style="text-align:left;">CodeIQ</td>
+<td style="text-align:left;">バッジ数トップ</td>
+</tr>
+<tr>
+<td style="text-align:left;">paiza</td>
+<td style="text-align:left;">paizaマスター、言語マスター</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>音楽ゲーム</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"></th>
+<th style="text-align:left;">成績</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">グルーヴコースター (iOS)</td>
+<td style="text-align:left;">約1000位。Sayonara Twilight削られたのは痛い。</td>
+</tr>
+<tr>
+<td style="text-align:left;">グルーヴコースター (AC)</td>
+<td style="text-align:left;">400位台。理論値1、S++4</td>
+</tr>
+<tr>
+<td style="text-align:left;">maimai</td>
+<td style="text-align:left;">7.39</td>
+</tr>
+<tr>
+<td style="text-align:left;">太鼓の達人</td>
+<td style="text-align:left;">モモイロ初級(苦笑)</td>
+</tr>
+<tr>
+<td style="text-align:left;">jubeat</td>
+<td style="text-align:left;">音ゲ祭始まったら参入予定</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>作ったもの</h3>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;"></th>
+<th style="text-align:left;">URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">cTouch</td>
+<td style="text-align:left;"><a href="https://code.google.com/p/ctouch/">https://code.google.com/p/ctouch/</a><br><a href="https://sourceforge.net/projects/ctouch/">https://sourceforge.net/projects/ctouch/</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">yomebrowser</td>
+<td style="text-align:left;"><a href="https://code.google.com/p/yomebrowser/">https://code.google.com/p/yomebrowser/</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">picrawler</td>
+<td style="text-align:left;"><a href="http://code.google.com/p/picrawler/">http://code.google.com/p/picrawler/</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">R on iOS</td>
+<td style="text-align:left;">(記入時点でrwikiが落ちている…何たること…)</td>
+</tr>
+<tr>
+<td style="text-align:left;">R on Android</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left;">Google TwoFactor Authenticator on PSP</td>
+<td style="text-align:left;"><a href="http://qiita.com/cielavenir/items/a13215069306eeaa24bf">http://qiita.com/cielavenir/items/a13215069306eeaa24bf</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">qinatall</td>
+<td style="text-align:left;"><a href="https://github.com/cielavenir/qinstall">https://github.com/cielavenir/qinstall</a></td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>イラスト</h3>
+
+<ul>
+<li>deviantART (限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GitHub Pages始めました]]></title>
