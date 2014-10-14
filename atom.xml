@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[My Octopress Blog]]></title>
+  <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
+  <link href="http://cielavenir.github.io/"/>
+  <updated>2014-10-14T17:42:35+09:00</updated>
+  <id>http://cielavenir.github.io/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GitHub Pages始めました]]></title>
+    <link href="http://cielavenir.github.io/blog/2014/10/14/launched-github-pages/"/>
+    <updated>2014-10-14T17:30:58+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2014/10/14/launched-github-pages</id>
+    <content type="html"><![CDATA[<p>始めてみました。</p>
+]]></content>
+  </entry>
+  
+</feed>
