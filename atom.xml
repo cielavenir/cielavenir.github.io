@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2014-10-14T18:35:22+09:00</updated>
+  <updated>2014-10-14T18:49:36+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -151,11 +151,11 @@
 </tr>
 <tr>
 <td style="text-align:left;">R on iOS</td>
-<td style="text-align:left;">(記入時点でrwikiが落ちている…何たること…)</td>
+<td style="text-align:left;">(記入時点でrwikiが落ちている…何たること…)<br><a href="http://rwiki.sciviews.org/doku.php?id=getting-started:installation:iphone">http://rwiki.sciviews.org/doku.php?id=getting-started:installation:iphone</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">R on Android</td>
-<td></td>
+<td style="text-align:left;"><a href="http://rwiki.sciviews.org/doku.php?id=getting-started:installation:android">http://rwiki.sciviews.org/doku.php?id=getting-started:installation:android</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">Google TwoFactor Authenticator on PSP</td>
@@ -167,6 +167,51 @@
 </tr>
 </tbody>
 </table>
+
+
+<h3>発見したバグ</h3>
+
+<ul>
+<li>mdbtools
+
+<ul>
+<li>ODBCドライバにおいて、(MicrosoftAccessと違い)DBQ引数が取れない</li>
+<li>ODBCドライバでマルチバイト文字列が扱えない</li>
+</ul>
+</li>
+<li>ExGame (モバゲーのFlashランタイム)
+
+<ul>
+<li>Android Chrome/iOS6で文字が表示できない</li>
+</ul>
+</li>
+<li>RVM
+
+<ul>
+<li>古いMac(本来i386だがboot.efiハックでx86_64化が可能なモデル)をMountain Lionにアップデートした時に、カーネルがx86_64に切り替わるが、libyaml.dylibがi386のまま正しく読み込まれず、x86_64用にリビルドもされない</li>
+</ul>
+</li>
+<li>Google Chrome
+
+<ul>
+<li>filesystem APIのクオータ要求時に警告バーが出るが、この要求を機能拡張のポップアップ画面内で行うと警告バーが出る代わりに(親ごと)クラッシュする</li>
+</ul>
+</li>
+<li>嫁コレ
+
+<ul>
+<li>APIトークンにIMEIをハッシュではなく暗号化したものを用いているため、嫁コレサーバー側で生IMEIを取り出すことができる。一部通信はHTTPで行われているため盗聴も可能である</li>
+<li>3.4.xで修正された</li>
+</ul>
+</li>
+<li>東京100ガイド
+
+<ul>
+<li>WiMAX環境で使用できない</li>
+<li>修正済み</li>
+</ul>
+</li>
+</ul>
 
 
 <h3>イラスト</h3>
