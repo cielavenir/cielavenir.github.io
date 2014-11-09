@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2014-10-15T00:30:16+09:00</updated>
+  <updated>2014-11-10T00:33:58+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -142,31 +142,74 @@
 </table>
 
 
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">大会</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">CodeSCORE 2014|単独満点</td>
+</tr>
+<tr>
+<td style="text-align:left;">Code Formula 2014|銀賞</td>
+</tr>
+<tr>
+<td style="text-align:left;">CODE FESTIVAL 2014|あさプロ銀賞</td>
+</tr>
+<tr>
+<td style="text-align:left;">Code Runner 2014|</td>
+</tr>
+</tbody>
+</table>
+
+
 <h3>音楽ゲーム</h3>
 
 <table>
 <thead>
 <tr>
 <th style="text-align:left;">ゲーム</th>
-<th style="text-align:left;">成績</th>
+<th style="text-align:left;"></th>
+<th>成績</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">グルーヴコースター</td>
-<td style="text-align:left;">iOS：約1000位。Sayonara Twilight削られたのは痛い。<br>AC：400位台。理論値1、S++4</td>
+<td style="text-align:left;"></td>
+<td>iOS：約1000位。Sayonara Twilight削られたのは痛い。<br>AC：400位台。理論値1、S++4</td>
 </tr>
 <tr>
 <td style="text-align:left;">maimai</td>
-<td style="text-align:left;">7.39</td>
+<td style="text-align:left;"></td>
+<td>7.39</td>
 </tr>
 <tr>
 <td style="text-align:left;">太鼓の達人</td>
-<td style="text-align:left;">モモイロ初級(苦笑)</td>
+<td style="text-align:left;">532629126552</td>
+<td>モモイロ初級(苦笑)</td>
 </tr>
 <tr>
 <td style="text-align:left;">jubeat</td>
-<td style="text-align:left;">音ゲ祭始まったら参入予定</td>
+<td style="text-align:left;">57710108066051</td>
+<td>2.43</td>
+</tr>
+<tr>
+<td style="text-align:left;">DDR</td>
+<td style="text-align:left;">41242214</td>
+<td>Enjoy LV 10</td>
+</tr>
+<tr>
+<td style="text-align:left;">弐寺</td>
+<td style="text-align:left;">3492-2945</td>
+<td>step up 2エリアクリア</td>
+</tr>
+<tr>
+<td style="text-align:left;">BeatStream</td>
+<td style="text-align:left;"></td>
+<td>Trial2クリア</td>
 </tr>
 </tbody>
 </table>
@@ -207,7 +250,7 @@
 <td style="text-align:left;"><a href="http://qiita.com/cielavenir/items/a13215069306eeaa24bf">http://qiita.com/cielavenir/items/a13215069306eeaa24bf</a></td>
 </tr>
 <tr>
-<td style="text-align:left;">qinatall</td>
+<td style="text-align:left;">qinstall</td>
 <td style="text-align:left;"><a href="https://github.com/cielavenir/qinstall">https://github.com/cielavenir/qinstall</a></td>
 </tr>
 </tbody>
