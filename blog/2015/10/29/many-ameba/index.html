@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>シンクロニカの公開用IDを得る方法 - My Octopress Blog</title>
+  <title>アメーバがたくさん (and マスと駒と色塗り) - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/07/19/synchronica-id">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/10/29/many-ameba">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -95,7 +95,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">シンクロニカの公開用IDを得る方法</h1>
+      <h1 class="entry-title">アメーバがたくさん (and マスと駒と色塗り)</h1>
     
     
       <p class="meta">
@@ -111,18 +111,54 @@
   
 
 
-<time datetime="2015-07-19T16:53:25+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-10-29T01:40:16+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li><a href="https://lounge.synchronica.jp/">シンクロニカラウンジ</a>にて、自分のIDを得る方法について</li>
-<li>フレンド検索で自分を検索することはできませんが、「スコアデータ」->「個人プレイ成績」を閲覧すると、URLの末尾に40文字の文字列が見えます。</li>
-<li><p>これを <a href="https://lounge.synchronica.jp/Friend/info/">https://lounge.synchronica.jp/Friend/info/</a> の後ろに付けることで、自分の情報を実際に見ることができます。よって、これを公開用IDとして良いのではないかと思われます。</p></li>
-<li><p>なお、maimaiもフレンドコードを見られませんが、この方法で得ることもできません。なおフレンド申請は「ご近所リストの○番目に申請」という形式で実装されています。</p></li>
+<div class="entry-content"><p><a href="http://yukicoder.me/problems/6">http://yukicoder.me/problems/6</a></p>
+
+<ul>
+<li>まず、N,D,Tを取得した後、アメーバの初期位置(e)を取得し、(e%D+D)%D(=mod)ごとに分けます。</li>
+<li>「e%Dごとに分け」て以降にDを考慮しなくても良いよう、各アメーバは、[(e-mod)/D-T,(e-mod)/D+T]という範囲(閉区間)に分裂するとします。</li>
+<li><p>※言語によってはeが負だとバグるので、mod計算はきちんとやったほうが良いでしょう。</p>
+
+<ul>
+<li>Ruby/Pythonだとe//D-TでACですが、C++ではそうではない。</li>
+</ul>
+</li>
+<li><p>ここからが本題で、現在yukicoderに上がっている解説ですと、範囲集合を事前にソートするとしていますが、それは必ずしも必要ではありません。逐一マージすれば良いからです。</p></li>
+<li><p>マージするには、二分探索で右側を求め、左側と重なっているかチェックして、右側はいくつ先まで重なっているかもチェック。それらを消して、新しい範囲を挿入すればよいです。</p>
+
+<ul>
+<li>Python2/3 <a href="http://yukicoder.me/submissions/4190">http://yukicoder.me/submissions/4190</a></li>
+<li>Ruby <a href="http://yukicoder.me/submissions/56062">http://yukicoder.me/submissions/56062</a></li>
+<li>C++
+
+<ul>
+<li>vector <a href="http://yukicoder.me/submissions/56075">http://yukicoder.me/submissions/56075</a></li>
+<li>deque <a href="http://yukicoder.me/submissions/56074">http://yukicoder.me/submissions/56074</a></li>
+<li>set <a href="http://yukicoder.me/submissions/56077">http://yukicoder.me/submissions/56077</a></li>
+<li>dequeはvectorと比較しておおよそ定数倍の高速化が望めます。(cf: CODE FESTIVAL 2014 あさぷろD 枕決め)</li>
+<li>この問題はNが小さいので実行時間の差があまり出ませんが、Nが大きいとvector > deque > setの順番に時間がかかることが如実にわかります。</li>
+<li>順序が重要ですので、当然ながらunordered_setは使えないことに注意して下さい。</li>
+</ul>
+</li>
+<li><strong>Crystalでも解こうと思いましたが、bsearchがないようなのでやめました。</strong></li>
+</ul>
+</li>
+<li><p>事前にソートしない利点として、以下のように変形した問題も容易に解けることが上げられます。</p></li>
+<li>「N個の初期位置が与えられる。あなたは与えられた順番通りにN匹のアメーバを数直線上に配置する。配置されたアメーバは、分裂を開始してT秒後に停止する。停止するまで次のアメーバを配置することはない。さて、i番目のアメーバが停止した時点で合計何匹のアメーバが数直線上に存在するか？」</li>
+<li><p>この考え方を使うことで解ける問題があります。そう、<a href="http://code-festival-2015-qualb.contest.atcoder.jp/tasks/codefestival_2015_qualB_d">CODE FESTIVAL 2015 予選B D問題 (マスと駒と色塗り)</a>です。</p>
+
+<ul>
+<li>なお、残念ながら、この問題は制約が大きいため、Ruby/PythonだとTLEします。PyPy/Crystalは導入されていないため、通るかはわかりません。ただ、C++でも(tree)map解法でなければならず、deque解法は75点(ちなみにvectorは40点)だったので、通る可能性は低いかもしれませんが。</li>
+<li><a href="http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169">http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169</a></li>
+</ul>
+</li>
+<li><p>※ ついでに言うと、<a href="http://www.checkio.org/mission/painting-wall/share/8a0e0061de3ff95664776d904d309e57/">CheckiO Painting Wall</a>も逐一マージが想定解です。</p></li>
 </ul>
 
 </div>
@@ -147,7 +183,7 @@
   
 
 
-<time datetime="2015-07-19T16:53:25+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-10-29T01:40:16+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -155,7 +191,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/07/19/synchronica-id/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/07/19/synchronica-id/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/10/29/many-ameba/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/10/29/many-ameba/" >Tweet</a>
   
   
   
@@ -166,13 +202,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2015/06/15/yukiko-15/" title="Previous Post:
-        ゆきこちゃんの15パズル">&laquo; ゆきこちゃんの15パズル</a></li>
+        href="/blog/2015/07/19/synchronica-id/" title="Previous Post:
+        シンクロニカの公開用IDを得る方法">&laquo; シンクロニカの公開用IDを得る方法</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2015/10/29/many-ameba/"
-        title="Next Post: アメーバがたくさん (and マスと駒と色塗り)">アメーバがたくさん (and マスと駒と色塗り)
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>
