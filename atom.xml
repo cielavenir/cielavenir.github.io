@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-10-29T03:37:07+09:00</updated>
+  <updated>2015-10-29T03:43:55+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -468,7 +468,7 @@
 <ul>
 <li>vector <a href="http://yukicoder.me/submissions/56075">http://yukicoder.me/submissions/56075</a></li>
 <li>deque <a href="http://yukicoder.me/submissions/56074">http://yukicoder.me/submissions/56074</a></li>
-<li>set <a href="http://yukicoder.me/submissions/56077">http://yukicoder.me/submissions/56077</a></li>
+<li>set <a href="http://yukicoder.me/submissions/56079">http://yukicoder.me/submissions/56079</a></li>
 <li>dequeはvectorと比較しておおよそ定数倍の高速化が望めます。(cf: CODE FESTIVAL 2014 あさぷろD 枕決め)</li>
 <li>この問題はNが小さいので実行時間の差があまり出ませんが、Nが大きいとvector > deque > setの順番に時間がかかることが如実にわかります。</li>
 <li>順序が重要ですので、当然ながらunordered_setは使えないことに注意して下さい。</li>
@@ -483,6 +483,7 @@
 
 <ul>
 <li>なお、残念ながら、この問題は制約が大きいため、Ruby/PythonだとTLEします。PyPy/Crystalは導入されていないため、通るかはわかりません。ただ、C++でもset解法でなければならず、deque解法は75点(ちなみにvectorは40点)だったので、通る可能性は低いかもしれませんが。</li>
+<li>あと、<code>if(l&lt;=left-&gt;second+1)</code>の「+1」は必須。</li>
 <li><a href="http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169">http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169</a></li>
 </ul>
 </li>
