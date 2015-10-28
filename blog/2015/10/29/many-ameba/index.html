@@ -122,7 +122,7 @@
 
 <ul>
 <li>まず、N,D,Tを取得した後、アメーバの初期位置(e)を取得し、(e%D+D)%D(=mod)ごとに分けます。</li>
-<li>「e%Dごとに分け」て以降にDを考慮しなくても良いよう、各アメーバは、[(e-mod)/D-T,(e-mod)/D+T]という範囲(閉区間)に分裂するとします。</li>
+<li>「modごとに分け」て以降にDを考慮しなくても良いよう、分けられたアメーバは、その中で [(e-mod)/D-T,(e-mod)/D+T] という範囲(閉区間)に分裂するとします。</li>
 <li><p>※言語によってはeが負だとバグるので、mod計算はきちんとやったほうが良いでしょう。</p>
 
 <ul>
@@ -154,7 +154,7 @@
 <li><p>この考え方を使うことで解ける問題があります。そう、<a href="http://code-festival-2015-qualb.contest.atcoder.jp/tasks/codefestival_2015_qualB_d">CODE FESTIVAL 2015 予選B D問題 (マスと駒と色塗り)</a>です。</p>
 
 <ul>
-<li>なお、残念ながら、この問題は制約が大きいため、Ruby/PythonだとTLEします。PyPy/Crystalは導入されていないため、通るかはわかりません。ただ、C++でも(tree)map解法でなければならず、deque解法は75点(ちなみにvectorは40点)だったので、通る可能性は低いかもしれませんが。</li>
+<li>なお、残念ながら、この問題は制約が大きいため、Ruby/PythonだとTLEします。PyPy/Crystalは導入されていないため、通るかはわかりません。ただ、C++でもset解法でなければならず、deque解法は75点(ちなみにvectorは40点)だったので、通る可能性は低いかもしれませんが。</li>
 <li><a href="http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169">http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169</a></li>
 </ul>
 </li>
