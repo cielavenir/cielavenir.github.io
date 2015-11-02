@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-10-29T03:43:55+09:00</updated>
+  <updated>2015-11-02T22:02:24+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -474,7 +474,7 @@
 <li>順序が重要ですので、当然ながらunordered_setは使えないことに注意して下さい。</li>
 </ul>
 </li>
-<li><strong>Crystalでも解こうと思いましたが、bsearchがないようなのでやめました。</strong></li>
+<li>Crystal <a href="http://yukicoder.me/submissions/56637">http://yukicoder.me/submissions/56637</a> (bsearchは独自ポート)</li>
 </ul>
 </li>
 <li><p>事前にソートしない利点として、以下のように変形した問題も容易に解けることが上げられます。</p></li>
