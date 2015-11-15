@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-11-16T03:20:25+09:00</updated>
+  <updated>2015-11-16T03:23:41+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -956,13 +956,13 @@
 <td style="text-align:left;">0:12</td>
 <td style="text-align:left;">Ruby</td>
 <td style="text-align:left;">C</td>
-<td style="text-align:left;">10**6全探索。TLE</td>
+<td style="text-align:left;">10<sup>6</sup>全探索。TLE</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:14</td>
 <td style="text-align:left;">Ruby</td>
 <td style="text-align:left;">C</td>
-<td style="text-align:left;">閾値を10<strong>5に。</strong>AC**</td>
+<td style="text-align:left;">閾値を10<sup>5</sup>に。<strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:32</td>
@@ -1071,7 +1071,7 @@
 <td style="text-align:left;">1:28</td>
 <td style="text-align:left;">C++</td>
 <td style="text-align:left;">D</td>
-<td style="text-align:left;">2分探索して削除を繰り返す…mapだと複数の値持てないし…ええーいvectorガチャ!実行時間1.2秒! <strong>AC</strong></td>
+<td style="text-align:left;">2分探索して削除を繰り返す…mapだと複数の値持てないし…ええーいvectorガチャ!実行時間1.2秒! <strong>AC</strong> (LA)</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:30</td>
