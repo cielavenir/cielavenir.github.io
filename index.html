@@ -612,93 +612,111 @@
 <th style="text-align:left;">時間</th>
 <th style="text-align:left;">言語</th>
 <th style="text-align:left;">問題(A-J)</th>
+<th style="text-align:left;">コメント</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">44秒</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A|<strong>AC</strong> 。<code>a[0].size==5&amp;&amp;a[1].size==7&amp;&amp;a[2].size==5</code>というくそコードを生み出す。gets.split.map(&amp;:size)==[5,7,5]とタイプしていたらFAだった。</td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;"><strong>AC</strong> 。<code>a[0].size==5&amp;&amp;a[1].size==7&amp;&amp;a[2].size==5</code>というくそコードを生み出す。gets.split.map(&amp;:size)==[5,7,5]とタイプしていたらFAだった。</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:03</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B|<code>[*2..6*N]</code>の中央値でしょ -> WA。焦る。</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;"><code>[*2..6*N]</code>の中央値でしょ -> WA。焦る。</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:09</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">C|そのまま置けるときは置く、そうでない場合分解が必要かどうか判断する貪欲法。 <strong>AC</strong></td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">そのまま置けるときは置く、そうでない場合分解が必要かどうか判断する貪欲法。 <strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:16</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E|適当に置換 WA</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">適当に置換 WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:20</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E|WA</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:25</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B|N=1の処理を追加するも WA</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">N=1の処理を追加するも WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:30</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">D|最大被覆-1 WA。rprocon 2013FでnCrの計算式を間違えたり、code festival 2015予選A Dで2分探索がオーバーフローしたりとRHDコンテストには魔が潜む、その魔に今回も喰われるのか。2問で終わるのか。 <em>激しく焦る。胸が痛む。</em></td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">最大被覆-1 WA。rprocon 2013FでnCrの計算式を間違えたり、code festival 2015予選A Dで2分探索がオーバーフローしたりとRHDコンテストには魔が潜む、その魔に今回も喰われるのか。2問で終わるのか。 <em>激しく焦る。胸が痛む。</em></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:33</td>
 <td style="text-align:left;">Python</td>
-<td style="text-align:left;">B|N〜N*6の確率を全部求め、その最大を答えるという酷い実装。<a href="http://www.checkio.org/mission/probably-dice/share/3d723f2165fef2b5dc2b1992ae7eb3e6/">CheckiO probably-dice</a>をコピった。 <strong>AC</strong></td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">N〜N*6の確率を全部求め、その最大を答えるという酷い実装。<a href="http://www.checkio.org/mission/probably-dice/share/3d723f2165fef2b5dc2b1992ae7eb3e6/">CheckiO probably-dice</a>をコピった。 <strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:54</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E|2**3通り、-10〜10に対しシミュレーションする。WA</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">2**3通り、-10〜10に対しシミュレーションする。WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:55</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E|WA</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:57</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E|探索部分のバグを修正成功。 <strong>AC</strong></td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">探索部分のバグを修正成功。 <strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">1:20</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">D|謎なDFSを生やす。WA</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">謎なDFSを生やす。WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:38</td>
 <td style="text-align:left;">C++</td>
-<td style="text-align:left;">D|使わないボタンを1個決めて、それぞれに対し最大被覆を計算すれば良いことはわかるんですよ。O(nm)の定数倍で通そうとする無茶。TLE</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">使わないボタンを1個決めて、それぞれに対し最大被覆を計算すれば良いことはわかるんですよ。O(nm)の定数倍で通そうとする無茶。TLE</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:51</td>
 <td style="text-align:left;">C++</td>
-<td style="text-align:left;">D|手持ちのRMQで殴る。rmq=imos(notes);print min(max(rmq.query(1,e.first),rmq.query(e.first,e.second)-1,rmq.query(e.second,10<strong>5+1)) for e in notes)。 </strong>AC<strong> </strong>パーカー確定<em><em> 。 </em>胸の痛み、収束する</em>。 かなりやばい。提供されたおにぎりを食べる。</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">手持ちのRMQで殴る。rmq=imos(notes);print min(max(rmq.query(1,e.first),rmq.query(e.first,e.second)-1,rmq.query(e.second,10<strong>5+1)) for e in notes)。 </strong>AC<strong> </strong>パーカー確定<em><em> 。 </em>胸の痛み、収束する</em>。 かなりやばい。提供されたおにぎりを食べる。</td>
 </tr>
 <tr>
 <td style="text-align:left;"></td>
 <td style="text-align:left;"></td>
-<td style="text-align:left;">F〜J|読んだけど方針すら立たない</td>
+<td style="text-align:left;">F〜J</td>
+<td style="text-align:left;">読んだけど方針すら立たない</td>
 </tr>
 <tr>
 <td style="text-align:left;">2:16</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B|普通の解き方でAC</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">普通の解き方でAC</td>
 </tr>
 <tr>
 <td style="text-align:left;">3:00</td>
 <td style="text-align:left;"></td>
-<td style="text-align:left;">|116位。仕方がない。パーカーで良しとします。ところで、今年はパーカーが159着出ました。去年の54着に比べるとかなりの大盤振る舞いありがとうございます。</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">116位。仕方がない。パーカーで良しとします。ところで、今年はパーカーが159着出ました。去年の54着に比べるとかなりの大盤振る舞いありがとうございます。</td>
 </tr>
 </tbody>
 </table>
@@ -766,68 +784,81 @@
 <th style="text-align:left;">時間</th>
 <th style="text-align:left;">言語</th>
 <th style="text-align:left;">問題(A-H)</th>
+<th style="text-align:left;">コメント</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align:left;">52秒</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A|<code>Math.sqrt(n).to_i!=n</code> TLE。今思えば最低ですが、この時は仕方がない。</td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;"><code>Math.sqrt(n).to_i!=n</code> TLE。今思えば最低ですが、この時は仕方がない。</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:03</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B|2つに分けて、ハミング距離。 <strong>AC</strong></td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">2つに分けて、ハミング距離。 <strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:07</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A|<code>(1..100).map{e e**2}.bsearch{e e&gt;=n}-n</code>。頭がおかしいですが、やむをえません。 <strong>AC</strong></td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;"><code>(1..100).map{e e**2}.bsearch{e e&gt;=n}-n</code>。頭がおかしいですが、やむをえません。 <strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:10</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">C|ソートして、上位K個の和が既にR*Kを越えているか、または下を1個減らしたときに足すべき値は何か。WA。焦る。</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">ソートして、上位K個の和が既にR*Kを越えているか、または下を1個減らしたときに足すべき値は何か。WA。焦る。</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:11</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">C|N==1の時、reduce(:+)はnilになる。(0,:+)。WA</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">N==1の時、reduce(:+)はnilになる。(0,:+)。WA</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:13</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">C|N==Kの時、a[0,K]の要素数はKではなくK-1。下を1個減らす必要はない。 <strong>AC</strong></td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">N==Kの時、a[0,K]の要素数はKではなくK-1。下を1個減らす必要はない。 <strong>AC</strong></td>
 </tr>
 <tr>
 <td style="text-align:left;">0:20あたり</td>
 <td style="text-align:left;">C</td>
-<td style="text-align:left;">D|lcsを試すも、サンプルが通らない。スコア計算関数を修正。まだ通らない。切断位置はN/2である必要はないのか。じゃあB問題と違ってN%2の場合分けも要らないな。</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">lcsを試すも、サンプルが通らない。スコア計算関数を修正。まだ通らない。切断位置はN/2である必要はないのか。じゃあB問題と違ってN%2の場合分けも要らないな。</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:32</td>
 <td style="text-align:left;">C</td>
-<td style="text-align:left;">D|<strong>AC</strong> Easy順位確定。7位。</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;"><strong>AC</strong> Easy順位確定。7位。</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:08</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E|左右に分けて、<code>sum((i+1)*a[i]+1 for i in range(N))</code>。サンプル合わず。</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">左右に分けて、<code>sum((i+1)*a[i]+1 for i in range(N))</code>。サンプル合わず。</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:15</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">G|各数字の前で切ってソートすればいいんじゃね->&hellip; 1 2 9 3 &hellip;で他の部分を切ってしまい2と9を切らない。間違えました、はい。ソース破棄。</td>
+<td style="text-align:left;">G</td>
+<td style="text-align:left;">各数字の前で切ってソートすればいいんじゃね->&hellip; 1 2 9 3 &hellip;で他の部分を切ってしまい2と9を切らない。間違えました、はい。ソース破棄。</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:21</td>
 <td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">F|高さでソートして貪欲。O(K)。TLE。ちなみにO(N)の答案を書いてわかりましたがこの解放は嘘解法でした。</td>
+<td style="text-align:left;">F</td>
+<td style="text-align:left;">高さでソートして貪欲。O(K)。TLE。ちなみにO(N)の答案を書いてわかりましたがこの解放は嘘解法でした。</td>
 </tr>
 <tr>
 <td style="text-align:left;">1:30</td>
 <td style="text-align:left;"></td>
-<td style="text-align:left;">|Middleは77位。3問解きたかったね。仕方ないね。</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">Middleは77位。3問解きたかったね。仕方ないね。</td>
 </tr>
 </tbody>
 </table>
