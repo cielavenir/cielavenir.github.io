@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-11-16T02:09:34+09:00</updated>
+  <updated>2015-11-16T02:10:46+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -491,7 +491,7 @@
 <td style="text-align:left;">44秒</td>
 <td style="text-align:left;">Ruby</td>
 <td style="text-align:left;">A</td>
-<td style="text-align:left;"><strong>AC</strong> 。<code>a[0].size==5&amp;&amp;a[1].size==7&amp;&amp;a[2].size==5</code>というくそコードを生み出す。gets.split.map(&amp;:size)==[5,7,5]とタイプしていたらFAだった。</td>
+<td style="text-align:left;"><strong>AC</strong> 。<code>a[0].size==5&amp;&amp;a[1].size==7&amp;&amp;a[2].size==5</code>というくそコードを生み出す。<code>gets.split.map(&amp;:size)==[5,7,5]</code>とタイプしていたらFAだった。</td>
 </tr>
 <tr>
 <td style="text-align:left;">0:03</td>
@@ -569,7 +569,7 @@
 <td style="text-align:left;">1:51</td>
 <td style="text-align:left;">C++</td>
 <td style="text-align:left;">D</td>
-<td style="text-align:left;">手持ちのRMQで殴る。rmq=imos(notes);print min(max(rmq.query(1,e.first),rmq.query(e.first,e.second)-1,rmq.query(e.second,10<strong>5+1)) for e in notes)。 </strong>AC<strong> </strong>パーカー確定<em><em> 。 </em>胸の痛み、収束する</em>。 かなりやばい。提供されたおにぎりを食べる。</td>
+<td style="text-align:left;">手持ちのRMQで殴る。<code>rmq=imos(notes);print min(max(rmq.query(1,e.first),rmq.query(e.first,e.second)-1,rmq.query(e.second,10**5+1)) for e in notes)</code>。 <strong>AC</strong> <strong>パーカー確定</strong> 。 <em>胸の痛み、収束する</em>。 かなりやばい。提供されたおにぎりを食べる。</td>
 </tr>
 <tr>
 <td style="text-align:left;"></td>
