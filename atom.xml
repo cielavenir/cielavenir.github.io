@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-11-16T20:32:54+09:00</updated>
+  <updated>2015-11-16T20:39:13+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -770,6 +770,7 @@
 <h3>早解きリレー</h3>
 
 <ul>
+<li>ゼッケン、去年はアルファベットだけど、今年整数だ。問題番号なのか解く順番なのかわからないっす。</li>
 <li>順位順で、普通にEを担当。実装は2問目。</li>
 <li>最初、すぐに反転させれば良いと勘違いしてWA。「解けそうだ」とか言ってすみません。h&lt;=6やm&lt;=30のときは待ってから反転させることで0にできますね。AC。途中で戻らずにすみました。</li>
 <li>ちなみに解いた順番の関係でEはFAらしい。</li>
