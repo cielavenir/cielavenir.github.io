@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-11-20T17:07:23+09:00</updated>
+  <updated>2015-11-22T04:27:04+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -459,6 +459,47 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CodeEval 219 The Tourist]]></title>
+    <link href="http://cielavenir.github.io/blog/2015/11/22/codeeval219/"/>
+    <updated>2015-11-22T04:13:10+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2015/11/22/codeeval219</id>
+    <content type="html"><![CDATA[<p>問題文：<a href="https://www.codeeval.com/browse/219/">https://www.codeeval.com/browse/219/</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>探偵が複数の都市を全て回るとき、その距離の合計値の最小を出力する問題。</li>
+<li>こう書くと、巡回セールスマン問題だと思いたいですが、なんと、 <strong>最小全域木</strong> 問題である。やばくないですか。問題文ではHeと <strong>単数形</strong> で書かれていますが…分身できるんですか。</li>
+<li>普通にクラスカル法で解けば良いのでその部分の解説は他に譲ります。もしくは私の解答集を見ても。</li>
+</ul>
+
+
+<h2>注意点</h2>
+
+<ul>
+<li>Falseを出力すべきなのは、
+
+<ul>
+<li>グラフが連結でない場合</li>
+<li><strong>グラフに示されていない点が存在する場合</strong></li>
+</ul>
+</li>
+<li>である。たとえば、<code>1 2 1 | 2 4 1</code>の答えは、2ではなくFalseである。つまり、点番号を詰める必要はないということ。</li>
+<li>多重辺を持つ場合、 <strong>一番後ろの辺を採用</strong> する。例えば、<code>1 2 1 | 2 1 2</code>の場合、点1と点2の間にコスト2の無向辺を張る。</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>公式掲示板の <a href="https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly">https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly</a> スレッドがなければ解けませんでした。</li>
+<li>解法がミスリードすぎるのは(拙作Rotate Holeの旧問題文以上に)やばいと思います。</li>
 </ul>
 
 ]]></content>

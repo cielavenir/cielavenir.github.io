@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>GitHub Pages始めました - My Octopress Blog</title>
+  <title>CodeEval 219 The Tourist - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2014/10/14/launched-github-pages">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/11/22/codeeval219">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -95,7 +95,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">GitHub Pages始めました</h1>
+      <h1 class="entry-title">CodeEval 219 the Tourist</h1>
     
     
       <p class="meta">
@@ -111,14 +111,46 @@
   
 
 
-<time datetime="2014-10-14T17:30:58+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-11-22T04:13:10+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>始めてみました。</p>
+<div class="entry-content"><p>問題文：<a href="https://www.codeeval.com/browse/219/">https://www.codeeval.com/browse/219/</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>探偵が複数の都市を全て回るとき、その距離の合計値の最小を出力する問題。</li>
+<li>こう書くと、巡回セールスマン問題だと思いたいですが、なんと、 <strong>最小全域木</strong> 問題である。やばくないですか。問題文ではHeと <strong>単数形</strong> で書かれていますが…分身できるんですか。</li>
+<li>普通にクラスカル法で解けば良いのでその部分の解説は他に譲ります。もしくは私の解答集を見ても。</li>
+</ul>
+
+
+<h2>注意点</h2>
+
+<ul>
+<li>Falseを出力すべきなのは、
+
+<ul>
+<li>グラフが連結でない場合</li>
+<li><strong>グラフに示されていない点が存在する場合</strong></li>
+</ul>
+</li>
+<li>である。たとえば、<code>1 2 1 | 2 4 1</code>の答えは、2ではなくFalseである。つまり、点番号を詰める必要はないということ。</li>
+<li>多重辺を持つ場合、 <strong>一番後ろの辺を採用</strong> する。例えば、<code>1 2 1 | 2 1 2</code>の場合、点1と点2の間にコスト2の無向辺を張る。</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>公式掲示板の <a href="https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly">https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly</a> スレッドがなければ解けませんでした。</li>
+<li>解法がミスリードすぎるのは(拙作Rotate Holeの旧問題文以上に)やばいと思います。</li>
+</ul>
+
 </div>
 
 
@@ -141,7 +173,7 @@
   
 
 
-<time datetime="2014-10-14T17:30:58+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-11-22T04:13:10+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -149,7 +181,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2014/10/14/launched-github-pages/" data-via="" data-counturl="http://cielavenir.github.io/blog/2014/10/14/launched-github-pages/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/11/22/codeeval219/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/11/22/codeeval219/" >Tweet</a>
   
   
   
@@ -159,10 +191,14 @@
     
     <ul class="pager">
       
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2015/11/16/code-festival-2015/" title="Previous Post:
+        Code Festival 2015 参加記">&laquo; Code Festival 2015 参加記</a></li>
+      
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2014/11/30/code-festival-2014/"
-        title="Next Post: Code Festival 2014 参加記">Code Festival 2014 参加記
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>
