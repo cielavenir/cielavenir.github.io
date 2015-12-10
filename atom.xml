@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-12-11T06:10:15+09:00</updated>
+  <updated>2015-12-11T06:12:12+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -459,6 +459,32 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[辺の追加]]></title>
+    <link href="http://cielavenir.github.io/blog/2015/12/11/add-edges/"/>
+    <updated>2015-12-11T06:11:16+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2015/12/11/add-edges</id>
+    <content type="html"><![CDATA[<p><a href="http://yukicoder.me/problems/896">http://yukicoder.me/problems/896</a></p>
+
+<ul>
+<li>まず、union-findで島の大きさを列挙し、その列挙されたものに対し、bag[0]=-1として、最小値版0-1ナップザックを行えばよいです。</li>
+<li>しかし、これでは、島の個数をXとすると、O(NX)であり、Xの最大値はNなので、島が多数あった場合に最悪O(N<sup>2</sup>)となり、TLEになってしまいます。</li>
+<li><p>そこで、ダブリングを行います。例えば、大きさ2の島が7つある場合、「大きさ2コスト1」を7回並べるのではなく、「大きさ2コスト1」「大きさ4コスト2」「大きさ8コスト4」「大きさ14コスト7」の4つを並べれば良いことになります。</p></li>
+<li><p><a href="http://yukicoder.me/submissions/64709">http://yukicoder.me/submissions/64709</a></p></li>
+<li><p>この考え方はtails氏の答案( <a href="http://yukicoder.me/submissions/64600">http://yukicoder.me/submissions/64600</a> )を参考にしました。ありがとうございます。</p></li>
+</ul>
+
+
+<h3>追伸</h3>
+
+<ul>
+<li>蟻本302ページに普通に書いてありました。まだ読み終わっていないため、勉強不足ということが露呈しました…</li>
+<li>deque解法が多いのはスライド最小値の考え方で解けるかららしいですね。ダブリング解法は(計算量が少し増えることもあって)少数派のようです。</li>
 </ul>
 
 ]]></content>
@@ -946,32 +972,6 @@
 </ul>
 </li>
 <li><p>※ ついでに言うと、<a href="http://www.checkio.org/mission/painting-wall/share/8a0e0061de3ff95664776d904d309e57/">CheckiO Painting Wall</a>も逐一マージが想定解です。</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[辺の追加]]></title>
-    <link href="http://cielavenir.github.io/blog/2015/10/29/add-edges/"/>
-    <updated>2015-10-29T01:40:16+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2015/10/29/add-edges</id>
-    <content type="html"><![CDATA[<p><a href="http://yukicoder.me/problems/896">http://yukicoder.me/problems/896</a></p>
-
-<ul>
-<li>まず、union-findで島の大きさを列挙し、その列挙されたものに対し、bag[0]=-1として、最小値版0-1ナップザックを行えばよいです。</li>
-<li>しかし、これでは、島の個数をXとすると、O(NX)であり、Xの最大値はNなので、島が多数あった場合に最悪O(N<sup>2</sup>)となり、TLEになってしまいます。</li>
-<li><p>そこで、ダブリングを行います。例えば、大きさ2の島が7つある場合、「大きさ2コスト1」を7回並べるのではなく、「大きさ2コスト1」「大きさ4コスト2」「大きさ8コスト4」「大きさ14コスト7」の4つを並べれば良いことになります。</p></li>
-<li><p><a href="http://yukicoder.me/submissions/64709">http://yukicoder.me/submissions/64709</a></p></li>
-<li><p>この考え方はtails氏の答案( <a href="http://yukicoder.me/submissions/64600">http://yukicoder.me/submissions/64600</a> )を参考にしました。ありがとうございます。</p></li>
-</ul>
-
-
-<h3>追伸</h3>
-
-<ul>
-<li>蟻本302ページに普通に書いてありました。まだ読み終わっていないため、勉強不足ということが露呈しました…</li>
-<li>deque解法が多いのはスライド最小値の考え方で解けるかららしいですね。ダブリング解法は(計算量が少し増えることもあって)少数派のようです。</li>
 </ul>
 
 ]]></content>
