@@ -348,7 +348,7 @@
 <tr>
 <td style="text-align:left;">グルーヴコースター</td>
 <td style="text-align:left;"></td>
-<td style="text-align:left;">CS(Android)：約1300位。Sayonara Twilight削られたのは痛い。<br><a href="https://docs.google.com/spreadsheets/d/1wmi6VDrz3s9iNlBXe9_G_3X7lrKKicbGX3oPl_c3uVc/edit?usp=sharing">AC：400位台。理論値5、S++18</a></td>
+<td style="text-align:left;">CS(Android)：約1300位。Sayonara Twilight削られたのは痛い。<br><a href="https://docs.google.com/spreadsheets/d/1wmi6VDrz3s9iNlBXe9_G_3X7lrKKicbGX3oPl_c3uVc/edit?usp=sharing">AC：400位台。理論値5、S++19</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">[SEGA]</td>
@@ -393,7 +393,7 @@
 <tr>
 <td style="text-align:left;">crossbeats REV.</td>
 <td style="text-align:left;">76435928</td>
-<td style="text-align:left;"><a href="http://revbeta.maplia.jp/view/00209">Class II 642.03</a></td>
+<td style="text-align:left;"><a href="http://revbeta.maplia.jp/view/00209">Class II 662.32</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">(Cytus)</td>
@@ -1143,6 +1143,59 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2015/10/29/add-edges/">辺の追加</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-29T01:40:16+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://yukicoder.me/problems/896">http://yukicoder.me/problems/896</a></p>
+
+<ul>
+<li>まず、union-findで島の大きさを列挙し、その列挙されたものに対し、bag[0]=-1として、最小値版0-1ナップザックを行えばよいです。</li>
+<li>しかし、これでは、島の個数をXとすると、O(NX)であり、Xの最大値はNなので、島が多数あった場合に最悪O(N<sup>2</sup>)となり、TLEになってしまいます。</li>
+<li><p>そこで、ダブリングを行います。例えば、大きさ2の島が7つある場合、「大きさ2コスト1」を7回並べるのではなく、「大きさ2コスト1」「大きさ4コスト2」「大きさ8コスト4」「大きさ14コスト7」の4つを並べれば良いことになります。</p></li>
+<li><p><a href="http://yukicoder.me/submissions/64709">http://yukicoder.me/submissions/64709</a></p></li>
+<li><p>この考え方はtails氏の答案( <a href="http://yukicoder.me/submissions/64600">http://yukicoder.me/submissions/64600</a> )を参考にしました。ありがとうございます。</p></li>
+</ul>
+
+
+<h3>追伸</h3>
+
+<ul>
+<li>蟻本302ページに普通に書いてありました。まだ読み終わっていないため、勉強不足ということが露呈しました…</li>
+<li>deque解法が多いのはスライド最小値の考え方で解けるかららしいですね。ダブリング解法は(計算量が少し増えることもあって)少数派のようです。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2015/07/19/synchronica-id/">シンクロニカの公開用IDを得る方法</a></h1>
     
     
@@ -1538,7 +1591,7 @@
       </li>
     
       <li class="post">
-        <a href="/blog/2015/07/19/synchronica-id/">シンクロニカの公開用IDを得る方法</a>
+        <a href="/blog/2015/10/29/add-edges/">辺の追加</a>
       </li>
     
   </ul>

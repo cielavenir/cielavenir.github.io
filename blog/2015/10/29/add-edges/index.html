@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>ゆきこちゃんの15パズル - My Octopress Blog</title>
+  <title>辺の追加 - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/06/15/yukiko-15">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/10/29/add-edges">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -95,7 +95,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">ゆきこちゃんの15パズル</h1>
+      <h1 class="entry-title">辺の追加</h1>
     
     
       <p class="meta">
@@ -111,34 +111,29 @@
   
 
 
-<time datetime="2015-06-15T01:38:30+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-10-29T01:40:16+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://yukicoder.me/problems/247">http://yukicoder.me/problems/247</a></p>
-
-<p>この問題はシミュレーションとなっていますが、シミュレーションは必要ではないです。</p>
+<div class="entry-content"><p><a href="http://yukicoder.me/problems/896">http://yukicoder.me/problems/896</a></p>
 
 <ul>
-<li>まず、各駒について、完成状態とのマンハッタン距離を取ります。1つでも2以上であれば、その配置は作ることができません。</li>
-<li>次に、その盤面が15パズルの盤面として正しいかを確認します。これは、(空マス以外の転倒数+空マスの上下動数)%2が偶数であれば正しいということが言えます。転倒数については</li>
-<li><a href="https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_">https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_</a>(%E6%95%B0%E5%AD%A6)</li>
-<li><p>を参照して下さい。</p></li>
-<li><p>これらの2条件がそろうとき、問題の配置は正しいと言えます。</p>
-
-<ul>
-<li><a href="http://yukicoder.me/submissions/33252">http://yukicoder.me/submissions/33252</a></li>
+<li>まず、union-findで島の大きさを列挙し、その列挙されたものに対し、bag[0]=-1として、最小値版0-1ナップザックを行えばよいです。</li>
+<li>しかし、これでは、島の個数をXとすると、O(NX)であり、Xの最大値はNなので、島が多数あった場合に最悪O(N<sup>2</sup>)となり、TLEになってしまいます。</li>
+<li><p>そこで、ダブリングを行います。例えば、大きさ2の島が7つある場合、「大きさ2コスト1」を7回並べるのではなく、「大きさ2コスト1」「大きさ4コスト2」「大きさ8コスト4」「大きさ14コスト7」の4つを並べれば良いことになります。</p></li>
+<li><p><a href="http://yukicoder.me/submissions/64709">http://yukicoder.me/submissions/64709</a></p></li>
+<li><p>この考え方はtails氏の答案( <a href="http://yukicoder.me/submissions/64600">http://yukicoder.me/submissions/64600</a> )を参考にしました。ありがとうございます。</p></li>
 </ul>
-</li>
-<li>今回は転倒数の計算はO(nlogn)ではなくO(n<sup>2</sup>)でよいので、2重ループを書けばよいです。さらに、入力を読み込む途中に適宜転倒数の計算を行うとループの記述が1個消えます。これをまとめると以下のようになります(暫定最短コードです)。
+
+
+<h3>追伸</h3>
 
 <ul>
-<li><a href="http://yukicoder.me/submissions/33461">http://yukicoder.me/submissions/33461</a></li>
-</ul>
-</li>
+<li>蟻本302ページに普通に書いてありました。まだ読み終わっていないため、勉強不足ということが露呈しました…</li>
+<li>deque解法が多いのはスライド最小値の考え方で解けるかららしいですね。ダブリング解法は(計算量が少し増えることもあって)少数派のようです。</li>
 </ul>
 
 </div>
@@ -163,7 +158,7 @@
   
 
 
-<time datetime="2015-06-15T01:38:30+09:00" pubdate data-updated="true"></time>
+<time datetime="2015-10-29T01:40:16+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -171,7 +166,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/06/15/yukiko-15/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/06/15/yukiko-15/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/10/29/add-edges/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/10/29/add-edges/" >Tweet</a>
   
   
   
@@ -182,13 +177,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2014/11/30/code-festival-2014/" title="Previous Post:
-        Code Festival 2014 参加記">&laquo; Code Festival 2014 参加記</a></li>
+        href="/blog/2015/07/19/synchronica-id/" title="Previous Post:
+        シンクロニカの公開用IDを得る方法">&laquo; シンクロニカの公開用IDを得る方法</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2015/07/19/synchronica-id/"
-        title="Next Post: シンクロニカの公開用IDを得る方法">シンクロニカの公開用IDを得る方法
+      <li class="next"><a class="basic-alignment right" href="/blog/2015/10/29/many-ameba/"
+        title="Next Post: アメーバがたくさん (and マスと駒と色塗り)">アメーバがたくさん (and マスと駒と色塗り)
         &raquo;</a></li>
       
     </ul>
