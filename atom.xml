@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-12-11T06:12:12+09:00</updated>
+  <updated>2015-12-14T22:18:58+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -459,6 +459,75 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Code Runner 2015 参加記]]></title>
+    <link href="http://cielavenir.github.io/blog/2015/12/14/coderunner2015/"/>
+    <updated>2015-12-14T18:25:54+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2015/12/14/coderunner2015</id>
+    <content type="html"><![CDATA[<p>参加記、書く予定なかったけど、私のことがコンテストレポートに載る可能性が濃厚なので、書くことにする。</p>
+
+<ul>
+<li>CodeIQパーカー。Code Festivalでパーカー獲得が叶ったので、今日も願掛けです。</li>
+<li>orisano氏とjmc.miz-miz.bizの話とか(jmc、A問題であふあふなんですが…)。kcs/koj復活お願いします(開発頑張ってください)。
+
+<ul>
+<li>てか、yukicoderもkojも、Docker-Builder部分は公開してはどうでしょうか。コンテストサイト乱立を助長するリスクは有りますけど…</li>
+</ul>
+</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">時間</th>
+<th style="text-align:left;">コメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">0:00</td>
+<td style="text-align:left;">問題のリンクが違う、昨年に続き。大丈夫ですか。 <strong>game.coderunner.jpは開いたので、一番上に書いてあるAPIを叩きまくって負債を抱える大事故。</strong> 問題読まないの、絶対ダメ。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:25</td>
+<td style="text-align:left;">正の得点が取れるプログラムを書くことができた。 <strong>仕事を請けて、全割当。納期に収まるかどうかとか考えてません。</strong> コメント変更「今回、今までの全6問で初の、誰でも正の点数を取れるわけではない問題。」</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:40</td>
+<td style="text-align:left;">点数の推移がおかしいのが注目されたらしく、インタビューを受けることに。実はこの時点でほぼ万策尽きていたので、考え中というのは半分取り繕い。ただ、得点が半分になるルールをこの時知った(0:30の時点で負債が半分になっていた)ので、ラッキーでした。 <strong>でも…解説放送聞きたかったなぁ。</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">1:30</td>
+<td style="text-align:left;">仕事量と報酬から計算される仮想乱数値が75以上(外注元の利益を考え80にはしてない。ただ、これ以上下げると安請け合いと判断した)、仕事量が1250以上(報酬は2乗で計算されるため)、得意な仕事(仕事Xに対する全社員の速度の和が90以上)について、外注から請ける処理を実装した。</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:10</td>
+<td style="text-align:left;">0:50〜1:40まで10位をキープしていたが、この辺りで20位ほどに。コメント変更「 <strong>闘え、堕ちるまで。</strong> 」</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:00</td>
+<td style="text-align:left;">論文を読みながら過ごし、終了。</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>10位以内のパーカーはないんですね。願掛けはあくまでパーカーに対するものと考えれば前提が(略)</li>
+<li>懇親会、時間中に3ブースかつ先着でトートバッグとかいろいろひどくないですか。
+
+<ul>
+<li>私は特別に頂けましたが。kenkoooo氏からもらったようなものなので、使うことにします。。</li>
+</ul>
+</li>
+<li><p>食事はあまり摂れませんでした。昼食のサンドイッチを食べたのがコンテスト開始後2時間だったので、まあよかった(サンドイッチ食べたの遅すぎたかなと心配していましたが杞憂に終わった(よくない))。</p></li>
+<li><p>帰り、レジャーランドでmusecaやった。となりにsnuke氏がいた。対戦とかはしてませんが。twitter流してればまた違ったかも。</p></li>
 </ul>
 
 ]]></content>
