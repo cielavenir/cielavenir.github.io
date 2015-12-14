@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-12-15T01:21:32+09:00</updated>
+  <updated>2015-12-15T01:21:45+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -525,7 +525,7 @@
 
 <ul>
 <li><del>てか、yukicoderもkojも、Docker-Builder部分は公開してはどうでしょうか。</del></li>
-<li>セキュリティの問題があるので公開ですが、問い合わせは可とするのは。どうしてもサイトを作りたいには、みたく。</li>
+<li>セキュリティの問題があるので公開はあれですが、問い合わせは可とするのは。どうしてもサイトを作りたいには、みたく。</li>
 </ul>
 </li>
 </ul>
