@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-12-15T01:14:33+09:00</updated>
+  <updated>2015-12-15T01:21:32+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -524,7 +524,8 @@
 <li>orisano氏とjmc.miz-miz.bizの話とか(jmc、A問題であふあふなんですが…)。kcs/koj復活お願いします(開発頑張ってください)。
 
 <ul>
-<li>てか、yukicoderもkojも、Docker-Builder部分は公開してはどうでしょうか。コンテストサイト乱立のリスクは有りますけど…</li>
+<li><del>てか、yukicoderもkojも、Docker-Builder部分は公開してはどうでしょうか。</del></li>
+<li>セキュリティの問題があるので公開ですが、問い合わせは可とするのは。どうしてもサイトを作りたいには、みたく。</li>
 </ul>
 </li>
 </ul>
