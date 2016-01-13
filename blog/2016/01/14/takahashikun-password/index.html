@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>(P,Q)-サンタと街の子供たち - My Octopress Blog</title>
+  <title>高橋くんとパスワード - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/12/14/pq-santa">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/01/14/takahashikun-password">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -95,7 +95,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">(P,Q)-サンタと街の子供たち</h1>
+      <h1 class="entry-title">高橋くんとパスワード</h1>
     
     
       <p class="meta">
@@ -111,53 +111,45 @@
   
 
 
-<time datetime="2015-12-14T23:59:59+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-01-14T01:37:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li>P,Qがどちらも0の場合はX==0とY==0だけを数えます。</li>
-<li>簡単のため、P,Qの最大公約数を単位とする座標系に変換します。X,Yが変換できなければ弾きます。</li>
-<li>ここで、各方向に進む回数をa,b,c,dと置くと、</li>
+<div class="entry-content"><p><a href="http://abc032.contest.atcoder.jp/tasks/abc032_b">http://abc032.contest.atcoder.jp/tasks/abc032_b</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>sからk文字取り出して、その部分文字列を連想配列に突っ込んで、重複しない数を答える。</li>
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(a+b)P+(c+d)Q==X - (1)
-</span><span class='line'>(c-d)P+(a-b)Q==Y - (2)</span></code></pre></td></tr></table></div></figure>
-
+<h2>高速解法</h2>
 
 <ul>
-<li>となります。</li>
-<li>α=a+b、β=c+dとおきます。</li>
-<li>αP+βQ==1を満たす(α,β)を拡張ユークリッド互除法で求めます。
+<li>ローリングハッシュを生成する。ローリングハッシュには、<code>hash[a:c] = (hash[a:b]*B**(c-b) + hash[b:c]) % P</code>という性質がある。</li>
+<li>今回はhash[i:i+k]が得られれば良いので、この式を<code>hash[b:c] = ...</code>と変形すれば良い。</li>
+<li>部分ハッシュを得るのは、<code>B**(c-b)</code>を事前に計算しておくことでO(1)とできる。</li>
+<li>また、連想配列がハッシュテーブルならば重複判定もO(1)なので、トータルでO(s)となる。</li>
+<li><a href="http://abc032.contest.atcoder.jp/submissions/608838">http://abc032.contest.atcoder.jp/submissions/608838</a>
 
 <ul>
-<li>代表値を(z1,z2)とすると、式(1)を満たすのは、α=z1<em>X+Q</em>n、β=z2<em>X-P</em>nとなります。</li>
-</ul>
-</li>
-<li>式(2)を<code>(β-2d)P+(α-2b)Q==Y</code>と変形し、αとβを代入して、整理します。<code>2*P*d+2*Q*b==(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>となります。</li>
-<li>この不定方程式において、 <strong>整数解(d,b)を持つようなnが存在する</strong> ことが問題が求める条件となります。
-
-<ul>
-<li>ここで、上で媒介変数表示により変数を一個減らしたことが効いてきます。</li>
-</ul>
-</li>
-<li><code>(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>が<code>gcd(2*P,2*Q)</code>の倍数であることが条件ですので、<code>-(z2*X*P+z1*X*Q-Y)%gcd(Q*Q-P*P,gcd(2*P,2*Q))==0</code>を判定します。</li>
-<li>なお、このnを用いてd,bを拡張ユークリッド互除法から求めることで、a,cも求まりますので、原点から何回で目標に到達するかを実際に計算することも可能です。
-
-<ul>
-<li>プログラムにおいてeとfが可変。abs(a)+abs(b)+abs&copy;+abs(d)が最小となるようなe,fを求めるのもまた一興かと(やってませんが)。</li>
+<li>※C++98互換のためunordered_setではなくsetを使っているためこの実装はO(slogs)</li>
 </ul>
 </li>
 </ul>
 
 
-<p><a href="http://yukicoder.me/submissions/65751">http://yukicoder.me/submissions/65751</a></p>
+<h2>まとめ</h2>
+
+<ul>
+<li>今回の制約では全くの無駄ですので、解法は賢く選びましょう。</li>
+<li>なぜyukicoder復習コンテストのストックにしなかったし。提出後に気づいたので後の祭り。</li>
+</ul>
+
 </div>
 
 
@@ -180,7 +172,7 @@
   
 
 
-<time datetime="2015-12-14T23:59:59+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-01-14T01:37:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -188,7 +180,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/12/14/pq-santa/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/12/14/pq-santa/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/" >Tweet</a>
   
   
   
@@ -199,13 +191,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2015/12/14/coderunner2015/" title="Previous Post:
-        Code Runner 2015 参加記">&laquo; Code Runner 2015 参加記</a></li>
+        href="/blog/2015/12/14/pq-santa/" title="Previous Post:
+        (P,Q)-サンタと街の子供たち">&laquo; (P,Q)-サンタと街の子供たち</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2016/01/14/takahashikun-password/"
-        title="Next Post: 高橋くんとパスワード">高橋くんとパスワード
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

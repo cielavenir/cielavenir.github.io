@@ -11,6 +11,14 @@
   </url>
   
   <url>
+    <loc>http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/</loc>
+    
+    <lastmod>2016-01-14T01:37:00+09:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://cielavenir.github.io/blog/2015/12/14/pq-santa/</loc>
     
     <lastmod>2015-12-14T23:59:59+09:00</lastmod>
@@ -93,14 +101,14 @@
   
   <url>
     <loc>http://cielavenir.github.io/blog/archives/</loc>
-    <lastmod>2015-12-19T02:10:51+09:00</lastmod>
+    <lastmod>2016-01-14T01:45:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://cielavenir.github.io/</loc>
-    <lastmod>2015-12-19T02:10:51+09:00</lastmod>
+    <lastmod>2016-01-14T01:45:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

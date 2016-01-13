@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2015-12-19T02:10:51+09:00</updated>
+  <updated>2016-01-14T01:45:35+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -40,6 +40,14 @@
 </ul>
 
 
+<h3>巡拝</h3>
+
+<ul>
+<li>2015/01 関東三十六不動尊結願</li>
+<li>2015/04 江戸三十三観音満願</li>
+</ul>
+
+
 <h3>資格等</h3>
 
 <ul>
@@ -47,7 +55,8 @@
 <li>漢検2級</li>
 <li>文検4級</li>
 <li>普通自動車AT</li>
-<li><p>Master of Integrated Biosciences</p></li>
+<li>Master of Integrated Biosciences</li>
+<li><p>JSBi認定バイオインフォマティクス技術者</p></li>
 <li><p>以下は受験料が無料だった時に適当に取ったので誇ることもない。</p>
 
 <ul>
@@ -149,11 +158,11 @@
 </tr>
 <tr>
 <td style="text-align:left;">yukicoder</td>
-<td style="text-align:left;">Lv 66〜67</td>
+<td style="text-align:left;">Lv 76</td>
 </tr>
 <tr>
 <td style="text-align:left;">AOJ</td>
-<td style="text-align:left;">615問</td>
+<td style="text-align:left;">619問</td>
 </tr>
 <tr>
 <td style="text-align:left;">POJ</td>
@@ -221,7 +230,7 @@
 </tr>
 <tr>
 <td style="text-align:left;">Code Runner 2015</td>
-<td style="text-align:left;">本選○位/100</td>
+<td style="text-align:left;">本選33位/100</td>
 </tr>
 </tbody>
 </table>
@@ -246,7 +255,7 @@
 <tr>
 <td style="text-align:left;">グルーヴコースター</td>
 <td style="text-align:left;"></td>
-<td style="text-align:left;">CS(Android)：約1300位。Sayonara Twilight削られたのは痛い。<br><a href="https://docs.google.com/spreadsheets/d/1wmi6VDrz3s9iNlBXe9_G_3X7lrKKicbGX3oPl_c3uVc/edit?usp=sharing">AC：400位台。理論値5、S++19</a></td>
+<td style="text-align:left;">CS(Android)：約2000位。離れてます。<br><a href="https://docs.google.com/spreadsheets/d/1wmi6VDrz3s9iNlBXe9_G_3X7lrKKicbGX3oPl_c3uVc/edit?usp=sharing">AC：500位台。理論値5、S++21</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">[SEGA]</td>
@@ -256,12 +265,12 @@
 <tr>
 <td style="text-align:left;">maimai</td>
 <td style="text-align:left;"></td>
-<td style="text-align:left;"><a href="http://maimai-log.net/view/cielavenir"><strong>9.00</strong></a></td>
+<td style="text-align:left;"><a href="http://maimai-log.net/view/cielavenir"><strong>9.53</strong></a></td>
 </tr>
 <tr>
 <td style="text-align:left;">chunithm</td>
 <td style="text-align:left;">2037702683463</td>
-<td style="text-align:left;"><a href="http://www.ginjake.net/score/tyuni.php?user=ciel">10.84</a></td>
+<td style="text-align:left;"><a href="http://www.ginjake.net/score/tyuni.php?user=ciel"><strong>11.00</strong></a></td>
 </tr>
 <tr>
 <td style="text-align:left;">DIVA</td>
@@ -289,9 +298,14 @@
 <td></td>
 </tr>
 <tr>
+<td style="text-align:left;">crossbeats</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">約550</td>
+</tr>
+<tr>
 <td style="text-align:left;">crossbeats REV.</td>
 <td style="text-align:left;">76435928</td>
-<td style="text-align:left;"><a href="http://revbeta.maplia.jp/view/00209">Class II 662.32</a></td>
+<td style="text-align:left;"><a href="http://revrank.maplia.jp/view/">Class II 730.56</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">(Cytus)</td>
@@ -459,6 +473,46 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[高橋くんとパスワード]]></title>
+    <link href="http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/"/>
+    <updated>2016-01-14T01:37:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2016/01/14/takahashikun-password</id>
+    <content type="html"><![CDATA[<p><a href="http://abc032.contest.atcoder.jp/tasks/abc032_b">http://abc032.contest.atcoder.jp/tasks/abc032_b</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>sからk文字取り出して、その部分文字列を連想配列に突っ込んで、重複しない数を答える。</li>
+</ul>
+
+
+<h2>高速解法</h2>
+
+<ul>
+<li>ローリングハッシュを生成する。ローリングハッシュには、<code>hash[a:c] = (hash[a:b]*B**(c-b) + hash[b:c]) % P</code>という性質がある。</li>
+<li>今回はhash[i:i+k]が得られれば良いので、この式を<code>hash[b:c] = ...</code>と変形すれば良い。</li>
+<li>部分ハッシュを得るのは、<code>B**(c-b)</code>を事前に計算しておくことでO(1)とできる。</li>
+<li>また、連想配列がハッシュテーブルならば重複判定もO(1)なので、トータルでO(s)となる。</li>
+<li><a href="http://abc032.contest.atcoder.jp/submissions/608838">http://abc032.contest.atcoder.jp/submissions/608838</a>
+
+<ul>
+<li>※C++98互換のためunordered_setではなくsetを使っているためこの実装はO(slogs)</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>今回の制約では全くの無駄ですので、解法は賢く選びましょう。</li>
+<li>なぜyukicoder復習コンテストのストックにしなかったし。提出後に気づいたので後の祭り。</li>
 </ul>
 
 ]]></content>
