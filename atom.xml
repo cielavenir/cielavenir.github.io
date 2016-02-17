@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2016-02-18T00:22:44+09:00</updated>
+  <updated>2016-02-18T00:44:39+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -485,7 +485,7 @@
     <updated>2016-02-11T03:57:27+09:00</updated>
     <id>http://cielavenir.github.io/blog/2016/02/11/crossbeats-music</id>
     <content type="html"><![CDATA[<ul>
-<li>CROSS X BEATSを始めて1ヶ月半、35曲となりました。(RP以外の)ミッション曲を全部回収したこともあり、今後曲がどんどん増えていくということはないでしょう。</li>
+<li>CROSS X BEATSを始めて1ヶ月半、36曲となりました。(RP以外の)ミッション曲を全部回収したこともあり、今後曲がどんどん増えていくということはないでしょう。</li>
 <li>というわけで、時系列でまとめておきます。</li>
 </ul>
 
@@ -500,24 +500,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;">9</td>
-<td style="text-align:left;">1 / 2</td>
-<td style="text-align:left;">Wanna Be Your Special / Touch Of Gold / 雨の音が虹を呼ぶ / DIAMOND SKIN / Wasteland / When You Call My Name / キミとMUSIC / Aqualight / Wanyo Wanyo</td>
-</tr>
-<tr>
 <td style="text-align:left;">10</td>
 <td style="text-align:left;">1 / 3</td>
-<td style="text-align:left;">Lotus Love</td>
-</tr>
-<tr>
-<td style="text-align:left;">12</td>
-<td style="text-align:left;">1 / 4</td>
-<td style="text-align:left;">Loveless / Landing on the moon</td>
+<td style="text-align:left;">Wanna Be Your Special / Touch Of Gold / 雨の音が虹を呼ぶ / DIAMOND SKIN / Wasteland / When You Call My Name / キミとMUSIC / Aqualight / Wanyo Wanyo / Lotus Love</td>
 </tr>
 <tr>
 <td style="text-align:left;">13</td>
 <td style="text-align:left;">1 / 5</td>
-<td style="text-align:left;">Jahacid</td>
+<td style="text-align:left;">Loveless / Landing on the moon / Jahacid</td>
 </tr>
 <tr>
 <td style="text-align:left;">16</td>
@@ -535,9 +525,14 @@
 <td style="text-align:left;">Anomie</td>
 </tr>
 <tr>
-<td style="text-align:left;">21</td>
+<td style="text-align:left;">20</td>
 <td style="text-align:left;">1 / 12</td>
-<td style="text-align:left;">Otherside / What is Wrong With The World</td>
+<td style="text-align:left;">Otherside</td>
+</tr>
+<tr>
+<td style="text-align:left;">21</td>
+<td style="text-align:left;">1 / 13</td>
+<td style="text-align:left;">What is Wrong With The World</td>
 </tr>
 <tr>
 <td style="text-align:left;">23</td>
@@ -555,29 +550,34 @@
 <td style="text-align:left;">Eternally</td>
 </tr>
 <tr>
-<td style="text-align:left;">27</td>
+<td style="text-align:left;">26</td>
 <td style="text-align:left;">1 / 23</td>
-<td style="text-align:left;">Giant Killing / Azitate</td>
+<td style="text-align:left;">Giant Killing</td>
 </tr>
 <tr>
 <td style="text-align:left;">28</td>
 <td style="text-align:left;">1 / 24</td>
-<td style="text-align:left;">Cross + Angel</td>
+<td style="text-align:left;">Azitate / Cross + Angel</td>
 </tr>
 <tr>
 <td style="text-align:left;">29</td>
-<td style="text-align:left;">1 / 25</td>
+<td style="text-align:left;">1 / 26</td>
 <td style="text-align:left;">everKrack</td>
 </tr>
 <tr>
 <td style="text-align:left;">30</td>
-<td style="text-align:left;">1 / 27</td>
+<td style="text-align:left;">1 / 28</td>
 <td style="text-align:left;">Winter, again</td>
 </tr>
 <tr>
-<td style="text-align:left;">32</td>
+<td style="text-align:left;">31</td>
 <td style="text-align:left;">2 / 7</td>
-<td style="text-align:left;">未確認XX生命体 / NEXT FRONTIER</td>
+<td style="text-align:left;">未確認XX生命体</td>
+</tr>
+<tr>
+<td style="text-align:left;">32</td>
+<td style="text-align:left;">2 / 8</td>
+<td style="text-align:left;">NEXT FRONTIER</td>
 </tr>
 <tr>
 <td style="text-align:left;">33</td>
@@ -585,7 +585,12 @@
 <td style="text-align:left;">The Epic</td>
 </tr>
 <tr>
-<td style="text-align:left;">35</td>
+<td style="text-align:left;">34</td>
+<td style="text-align:left;">2 / 14</td>
+<td style="text-align:left;">How True Is Your Love</td>
+</tr>
+<tr>
+<td style="text-align:left;">36</td>
 <td style="text-align:left;">2 / 15</td>
 <td style="text-align:left;">nightmares / default affinity</td>
 </tr>
