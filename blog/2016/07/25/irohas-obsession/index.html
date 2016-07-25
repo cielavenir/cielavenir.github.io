@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>CodeEval 219 The Tourist - My Octopress Blog</title>
+  <title>こだわり者いろはちゃん - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/11/22/codeeval219">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/07/25/irohas-obsession">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -95,7 +95,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">CodeEval 219 the Tourist</h1>
+      <h1 class="entry-title">こだわり者いろはちゃん</h1>
     
     
       <p class="meta">
@@ -111,46 +111,59 @@
   
 
 
-<time datetime="2015-11-22T04:13:10+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-07-25T16:10:23+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>問題文：<a href="https://www.codeeval.com/browse/219/">https://www.codeeval.com/browse/219/</a></p>
+<div class="entry-content"><p><a href="http://abc042.contest.atcoder.jp/tasks/arc058_a">http://abc042.contest.atcoder.jp/tasks/arc058_a</a>
+<a href="http://arc058.contest.atcoder.jp/tasks/arc058_a">http://arc058.contest.atcoder.jp/tasks/arc058_a</a></p>
 
 <h2>概要</h2>
 
 <ul>
-<li>探偵が複数の都市を全て回るとき、その距離の合計値の最小を出力する問題。</li>
-<li>こう書くと、巡回セールスマン問題だと思いたいですが、なんと、 <strong>最小全域木</strong> 問題である。やばくないですか。問題文ではHeと <strong>単数形</strong> で書かれていますが…分身できるんですか。</li>
-<li>普通にクラスカル法で解けば良いのでその部分の解説は他に譲ります。もしくは私の解答集を見ても。</li>
+<li>N以上の数値で、与えられた数字を使わずに作れる最小のものを答える。</li>
 </ul>
 
 
-<h2>注意点</h2>
+<h2>高速解法</h2>
 
 <ul>
-<li>Falseを出力すべきなのは、
+<li>使って良い数字の集合(入力の補集合)Aを求めておく。</li>
+<li>まず、与えられた数値の文字列表記Sの前側から、使って良い数字以外が含まれる桁jを求める。
 
 <ul>
-<li>グラフが連結でない場合</li>
-<li><strong>グラフに示されていない点が存在する場合</strong></li>
+<li>もし見つからないなら、Sを出力して終了する。</li>
 </ul>
 </li>
-<li>である。たとえば、<code>1 2 1 | 2 4 1</code>の答えは、2ではなくFalseである。つまり、点番号を詰める必要はないということ。</li>
-<li>多重辺を持つ場合、 <strong>一番後ろの辺を採用</strong> する。例えば、<code>1 2 1 | 2 1 2</code>の場合、点1と点2の間にコスト2の無向辺を張る。</li>
+<li>桁jから後ろ側に、Siよりも大きい数字がAに含まれるような桁kを求める。見つからなければ-1とする。
+
+<ul>
+<li>大きい数字がAに含まれるとは、繰り上がりを受け切れるという意味である。</li>
+</ul>
+</li>
+<li>kが-1ならばAの先頭(ただし先頭が0ならば次の要素)を出力。0以上ならばSの先頭からk文字とSkよりも大きい数字のうち最小のものを出力。</li>
+<li>Aの先頭要素を(Sの文字数-k-1)だけつなげて出力。
+
+<ul>
+<li>kを-1にしておくとこの部分での場合分けが不要になるというわけ。</li>
+</ul>
+</li>
+<li>2回Sを走査するので、計算量はO(S)あるいはO(logN)となる。</li>
 </ul>
 
 
 <h2>まとめ</h2>
 
 <ul>
-<li>公式掲示板の <a href="https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly">https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly</a> スレッドがなければ解けませんでした。</li>
-<li>解法がミスリードすぎるのは(拙作Rotate Holeの旧問題文以上に)やばいと思います。</li>
+<li>土曜日、帰宅後に問題ページを開いて最初に思いついた解法がこれです。O(NlogN)解法の方が明らかに実装が楽なので、コンテストとしては負け。</li>
+<li>復習コンテストのストックにしなかったのは、テストデータ作成が面倒だったからです。</li>
 </ul>
 
+
+<p><a href="http://abc042.contest.atcoder.jp/submissions/818591">http://abc042.contest.atcoder.jp/submissions/818591</a></p>
 </div>
 
 
@@ -173,7 +186,7 @@
   
 
 
-<time datetime="2015-11-22T04:13:10+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-07-25T16:10:23+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -181,7 +194,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/11/22/codeeval219/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/11/22/codeeval219/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/07/25/irohas-obsession/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/07/25/irohas-obsession/" >Tweet</a>
   
   
   
@@ -192,13 +205,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2015/11/16/code-festival-2015/" title="Previous Post:
-        Code Festival 2015 参加記">&laquo; Code Festival 2015 参加記</a></li>
+        href="/blog/2016/02/29/crossbeats/" title="Previous Post:
+        CROSS X BEATSをやってみて">&laquo; CROSS X BEATSをやってみて</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2015/12/11/add-edges/"
-        title="Next Post: 辺の追加">辺の追加
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>
