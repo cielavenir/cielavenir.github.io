@@ -1,23 +1,23 @@
 * + table {
-    border-style:solid;
-    border-width:1px;
+	border-style:solid;
+	border-width:1px;
 	border-color:black;
 }
 
 * + table th, * + table td {
-    border-style:dashed;
-    border-width:1px;
-    border-color:#8888AA;
+	border-style:solid;
+	border-width:1px;
+	border-color:gray;
 }
 
 * + table th[align="left"], * + table td[align="left"] {
-    text-align:left;
+	text-align:left;
 }
 
 * + table th[align="right"], * + table td[align="right"] {
-    text-align:right;
+	text-align:right;
 }
 
 * + table th[align="center"], * + table td[align="center"] {
-    text-align:center;
+	text-align:center;
 }
