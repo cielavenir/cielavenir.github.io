@@ -1000,186 +1000,18 @@
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
 </span><span class='line'>loop{
 </span><span class='line'>  system("&lt;data.zip funzip -bf-cbc &gt;data.bin")
 </span><span class='line'>  break if File.binread('data.bin',2)!='PK'
 </span><span class='line'>  File.rename('data.bin','data.zip')
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>- ヒントに助けられました。
-</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>!/usr/bin/php</h1>
+<ul>
+<li>ヒントに助けられました。</li>
+</ul>
 
-<p>&lt;?php
-$s=&lsquo;&rsquo;;
-for(;;){
-    $stdin=trim(fgets(STDIN));
-    if(!$stdin)break;
-    $s.=$stdin;
-}
-for($i=0;$i&lt;39;$i++)$s=openssl_decrypt($s,&lsquo;bf-cbc&rsquo;,&lsquo;bf-cbc&rsquo;);
-echo $s;</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>### (3)
-</span><span class='line'>- これもヒントに助けられました。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>!/usr/bin/ruby</h1>
-
-<p>require &lsquo;net/http&rsquo;
-s=&lsquo;&rsquo;.dup
-Net::HTTP.start(&lsquo;goo.gl&rsquo;){|http|
-    key=&lsquo;xFnLDH&rsquo;
-    location=&lsquo;&rsquo;
-    loop{
-        resp=http.get(&lsquo;/&rsquo;+key)
-        h=Hash[*resp]
-        break if !h.has_key?(&lsquo;location&rsquo;)
-        location=h[&lsquo;location&rsquo;][0]
-        domain,key=location.split(&lsquo;/&rsquo;)[-2..-1]
-        s&lt;&lt;domain.scan(/\d/).join
-        sleep(1)
-    }
-    puts location
-}
-puts s.tr(&lsquo;10&rsquo;,&lsquo;ls&rsquo;)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>- Herbert Online Judgeに流し込む。
-</span><span class='line'>
-</span><span class='line'>- 答案
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>bf-cbc
-xFnLDH
-SHRIFT</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## N:Answer the Number(部分点)
-</span><span class='line'>- (1)だけです
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>def f(n) r=1.0;(1..1/0.0).find{|i|(r=r*(n-i)/n)&lt;=0.5}+1 end
-p f(10000)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## O:THE EMPTY
-</span><span class='line'>- 問題文は透過pngになっているのですが、画像中の暗号を解読できず。
-</span><span class='line'>- 0,6,8,9の輪っかでπを表現するとか…うーむ。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>!/usr/bin/ruby</h1>
-
-<p>s=Math::PI.to_s.tr(&lsquo;.&rsquo;,&lsquo;&rsquo;)
-puts s[gets.to_i-1]</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## P:THE EMPTY 2(AC)
-</span><span class='line'>- 解答言語としてWhitespaceを選択すると問題文が現れます。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>!/usr/bin/ruby</h1>
-
-<p>require &lsquo;prime&rsquo;
-a,b=<code>dd</code>.split.map(&amp;:to_i)
-p Prime.each(b).drop_while{|e|e&lt;a}.size</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## Q:THE EMPTY 3(AC)
-</span><span class='line'>- Download sample test casesすると、output00.txtに問題文があります。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>!/usr/bin/ruby</h1>
-
-<p>require &lsquo;prime&rsquo;
-class Integer
-    def divisornum() self.prime_division.reduce(1){|s,(n,p)|s*(p+1)} end
-end
-p (gets.to_i**2).divisornum</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## R:正しいダジャレギュレーション(AC)
-</span><span class='line'>- 落ち着いて問題文を読みましょう。sの種類数と同じ意味です(ただしsが1文字の場合は無効)。
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>!/usr/bin/ruby</h1>
-
-<p>n,a=gets.split.map(&amp;:to_i)
-if n&lt;2
-    p 0
-elsif
-    p a**n%100000007
-end</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## S:健康計算機(部分点)
-</span><span class='line'>- こういう問題の相場として、複雑な字句解析ってのがあるんですが、どうにもならなかった感じがします。ぐぬぬ。
-</span><span class='line'>- まじめ版の字句解析器が通らなかったのは「x'y」という入力のせいですかあーあーそこまで考えてなかったわ
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>!/usr/bin/ruby</h1>
-
-<p>def bmi(kg,m)
-    kg/m/m
-end
-a,b,c,d=gets.split
-if a.scan(/\d/).empty?
-    a,b=b,a
-end
-if b.end_with?(&lsquo;g&rsquo;)
-    a,c=c,a
-    b,d=d,b
-end
-a=a.to_f
-a<em>=1000 if b==&lsquo;km&rsquo;
-a/=100 if b==&lsquo;cm&rsquo;
-a/=1000 if b==&lsquo;mm&rsquo;
-c=c.to_f
-c</em>=1000 if d==&rsquo;t&#8217;
-c/=1000 if d==&lsquo;g&rsquo;
-c/=1000000 if d==&lsquo;mg&rsquo;
-p bmi(c,a)</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1187,19 +1019,28 @@ p bmi(c,a)</p>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## T:明日使えない英単語(部分点)
-</span><span class='line'>- 知るかいな
-</span><span class='line'>- 本番中は2,4に正解。
-</span><span class='line'>- alopecoidという単語は「プログレッシブ英和・和英中辞典」「ウィズダム英和・和英辞典」「New Oxford American Dictionary」「Oxford Dictionary of English」のいずれにも載っていない単語ですよ
-</span><span class='line'>  - OSXの辞書ってこんなにくそでしたっけ(んなわけはない) ＾ω＾＃
-</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/php
+</span><span class='line'>&lt;?php
+</span><span class='line'>$s='';
+</span><span class='line'>for(;;){
+</span><span class='line'>  $stdin=trim(fgets(STDIN));
+</span><span class='line'>  if(!$stdin)break;
+</span><span class='line'>  $s.=$stdin;
+</span><span class='line'>}
+</span><span class='line'>for($i=0;$i&lt;39;$i++)$s=openssl_decrypt($s,'bf-cbc','bf-cbc');
+</span><span class='line'>echo $s;</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>!/usr/bin/ruby</h1>
+<h3>(3)</h3>
 
-<p>T=%w(eaglet camaraderie oblast thesaurus alopecoid)
-puts T[gets.to_i-1]</p>
+<ul>
+<li>これもヒントに助けられました。</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1215,28 +1056,240 @@ puts T[gets.to_i-1]</p>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
 <span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>
-</span><span class='line'>## U:うんちくビ〜ム
-</span><span class='line'>- **解説すら読めない。**
-</span><span class='line'>
-</span><span class='line'>## V:Side Story of WolfHockeyTeamEasy/Hard
-</span><span class='line'>- 問題、読めず。私の国語力も地に落ちたもの。
-</span><span class='line'>- jpg埋め込みかよ
-</span><span class='line'>- `HOUSTON COSMONAUTS`
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>## W:Shiritori(部分点)
-</span><span class='line'>- 知るかいな(2回目)
-</span><span class='line'>- 本番中は1,2,3,4,5,7,8,9に正解できました。
-</span><span class='line'>- ウルフサザ?なんですかそれGoogle検索結果0件なんですが…?「sothe」は不正解だしねぇ。
-</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>require 'net/http'
+</span><span class='line'>s=''.dup
+</span><span class='line'>Net::HTTP.start('goo.gl'){|http|
+</span><span class='line'>  key='xFnLDH'
+</span><span class='line'>  location=''
+</span><span class='line'>  loop{
+</span><span class='line'>      resp=http.get('/'+key)
+</span><span class='line'>      h=Hash[*resp]
+</span><span class='line'>      break if !h.has_key?('location')
+</span><span class='line'>      location=h['location'][0]
+</span><span class='line'>      domain,key=location.split('/')[-2..-1]
+</span><span class='line'>      s&lt;&lt;domain.scan(/\d/).join
+</span><span class='line'>      sleep(1)
+</span><span class='line'>  }
+</span><span class='line'>  puts location
+</span><span class='line'>}
+</span><span class='line'>puts s.tr('10','ls')</span></code></pre></td></tr></table></div></figure>
 
 
-<h1>!/usr/bin/ruby</h1>
+<ul>
+<li><p>Herbert Online Judgeに流し込む。</p></li>
+<li><p>答案</p></li>
+</ul>
 
-<p>T=%w(ke-ki ki kitune nezi zi ziyu-nomegami idou u uruhusaza huryoku kuku donou)
-puts T[gets.to_i-1]
-&#8220;`</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bf-cbc
+</span><span class='line'>xFnLDH
+</span><span class='line'>SHRIFT</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>N:Answer the Number(部分点)</h2>
+
+<ul>
+<li>(1)だけです</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def f(n) r=1.0;(1..1/0.0).find{|i|(r=r*(n-i)/n)&lt;=0.5}+1 end
+</span><span class='line'>p f(10000)</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>O:THE EMPTY</h2>
+
+<ul>
+<li>問題文は透過pngになっているのですが、画像中の暗号を解読できず。</li>
+<li>0,6,8,9の輪っかでπを表現するとか…うーむ。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>s=Math::PI.to_s.tr('.','')
+</span><span class='line'>puts s[gets.to_i-1]</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>P:THE EMPTY 2(AC)</h2>
+
+<ul>
+<li>解答言語としてWhitespaceを選択すると問題文が現れます。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>require 'prime'
+</span><span class='line'>a,b=`dd`.split.map(&:to_i)
+</span><span class='line'>p Prime.each(b).drop_while{|e|e&lt;a}.size</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Q:THE EMPTY 3(AC)</h2>
+
+<ul>
+<li>Download sample test casesすると、output00.txtに問題文があります。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>require 'prime'
+</span><span class='line'>class Integer
+</span><span class='line'>  def divisornum() self.prime_division.reduce(1){|s,(n,p)|s*(p+1)} end
+</span><span class='line'>end
+</span><span class='line'>p (gets.to_i**2).divisornum</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>R:正しいダジャレギュレーション(AC)</h2>
+
+<ul>
+<li>落ち着いて問題文を読みましょう。sの種類数と同じ意味です(ただしsが1文字の場合は無効)。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>n,a=gets.split.map(&:to_i)
+</span><span class='line'>if n&lt;2
+</span><span class='line'>  p 0
+</span><span class='line'>elsif
+</span><span class='line'>  p a**n%100000007
+</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>S:健康計算機(部分点)</h2>
+
+<ul>
+<li>こういう問題の相場として、複雑な字句解析ってのがあるんですが、どうにもならなかった感じがします。ぐぬぬ。</li>
+<li>まじめ版の字句解析器が通らなかったのは「x&#8217;y」という入力のせいですかあーあーそこまで考えてなかったわ</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>def bmi(kg,m)
+</span><span class='line'>  kg/m/m
+</span><span class='line'>end
+</span><span class='line'>a,b,c,d=gets.split
+</span><span class='line'>if a.scan(/\d/).empty?
+</span><span class='line'>  a,b=b,a
+</span><span class='line'>end
+</span><span class='line'>if b.end_with?('g')
+</span><span class='line'>  a,c=c,a
+</span><span class='line'>  b,d=d,b
+</span><span class='line'>end
+</span><span class='line'>a=a.to_f
+</span><span class='line'>a*=1000 if b=='km'
+</span><span class='line'>a/=100 if b=='cm'
+</span><span class='line'>a/=1000 if b=='mm'
+</span><span class='line'>c=c.to_f
+</span><span class='line'>c*=1000 if d=='t'
+</span><span class='line'>c/=1000 if d=='g'
+</span><span class='line'>c/=1000000 if d=='mg'
+</span><span class='line'>p bmi(c,a)</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>T:明日使えない英単語(部分点)</h2>
+
+<ul>
+<li>知るかいな</li>
+<li>本番中は2,4に正解。</li>
+<li>alopecoidという単語は「プログレッシブ英和・和英中辞典」「ウィズダム英和・和英辞典」「New Oxford American Dictionary」「Oxford Dictionary of English」のいずれにも載っていない単語ですよ
+
+<ul>
+<li>OSXの辞書ってこんなにくそでしたっけ(んなわけはない) ＾ω＾＃</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>T=%w(eaglet camaraderie oblast thesaurus alopecoid)
+</span><span class='line'>puts T[gets.to_i-1]</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>U:うんちくビ〜ム</h2>
+
+<ul>
+<li><strong>解説すら読めない。</strong></li>
+</ul>
+
+
+<h2>V:Side Story of WolfHockeyTeamEasy/Hard</h2>
+
+<ul>
+<li>問題、読めず。私の国語力も地に落ちたもの。</li>
+<li>jpg埋め込みかよ</li>
+<li><code>HOUSTON COSMONAUTS</code></li>
+</ul>
+
+
+<h2>W:Shiritori(部分点)</h2>
+
+<ul>
+<li>知るかいな(2回目)</li>
+<li>本番中は1,2,3,4,5,7,8,9に正解できました。</li>
+<li>ウルフサザ?なんですかそれGoogle検索結果0件なんですが…?「sothe」は不正解だしねぇ。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>T=%w(ke-ki ki kitune nezi zi ziyu-nomegami idou u uruhusaza huryoku kuku donou)
+</span><span class='line'>puts T[gets.to_i-1]</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>X:Please ignore.</h2>
 
