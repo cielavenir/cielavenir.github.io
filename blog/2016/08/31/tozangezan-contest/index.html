@@ -1,0 +1,854 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>tozangezanお誕生日コンテスト - My Octopress Blog</title>
+  <meta name="author" content="Ciel Avenir">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/08/31/tozangezan-contest">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/table.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">My Octopress Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="https://www.google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:cielavenir.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">Tozangezanお誕生日コンテスト</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-08-31T17:45:14+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>URL</h2>
+
+<ul>
+<li><a href="https://www.hackerrank.com/contests/tozangezan-birthday-contest/challenges">https://www.hackerrank.com/contests/tozangezan-birthday-contest/challenges</a></li>
+</ul>
+
+
+<h2>結果</h2>
+
+<ul>
+<li><code>---ox△△◎oo-oo△-ooo△△--△-</code> 1752.66点で2位でした。</li>
+</ul>
+
+
+<h2>A:BonusMondai</h2>
+
+<ul>
+<li>解いたらあかんやつやこれ</li>
+<li>てか負の配点って設定できちゃだめやろ</li>
+</ul>
+
+
+<h2>B:NA RI KI RI knapsack</h2>
+
+<ul>
+<li>よくある問題だけど得点が謎。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;vector&gt;
+</span><span class='line'>#include &lt;algorithm&gt;
+</span><span class='line'>#include &lt;cstdio&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>int main(){
+</span><span class='line'>  int N,W;
+</span><span class='line'>  scanf("%d%d",&N,&W);
+</span><span class='line'>  vector&lt;pair&lt;int,long long&gt;&gt;v(N);
+</span><span class='line'>  for(int i=0;i&lt;N;i++)scanf("%d%lld",&v[i].first,&v[i].second);
+</span><span class='line'>  vector&lt;long long&gt;bag(W+1);bag[0]=1;
+</span><span class='line'>  for(auto &e:v){
+</span><span class='line'>      for(int j=W;j&gt;=e.first;j--){
+</span><span class='line'>          if(bag[j-e.first]&&bag[j]&lt;bag[j-e.first]+e.second)bag[j]=bag[j-e.first]+e.second;
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  printf("%lld\n",*max_element(bag.begin(),bag.end())-1);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>C:Number Guessing Master</h2>
+
+<ul>
+<li>8桁の数値の当該桁がヒットならACになるかと思ったけどそうでもなかった</li>
+<li>最初の4ケースがhit、後ろの4ケースがblowだそうです…</li>
+</ul>
+
+
+<h2>D:ポッポカウント(AC)</h2>
+
+<ul>
+<li>素直に解いて良い。なおNの最大は100であるようだ。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;stdio.h&gt;
+</span><span class='line'>int main(){
+</span><span class='line'>  long long N,i,j,R=0;
+</span><span class='line'>  scanf("%lld",&N);
+</span><span class='line'>  for(i=1;i&lt;N;i++)for(j=i+1;j&lt;=N;j++)R+=__builtin_popcountll(i*j);
+</span><span class='line'>  printf("%lld\n",R);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>E:Hedgehog(TLE)</h2>
+
+<ul>
+<li><strong>入力拾うだけでTLEになる</strong> のでどうしたもんだろう。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;algorithm&gt;
+</span><span class='line'>#include &lt;cstdio&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>int main(){
+</span><span class='line'>  long long v[1000];
+</span><span class='line'>  long long R=0;
+</span><span class='line'>  int N,M;
+</span><span class='line'>  scanf("%d",&N);
+</span><span class='line'>  for(int i=0;i&lt;N;i++){
+</span><span class='line'>      scanf("%d",&M);
+</span><span class='line'>      for(int j=0;j&lt;M;j++)scanf("%lld",&v[j]);
+</span><span class='line'>      std::sort(v,v+M);
+</span><span class='line'>      for(int j=1;j&lt;M;j++)R^=v[j]*j;
+</span><span class='line'>  }
+</span><span class='line'>  printf("%lld\n",R);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>F:ライツアウト(部分点)</h2>
+
+<ul>
+<li>5x5を反転させるのでは満点にならないらしい。サイズ、いくらなんだろう。</li>
+<li>解説読んだけどあれはひどい&ndash;;</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>15
+</span><span class='line'>0 0
+</span><span class='line'>0 1
+</span><span class='line'>1 0
+</span><span class='line'>1 1
+</span><span class='line'>1 3
+</span><span class='line'>1 4
+</span><span class='line'>2 2
+</span><span class='line'>2 3
+</span><span class='line'>2 4
+</span><span class='line'>3 1
+</span><span class='line'>3 2
+</span><span class='line'>3 3
+</span><span class='line'>4 1
+</span><span class='line'>4 2
+</span><span class='line'>4 4</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>G:Surprising Language(部分点)</h2>
+
+<ul>
+<li>Perlで解いたものをBashに埋め込んで210/300点。300点は難読言語専用かな？</li>
+<li>Whitespaceで解くと満点なの?テストケース埋め込みが必要やん…</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/perl
+</span><span class='line'>use feature qw(say);
+</span><span class='line'>use strict;
+</span><span class='line'>my($x,$y)=split(/ /,&lt;&gt;);
+</span><span class='line'>my $M=10**9+7;
+</span><span class='line'>my @I=(1,1);
+</span><span class='line'>my @F=(1,1);
+</span><span class='line'>my @R=(1,1);
+</span><span class='line'>for(my $i=2;$i&lt;=$x;$i++){
+</span><span class='line'>  my $z=($M-($M/$i^0))*$I[$M%$i]%$M;
+</span><span class='line'>  $I[$i]=$z;
+</span><span class='line'>  $F[$i]=$i*$F[-1]%$M;
+</span><span class='line'>  $R[$i]=$z*$R[-1]%$M;
+</span><span class='line'>}
+</span><span class='line'>say $F[$x]*$R[$x-$y]%$M*$R[$y]%$M;</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>H:OCR Killer(AC)</h2>
+
+<ul>
+<li>FAです。やった＾ω＾</li>
+<li><a href="http://kjjk.weblio.jp/">http://kjjk.weblio.jp/</a> の手書きに頑張って書く。途中から疲れてiPadになった(twitter 自分宛DMでPCに転送)。タッチパネル最強＾＾</li>
+<li>問題文(一部おかしいけど、まあ。これでもGoogle翻訳結果見ながら手直しした方ですよ？)</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>달의 구면 상의 러리를 구하심시모
+</span><span class='line'>달의 구면 상의 점은 두 실수
+</span><span class='line'>(a,b) 로 주어진다 이건 지구의
+</span><span class='line'>"동겸a 도, 북왼 b도", 와 같다
+</span><span class='line'>서경, 남위는 음수를 사용 찬다
+</span><span class='line'>단, 이 몬세에서는 달을 위키백라
+</span><span class='line'>기사에 쓰이는 직경의 구라고
+</span><span class='line'>가정해야 찬다
+</span><span class='line'>(出力)
+</span><span class='line'>주머신 두 점의 거리를 츨력한다
+</span><span class='line'>오차는 적담히</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>要約</li>
+<li><p>東経aと北緯bが2組入力される。月における2点間の距離を求めよ。月の半径はWikiにあるものを使え。</p></li>
+<li><p>答案</p></li>
+<li>北緯と東経が(慣習と)逆に入力されることにさえ注意すれば、難しくはない。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/python
+</span><span class='line'>import sys,math
+</span><span class='line'>def calcdist(a):
+</span><span class='line'>  lat1,lon1,lat2,lon2=map(lambda e:e*math.pi/180,a)
+</span><span class='line'>  return 3474.3/2*math.acos( (math.sin(lat1)*math.sin(lat2)+math.cos(lat1)*math.cos(lat2)*math.cos(lon1-lon2)) )
+</span><span class='line'>
+</span><span class='line'>b1,a1=map(float,sys.stdin.readline().split())
+</span><span class='line'>b2,a2=map(float,sys.stdin.readline().split())
+</span><span class='line'>print(calcdist([a1,b1,a2,b2]))</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>I:雑な問題(AC)</h2>
+
+<ul>
+<li><code>piyo</code></li>
+</ul>
+
+
+<h2>J:雑な問題2(AC)</h2>
+
+<ul>
+<li>問題IDが「the-answer-is-to2ange2an」である。</li>
+<li><code>to2ange2an</code></li>
+</ul>
+
+
+<h2>K:Classical Cipher</h2>
+
+<ul>
+<li>もういいや</li>
+<li>鍵がT,Z,Nであることからエニグマだと思ったんですけどね、 <strong>ローターの選択とプラグボード配線もエニグマの鍵に含まれますよね？？</strong></li>
+</ul>
+
+
+<h2>L:洞窟(AC)</h2>
+
+<ul>
+<li>Googleフォームを開いたらソースを開くと答えを見つけることができる。</li>
+<li><code>SNUKEGORM_BY_DARUDE</code></li>
+</ul>
+
+
+<h2>M:Matryoshka(AC)</h2>
+
+<h3>(1)</h3>
+
+<ul>
+<li>CPUに <strong>10時間ほど</strong> 頑張って頂きました。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>s=DATA.gets
+</span><span class='line'>314161.times{|i|p i
+</span><span class='line'>  s=IO.popen('php','r+b'){|io|
+</span><span class='line'>      io.puts s
+</span><span class='line'>      io.close_write
+</span><span class='line'>      io.read
+</span><span class='line'>  }
+</span><span class='line'>  puts s if i%1000==0
+</span><span class='line'>}
+</span><span class='line'>puts s
+</span><span class='line'># &lt;?printf($a=($b=0)?'&lt;?printf($a=($b=%d)?%c%s%c:"%s-%s",$b-1,39,$a,39,dechex($x=%d),dechex($y=%d),$x+$x+$y,-$x);':"bf-cbc",$b-1,39,$a,39,dechex($x=3642),dechex($y=-191),$x+$x+$y,-$x);
+</span><span class='line'># bf-cbc
+</span><span class='line'>__END__
+</span><span class='line'>&lt;?printf($a='&lt;?printf($a=($b=%d)?%c%s%c:"%s-%s",$b-1,39,$a,39,dechex($x=%d),dechex($y=%d),$x+$x+$y,-$x);',314159,39,$a,39,'','',-1084159067,1084162518);</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>(2)</h3>
+
+<ul>
+<li>こちらもCPUに10分ほど頑張って頂き、後半戦には入れたのですが、そこで死にました。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>loop{
+</span><span class='line'>  system("&lt;data.zip funzip -bf-cbc &gt;data.bin")
+</span><span class='line'>  break if File.binread('data.bin',2)!='PK'
+</span><span class='line'>  File.rename('data.bin','data.zip')
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>- ヒントに助けられました。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/php</h1>
+
+<p>&lt;?php
+$s=&lsquo;&rsquo;;
+for(;;){
+    $stdin=trim(fgets(STDIN));
+    if(!$stdin)break;
+    $s.=$stdin;
+}
+for($i=0;$i&lt;39;$i++)$s=openssl_decrypt($s,&lsquo;bf-cbc&rsquo;,&lsquo;bf-cbc&rsquo;);
+echo $s;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>### (3)
+</span><span class='line'>- これもヒントに助けられました。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>require &lsquo;net/http&rsquo;
+s=&lsquo;&rsquo;.dup
+Net::HTTP.start(&lsquo;goo.gl&rsquo;){|http|
+    key=&lsquo;xFnLDH&rsquo;
+    location=&lsquo;&rsquo;
+    loop{
+        resp=http.get(&lsquo;/&rsquo;+key)
+        h=Hash[*resp]
+        break if !h.has_key?(&lsquo;location&rsquo;)
+        location=h[&lsquo;location&rsquo;][0]
+        domain,key=location.split(&lsquo;/&rsquo;)[-2..-1]
+        s&lt;&lt;domain.scan(/\d/).join
+        sleep(1)
+    }
+    puts location
+}
+puts s.tr(&lsquo;10&rsquo;,&lsquo;ls&rsquo;)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>- Herbert Online Judgeに流し込む。
+</span><span class='line'>
+</span><span class='line'>- 答案
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>bf-cbc
+xFnLDH
+SHRIFT</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## N:Answer the Number(部分点)
+</span><span class='line'>- (1)だけです
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>def f(n) r=1.0;(1..1/0.0).find{|i|(r=r*(n-i)/n)&lt;=0.5}+1 end
+p f(10000)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## O:THE EMPTY
+</span><span class='line'>- 問題文は透過pngになっているのですが、画像中の暗号を解読できず。
+</span><span class='line'>- 0,6,8,9の輪っかでπを表現するとか…うーむ。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>s=Math::PI.to_s.tr(&lsquo;.&rsquo;,&lsquo;&rsquo;)
+puts s[gets.to_i-1]</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## P:THE EMPTY 2(AC)
+</span><span class='line'>- 解答言語としてWhitespaceを選択すると問題文が現れます。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>require &lsquo;prime&rsquo;
+a,b=<code>dd</code>.split.map(&amp;:to_i)
+p Prime.each(b).drop_while{|e|e&lt;a}.size</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## Q:THE EMPTY 3(AC)
+</span><span class='line'>- Download sample test casesすると、output00.txtに問題文があります。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>require &lsquo;prime&rsquo;
+class Integer
+    def divisornum() self.prime_division.reduce(1){|s,(n,p)|s*(p+1)} end
+end
+p (gets.to_i**2).divisornum</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## R:正しいダジャレギュレーション(AC)
+</span><span class='line'>- 落ち着いて問題文を読みましょう。sの種類数と同じ意味です(ただしsが1文字の場合は無効)。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>n,a=gets.split.map(&amp;:to_i)
+if n&lt;2
+    p 0
+elsif
+    p a**n%100000007
+end</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## S:健康計算機(部分点)
+</span><span class='line'>- こういう問題の相場として、複雑な字句解析ってのがあるんですが、どうにもならなかった感じがします。ぐぬぬ。
+</span><span class='line'>- まじめ版の字句解析器が通らなかったのは「x'y」という入力のせいですかあーあーそこまで考えてなかったわ
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>def bmi(kg,m)
+    kg/m/m
+end
+a,b,c,d=gets.split
+if a.scan(/\d/).empty?
+    a,b=b,a
+end
+if b.end_with?(&lsquo;g&rsquo;)
+    a,c=c,a
+    b,d=d,b
+end
+a=a.to_f
+a<em>=1000 if b==&lsquo;km&rsquo;
+a/=100 if b==&lsquo;cm&rsquo;
+a/=1000 if b==&lsquo;mm&rsquo;
+c=c.to_f
+c</em>=1000 if d==&rsquo;t&#8217;
+c/=1000 if d==&lsquo;g&rsquo;
+c/=1000000 if d==&lsquo;mg&rsquo;
+p bmi(c,a)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## T:明日使えない英単語(部分点)
+</span><span class='line'>- 知るかいな
+</span><span class='line'>- 本番中は2,4に正解。
+</span><span class='line'>- alopecoidという単語は「プログレッシブ英和・和英中辞典」「ウィズダム英和・和英辞典」「New Oxford American Dictionary」「Oxford Dictionary of English」のいずれにも載っていない単語ですよ
+</span><span class='line'>  - OSXの辞書ってこんなにくそでしたっけ(んなわけはない) ＾ω＾＃
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>T=%w(eaglet camaraderie oblast thesaurus alopecoid)
+puts T[gets.to_i-1]</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>## U:うんちくビ〜ム
+</span><span class='line'>- **解説すら読めない。**
+</span><span class='line'>
+</span><span class='line'>## V:Side Story of WolfHockeyTeamEasy/Hard
+</span><span class='line'>- 問題、読めず。私の国語力も地に落ちたもの。
+</span><span class='line'>- jpg埋め込みかよ
+</span><span class='line'>- `HOUSTON COSMONAUTS`
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>## W:Shiritori(部分点)
+</span><span class='line'>- 知るかいな(2回目)
+</span><span class='line'>- 本番中は1,2,3,4,5,7,8,9に正解できました。
+</span><span class='line'>- ウルフサザ?なんですかそれGoogle検索結果0件なんですが…?「sothe」は不正解だしねぇ。
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>!/usr/bin/ruby</h1>
+
+<p>T=%w(ke-ki ki kitune nezi zi ziyu-nomegami idou u uruhusaza huryoku kuku donou)
+puts T[gets.to_i-1]
+&#8220;`</p>
+
+<h2>X:Please ignore.</h2>
+
+<ul>
+<li>解いたらあかんやつ(2回目)</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ciel Avenir</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-08-31T17:45:14+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/08/31/tozangezan-contest/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/08/31/tozangezan-contest/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2016/08/09/ios-illegal-instruction/" title="Previous Post:
+        iOSのターミナルでIllegal Instruction: 4が表示される">&laquo; iOSのターミナルでIllegal Instruction: 4が表示される</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2038/01/01/personal-stuff/">Personal Stuff</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/31/tozangezan-contest/">tozangezanお誕生日コンテスト</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/09/ios-illegal-instruction/">iOSのターミナルでIllegal Instruction: 4が表示される</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/25/irohas-obsession/">こだわり者いろはちゃん</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/02/29/crossbeats/">CROSS X BEATSをやってみて</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2016 - Ciel Avenir -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
