@@ -934,8 +934,38 @@
 
 <ul>
 <li>もういいや</li>
-<li>鍵がT,Z,Nであることからエニグマだと思ったんですけどね、 <strong>ローターの選択とプラグボード配線もエニグマの鍵に含まれますよね？？</strong></li>
+<li><p>鍵がT,Z,Nであることからエニグマだと思ったんですけどね、 <strong>ローターの選択とプラグボード配線もエニグマの鍵に含まれますよね？？</strong></p></li>
+<li><p>問題文</p></li>
 </ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>YOUAREGIVENASTRING
+</span><span class='line'>WRITEAPROGRAMTODECODETHESTRING
+</span><span class='line'>THESTRINGISENCODEDINFOLLOWINGWAY
+</span><span class='line'>FIRSTCONVERTEACHCHARACTERBYTHETABLE
+</span><span class='line'>THETABLEISGIVENRIGHTBELOW
+</span><span class='line'>KSYWQJDRZUIPGOLMXEBTVAFNHC
+</span><span class='line'>NEXTCHANGEKTHCHARACTERTOITSKTHNEXTALPHABET
+</span><span class='line'>FOREXAMPLEIFAFOURTHCHARACTERISYTHENCHANGEITTOC</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>答案</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>puts gets.chomp.bytes.map.with_index{|b,i|((b-65-i)%26+65).chr}.join.tr('KSYWQJDRZUIPGOLMXEBTVAFNHC','A-Z')</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>L:洞窟(AC)</h2>
