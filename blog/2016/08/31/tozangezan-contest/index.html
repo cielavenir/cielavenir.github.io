@@ -728,19 +728,30 @@
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
-</span><span class='line'>def bmi(kg,m)
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>def bmi(kg,m)
 </span><span class='line'>  kg/m/m
 </span><span class='line'>end
-</span><span class='line'>a,b,c,d=gets.split
+</span><span class='line'>a,b,c,d=gets.downcase.scan(/([\d'"\.]+)|([a-zA-Z]+)/).map{|e|e.compact[0]}
 </span><span class='line'>if a.scan(/\d/).empty?
 </span><span class='line'>  a,b=b,a
+</span><span class='line'>end
+</span><span class='line'>if c.scan(/\d/).empty?
+</span><span class='line'>  c,d=d,c
 </span><span class='line'>end
 </span><span class='line'>if b.end_with?('g')
 </span><span class='line'>  a,c=c,a
 </span><span class='line'>  b,d=d,b
 </span><span class='line'>end
 </span><span class='line'>a=a.to_f
+</span><span class='line'>a*=0.3048/12 if b=='in'
+</span><span class='line'>a*=0.3048 if b=='ft'
+</span><span class='line'>a*=0.9144 if b=='yd'
 </span><span class='line'>a*=1000 if b=='km'
 </span><span class='line'>a/=100 if b=='cm'
 </span><span class='line'>a/=1000 if b=='mm'
@@ -748,6 +759,7 @@
 </span><span class='line'>c*=1000 if d=='t'
 </span><span class='line'>c/=1000 if d=='g'
 </span><span class='line'>c/=1000000 if d=='mg'
+</span><span class='line'>c*=0.45359237 if d=='lb' || d=='lbs'
 </span><span class='line'>p bmi(c,a)</span></code></pre></td></tr></table></div></figure>
 
 
