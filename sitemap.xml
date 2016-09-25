@@ -1,158 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2038/01/01/personal-stuff/</loc>
-    
-    <lastmod>2038-01-01T00:00:00+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2016/08/31/tozangezan-contest/</loc>
-    
-    <lastmod>2016-08-31T17:45:14+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2016/08/09/ios-illegal-instruction/</loc>
-    
-    <lastmod>2016-08-09T16:34:42+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2016/07/25/irohas-obsession/</loc>
-    
-    <lastmod>2016-07-25T16:10:23+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2016/02/29/crossbeats/</loc>
-    
-    <lastmod>2016-02-29T23:59:59+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2016/02/11/crossbeats-music/</loc>
-    
-    <lastmod>2016-02-11T03:57:27+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/</loc>
-    
-    <lastmod>2016-01-14T01:37:00+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/12/14/pq-santa/</loc>
-    
-    <lastmod>2015-12-14T23:59:59+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/12/14/coderunner2015/</loc>
-    
-    <lastmod>2015-12-14T18:25:54+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/12/11/add-edges/</loc>
-    
-    <lastmod>2015-12-11T06:11:16+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/11/22/codeeval219/</loc>
-    
-    <lastmod>2015-11-22T04:13:10+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/11/16/code-festival-2015/</loc>
-    
-    <lastmod>2015-11-16T02:06:30+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/10/29/many-ameba/</loc>
-    
-    <lastmod>2015-10-29T01:40:16+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/07/19/synchronica-id/</loc>
-    
-    <lastmod>2015-07-19T16:53:25+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2015/06/15/yukiko-15/</loc>
-    
-    <lastmod>2015-06-15T01:38:30+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2014/11/30/code-festival-2014/</loc>
-    
-    <lastmod>2014-11-30T02:06:30+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/2014/10/14/launched-github-pages/</loc>
-    
-    <lastmod>2014-10-14T17:30:58+09:00</lastmod>
-    
-    <priority>0.8</priority>
-  </url>
-  
-  
-  <url>
-    <loc>http://cielavenir.github.io/blog/archives/</loc>
-    <lastmod>2016-09-20T12:11:38+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
-  <url>
-    <loc>http://cielavenir.github.io/</loc>
-    <lastmod>2016-09-20T12:11:38+09:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  
-  
-  
+<url>
+<loc>http://cielavenir.github.io/blog/2038/01/01/personal-stuff/</loc>
+<lastmod>2038-01-01T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2016/08/31/tozangezan-contest/</loc>
+<lastmod>2016-08-31T17:45:14+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2016/08/09/ios-illegal-instruction/</loc>
+<lastmod>2016-08-09T16:34:42+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2016/07/25/irohas-obsession/</loc>
+<lastmod>2016-07-25T16:10:23+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2016/02/29/crossbeats/</loc>
+<lastmod>2016-02-29T23:59:59+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2016/02/11/crossbeats-music/</loc>
+<lastmod>2016-02-11T03:57:27+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/</loc>
+<lastmod>2016-01-14T01:37:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/12/14/pq-santa/</loc>
+<lastmod>2015-12-14T23:59:59+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/12/14/coderunner2015/</loc>
+<lastmod>2015-12-14T18:25:54+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/12/11/add-edges/</loc>
+<lastmod>2015-12-11T06:11:16+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/11/22/codeeval219/</loc>
+<lastmod>2015-11-22T04:13:10+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/11/16/code-festival-2015/</loc>
+<lastmod>2015-11-16T02:06:30+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/10/29/many-ameba/</loc>
+<lastmod>2015-10-29T01:40:16+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/07/19/synchronica-id/</loc>
+<lastmod>2015-07-19T16:53:25+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2015/06/15/yukiko-15/</loc>
+<lastmod>2015-06-15T01:38:30+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2014/11/30/code-festival-2014/</loc>
+<lastmod>2014-11-30T02:06:30+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/2014/10/14/launched-github-pages/</loc>
+<lastmod>2014-10-14T17:30:58+09:00</lastmod>
+</url>
+<url>
+<loc>http://cielavenir.github.io/blog/archives/</loc>
+</url>
+<url>
+<loc>http://cielavenir.github.io/</loc>
+</url>
+<url>
+<loc>http://cielavenir.github.io/posts/2/</loc>
+</url>
 </urlset>
