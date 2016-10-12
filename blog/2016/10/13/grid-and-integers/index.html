@@ -1,0 +1,494 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>無矛盾な単位系 / マス目と整数 - My Octopress Blog</title>
+  <meta name="author" content="Ciel Avenir">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/10/13/grid-and-integers">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/table.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">My Octopress Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="https://www.google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:cielavenir.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">無矛盾な単位系 / マス目と整数</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-10-13T04:18:24+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><ul>
+<li>無矛盾な単位系
+
+<ul>
+<li><a href="http://www.utpc.jp/2010/">http://www.utpc.jp/2010/</a></li>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2207">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2207</a></li>
+</ul>
+</li>
+<li>マス目と整数
+
+<ul>
+<li><a href="http://code-festival-2016-quala.contest.atcoder.jp/tasks/codefestival_2016_qualA_d">http://code-festival-2016-quala.contest.atcoder.jp/tasks/codefestival_2016_qualA_d</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>無矛盾な単位系</h2>
+
+<h3>概要</h3>
+
+<ul>
+<li>無向グラフが与えられるので、誤った閉路がないかどうか判定せよ。なお点は文字列として与えられる。</li>
+</ul>
+
+
+<h3>方法</h3>
+
+<ul>
+<li>まだ訪れていない点を調べる。
+
+<ul>
+<li><a href="http://www.utpc.jp/2010/">解</a> <a href="https://code-festival-2016-quala.contest.atcoder.jp/editorial">説</a> には深さ優先探索とありますが、実装が適切であれば幅優先探索でも大丈夫っぽいです。ただ、2倍ほど遅くなります。</li>
+<li>memoに加えるのは、深さ優先探索では入れる時出す時のいずれでも良いですが、幅優先探索だと入れる時に加える必要があります。</li>
+<li>訪れていたら、最初に訪れた時の値と同じかどうか確認します。</li>
+</ul>
+</li>
+<li><p>なお、独立な単位系が複数存在するかもしれない(連結成分が1個ではないかもしれない)ので、グラフが空になるまで取り出し続ける実装にする必要がある。</p></li>
+<li><p>コード(深さ優先探索と幅優先探索をベンチマークするためにdequeにしていますが、深さ優先探索だけで良いならvectorの方が速いです)</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;string&gt;
+</span><span class='line'>#include &lt;cstdio&gt;
+</span><span class='line'>#include &lt;unordered_map&gt;
+</span><span class='line'>#include &lt;deque&gt;
+</span><span class='line'>#include &lt;algorithm&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>typedef string key;
+</span><span class='line'>
+</span><span class='line'>char b1[99],b2[99];
+</span><span class='line'>void main2(int n){
+</span><span class='line'>  unordered_map&lt;key,deque&lt;pair&lt;key,long long&gt;&gt;&gt;m;
+</span><span class='line'>  for(;n;n--){
+</span><span class='line'>      int d;
+</span><span class='line'>      scanf(" 1 %s = 10^%d %s",b1,&d,b2);
+</span><span class='line'>      string s1=b1,s2=b2;
+</span><span class='line'>      m[s1].emplace_back(s2,d);
+</span><span class='line'>      m[s2].emplace_back(s1,-d);
+</span><span class='line'>  }
+</span><span class='line'>  for(;!m.empty();){
+</span><span class='line'>      auto s=m.begin()-&gt;first;
+</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st=;
+</span><span class='line'>      unordered_map&lt;key,long long&gt;memo=;
+</span><span class='line'>      for(;!st.empty();){
+</span><span class='line'>          auto p=*st.rbegin();st.pop_back();
+</span><span class='line'>          auto cur=p.first;long long d=p.second;
+</span><span class='line'>          for(auto &e:m[cur]){
+</span><span class='line'>              if(memo.find(e.first)==memo.end()){
+</span><span class='line'>                  st.emplace_back(e.first,d+e.second);
+</span><span class='line'>                  memo[e.first]=d+e.second;
+</span><span class='line'>              }else if(memo[e.first]!=d+e.second){
+</span><span class='line'>                  puts("No");
+</span><span class='line'>                  return;
+</span><span class='line'>              }
+</span><span class='line'>          }
+</span><span class='line'>      }
+</span><span class='line'>      for(auto &e:memo)m.erase(m.find(e.first));
+</span><span class='line'>  }
+</span><span class='line'>  puts("Yes");
+</span><span class='line'>}
+</span><span class='line'>int main(){int n;for(;~scanf("%d",&n)&&n;)main2(n);}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>マス目と整数</h2>
+
+<ul>
+<li>入力を変更し、連結成分重み判定を加えるだけで、マス目と整数の解答に変更することができる。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>--- utpc2010_10125(aizu2207)_stack.cpp   2016-10-13 04:19:40.000000000 +0900
+</span><span class='line'>+++ atcodercodefestival2016qualaD.cpp 2016-10-13 04:42:46.000000000 +0900
+</span><span class='line'>@@ -1,22 +1,22 @@
+</span><span class='line'>-#include &lt;string&gt;
+</span><span class='line'> #include &lt;cstdio&gt;
+</span><span class='line'> #include &lt;unordered_map&gt;
+</span><span class='line'> #include &lt;deque&gt;
+</span><span class='line'> #include &lt;algorithm&gt;
+</span><span class='line'> using namespace std;
+</span><span class='line'>-typedef string key;
+</span><span class='line'>+typedef int key;
+</span><span class='line'> 
+</span><span class='line'>-char b1[99],b2[99];
+</span><span class='line'>-void main2(int n){
+</span><span class='line'>+int main(){
+</span><span class='line'>+ int r,c,n;
+</span><span class='line'>+ scanf("%d%d%d",&r,&c,&n);
+</span><span class='line'>  unordered_map&lt;key,deque&lt;pair&lt;key,long long&gt;&gt;&gt;m;
+</span><span class='line'>  for(;n;n--){
+</span><span class='line'>-     int d;
+</span><span class='line'>-     scanf(" 1 %s = 10^%d %s",b1,&d,b2);
+</span><span class='line'>-     string s1=b1,s2=b2;
+</span><span class='line'>-     m[s1].emplace_back(s2,d);
+</span><span class='line'>-     m[s2].emplace_back(s1,-d);
+</span><span class='line'>+     int s1,s2,d;
+</span><span class='line'>+     scanf("%d%d%d",&s1,&s2,&d);
+</span><span class='line'>+     m[s1].emplace_back(s2+r,d);
+</span><span class='line'>+     m[s2+r].emplace_back(s1,-d);
+</span><span class='line'>  }
+</span><span class='line'>  for(;!m.empty();){
+</span><span class='line'>+     long long a=-1LL&lt;&lt;61,b=1LL&lt;&lt;61;
+</span><span class='line'>      auto s=m.begin()-&gt;first;
+</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st=;
+</span><span class='line'>      unordered_map&lt;key,long long&gt;memo=;
+</span><span class='line'>@@ -29,12 +29,17 @@
+</span><span class='line'>                  memo[e.first]=d+e.second;
+</span><span class='line'>              }else if(memo[e.first]!=d+e.second){
+</span><span class='line'>                  puts("No");
+</span><span class='line'>-                 return;
+</span><span class='line'>+                 return 0;
+</span><span class='line'>              }
+</span><span class='line'>          }
+</span><span class='line'>+         if(cur&lt;=r)a=max(a,d);
+</span><span class='line'>+         else b=min(b,d);
+</span><span class='line'>      }
+</span><span class='line'>+     if(a&gt;b){
+</span><span class='line'>+         puts("No");
+</span><span class='line'>+         return 0;
+</span><span class='line'>+     }
+</span><span class='line'>      for(auto &e:memo)m.erase(m.find(e.first));
+</span><span class='line'>  }
+</span><span class='line'>  puts("Yes");
+</span><span class='line'> }
+</span><span class='line'>-int main(){int n;for(;~scanf("%d",&n)&&n;)main2(n);}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>あとがき</h2>
+
+<ul>
+<li>Code Festival 予選中、無矛盾な単位系が類似問題として頭に浮かんだのですが、当時書いていたコードが <strong>一行入力するごとにグラフを全走査する</strong> くそコードだったため、どうしようもできませんでした。</li>
+<li>結果的には復習になってよかったです。</li>
+<li>ただ、連結成分重み判定はやはり本番中に思いつかなかったと思います…</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ciel Avenir</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-10-13T04:18:24+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/10/13/grid-and-integers/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/10/13/grid-and-integers/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2016/08/31/tozangezan-contest/" title="Previous Post:
+        tozangezanお誕生日コンテスト">&laquo; tozangezanお誕生日コンテスト</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2038/01/01/personal-stuff/">Personal Stuff</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/10/13/grid-and-integers/">無矛盾な単位系 / マス目と整数</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/31/tozangezan-contest/">tozangezanお誕生日コンテスト</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/08/09/ios-illegal-instruction/">iOSのターミナルでIllegal Instruction: 4が表示される</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2016/07/25/irohas-obsession/">こだわり者いろはちゃん</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2016 - Ciel Avenir -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
