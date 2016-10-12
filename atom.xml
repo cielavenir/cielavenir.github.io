@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2016-10-13T05:20:24+09:00</updated>
+  <updated>2016-10-13T05:28:01+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -607,8 +607,8 @@
 </span><span class='line'>  }
 </span><span class='line'>  for(;!m.empty();){
 </span><span class='line'>      auto s=m.begin()-&gt;first;
-</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st=;
-</span><span class='line'>      unordered_map&lt;key,long long&gt;memo=;
+</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st={ {s,0} };
+</span><span class='line'>      unordered_map&lt;key,long long&gt;memo={ {s,0} };
 </span><span class='line'>      for(;!st.empty();){
 </span><span class='line'>          auto p=*st.rbegin();st.pop_back();
 </span><span class='line'>          auto cur=p.first;long long d=p.second;
@@ -722,8 +722,8 @@
 </span><span class='line'>  for(;!m.empty();){
 </span><span class='line'>+     long long a=-1LL&lt;&lt;61,b=1LL&lt;&lt;61;
 </span><span class='line'>      auto s=m.begin()-&gt;first;
-</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st=;
-</span><span class='line'>      unordered_map&lt;key,long long&gt;memo=;
+</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st={ {s,0} };
+</span><span class='line'>      unordered_map&lt;key,long long&gt;memo={ {s,0} };
 </span><span class='line'>@@ -29,12 +29,17 @@
 </span><span class='line'>                  memo[e.first]=d+e.second;
 </span><span class='line'>              }else if(memo[e.first]!=d+e.second){
@@ -744,6 +744,11 @@
 </span><span class='line'>  puts("Yes");
 </span><span class='line'> }
 </span><span class='line'>-int main(){int n;for(;~scanf("%d",&n)&&n;)main2(n);}</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/commit/073d4d0c991750b056836de69cc7b556864b6353">https://github.com/cielavenir/procon/commit/073d4d0c991750b056836de69cc7b556864b6353</a></li>
+</ul>
 
 
 <h2>あとがき</h2>
