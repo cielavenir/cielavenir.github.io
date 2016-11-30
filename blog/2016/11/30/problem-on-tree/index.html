@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>CROSS X BEATSをやってみて - My Octopress Blog</title>
+  <title>木の問題 - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/02/29/crossbeats">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">CROSS X BEATSをやってみて</h1>
+      <h1 class="entry-title">木の問題</h1>
     
     
       <p class="meta">
@@ -112,28 +112,81 @@
   
 
 
-<time datetime="2016-02-29T23:59:59+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li>1/3、何を思ったか研究室から貸与されたiPadにインストール。まあ、共有物ではないし…</li>
-<li>ULC、面白いシステムだと思う。(最後までプレイすることで完了させられるようになったのは最近らしいけど、それを差し置けば)難しい譜面も繰り返しプレイすることでクリアできるようになる点は良い。</li>
-<li>節分キャンペーンを進める。所持していない楽曲はフレンド募集スレッドからプレイさせていただくことを学習する。シェアソングはソーシャル要素の答えの１つだと思った。</li>
-<li>1/15、Break down獲得(RP600突破)。しかし、節分キャンペーンを進めた結果、同時期開催の個人戦報酬を落とす。まあ、ソシャゲを始めた時のイベント報酬が厳しいのと近いので、しかたがない。個人戦の課題曲が全て未所持であることも理由。</li>
-<li>ランダムセレクト祭。ランダム選曲すると過去の曲が常駐するかもしれないというイベント。とりあえずフルコンボ譜面を増やす。</li>
-<li>1/24、Azitate獲得。条件は難しい難易度であるMASTER譜面をULTIMATEで5曲クリアということで、当時はかなりきつい条件だった。ランダムセレクト祭で引き当てたEternallyが5曲目だった。</li>
-<li>期間限定RP曲、未確認XX生命体を購入すれば5曲とも所持することになるので、購入。結果、2/8、RP1000突破。NEXT FRONTIER獲得。簡単な難易度であるSTANDARD譜面の難易度値がかなり高いんですが、慣れれば自然と指が動く面白い譜面。</li>
-<li>2/17、RP1100突破。期間限定RP曲+上位20曲のため、いろいろ埋めないと上がらない。あと、Lobi入れた。</li>
-<li>2/18、バレンタインキャンペーン完走。きつかったのがMake It Fresh HARDフルゲージと最後の1ページ MASTER Sランク。まあ、クリア出来てよかった(節分キャンペーンリバイバルの最後の報酬を諦めた理由がMASTERフルゲージで、それよりは簡単ですし…)。</li>
-<li>2/28、RP1200突破。Touch of Goldと雨の音が虹を呼ぶでMASTER ULTできたのが大きい。</li>
-<li>3/1、期間限定RP曲のうち4曲しか所持していないため、RP1200を割る。</li>
-<li>この進行がハイペースかどうかを訊くのは愚問とのこと。落ち着いて考えればそうなのですが…。ごめんなさい。</li>
-<li>まあ、個人個人自由に楽しむのが第一ですよね。</li>
-<li>あとは、アンロックゲージが溜まったからといってすぐにアンロックチャレンジを開始すべきかという質問も愚問のよう。チケットの消費に慎重な人もいるかもしれないので。</li>
+<div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>問題文がそれなりに読みにくい。</li>
+<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
+<li>答えは木の直径以上になることは容易に想像がつく。</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<ul>
+<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
+<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
+<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++14
+
+<ul>
+<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
 </ul>
 
 </div>
@@ -158,7 +211,7 @@
   
 
 
-<time datetime="2016-02-29T23:59:59+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -166,7 +219,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/02/29/crossbeats/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/02/29/crossbeats/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/" >Tweet</a>
   
   
   
@@ -177,13 +230,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2016/02/11/crossbeats-music/" title="Previous Post:
-        CROSS X BEATS 取得楽曲">&laquo; CROSS X BEATS 取得楽曲</a></li>
+        href="/blog/2016/11/28/code-festival-2016/" title="Previous Post:
+        Code Festival 2016 参加記">&laquo; Code Festival 2016 参加記</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2016/07/25/irohas-obsession/"
-        title="Next Post: こだわり者いろはちゃん">こだわり者いろはちゃん
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

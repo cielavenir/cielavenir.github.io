@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2016-11-28T22:16:33+09:00</updated>
+  <updated>2016-11-30T15:11:25+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -500,6 +500,84 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[木の問題]]></title>
+    <link href="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/"/>
+    <updated>2016-11-30T15:07:16+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2016/11/30/problem-on-tree</id>
+    <content type="html"><![CDATA[<p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>問題文がそれなりに読みにくい。</li>
+<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
+<li>答えは木の直径以上になることは容易に想像がつく。</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<ul>
+<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
+<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
+<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++14
+
+<ul>
+<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
 </ul>
 
 ]]></content>

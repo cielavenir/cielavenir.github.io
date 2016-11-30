@@ -617,6 +617,111 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2016/11/30/problem-on-tree/">木の問題</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>問題文がそれなりに読みにくい。</li>
+<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
+<li>答えは木の直径以上になることは容易に想像がつく。</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<ul>
+<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
+<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
+<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++14
+
+<ul>
+<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2016/11/28/code-festival-2016/">Code Festival 2016 参加記</a></h1>
     
     
@@ -2757,81 +2862,6 @@ done
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2015/12/14/pq-santa/">(P,Q)-サンタと街の子供たち</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-12-14T23:59:59+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>P,Qがどちらも0の場合はX==0とY==0だけを数えます。</li>
-<li>簡単のため、P,Qの最大公約数を単位とする座標系に変換します。X,Yが変換できなければ弾きます。</li>
-<li>ここで、各方向に進む回数をa,b,c,dと置くと、</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(a+b)P+(c+d)Q==X - (1)
-</span><span class='line'>(c-d)P+(a-b)Q==Y - (2)</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>となります。</li>
-<li>α=a+b、β=c+dとおきます。</li>
-<li>αP+βQ==1を満たす(α,β)を拡張ユークリッド互除法で求めます。
-
-<ul>
-<li>代表値を(z1,z2)とすると、式(1)を満たすのは、α=z1<em>X+Q</em>n、β=z2<em>X-P</em>nとなります。</li>
-</ul>
-</li>
-<li>式(2)を<code>(β-2d)P+(α-2b)Q==Y</code>と変形し、αとβを代入して、整理します。<code>2*P*d+2*Q*b==(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>となります。</li>
-<li>この不定方程式において、 <strong>整数解(d,b)を持つようなnが存在する</strong> ことが問題が求める条件となります。
-
-<ul>
-<li>ここで、上で媒介変数表示により変数を一個減らしたことが効いてきます。</li>
-</ul>
-</li>
-<li><code>(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>が<code>gcd(2*P,2*Q)</code>の倍数であることが条件ですので、<code>-(z2*X*P+z1*X*Q-Y)%gcd(Q*Q-P*P,gcd(2*P,2*Q))==0</code>を判定します。</li>
-<li>なお、このnを用いてd,bを拡張ユークリッド互除法から求めることで、a,cも求まりますので、原点から何回で目標に到達するかを実際に計算することも可能です。
-
-<ul>
-<li>プログラムにおいてeとfが可変。abs(a)+abs(b)+abs&copy;+abs(d)が最小となるようなe,fを求めるのもまた一興かと(やってませんが)。</li>
-</ul>
-</li>
-</ul>
-
-
-<p><a href="http://yukicoder.me/submissions/65751">http://yukicoder.me/submissions/65751</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -2851,6 +2881,10 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2016/11/30/problem-on-tree/">木の問題</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/11/28/code-festival-2016/">Code Festival 2016 参加記</a>
       </li>
     
@@ -2860,10 +2894,6 @@ done
     
       <li class="post">
         <a href="/blog/2016/08/31/tozangezan-contest/">tozangezanお誕生日コンテスト</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/09/ios-illegal-instruction/">iOSのターミナルでIllegal Instruction: 4が表示される</a>
       </li>
     
   </ul>
