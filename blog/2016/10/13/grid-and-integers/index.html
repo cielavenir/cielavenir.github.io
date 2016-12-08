@@ -161,7 +161,7 @@
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -201,46 +201,47 @@
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;string&gt;
-</span><span class='line'>#include &lt;cstdio&gt;
-</span><span class='line'>#include &lt;unordered_map&gt;
-</span><span class='line'>#include &lt;deque&gt;
-</span><span class='line'>#include &lt;algorithm&gt;
-</span><span class='line'>using namespace std;
-</span><span class='line'>typedef string key;
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;string&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;cstdio&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;unordered_map&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;deque&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="k">typedef</span> <span class="n">string</span> <span class="n">key</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>char b1[99],b2[99];
-</span><span class='line'>void main2(int n){
-</span><span class='line'>  unordered_map&lt;key,deque&lt;pair&lt;key,long long&gt;&gt;&gt;m;
-</span><span class='line'>  for(;n;n--){
-</span><span class='line'>      int d;
-</span><span class='line'>      scanf(" 1 %s = 10^%d %s",b1,&d,b2);
-</span><span class='line'>      string s1=b1,s2=b2;
-</span><span class='line'>      m[s1].emplace_back(s2,d);
-</span><span class='line'>      m[s2].emplace_back(s1,-d);
-</span><span class='line'>  }
-</span><span class='line'>  for(;!m.empty();){
-</span><span class='line'>      auto s=m.begin()-&gt;first;
-</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st={ {s,0} };
-</span><span class='line'>      unordered_map&lt;key,long long&gt;memo={ {s,0} };
-</span><span class='line'>      for(;!st.empty();){
-</span><span class='line'>          auto p=*st.rbegin();st.pop_back();
-</span><span class='line'>          auto cur=p.first;long long d=p.second;
-</span><span class='line'>          for(auto &e:m[cur]){
-</span><span class='line'>              if(memo.find(e.first)==memo.end()){
-</span><span class='line'>                  st.emplace_back(e.first,d+e.second);
-</span><span class='line'>                  memo[e.first]=d+e.second;
-</span><span class='line'>              }else if(memo[e.first]!=d+e.second){
-</span><span class='line'>                  puts("No");
-</span><span class='line'>                  return;
-</span><span class='line'>              }
-</span><span class='line'>          }
-</span><span class='line'>      }
-</span><span class='line'>      for(auto &e:memo)m.erase(m.find(e.first));
-</span><span class='line'>  }
-</span><span class='line'>  puts("Yes");
-</span><span class='line'>}
-</span><span class='line'>int main(){int n;for(;~scanf("%d",&n)&&n;)main2(n);}</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="kt">char</span> <span class="n">b1</span><span class="p">[</span><span class="mi">99</span><span class="p">],</span><span class="n">b2</span><span class="p">[</span><span class="mi">99</span><span class="p">];</span>
+</span><span class='line'><span class="kt">void</span> <span class="nf">main2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+</span><span class='line'>  <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;&gt;</span><span class="n">m</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(;</span><span class="n">n</span><span class="p">;</span><span class="n">n</span><span class="o">--</span><span class="p">){</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">d</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">scanf</span><span class="p">(</span><span class="s">&quot; 1 %s = 10^%d %s&quot;</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">d</span><span class="p">,</span><span class="n">b2</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">string</span> <span class="n">s1</span><span class="o">=</span><span class="n">b1</span><span class="p">,</span><span class="n">s2</span><span class="o">=</span><span class="n">b2</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">m</span><span class="p">[</span><span class="n">s1</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'>      <span class="n">m</span><span class="p">[</span><span class="n">s2</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(;</span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="n">empty</span><span class="p">();){</span>
+</span><span class='line'>      <span class="k">auto</span> <span class="n">s</span><span class="o">=</span><span class="n">m</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">deque</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;</span><span class="n">st</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span> <span class="p">};</span>
+</span><span class='line'>      <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span><span class="n">memo</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span> <span class="p">};</span>
+</span><span class='line'>      <span class="k">for</span><span class="p">(;</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">();){</span>
+</span><span class='line'>          <span class="k">auto</span> <span class="n">p</span><span class="o">=*</span><span class="n">st</span><span class="p">.</span><span class="n">rbegin</span><span class="p">();</span><span class="n">st</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+</span><span class='line'>          <span class="k">auto</span> <span class="n">cur</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">;</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">d</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+</span><span class='line'>          <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">e</span><span class="p">:</span><span class="n">m</span><span class="p">[</span><span class="n">cur</span><span class="p">]){</span>
+</span><span class='line'>              <span class="k">if</span><span class="p">(</span><span class="n">memo</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">)</span><span class="o">==</span><span class="n">memo</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+</span><span class='line'>                  <span class="n">st</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">,</span><span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+</span><span class='line'>                  <span class="n">memo</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">=</span><span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+</span><span class='line'>              <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">!=</span><span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">){</span>
+</span><span class='line'>                  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;No&quot;</span><span class="p">);</span>
+</span><span class='line'>                  <span class="k">return</span><span class="p">;</span>
+</span><span class='line'>              <span class="p">}</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">e</span><span class="p">:</span><span class="n">memo</span><span class="p">)</span><span class="n">m</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">));</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span><span class="kt">int</span> <span class="n">n</span><span class="p">;</span><span class="k">for</span><span class="p">(;</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="n">n</span><span class="p">;)</span><span class="n">main2</span><span class="p">(</span><span class="n">n</span><span class="p">);}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>マス目と整数</h2>
@@ -250,7 +251,7 @@
 </ul>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -304,60 +305,61 @@
 <span class='line-number'>52</span>
 <span class='line-number'>53</span>
 <span class='line-number'>54</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>--- utpc2010_10125(aizu2207)_stack.cpp   2016-10-13 04:19:40.000000000 +0900
-</span><span class='line'>+++ atcodercodefestival2016qualaD.cpp 2016-10-13 04:42:46.000000000 +0900
-</span><span class='line'>@@ -1,22 +1,22 @@
-</span><span class='line'>-#include &lt;string&gt;
-</span><span class='line'> #include &lt;cstdio&gt;
-</span><span class='line'> #include &lt;unordered_map&gt;
-</span><span class='line'> #include &lt;deque&gt;
-</span><span class='line'> #include &lt;algorithm&gt;
-</span><span class='line'> using namespace std;
-</span><span class='line'>-typedef string key;
-</span><span class='line'>+typedef int key;
-</span><span class='line'> 
-</span><span class='line'>-char b1[99],b2[99];
-</span><span class='line'>-void main2(int n){
-</span><span class='line'>+int main(){
-</span><span class='line'>+ int r,c,n;
-</span><span class='line'>+ scanf("%d%d%d",&r,&c,&n);
-</span><span class='line'>  unordered_map&lt;key,deque&lt;pair&lt;key,long long&gt;&gt;&gt;m;
-</span><span class='line'>  for(;n;n--){
-</span><span class='line'>-     int d;
-</span><span class='line'>-     scanf(" 1 %s = 10^%d %s",b1,&d,b2);
-</span><span class='line'>-     string s1=b1,s2=b2;
-</span><span class='line'>-     m[s1].emplace_back(s2,d);
-</span><span class='line'>-     m[s2].emplace_back(s1,-d);
-</span><span class='line'>+     int s1,s2,d;
-</span><span class='line'>+     scanf("%d%d%d",&s1,&s2,&d);
-</span><span class='line'>+     m[s1].emplace_back(s2+r,d);
-</span><span class='line'>+     m[s2+r].emplace_back(s1,-d);
-</span><span class='line'>  }
-</span><span class='line'>  for(;!m.empty();){
-</span><span class='line'>+     long long a=-1LL&lt;&lt;61,b=1LL&lt;&lt;61;
-</span><span class='line'>      auto s=m.begin()-&gt;first;
-</span><span class='line'>      deque&lt;pair&lt;key,long long&gt;&gt;st={ {s,0} };
-</span><span class='line'>      unordered_map&lt;key,long long&gt;memo={ {s,0} };
-</span><span class='line'>@@ -29,12 +29,17 @@
-</span><span class='line'>                  memo[e.first]=d+e.second;
-</span><span class='line'>              }else if(memo[e.first]!=d+e.second){
-</span><span class='line'>                  puts("No");
-</span><span class='line'>-                 return;
-</span><span class='line'>+                 return 0;
-</span><span class='line'>              }
-</span><span class='line'>          }
-</span><span class='line'>+         if(cur&lt;=r)a=max(a,d);
-</span><span class='line'>+         else b=min(b,d);
-</span><span class='line'>      }
-</span><span class='line'>+     if(a&gt;b){
-</span><span class='line'>+         puts("No");
-</span><span class='line'>+         return 0;
-</span><span class='line'>+     }
-</span><span class='line'>      for(auto &e:memo)m.erase(m.find(e.first));
-</span><span class='line'>  }
-</span><span class='line'>  puts("Yes");
-</span><span class='line'> }
-</span><span class='line'>-int main(){int n;for(;~scanf("%d",&n)&&n;)main2(n);}</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="o">---</span> <span class="n">utpc2010_10125</span><span class="p">(</span><span class="n">aizu2207</span><span class="p">)</span><span class="n">_stack</span><span class="p">.</span><span class="n">cpp</span>    <span class="mi">2016</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">13</span> <span class="mo">04</span><span class="o">:</span><span class="mi">19</span><span class="o">:</span><span class="mf">40.000000000</span> <span class="o">+</span><span class="mi">0900</span>
+</span><span class='line'><span class="o">+++</span> <span class="n">atcodercodefestival2016qualaD</span><span class="p">.</span><span class="n">cpp</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">13</span> <span class="mo">04</span><span class="o">:</span><span class="mi">42</span><span class="o">:</span><span class="mf">46.000000000</span> <span class="o">+</span><span class="mi">0900</span>
+</span><span class='line'><span class="err">@@</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span> <span class="err">@@</span>
+</span><span class='line'><span class="o">-</span><span class="err">#</span><span class="n">include</span> <span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span>
+</span><span class='line'> <span class="cp">#include &lt;cstdio&gt;</span>
+</span><span class='line'> <span class="cp">#include &lt;unordered_map&gt;</span>
+</span><span class='line'> <span class="cp">#include &lt;deque&gt;</span>
+</span><span class='line'> <span class="cp">#include &lt;algorithm&gt;</span>
+</span><span class='line'> <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'><span class="o">-</span><span class="k">typedef</span> <span class="n">string</span> <span class="n">key</span><span class="p">;</span>
+</span><span class='line'><span class="o">+</span><span class="k">typedef</span> <span class="kt">int</span> <span class="n">key</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">-</span><span class="kt">char</span> <span class="n">b1</span><span class="p">[</span><span class="mi">99</span><span class="p">],</span><span class="n">b2</span><span class="p">[</span><span class="mi">99</span><span class="p">];</span>
+</span><span class='line'><span class="o">-</span><span class="kt">void</span> <span class="n">main2</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+</span><span class='line'><span class="o">+</span><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+</span><span class='line'><span class="o">+</span>  <span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+</span><span class='line'><span class="o">+</span>  <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">r</span><span class="p">,</span><span class="o">&amp;</span><span class="n">c</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="n">deque</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;&gt;</span><span class="n">m</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(;</span><span class="n">n</span><span class="p">;</span><span class="n">n</span><span class="o">--</span><span class="p">){</span>
+</span><span class='line'><span class="o">-</span>      <span class="kt">int</span> <span class="n">d</span><span class="p">;</span>
+</span><span class='line'><span class="o">-</span>      <span class="n">scanf</span><span class="p">(</span><span class="s">&quot; 1 %s = 10^%d %s&quot;</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">d</span><span class="p">,</span><span class="n">b2</span><span class="p">);</span>
+</span><span class='line'><span class="o">-</span>      <span class="n">string</span> <span class="n">s1</span><span class="o">=</span><span class="n">b1</span><span class="p">,</span><span class="n">s2</span><span class="o">=</span><span class="n">b2</span><span class="p">;</span>
+</span><span class='line'><span class="o">-</span>      <span class="n">m</span><span class="p">[</span><span class="n">s1</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'><span class="o">-</span>      <span class="n">m</span><span class="p">[</span><span class="n">s2</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'><span class="o">+</span>      <span class="kt">int</span> <span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">d</span><span class="p">;</span>
+</span><span class='line'><span class="o">+</span>      <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s2</span><span class="p">,</span><span class="o">&amp;</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'><span class="o">+</span>      <span class="n">m</span><span class="p">[</span><span class="n">s1</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">s2</span><span class="o">+</span><span class="n">r</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'><span class="o">+</span>      <span class="n">m</span><span class="p">[</span><span class="n">s2</span><span class="o">+</span><span class="n">r</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="o">-</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(;</span><span class="o">!</span><span class="n">m</span><span class="p">.</span><span class="n">empty</span><span class="p">();){</span>
+</span><span class='line'><span class="o">+</span>      <span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="o">=-</span><span class="mi">1LL</span><span class="o">&lt;&lt;</span><span class="mi">61</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="mi">1LL</span><span class="o">&lt;&lt;</span><span class="mi">61</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">auto</span> <span class="n">s</span><span class="o">=</span><span class="n">m</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">first</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">deque</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;&gt;</span><span class="n">st</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span> <span class="p">};</span>
+</span><span class='line'>      <span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">key</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span><span class="n">memo</span><span class="o">=</span><span class="p">{</span> <span class="p">{</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">}</span> <span class="p">};</span>
+</span><span class='line'><span class="err">@@</span> <span class="o">-</span><span class="mi">29</span><span class="p">,</span><span class="mi">12</span> <span class="o">+</span><span class="mi">29</span><span class="p">,</span><span class="mi">17</span> <span class="err">@@</span>
+</span><span class='line'>                  <span class="n">memo</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">=</span><span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+</span><span class='line'>              <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">memo</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">!=</span><span class="n">d</span><span class="o">+</span><span class="n">e</span><span class="p">.</span><span class="n">second</span><span class="p">){</span>
+</span><span class='line'>                  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;No&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="o">-</span>                  <span class="k">return</span><span class="p">;</span>
+</span><span class='line'><span class="o">+</span>                  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>              <span class="p">}</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'><span class="o">+</span>          <span class="k">if</span><span class="p">(</span><span class="n">cur</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">)</span><span class="n">a</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'><span class="o">+</span>          <span class="k">else</span> <span class="n">b</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'><span class="o">+</span>      <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">){</span>
+</span><span class='line'><span class="o">+</span>          <span class="n">puts</span><span class="p">(</span><span class="s">&quot;No&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="o">+</span>          <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="o">+</span>      <span class="p">}</span>
+</span><span class='line'>      <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">e</span><span class="p">:</span><span class="n">memo</span><span class="p">)</span><span class="n">m</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">m</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">first</span><span class="p">));</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Yes&quot;</span><span class="p">);</span>
+</span><span class='line'> <span class="p">}</span>
+</span><span class='line'><span class="o">-</span><span class="kt">int</span> <span class="n">main</span><span class="p">(){</span><span class="kt">int</span> <span class="n">n</span><span class="p">;</span><span class="k">for</span><span class="p">(;</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="n">n</span><span class="p">;)</span><span class="n">main2</span><span class="p">(</span><span class="n">n</span><span class="p">);}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <ul>
@@ -438,6 +440,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2016/12/09/smile/">(^^*)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/11/30/problem-on-tree/">木の問題</a>
       </li>
     
@@ -447,10 +453,6 @@
     
       <li class="post">
         <a href="/blog/2016/10/13/grid-and-integers/">無矛盾な単位系 / マス目と整数</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/08/31/tozangezan-contest/">tozangezanお誕生日コンテスト</a>
       </li>
     
   </ul>

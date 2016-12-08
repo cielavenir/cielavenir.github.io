@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>辺の追加 - My Octopress Blog</title>
+  <title>My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/12/11/add-edges">
+  <link rel="canonical" href="http://cielavenir.github.io/posts/3">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -90,13 +90,15 @@
 </nav>
   <div class="container">
     <div class="row-fluid">
-      
-<article class="hentry span9" role="article">
-
+      <div class="span9">
   
+  
+  
+    <article>
+      
   <header class="page-header">
     
-      <h1 class="entry-title">辺の追加</h1>
+      <h1 class="entry-title"><a href="/blog/2014/10/14/launched-github-pages/">GitHub Pages始めました</a></h1>
     
     
       <p class="meta">
@@ -112,90 +114,29 @@
   
 
 
-<time datetime="2015-12-11T06:11:16+09:00" pubdate data-updated="true"></time>
+<time datetime="2014-10-14T17:30:58+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://yukicoder.me/problems/896">http://yukicoder.me/problems/896</a></p>
-
-<ul>
-<li>まず、union-findで島の大きさを列挙し、その列挙されたものに対し、bag[0]=-1として、最小値版0-1ナップザックを行えばよいです。</li>
-<li>しかし、これでは、島の個数をXとすると、O(NX)であり、Xの最大値はNなので、島が多数あった場合に最悪O(N<sup>2</sup>)となり、TLEになってしまいます。</li>
-<li><p>そこで、ダブリングを行います。例えば、大きさ2の島が10個ある場合、「大きさ2コスト1」を10回並べるのではなく、「大きさ2コスト1」「大きさ4コスト2」「大きさ8コスト4」「大きさ6コスト3」の4つを並べれば良いことになります。</p>
-
-<ul>
-<li>最後の3は<code>10-1-2-4</code>のように求められます。</li>
-</ul>
-</li>
-<li><p><a href="http://yukicoder.me/submissions/64709">http://yukicoder.me/submissions/64709</a></p></li>
-<li><p>この考え方はtails氏の答案( <a href="http://yukicoder.me/submissions/64600">http://yukicoder.me/submissions/64600</a> )を参考にしました。ありがとうございます。</p></li>
-</ul>
-
-
-<h3>追伸</h3>
-
-<ul>
-<li>蟻本302ページに普通に書いてありました。まだ読み終わっていないため、勉強不足ということが露呈しました…</li>
-<li>deque解法が多いのはスライド最小値の考え方で解けるかららしいですね。ダブリング解法は(計算量が少し増えることもあって)少数派のようです。</li>
-</ul>
-
+  <div class="entry-content"><p>始めてみました。</p>
 </div>
-
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Ciel Avenir</span></span>
-
-      
-
-
-
-
-
-
-
-
   
 
 
-<time datetime="2015-12-11T06:11:16+09:00" pubdate data-updated="true"></time>
-      
-
-
-    </p>
+    </article>
+  
+  <ul class="pager">
     
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/12/11/add-edges/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/12/11/add-edges/" >Tweet</a>
-  
-  
-  
+    <li><a href="/blog/archives">Blog Archives</a></li>
+    
+    <li class="next"><a href="2">Newer &rarr;</a></li>
+    
+  </ul>
 </div>
-
-    
-    
-    <ul class="pager">
-      
-      <li class="previous"><a class="basic-alignment left"
-        href="/blog/2015/11/22/codeeval219/" title="Previous Post:
-        CodeEval 219 The Tourist">&laquo; CodeEval 219 The Tourist</a></li>
-      
-      <li><a href="/blog/archives">Blog Archives</a></li>
-      
-      <li class="next"><a class="basic-alignment right" href="/blog/2015/12/14/coderunner2015/"
-        title="Next Post: Code Runner 2015 参加記">Code Runner 2015 参加記
-        &raquo;</a></li>
-      
-    </ul>
-  </footer>
-</article>
-
 <aside class="sidebar-nav span3">
   
     <section class="well">
@@ -231,7 +172,6 @@
 
   
 </aside>
-
 
     </div>
   </div>
