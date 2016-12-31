@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2016-12-31T20:32:31+09:00</updated>
+  <updated>2016-12-31T20:51:09+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -543,7 +543,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[(^^*)]]></title>
+    <title type="html"><![CDATA[[yukicoder] (^^*)]]></title>
     <link href="http://cielavenir.github.io/blog/2016/12/09/smile/"/>
     <updated>2016-12-09T00:00:00+09:00</updated>
     <id>http://cielavenir.github.io/blog/2016/12/09/smile</id>
@@ -824,7 +824,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[木の問題]]></title>
+    <title type="html"><![CDATA[[atcoder] 木の問題]]></title>
     <link href="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/"/>
     <updated>2016-11-30T15:07:16+09:00</updated>
     <id>http://cielavenir.github.io/blog/2016/11/30/problem-on-tree</id>
@@ -1270,7 +1270,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[無矛盾な単位系 / マス目と整数]]></title>
+    <title type="html"><![CDATA[[atcoder] 無矛盾な単位系 / マス目と整数]]></title>
     <link href="http://cielavenir.github.io/blog/2016/10/13/grid-and-integers/"/>
     <updated>2016-10-13T04:18:24+09:00</updated>
     <id>http://cielavenir.github.io/blog/2016/10/13/grid-and-integers</id>
@@ -2287,7 +2287,7 @@ done
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[こだわり者いろはちゃん]]></title>
+    <title type="html"><![CDATA[[atcoder] こだわり者いろはちゃん]]></title>
     <link href="http://cielavenir.github.io/blog/2016/07/25/irohas-obsession/"/>
     <updated>2016-07-25T16:10:23+09:00</updated>
     <id>http://cielavenir.github.io/blog/2016/07/25/irohas-obsession</id>
@@ -2848,7 +2848,7 @@ done
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[高橋君とパスワード]]></title>
+    <title type="html"><![CDATA[[atcoder] 高橋君とパスワード]]></title>
     <link href="http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/"/>
     <updated>2016-01-14T01:37:00+09:00</updated>
     <id>http://cielavenir.github.io/blog/2016/01/14/takahashikun-password</id>
@@ -2888,7 +2888,7 @@ done
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[(P,Q)-サンタと街の子供たち]]></title>
+    <title type="html"><![CDATA[[yukicoder] (P,Q)-サンタと街の子供たち]]></title>
     <link href="http://cielavenir.github.io/blog/2015/12/14/pq-santa/"/>
     <updated>2015-12-14T23:59:59+09:00</updated>
     <id>http://cielavenir.github.io/blog/2015/12/14/pq-santa</id>
@@ -3007,7 +3007,7 @@ done
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[辺の追加]]></title>
+    <title type="html"><![CDATA[ [yukicoder] 辺の追加]]></title>
     <link href="http://cielavenir.github.io/blog/2015/12/11/add-edges/"/>
     <updated>2015-12-11T06:11:16+09:00</updated>
     <id>http://cielavenir.github.io/blog/2015/12/11/add-edges</id>
@@ -3473,7 +3473,7 @@ done
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[アメーバがたくさん (and マスと駒と色塗り)]]></title>
+    <title type="html"><![CDATA[[yukicoder] アメーバがたくさん (and マスと駒と色塗り)]]></title>
     <link href="http://cielavenir.github.io/blog/2015/10/29/many-ameba/"/>
     <updated>2015-10-29T01:40:16+09:00</updated>
     <id>http://cielavenir.github.io/blog/2015/10/29/many-ameba</id>
@@ -3540,7 +3540,7 @@ done
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[ゆきこちゃんの15パズル]]></title>
+    <title type="html"><![CDATA[[yukicoder] ゆきこちゃんの15パズル]]></title>
     <link href="http://cielavenir.github.io/blog/2015/06/15/yukiko-15/"/>
     <updated>2015-06-15T01:38:30+09:00</updated>
     <id>http://cielavenir.github.io/blog/2015/06/15/yukiko-15</id>
