@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2016-12-31T20:51:09+09:00</updated>
+  <updated>2017-01-22T23:17:32+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -500,6 +500,77 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[atcoder] Tournament]]></title>
+    <link href="http://cielavenir.github.io/blog/2017/01/22/tournament/"/>
+    <updated>2017-01-22T23:10:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2017/01/22/tournament</id>
+    <content type="html"><![CDATA[<p><a href="https://agc009.contest.atcoder.jp/tasks/agc009_b">https://agc009.contest.atcoder.jp/tasks/agc009_b</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>トーナメント戦を行ったところ、1番の選手が優勝した。</li>
+<li>他の選手について、誰に負けたのかが与えられるので、条件をみたすようなトーナメント表の深さの最低値を求めよ。</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<ul>
+<li>ある選手がどの選手を倒したかのグラフを作成し、1番の選手から再帰。</li>
+<li>倒した選手(N人)のそれぞれについてトーナメント表の深さを求めようとする(倒した選手がいなければ0)。</li>
+<li>深さを降順にソートし、これらに1からNまでの数値を割り当てて、足す。</li>
+<li>足した後の配列の最大値が答えである。</li>
+</ul>
+
+
+<h2>再帰の深さ</h2>
+
+<ul>
+<li>単純に実装すると、最悪10万回の再帰が必要になり、スタックオーバーフローになるおそれがある。</li>
+<li>今回、C++は <strong>偶然</strong> 大丈夫であったが、RubyやPythonだと不可であった。
+
+<ul>
+<li>スタック拡張テクを使っても依然として通らない。</li>
+</ul>
+</li>
+<li>今回は場当たり的(テストケース依存)な対応になるが、N/2番の選手から一旦再帰しておくことで再帰の深さをある程度減らすことができる。
+
+<ul>
+<li>この状態でもスタック拡張テクは依然として必要である。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++11
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1076375">http://agc009.contest.atcoder.jp/submissions/1076375</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1076373">http://agc009.contest.atcoder.jp/submissions/1076373</a></li>
+</ul>
+</li>
+<li>Python
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1076368">http://agc009.contest.atcoder.jp/submissions/1076368</a></li>
+<li>なお、なぜかPyPyでは通らない。</li>
+</ul>
+</li>
 </ul>
 
 ]]></content>
@@ -3534,37 +3605,6 @@ done
 <li>フレンド検索で自分を検索することはできませんが、「スコアデータ」->「個人プレイ成績」を閲覧すると、URLの末尾に40文字の文字列が見えます。</li>
 <li><p>これを <a href="https://lounge.synchronica.jp/Friend/info/">https://lounge.synchronica.jp/Friend/info/</a> の後ろに付けることで、自分の情報を実際に見ることができます。よって、これを公開用IDとして良いのではないかと思われます。</p></li>
 <li><p>なお、maimaiもフレンドコードを見られませんが、この方法で得ることもできません。なおフレンド申請は「ご近所リストの○番目に申請」という形式で実装されています。</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] ゆきこちゃんの15パズル]]></title>
-    <link href="http://cielavenir.github.io/blog/2015/06/15/yukiko-15/"/>
-    <updated>2015-06-15T01:38:30+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2015/06/15/yukiko-15</id>
-    <content type="html"><![CDATA[<p><a href="http://yukicoder.me/problems/247">http://yukicoder.me/problems/247</a></p>
-
-<p>この問題はシミュレーションとなっていますが、シミュレーションは必要ではないです。</p>
-
-<ul>
-<li>まず、各駒について、完成状態とのマンハッタン距離を取ります。1つでも2以上であれば、その配置は作ることができません。</li>
-<li>次に、その盤面が15パズルの盤面として正しいかを確認します。これは、(空マス以外の転倒数+空マスの上下動数)%2が偶数であれば正しいということが言えます。転倒数については</li>
-<li><a href="https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_">https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_</a>(%E6%95%B0%E5%AD%A6)</li>
-<li><p>を参照して下さい。</p></li>
-<li><p>これらの2条件がそろうとき、問題の配置は正しいと言えます。</p>
-
-<ul>
-<li><a href="http://yukicoder.me/submissions/33252">http://yukicoder.me/submissions/33252</a></li>
-</ul>
-</li>
-<li>今回は転倒数の計算はO(nlogn)ではなくO(n<sup>2</sup>)でよいので、2重ループを書けばよいです。さらに、入力を読み込む途中に適宜転倒数の計算を行うとループの記述が1個消えます。これをまとめると以下のようになります(暫定最短コードです)。
-
-<ul>
-<li><a href="http://yukicoder.me/submissions/33461">http://yukicoder.me/submissions/33461</a></li>
-</ul>
-</li>
 </ul>
 
 ]]></content>
