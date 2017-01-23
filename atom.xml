@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2017-01-22T23:17:32+09:00</updated>
+  <updated>2017-01-23T22:14:14+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -555,7 +555,7 @@
 <li>C++11
 
 <ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1076375">http://agc009.contest.atcoder.jp/submissions/1076375</a></li>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1077298">http://agc009.contest.atcoder.jp/submissions/1077298</a></li>
 </ul>
 </li>
 <li>Ruby
@@ -567,8 +567,20 @@
 <li>Python
 
 <ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1076368">http://agc009.contest.atcoder.jp/submissions/1076368</a></li>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1077307">http://agc009.contest.atcoder.jp/submissions/1077307</a></li>
 <li>なお、なぜかPyPyでは通らない。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>余談</h2>
+
+<ul>
+<li>木だから本来メモ化は必要なかった。取り除いたらRubyではおまじない不要になった…
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1076974">http://agc009.contest.atcoder.jp/submissions/1076974</a></li>
 </ul>
 </li>
 </ul>
