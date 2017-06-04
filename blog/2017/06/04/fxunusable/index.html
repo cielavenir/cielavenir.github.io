@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>単位取得退学します - My Octopress Blog</title>
+  <title>FXCampusGatePrinterはネットプリントドライバとしても使用できない - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/12/10/retrieve">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2017/06/04/fxunusable">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">単位取得退学します</h1>
+      <h1 class="entry-title">FXCampusGatePrinterはネットプリントドライバとしても使用できない</h1>
     
     
       <p class="meta">
@@ -112,42 +112,39 @@
   
 
 
-<time datetime="2016-12-10T00:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2017-06-04T15:00:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>【<a href="http://www.adventar.org/calendars/1388">http://www.adventar.org/calendars/1388</a> の12/10分です】</p>
+<div class="entry-content"><h2>背景</h2>
 
-<h2>高校</h2>
+<ul>
+<li>ファミリーマートやローソンの<a href="https://networkprint.ne.jp/">ネットワークプリント</a>はプリンタドライバが存在するが、セブンイレブンの<a href="https://www.printing.ne.jp/">ネットプリント</a>はプリンタドライバが存在しない。</li>
+<li><a href="http://www.ecc.u-tokyo.ac.jp/">ECCS</a>2012(ゼロックス)のプリンタドライバはネットプリントドライバとしても使うことが出来た。</li>
+<li>現在のECCS2016では業者がリコーになったが、ネットプリントドライバ部分はまだ使えるのではないか？</li>
+<li>しかし、使ってみようとすると、<code>接続エラー(320000)</code>となる。</li>
+</ul>
 
-<p>東大はBランクだったが、記念受験とした結果実力を出し切れたらしい。(現役)</p>
 
-<h2>学部</h2>
+<h2>調査</h2>
 
-<p>今の研究室には学部時代の体験ゼミでお世話になった。生物とコンピュータを両方取り扱う分野ということで興味を持った。
-学部の研究室は、今の研究室の教授から紹介してもらった。割と良い論文が書けた。</p>
+<ul>
+<li>/Library/Printers/FujiXerox/FXCampusGatePrinter/FXCampusGatePrinter.plist から、</li>
+<li><code>https://sdb.fujixerox.co.jp:443/CGPPrintPortal/Service.svc</code></li>
+<li>という内容が読み取れる。このサーバーは現在停止している。</li>
+<li><strong>したがって、ネットプリントドライバとして使うことも現在は不可能である。</strong></li>
+</ul>
 
-<h2>修士</h2>
 
-<p>割と良い論文が書けた、とあるが、これは学士の水準である。これを修士の基準に持っていくのは不可能であった。
-1個目のテーマは論文を書いたが、学士よりも酷い内容だったので捨てた。
-最終的なテーマを決めるのには結局2年半かかった(※1留)ということになり、半年で修士論文を書いた。こちらはまあまあの出来だった。</p>
+<h2>結論</h2>
 
-<h2>博士</h2>
+<ul>
+<li>個人的には当面はネットワークプリントだけを使うことにします…</li>
+</ul>
 
-<p>博士号取得要件は、論文を査読付き雑誌に掲載することである。
-修士論文のテーマでは不可能だった。
-結局まともな研究を始めたのは2年秋だった。
-博士3年の初めにfastqの話で論文を書いたが、内容に不備があり、修正叶わず投稿には至っていない。
-予備審査は通して頂けたが、本当にやる気のある学生なら1ヶ月で仕上げられられる内容の研究しかしていない。
-データの不足を痛感しつつも、親の希望により職に就くこととなった。</p>
-
-<hr />
-
-<p>というわけで2017/3を以って単位取得退学となる。まずは3月までに雑誌に投稿できるかが勝負である。</p>
 </div>
 
 
@@ -170,7 +167,7 @@
   
 
 
-<time datetime="2016-12-10T00:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2017-06-04T15:00:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -178,7 +175,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/12/10/retrieve/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/12/10/retrieve/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2017/06/04/fxunusable/" data-via="" data-counturl="http://cielavenir.github.io/blog/2017/06/04/fxunusable/" >Tweet</a>
   
   
   
@@ -189,13 +186,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2016/12/09/smile/" title="Previous Post:
-        [yukicoder] (^^*)">&laquo; [yukicoder] (^^*)</a></li>
+        href="/blog/2017/01/22/tournament/" title="Previous Post:
+        [atcoder] Tournament">&laquo; [atcoder] Tournament</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2017/01/22/tournament/"
-        title="Next Post: [atcoder] Tournament">[atcoder] Tournament
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

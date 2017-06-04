@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2017-01-23T22:14:14+09:00</updated>
+  <updated>2017-06-04T15:08:44+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -500,6 +500,40 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FXCampusGatePrinterはネットプリントドライバとしても使用できない]]></title>
+    <link href="http://cielavenir.github.io/blog/2017/06/04/fxunusable/"/>
+    <updated>2017-06-04T15:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2017/06/04/fxunusable</id>
+    <content type="html"><![CDATA[<h2>背景</h2>
+
+<ul>
+<li>ファミリーマートやローソンの<a href="https://networkprint.ne.jp/">ネットワークプリント</a>はプリンタドライバが存在するが、セブンイレブンの<a href="https://www.printing.ne.jp/">ネットプリント</a>はプリンタドライバが存在しない。</li>
+<li><a href="http://www.ecc.u-tokyo.ac.jp/">ECCS</a>2012(ゼロックス)のプリンタドライバはネットプリントドライバとしても使うことが出来た。</li>
+<li>現在のECCS2016では業者がリコーになったが、ネットプリントドライバ部分はまだ使えるのではないか？</li>
+<li>しかし、使ってみようとすると、<code>接続エラー(320000)</code>となる。</li>
+</ul>
+
+
+<h2>調査</h2>
+
+<ul>
+<li>/Library/Printers/FujiXerox/FXCampusGatePrinter/FXCampusGatePrinter.plist から、</li>
+<li><code>https://sdb.fujixerox.co.jp:443/CGPPrintPortal/Service.svc</code></li>
+<li>という内容が読み取れる。このサーバーは現在停止している。</li>
+<li><strong>したがって、ネットプリントドライバとして使うことも現在は不可能である。</strong></li>
+</ul>
+
+
+<h2>結論</h2>
+
+<ul>
+<li>個人的には当面はネットワークプリントだけを使うことにします…</li>
 </ul>
 
 ]]></content>
@@ -3602,21 +3636,6 @@ done
 </ul>
 </li>
 <li><p>※ ついでに言うと、<a href="http://www.checkio.org/mission/painting-wall/share/8a0e0061de3ff95664776d904d309e57/">CheckiO Painting Wall</a>も逐一マージが想定解です。</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[シンクロニカの公開用IDを得る方法]]></title>
-    <link href="http://cielavenir.github.io/blog/2015/07/19/synchronica-id/"/>
-    <updated>2015-07-19T16:53:25+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2015/07/19/synchronica-id</id>
-    <content type="html"><![CDATA[<ul>
-<li><a href="https://lounge.synchronica.jp/">シンクロニカラウンジ</a>にて、自分のIDを得る方法について</li>
-<li>フレンド検索で自分を検索することはできませんが、「スコアデータ」->「個人プレイ成績」を閲覧すると、URLの末尾に40文字の文字列が見えます。</li>
-<li><p>これを <a href="https://lounge.synchronica.jp/Friend/info/">https://lounge.synchronica.jp/Friend/info/</a> の後ろに付けることで、自分の情報を実際に見ることができます。よって、これを公開用IDとして良いのではないかと思われます。</p></li>
-<li><p>なお、maimaiもフレンドコードを見られませんが、この方法で得ることもできません。なおフレンド申請は「ご近所リストの○番目に申請」という形式で実装されています。</p></li>
 </ul>
 
 ]]></content>
