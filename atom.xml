@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2017-07-30T04:47:40+09:00</updated>
+  <updated>2017-07-30T04:48:43+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -506,7 +506,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[夏休みの思い出（１）]]></title>
+    <title type="html"><![CDATA[[yukicoder] 夏休みの思い出（１）]]></title>
     <link href="http://cielavenir.github.io/blog/2017/07/30/summer-task/"/>
     <updated>2017-07-30T04:00:00+09:00</updated>
     <id>http://cielavenir.github.io/blog/2017/07/30/summer-task</id>
