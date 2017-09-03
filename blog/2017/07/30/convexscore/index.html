@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[atcoder] ConvexScore - My Octopress Blog</title>
+  <meta name="author" content="Ciel Avenir">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2017/07/30/convexscore">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/table.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">My Octopress Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="https://www.google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:cielavenir.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">[Atcoder] ConvexScore</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-07-30T04:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://arc082.contest.atcoder.jp/tasks/arc082_c">http://arc082.contest.atcoder.jp/tasks/arc082_c</a></p>
+
+<h2>初版</h2>
+
+<ul>
+<li>解説を見て書いたコードがどうも合わないのですぎむさんの答案( <a href="http://arc082.contest.atcoder.jp/submissions/1561350">http://arc082.contest.atcoder.jp/submissions/1561350</a> )と見比べながら合わせた答案。</li>
+<li><p>解説にある「2点以上乗りうる直線」って線分じゃないですかね…。</p></li>
+<li><p><a href="http://arc082.contest.atcoder.jp/submissions/1566591">http://arc082.contest.atcoder.jp/submissions/1566591</a></p></li>
+<li>このバージョンは三角(不等)式を使うので誤差が激しくなる。long doubleが必須。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;complex&gt;
+</span><span class='line'>#include &lt;vector&gt;
+</span><span class='line'>#include &lt;set&gt;
+</span><span class='line'>#include &lt;cstdio&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'> 
+</span><span class='line'>const double EPS = 1e-12;
+</span><span class='line'>typedef complex&lt;long double&gt; P;
+</span><span class='line'>
+</span><span class='line'>struct L : public vector&lt;P&gt; {
+</span><span class='line'>  L(const P &a, const P &b) {
+</span><span class='line'>    push_back(a); push_back(b);
+</span><span class='line'>  }
+</span><span class='line'>};
+</span><span class='line'>bool intersectSP(const L &s, const P &p) {
+</span><span class='line'>  return abs(s[0]-p)+abs(s[1]-p)-abs(s[1]-s[0]) &lt; EPS; // triangle inequality
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>long long pow_binary_mod(long long x,long long y,long long M){
+</span><span class='line'>  long long z=1;
+</span><span class='line'>  for(;y;y&gt;&gt;=1){
+</span><span class='line'>      if((y&1)!=0)z=z*x%M;
+</span><span class='line'>      x=x*x%M;
+</span><span class='line'>  }
+</span><span class='line'>  return z;
+</span><span class='line'>}
+</span><span class='line'> 
+</span><span class='line'>int main(){
+</span><span class='line'>  int M=998244353;
+</span><span class='line'>  int N,x,y;
+</span><span class='line'>  scanf("%d",&N);
+</span><span class='line'>  vector&lt;P&gt;v(N);
+</span><span class='line'>  int r=pow_binary_mod(2,N,M);
+</span><span class='line'>  set&lt;L&gt;se;
+</span><span class='line'>  for(int i=0;i&lt;N;i++)scanf("%d%d",&x,&y),v[i]={(double)x,(double)y};
+</span><span class='line'>  for(int i=0;i&lt;N;i++)for(int j=i+1;j&lt;N;j++){
+</span><span class='line'>      L l(v[i],v[j]);
+</span><span class='line'>      int n=0;
+</span><span class='line'>      for(int k=0;k&lt;N;k++)if(k!=i&&k!=j&&intersectSP(l,v[k]))n++;
+</span><span class='line'>      r=(r-pow_binary_mod(2,n,M))%M;
+</span><span class='line'>  }
+</span><span class='line'>  printf("%d\n",((r-N-1)%M+M)%M);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>点が載っている判定を直線へ</h2>
+
+<ul>
+<li>1直線ごとに載っている点をすべてリストして、そこから線分を取り出す。</li>
+<li>直線での判定なので、long doubleは必要ない。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;complex&gt;
+</span><span class='line'>#include &lt;vector&gt;
+</span><span class='line'>#include &lt;set&gt;
+</span><span class='line'>#include &lt;cstdio&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>
+</span><span class='line'>const double EPS = 1e-12;
+</span><span class='line'>typedef complex&lt;double&gt; P;
+</span><span class='line'>
+</span><span class='line'>double cross(const P& a, const P& b) {
+</span><span class='line'>  return imag(conj(a)*b);
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>struct L : public vector&lt;P&gt; {
+</span><span class='line'>  L(const P &a, const P &b) {
+</span><span class='line'>    push_back(a); push_back(b);
+</span><span class='line'>  }
+</span><span class='line'>};
+</span><span class='line'>
+</span><span class='line'>bool intersectLP(const L &l, const P &p) {
+</span><span class='line'>  return abs(cross(l[1]-p, l[0]-p)) &lt; EPS;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>long long pow_binary_mod(long long x,long long y,long long M){
+</span><span class='line'>  long long z=1;
+</span><span class='line'>  for(;y;y&gt;&gt;=1){
+</span><span class='line'>      if((y&1)!=0)z=z*x%M;
+</span><span class='line'>      x=x*x%M;
+</span><span class='line'>  }
+</span><span class='line'>  return z;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>int main(){
+</span><span class='line'>  int M=998244353;
+</span><span class='line'>  int N,x,y;
+</span><span class='line'>  scanf("%d",&N);
+</span><span class='line'>  vector&lt;P&gt;v(N);
+</span><span class='line'>  int r=pow_binary_mod(2,N,M);
+</span><span class='line'>  set&lt;pair&lt;int,int&gt; &gt;se;
+</span><span class='line'>  for(int i=0;i&lt;N;i++)scanf("%d%d",&x,&y),v[i]={(double)x,(double)y};
+</span><span class='line'>  for(int i=0;i&lt;N;i++)for(int j=i+1;j&lt;N;j++){
+</span><span class='line'>      if(se.find({i,j})!=se.end())continue;
+</span><span class='line'>      L l(v[i],v[j]);
+</span><span class='line'>      vector&lt;int&gt;x={i,j};
+</span><span class='line'>      for(int k=0;k&lt;N;k++)if(k!=i&&k!=j&&intersectLP(l,v[k]))x.push_back(k);
+</span><span class='line'>      for(int a=0;a&lt;x.size();a++)for(int b=a+1;b&lt;x.size();b++){
+</span><span class='line'>          int n=b-a-1;
+</span><span class='line'>          r=(r-pow_binary_mod(2,n,M))%M;
+</span><span class='line'>          se.emplace(x[a],x[b]);
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  printf("%d\n",((r-N-1)%M+M)%M);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>インライン化</h2>
+
+<ul>
+<li>関数をインライン化。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#include &lt;complex&gt;
+</span><span class='line'>#include &lt;vector&gt;
+</span><span class='line'>#include &lt;set&gt;
+</span><span class='line'>#include &lt;cstdio&gt;
+</span><span class='line'>using namespace std;
+</span><span class='line'>
+</span><span class='line'>const double EPS = 1e-12;
+</span><span class='line'>typedef complex&lt;double&gt; P;
+</span><span class='line'>
+</span><span class='line'>long long pow_binary_mod(long long x,long long y,long long M){
+</span><span class='line'>  long long z=1;
+</span><span class='line'>  for(;y;y&gt;&gt;=1){
+</span><span class='line'>      if((y&1)!=0)z=z*x%M;
+</span><span class='line'>      x=x*x%M;
+</span><span class='line'>  }
+</span><span class='line'>  return z;
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>int main(){
+</span><span class='line'>  int M=998244353;
+</span><span class='line'>  int N,x,y;
+</span><span class='line'>  scanf("%d",&N);
+</span><span class='line'>  vector&lt;P&gt;v(N);
+</span><span class='line'>  int r=pow_binary_mod(2,N,M);
+</span><span class='line'>  set&lt;pair&lt;int,int&gt;&gt;se;
+</span><span class='line'>  for(int i=0;i&lt;N;i++)scanf("%d%d",&x,&y),v[i]={(double)x,(double)y};
+</span><span class='line'>  for(int i=0;i&lt;N;i++)for(int j=i+1;j&lt;N;j++){
+</span><span class='line'>      if(se.find({i,j})!=se.end())continue;
+</span><span class='line'>      vector&lt;int&gt;x={i,j};
+</span><span class='line'>      for(int k=j+1;k&lt;N;k++)if(abs(imag(conj(v[j]-v[k])*(v[i]-v[k])))&lt;1e-12)x.push_back(k);
+</span><span class='line'>      for(int a=0;a&lt;x.size();a++)for(int b=a+1;b&lt;x.size();b++){
+</span><span class='line'>          r=(r-pow_binary_mod(2,b+~a,M))%M;
+</span><span class='line'>          se.emplace(x[a],x[b]);
+</span><span class='line'>      }
+</span><span class='line'>  }
+</span><span class='line'>  printf("%d\n",((r-N-1)%M+M)%M);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Ruby</h2>
+
+<ul>
+<li>ここまで最適化すればRubyに移植可能になる。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>M=998244353
+</span><span class='line'>N=gets.to_i
+</span><span class='line'>v=$&lt;.map{|e|Complex(*e.split.map(&:to_i))}
+</span><span class='line'>h={}
+</span><span class='line'>r=2**N%M-N-1
+</span><span class='line'>N.times{|i|(i+1...N).map{|j|
+</span><span class='line'>  h[x=[i,j]]||
+</span><span class='line'>  (j+1...N).map{|k|((v[j]-v[k]).conj*(v[i]-v[k])).imag.abs&lt;1e-9&&x&lt;&lt;k}&&
+</span><span class='line'>  x.size.times{|a|(a+1...x.size).map{|b|
+</span><span class='line'>      r=(r-2**(b+~a))%M
+</span><span class='line'>      h[[x[a],x[b]]]=1
+</span><span class='line'>  }}
+</span><span class='line'>}}
+</span><span class='line'>p r</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ciel Avenir</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-07-30T04:00:00+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2017/07/30/convexscore/" data-via="" data-counturl="http://cielavenir.github.io/blog/2017/07/30/convexscore/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2017/06/04/fxunusable/" title="Previous Post:
+        FXCampusGatePrinterはネットプリントドライバとしても使用できない">&laquo; FXCampusGatePrinterはネットプリントドライバとしても使用できない</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2017/07/30/summer-task/"
+        title="Next Post: [yukicoder] 夏休みの思い出（１）">[yukicoder] 夏休みの思い出（１）
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2038/01/01/personal-stuff/">Personal Stuff</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/07/30/summer-task/">[yukicoder] 夏休みの思い出（１）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/07/30/convexscore/">[atcoder] ConvexScore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/06/04/fxunusable/">FXCampusGatePrinterはネットプリントドライバとしても使用できない</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2017/01/22/tournament/">[atcoder] Tournament</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2017 - Ciel Avenir -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
