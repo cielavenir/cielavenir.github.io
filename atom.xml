@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2017-09-03T23:21:26+09:00</updated>
+  <updated>2017-09-03T23:24:06+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -506,33 +506,10 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[[yukicoder] 夏休みの思い出（１）]]></title>
-    <link href="http://cielavenir.github.io/blog/2017/07/30/summer-task/"/>
-    <updated>2017-07-30T04:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2017/07/30/summer-task</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/550">https://yukicoder.me/problems/no/550</a></p>
-
-<ul>
-<li>解と係数の関係から3因数はCの約数である.</li>
-<li><a href="https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3">https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3</a> によると約数の個数は最大で103680なので、約数の全列挙をすればこの問題を解くには十分である.</li>
-<li><p>なお, Cの最大値は10**18であるが, <del>因数の最大値は10*9であるという制約があるので, Ruby標準ライブラリの素因数分解で問題ない.</del></p>
-
-<ul>
-<li><code>-1999999865 999999864000004607 999999866000004473</code>という入力(出力は<code>-1 999999929 999999937</code>)で死ぬので, 素因数列挙だけで解きたい場合はロー法を使いましょう&hellip;</li>
-</ul>
-</li>
-<li><p>Ruby標準ライブラリ(リジャッジでTLEになる予定) <a href="https://yukicoder.me/submissions/192779">https://yukicoder.me/submissions/192779</a></p></li>
-<li>ロー法 <a href="https://yukicoder.me/submissions/192783">https://yukicoder.me/submissions/192783</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[[atcoder] ConvexScore]]></title>
-    <link href="http://cielavenir.github.io/blog/2017/07/30/convexscore/"/>
-    <updated>2017-07-30T04:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2017/07/30/convexscore</id>
+    <link href="http://cielavenir.github.io/blog/2017/09/03/convexscore/"/>
+    <updated>2017-09-03T23:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2017/09/03/convexscore</id>
     <content type="html"><![CDATA[<p><a href="http://arc082.contest.atcoder.jp/tasks/arc082_c">http://arc082.contest.atcoder.jp/tasks/arc082_c</a></p>
 
 <h2>初版</h2>
@@ -908,6 +885,29 @@
 </span><span class='line'>  x.combination(2){|a,b|h[[a,b]]=1})
 </span><span class='line'>}
 </span><span class='line'>p r</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] 夏休みの思い出（１）]]></title>
+    <link href="http://cielavenir.github.io/blog/2017/07/30/summer-task/"/>
+    <updated>2017-07-30T04:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2017/07/30/summer-task</id>
+    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/550">https://yukicoder.me/problems/no/550</a></p>
+
+<ul>
+<li>解と係数の関係から3因数はCの約数である.</li>
+<li><a href="https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3">https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3</a> によると約数の個数は最大で103680なので、約数の全列挙をすればこの問題を解くには十分である.</li>
+<li><p>なお, Cの最大値は10**18であるが, <del>因数の最大値は10*9であるという制約があるので, Ruby標準ライブラリの素因数分解で問題ない.</del></p>
+
+<ul>
+<li><code>-1999999865 999999864000004607 999999866000004473</code>という入力(出力は<code>-1 999999929 999999937</code>)で死ぬので, 素因数列挙だけで解きたい場合はロー法を使いましょう&hellip;</li>
+</ul>
+</li>
+<li><p>Ruby標準ライブラリ(リジャッジでTLEになる予定) <a href="https://yukicoder.me/submissions/192779">https://yukicoder.me/submissions/192779</a></p></li>
+<li>ロー法 <a href="https://yukicoder.me/submissions/192783">https://yukicoder.me/submissions/192783</a></li>
+</ul>
 
 ]]></content>
   </entry>
