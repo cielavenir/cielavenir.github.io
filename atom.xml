@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2017-09-03T22:47:45+09:00</updated>
+  <updated>2017-09-03T23:21:26+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -539,7 +539,7 @@
 
 <ul>
 <li>解説を見て書いたコードがどうも合わないのですぎむさんの答案( <a href="http://arc082.contest.atcoder.jp/submissions/1561350">http://arc082.contest.atcoder.jp/submissions/1561350</a> )と見比べながら合わせた答案。</li>
-<li><p>解説にある「2点以上乗りうる直線」って線分じゃないですかね…。</p></li>
+<li><p><del>解説にある「2点以上乗りうる直線」って線分じゃないですかね…。</del></p></li>
 <li><p><a href="http://arc082.contest.atcoder.jp/submissions/1566591">http://arc082.contest.atcoder.jp/submissions/1566591</a></p></li>
 <li>このバージョンは三角(不等)式を使うので誤差が激しくなる。long doubleが必須。</li>
 </ul>
@@ -637,7 +637,8 @@
 
 <ul>
 <li>1直線ごとに載っている点をすべてリストして、そこから線分を取り出す。</li>
-<li>直線での判定なので、long doubleは必要ない。</li>
+<li><p>直線での判定なので、long doubleは必要ない。</p></li>
+<li><p><a href="http://arc082.contest.atcoder.jp/submissions/1566594">http://arc082.contest.atcoder.jp/submissions/1566594</a></p></li>
 </ul>
 
 
@@ -753,6 +754,7 @@
 
 <ul>
 <li>関数をインライン化。</li>
+<li><a href="http://arc082.contest.atcoder.jp/submissions/1566719">http://arc082.contest.atcoder.jp/submissions/1566719</a></li>
 </ul>
 
 
@@ -836,6 +838,7 @@
 
 <ul>
 <li>ここまで最適化すればRubyに移植可能になる。</li>
+<li><a href="http://arc082.contest.atcoder.jp/submissions/1567250">http://arc082.contest.atcoder.jp/submissions/1567250</a></li>
 </ul>
 
 
@@ -863,11 +866,47 @@
 </span><span class='line'>N.times{|i|(i+1...N).map{|j|
 </span><span class='line'>  h[x=[i,j]]||
 </span><span class='line'>  (j+1...N).map{|k|((v[j]-v[k]).conj*(v[i]-v[k])).imag.abs&lt;1e-9&&x&lt;&lt;k}&&
-</span><span class='line'>  x.size.times{|a|(a+1...x.size).map{|b|
+</span><span class='line'>  (l=x.size).times{|a|(a+1...l).map{|b|
 </span><span class='line'>      r=(r-2**(b+~a))%M
 </span><span class='line'>      h[[x[a],x[b]]]=1
 </span><span class='line'>  }}
 </span><span class='line'>}}
+</span><span class='line'>p r</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>最終版</h2>
+
+<ul>
+<li>ここまで来てようやく解説の意味が理解できた…確かに直線で合ってます…。</li>
+<li><a href="http://arc082.contest.atcoder.jp/submissions/1567322">http://arc082.contest.atcoder.jp/submissions/1567322</a></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>M=998244353
+</span><span class='line'>N=gets.to_i
+</span><span class='line'>v=$&lt;.map{|e|Complex(*e.split.map(&:to_i))}
+</span><span class='line'>h={}
+</span><span class='line'>r=2**N+~N
+</span><span class='line'>[*0...N].combination(2){|i,j|
+</span><span class='line'>  h[x=[i,j]]||(
+</span><span class='line'>  (j+1...N).map{|k|((v[j]-v[k]).conj*(v[i]-v[k])).imag.abs&lt;1e-9&&x&lt;&lt;k};
+</span><span class='line'>  r-=2**(l=x.size)+~l;
+</span><span class='line'>  x.combination(2){|a,b|h[[a,b]]=1})
+</span><span class='line'>}
 </span><span class='line'>p r</span></code></pre></td></tr></table></div></figure>
 
 ]]></content>
