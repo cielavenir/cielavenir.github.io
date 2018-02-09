@@ -155,9 +155,12 @@
 <li><p>この考え方を使うことで解ける問題があります。そう、<a href="http://code-festival-2015-qualb.contest.atcoder.jp/tasks/codefestival_2015_qualB_d">CODE FESTIVAL 2015 予選B D問題 (マスと駒と色塗り)</a>です。</p>
 
 <ul>
-<li>なお、残念ながら、この問題は制約が大きいため、Ruby/PythonだとTLEします。PyPy/Crystalは導入されていないため、通るかはわかりません。ただ、C++でもset解法でなければならず、deque解法は75点(ちなみにvectorは40点)だったので、通る可能性は低いかもしれませんが。</li>
+<li>なお、残念ながら、この問題は制約が大きいため、Ruby/PythonだとTLEします。C++でもset解法だと100ms切れますが、deque解法だとぎりぎりなので、Crystalも厳しそうです。(ちなみにvectorは<del>40</del>75点)</li>
 <li>あと、<code>if(l&lt;=left-&gt;second+1)</code>の「+1」は必須。</li>
-<li><a href="http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169">http://code-festival-2015-qualb.contest.atcoder.jp/submissions/549169</a></li>
+<li>set gcc <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077679">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077679</a></li>
+<li>set clang <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077677">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077677</a></li>
+<li>deque gcc <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077680">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077680</a></li>
+<li>deque clang <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077670">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077670</a></li>
 </ul>
 </li>
 <li><p>※ ついでに言うと、<a href="http://www.checkio.org/mission/painting-wall/share/8a0e0061de3ff95664776d904d309e57/">CheckiO Painting Wall</a>も逐一マージが想定解です。</p></li>
@@ -228,6 +231,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/02/10/goodnight/">[yukicoder] アメーバがたくさん (and マスと駒と色塗り)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2017/10/23/inn-reservation/">[yukicoder] 旅館の予約計画</a>
       </li>
     
@@ -237,10 +244,6 @@
     
       <li class="post">
         <a href="/blog/2017/07/30/summer-task/">[yukicoder] 夏休みの思い出（１）</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/06/04/fxunusable/">FXCampusGatePrinterはネットプリントドライバとしても使用できない</a>
       </li>
     
   </ul>
@@ -258,7 +261,7 @@
   </div>
   <footer role="contentinfo" class="page-footer"><hr>
 <p>
-  Copyright &copy; 2017 - Ciel Avenir -
+  Copyright &copy; 2018 - Ciel Avenir -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

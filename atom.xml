@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2017-12-09T13:00:17+09:00</updated>
+  <updated>2018-02-10T02:03:16+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -501,6 +501,57 @@
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] アメーバがたくさん (and マスと駒と色塗り)]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/02/10/goodnight/"/>
+    <updated>2018-02-10T02:00:16+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/02/10/goodnight</id>
+    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/648">https://yukicoder.me/problems/no/648</a></p>
+
+<p>基本的にはむこさんの解説のとおり、<code>(sqrt(8*n+1)-1)/2</code>を出力すれば良いですが、実装上の別解を。</p>
+
+<ol>
+<li>Integer sqrtの利用
+
+<ul>
+<li>sqrtの誤差が問題になるなら、整数での平方根をニュートン法などで計算すればよいでしょう。</li>
+<li>ただし、(LLでないなら)128bit幅の整数が必要になるので注意。</li>
+<li><a href="https://qiita.com/cielavenir/items/2a685d3080862f2c2c47">yhpg「多段階選抜」</a>の復習でライブラリを作っていました。
+
+<ul>
+<li>Ruby <a href="https://yukicoder.me/submissions/205380">https://yukicoder.me/submissions/205380</a></li>
+<li>C <a href="https://yukicoder.me/submissions/205381">https://yukicoder.me/submissions/205381</a></li>
+<li>Python <a href="https://yukicoder.me/submissions/207818">https://yukicoder.me/submissions/207818</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sqrtlの利用
+
+<ul>
+<li>long doubleの仮数部が64bitであることを思い出せば、sqrtlを使えば解けることは想像に固くありません。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+<li>C <a href="https://yukicoder.me/submissions/206063">https://yukicoder.me/submissions/206063</a></li>
+<li>Python (ctypes) <a href="https://yukicoder.me/submissions/207816">https://yukicoder.me/submissions/207816</a>
+
+<ul>
+<li>intをマーシャリングするときにfloatを経由されるといけないので、sscanfを用いて自力でマーシャリングする必要があります</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>あれ、topcoder初出場で撃沈したのは誰だ^^; (SRM 635 Div2 Medやらyukicoder No.413やら)<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
 
 ]]></content>
   </entry>
@@ -3813,37 +3864,6 @@ done
 <li><p>食事はあまり摂れませんでした。昼食のサンドイッチを食べたのがコンテスト開始後2時間だったので、まあよかった(サンドイッチ食べたの遅すぎたかなと心配していましたが杞憂に終わった(よくない))。</p></li>
 <li><p>帰り、レジャーランドでmusecaやった。となりにsnuke氏がいた。<del>対戦とかはしてませんが。twitterで募集かけてればまた違ったかも。</del>そういえばmusecaって現在は対戦機能ないんだった。</p></li>
 <li><p>そういえばインタビューでシエルについて訊かれたんだっけ。<a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%82%A4%E3%82%AC%E3%83%B3%E3%83%8A%E3%83%BC">スカイガンナー</a>、機会があったらやってみてください。キャラは可愛いのにゲーム内容がかなりガチだったりするので＾＾；</p></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ [yukicoder] 辺の追加]]></title>
-    <link href="http://cielavenir.github.io/blog/2015/12/11/add-edges/"/>
-    <updated>2015-12-11T06:11:16+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2015/12/11/add-edges</id>
-    <content type="html"><![CDATA[<p><a href="http://yukicoder.me/problems/896">http://yukicoder.me/problems/896</a></p>
-
-<ul>
-<li>まず、union-findで島の大きさを列挙し、その列挙されたものに対し、bag[0]=-1として、最小値版0-1ナップザックを行えばよいです。</li>
-<li>しかし、これでは、島の個数をXとすると、O(NX)であり、Xの最大値はNなので、島が多数あった場合に最悪O(N<sup>2</sup>)となり、TLEになってしまいます。</li>
-<li><p>そこで、ダブリングを行います。例えば、大きさ2の島が10個ある場合、「大きさ2コスト1」を10回並べるのではなく、「大きさ2コスト1」「大きさ4コスト2」「大きさ8コスト4」「大きさ6コスト3」の4つを並べれば良いことになります。</p>
-
-<ul>
-<li>最後の3は<code>10-1-2-4</code>のように求められます。</li>
-</ul>
-</li>
-<li><p><a href="http://yukicoder.me/submissions/64709">http://yukicoder.me/submissions/64709</a></p></li>
-<li><p>この考え方はtails氏の答案( <a href="http://yukicoder.me/submissions/64600">http://yukicoder.me/submissions/64600</a> )を参考にしました。ありがとうございます。</p></li>
-</ul>
-
-
-<h3>追伸</h3>
-
-<ul>
-<li>蟻本302ページに普通に書いてありました。まだ読み終わっていないため、勉強不足ということが露呈しました…</li>
-<li>deque解法が多いのはスライド最小値の考え方で解けるかららしいですね。ダブリング解法は(計算量が少し増えることもあって)少数派のようです。</li>
 </ul>
 
 ]]></content>
