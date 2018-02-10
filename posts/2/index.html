@@ -98,6 +98,111 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2016/11/30/problem-on-tree/">[Atcoder] 木の問題</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>問題文がそれなりに読みにくい。</li>
+<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
+<li>答えは木の直径以上になることは容易に想像がつく。</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<ul>
+<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
+<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
+<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>    o</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++14
+
+<ul>
+<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2016/11/28/code-festival-2016/">Code Festival 2016 参加記</a></h1>
     
     
@@ -2624,104 +2729,6 @@ done
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2015/12/14/coderunner2015/">Code Runner 2015 参加記</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-12-14T18:25:54+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>参加記、書く予定なかったけど、私のことがコンテストレポートに載る可能性が濃厚なので、書くことにする。</p>
-
-<ul>
-<li>CodeIQパーカー。Code Festivalでパーカー獲得が叶ったので、今日も願掛けです。</li>
-<li>orisano氏とjmc.miz-miz.bizの話とか(jmc、A問題であふあふなんですが…)。kcs/koj復活お願いします(開発頑張ってください)。
-
-<ul>
-<li><del>てか、yukicoderもkojも、Docker-Builder部分は公開してはどうでしょうか。</del></li>
-<li>セキュリティの問題があるので公開はあれですが、問い合わせは可とするのは。どうしてもサイトを作りたい人には、みたく。</li>
-</ul>
-</li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">時間</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">0:00</td>
-<td style="text-align:left;">問題のリンクが違う、昨年に続き。大丈夫ですか。 <strong>game.coderunner.jpは開いたので、一番上に書いてあるAPIを叩きまくって負債を抱える大事故。</strong> 問題読まないの、絶対ダメ。</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:25</td>
-<td style="text-align:left;">正の得点が取れるプログラムを書くことができた。 <strong>仕事を請けて、全割当。納期に収まるかどうかとか考えてません。</strong> コメント変更「今回、今までの全6問で初の、誰でも正の点数を取れるわけではない問題。」</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:40</td>
-<td style="text-align:left;">点数の推移がおかしいのが注目されたらしく、インタビューを受けることに。実はこの時点でほぼ万策尽きていたので、考え中というのは半分取り繕い。ただ、得点が半分になるルールをこの時知った(0:30の時点で負債が半分になっていた)ので、ラッキーでした。 <strong>でも…解説放送聞きたかったなぁ。</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">1:30</td>
-<td style="text-align:left;">仕事量と報酬から計算される仮想乱数値が75以上(外注元の利益を考え80にはしてない。ただ、これ以上下げると安請け合いと判断した)、仕事量が1250以上(報酬は2乗で計算されるため)、得意な仕事(仕事Xに対する全社員の速度の和が90以上)について、外注から請ける処理を実装した。</td>
-</tr>
-<tr>
-<td style="text-align:left;">2:10</td>
-<td style="text-align:left;">0:50〜1:40まで10位をキープしていたが、この辺りで20位ほどに。コメント変更「 <strong>闘え、堕ちるまで。</strong> 」</td>
-</tr>
-<tr>
-<td style="text-align:left;">3:00</td>
-<td style="text-align:left;">論文を読みながら過ごし、終了。33位。</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>10位以内のパーカーはないんですね。願掛けはあくまでパーカーに対するものと考えれば前提が(略)</li>
-<li>懇親会、時間中に3ブースかつ先着でトートバッグとかいろいろひどくないですか。
-
-<ul>
-<li>私は特別に頂けましたが。kenkoooo氏からもらったようなものなので、使うことにします。。</li>
-</ul>
-</li>
-<li><p>食事はあまり摂れませんでした。昼食のサンドイッチを食べたのがコンテスト開始後2時間だったので、まあよかった(サンドイッチ食べたの遅すぎたかなと心配していましたが杞憂に終わった(よくない))。</p></li>
-<li><p>帰り、レジャーランドでmusecaやった。となりにsnuke氏がいた。<del>対戦とかはしてませんが。twitterで募集かけてればまた違ったかも。</del>そういえばmusecaって現在は対戦機能ないんだった。</p></li>
-<li><p>そういえばインタビューでシエルについて訊かれたんだっけ。<a href="https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%82%A4%E3%82%AC%E3%83%B3%E3%83%8A%E3%83%BC">スカイガンナー</a>、機会があったらやってみてください。キャラは可愛いのにゲーム内容がかなりガチだったりするので＾＾；</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="3">&larr; Older</a></li>
@@ -2743,6 +2750,10 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2018/02/10/qk/">[yukicoder] ここでちょっとQK！</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/02/10/goodnight/">[yukicoder] おやすみ</a>
       </li>
     
@@ -2752,10 +2763,6 @@ done
     
       <li class="post">
         <a href="/blog/2017/09/03/convexscore/">[atcoder] ConvexScore</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2017/07/30/summer-task/">[yukicoder] 夏休みの思い出（１）</a>
       </li>
     
   </ul>
