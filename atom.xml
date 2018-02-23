@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-02-24T00:54:03+09:00</updated>
+  <updated>2018-02-24T01:02:19+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -515,7 +515,10 @@
     <link href="http://cielavenir.github.io/blog/2018/02/24/luckynumber/"/>
     <updated>2018-02-24T00:39:40+09:00</updated>
     <id>http://cielavenir.github.io/blog/2018/02/24/luckynumber</id>
-    <content type="html"><![CDATA[<p>下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
+    <content type="html"><![CDATA[<p>まず、最下位が0,6,7の場合はNoです。後述する状態1/0への移行は十の位以降で発生する必要があります。in06がこのケースです。</p>
+
+<p>それ以外の場合。
+下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
 
 <ul>
 <li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
@@ -528,7 +531,8 @@
 <li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
 </ul>
 </li>
-<li>0,6,7の場合は、状態1に移行します。</li>
+<li>6,7の場合は、状態1に移行します。</li>
+<li>0の場合は、状態0に移行します。</li>
 </ul>
 </li>
 <li>状態1のとき、0,6,7を受け付けます。
