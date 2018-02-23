@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[yukicoder] ゆきこちゃんの15パズル - My Octopress Blog</title>
+  <title>[yukicoder] E869120 and Lucky Numbers - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/06/15/yukiko-15">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/02/24/luckynumber">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Yukicoder] ゆきこちゃんの15パズル</h1>
+      <h1 class="entry-title">[Yukicoder] E869120 and Lucky Numbers</h1>
     
     
       <p class="meta">
@@ -112,36 +112,46 @@
   
 
 
-<time datetime="2015-06-15T01:38:30+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-02-24T00:39:40+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="http://yukicoder.me/problems/247">http://yukicoder.me/problems/247</a></p>
-
-<p>この問題はシミュレーションとなっていますが、シミュレーションは必要ではないです。</p>
+<div class="entry-content"><p>下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
 
 <ul>
-<li>まず、各駒について、完成状態とのマンハッタン距離を取ります。1つでも2以上であれば、その配置は作ることができません。</li>
-<li>次に、その盤面が15パズルの盤面として正しいかを確認します。これは、(空マス以外の転倒数+空マスの上下動数)%2が偶数であれば正しいということが言えます。転倒数については</li>
-<li><a href="https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_">https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_</a>(%E6%95%B0%E5%AD%A6)</li>
-<li><p>を参照して下さい。</p></li>
-<li><p>これらの2条件がそろうとき、問題の配置は正しいと言えます。</p>
+<li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
 
 <ul>
-<li><a href="http://yukicoder.me/submissions/33252">http://yukicoder.me/submissions/33252</a></li>
+<li>2,3,4の場合は、繰り上がりがあるので、上の桁から1を引きます。
+
+<ul>
+<li>すでに最上位の場合はNoです。</li>
+<li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
 </ul>
 </li>
-<li>今回は転倒数の計算はO(nlogn)ではなくO(n<sup>2</sup>)でよいので、2重ループを書けばよいです。さらに、入力を読み込む途中に適宜転倒数の計算を行うとループの記述が1個消えます。これをまとめると以下のようになります(暫定最短コードです)。
+<li>0,6,7の場合は、状態1に移行します。</li>
+</ul>
+</li>
+<li>状態1のとき、0,6,7を受け付けます。
 
 <ul>
-<li><a href="http://yukicoder.me/submissions/33461">http://yukicoder.me/submissions/33461</a></li>
+<li>0の場合は、状態0に移行します。</li>
+</ul>
+</li>
+<li>状態0のとき、0のみを受け付けます。
+
+<ul>
+<li>ラッキーナンバーが影響し得ないということは、すべての桁が0になっている以外にないです。</li>
+<li>(間に合わなかった)チャレンジでは、612だと、下位の12で6+6と完結しているのに、新たな600が出てきているので、十の位が不合理となるのです。</li>
 </ul>
 </li>
 </ul>
 
+
+<p><a href="https://yukicoder.me/submissions/238472">https://yukicoder.me/submissions/238472</a></p>
 </div>
 
 
@@ -164,7 +174,7 @@
   
 
 
-<time datetime="2015-06-15T01:38:30+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-02-24T00:39:40+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -172,7 +182,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/06/15/yukiko-15/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/06/15/yukiko-15/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/02/24/luckynumber/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/02/24/luckynumber/" >Tweet</a>
   
   
   
@@ -183,13 +193,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2014/11/30/code-festival-2014/" title="Previous Post:
-        Code Festival 2014 参加記">&laquo; Code Festival 2014 参加記</a></li>
+        href="/blog/2018/02/10/qk/" title="Previous Post:
+        [yukicoder] ここでちょっとQK！">&laquo; [yukicoder] ここでちょっとQK！</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2015/07/19/synchronica-id/"
-        title="Next Post: シンクロニカの公開用IDを得る方法">シンクロニカの公開用IDを得る方法
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

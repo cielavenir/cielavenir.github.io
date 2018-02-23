@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-02-10T15:33:31+09:00</updated>
+  <updated>2018-02-24T00:54:03+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -507,6 +507,47 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] E869120 and Lucky Numbers]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/02/24/luckynumber/"/>
+    <updated>2018-02-24T00:39:40+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/02/24/luckynumber</id>
+    <content type="html"><![CDATA[<p>下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
+
+<ul>
+<li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
+
+<ul>
+<li>2,3,4の場合は、繰り上がりがあるので、上の桁から1を引きます。
+
+<ul>
+<li>すでに最上位の場合はNoです。</li>
+<li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
+</ul>
+</li>
+<li>0,6,7の場合は、状態1に移行します。</li>
+</ul>
+</li>
+<li>状態1のとき、0,6,7を受け付けます。
+
+<ul>
+<li>0の場合は、状態0に移行します。</li>
+</ul>
+</li>
+<li>状態0のとき、0のみを受け付けます。
+
+<ul>
+<li>ラッキーナンバーが影響し得ないということは、すべての桁が0になっている以外にないです。</li>
+<li>(間に合わなかった)チャレンジでは、612だと、下位の12で6+6と完結しているのに、新たな600が出てきているので、十の位が不合理となるのです。</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="https://yukicoder.me/submissions/238472">https://yukicoder.me/submissions/238472</a></p>
 ]]></content>
   </entry>
   
@@ -3772,54 +3813,6 @@ done
 <li>なぜyukicoder復習コンテストのストックにしなかったし。提出後に気づいたので後の祭り。</li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] (P,Q)-サンタと街の子供たち]]></title>
-    <link href="http://cielavenir.github.io/blog/2015/12/14/pq-santa/"/>
-    <updated>2015-12-14T23:59:59+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2015/12/14/pq-santa</id>
-    <content type="html"><![CDATA[<ul>
-<li>P,Qがどちらも0の場合はX==0とY==0だけを数えます。</li>
-<li>簡単のため、P,Qの最大公約数を単位とする座標系に変換します。X,Yが変換できなければ弾きます。</li>
-<li>ここで、各方向に進む回数をa,b,c,dと置くと、</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(a+b)P+(c+d)Q==X - (1)
-</span><span class='line'>(c-d)P+(a-b)Q==Y - (2)</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>となります。</li>
-<li>α=a+b、β=c+dとおきます。</li>
-<li>αP+βQ==1を満たす(α,β)を拡張ユークリッド互除法で求めます。
-
-<ul>
-<li>代表値を(z1,z2)とすると、式(1)を満たすのは、α=z1<em>X+Q</em>n、β=z2<em>X-P</em>nとなります。</li>
-</ul>
-</li>
-<li>式(2)を<code>(β-2d)P+(α-2b)Q==Y</code>と変形し、αとβを代入して、整理します。<code>2*P*d+2*Q*b==(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>となります。</li>
-<li>この不定方程式において、 <strong>整数解(d,b)を持つようなnが存在する</strong> ことが問題が求める条件となります。
-
-<ul>
-<li>ここで、上で媒介変数表示により変数を一個減らしたことが効いてきます。</li>
-</ul>
-</li>
-<li><code>(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>が<code>gcd(2*P,2*Q)</code>の倍数であることが条件ですので、<code>-(z2*X*P+z1*X*Q-Y)%gcd(Q*Q-P*P,gcd(2*P,2*Q))==0</code>を判定します。</li>
-<li>なお、このnを用いてd,bを拡張ユークリッド互除法から求めることで、a,cも求まりますので、原点から何回で目標に到達するかを実際に計算することも可能です。
-
-<ul>
-<li>プログラムにおいてeとfが可変。abs(a)+abs(b)+abs&copy;+abs(d)が最小となるようなe,fを求めるのもまた一興かと(やってませんが)。</li>
-</ul>
-</li>
-</ul>
-
-
-<p><a href="http://yukicoder.me/submissions/65751">http://yukicoder.me/submissions/65751</a></p>
 ]]></content>
   </entry>
   
