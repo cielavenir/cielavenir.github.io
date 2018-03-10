@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-02-24T01:02:19+09:00</updated>
+  <updated>2018-03-10T22:17:36+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -507,6 +507,70 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[atcoder] くるくる寿司]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/03/10/conveyor-sushi/"/>
+    <updated>2018-03-10T22:16:05+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/03/10/conveyor-sushi</id>
+    <content type="html"><![CDATA[<h2>概要</h2>
+
+<ul>
+<li>N(=3000)枚の寿司ネタ(a-zの26種類)を連続して流す(文字列Sとする)。</li>
+<li>その中からM(=7)枚の部分列がQ(=30000)個問い合わせられる。ただし場合により部分列は連続していないことがある。</li>
+<li>そのそれぞれに対し、S上でのインデックスを答える。</li>
+</ul>
+
+
+<h2>決定的アルゴリズム</h2>
+
+<p>この問題、D=1とすれば、部分列は連続であることが保証されます。つまり、決定的アルゴリズムを使うことができます。</p>
+
+<ul>
+<li>N枚のうちで連続したM枚についてすべて異なるようにSを生成します。
+
+<ul>
+<li>完全に決定的にするには <a href="https://en.wikipedia.org/wiki/De_Bruijn_sequence">https://en.wikipedia.org/wiki/De_Bruijn_sequence</a> とか使うんですが、少しでもエントロピーを上げたいので、この部分は乱択を使って良いと思います。</li>
+</ul>
+</li>
+<li>すべて異なることがわかっているのだから、M枚の部分文字列を単にSから探すだけで終わりです。</li>
+<li><p>Sの生成さえできれば、1ケースに付き30000点、 <strong>合計300000点を確実に獲得できます。</strong></p></li>
+<li><p>Rubyの事実上初版 <a href="https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2177816">https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2177816</a></p></li>
+</ul>
+
+
+<h2>発展</h2>
+
+<ul>
+<li>この状態であれば、0..Nのそれぞれ(j)に対し、qがS[j,M*3]中にこの順番で入っている数(ただしSの先頭に入っているほど重みを大きくする)が最大となるjをインデックスとして答える実装にすることで、D=2.5程度までは安定してインデックスを求めることができます。
+
+<ul>
+<li>「*3」は、元となる部分文字列の長さはM*3以下であることを期待しています。</li>
+</ul>
+</li>
+<li><p>この「重み」が評価関数の肝になると思うのですが、調整の余地が残っている気がします。</p></li>
+<li><p>C++の(コンテスト後)最終版(381792点) <a href="https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2179945">https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2179945</a></p></li>
+<li><p>なお、コンテスト中は元となる部分文字列の長さがMであり、qの長さがM未満になりうると誤読していました、D=1.5にしかできなかったので324730点どまりでした。無念。</p></li>
+</ul>
+
+
+<h2>記事としての結論</h2>
+
+<ul>
+<li>順位表で、ある点数を取っている人が沢山いる場合は決定的アルゴリズムを疑うのは有用ではないかと思います。</li>
+</ul>
+
+
+<h2>補足</h2>
+
+<ul>
+<li>Sの一例は次のとおりです：</li>
+</ul>
+
+
+<p>kzsbqmuxtqwazgonugucjaouqsihsmgjpvdiwscfaewltvsyolgoenjcmlylyzhqlhgaypshugqlrqfxjigsliujfconzsyrnctoeztichmtznzxfhfkcpytpenkyqxmwxeaihahytbkbqkzxplhdtnzbsnpwhdpzjykrgwoxihvkiqrgmruztplaiuqecvbrvlbkwsbylxgxytyhsyiedtfvkjiylnjmcmhvtlkrmqbafrhngsqrvfbkadbkjshyhbagjoyhqmwipzegzqjkpxoquezkdplxombjqkdtbgnghkdaregkmrxelhpfbfoewbnfewmqvyivwkhfahoryxqvqnoguwpcldzcqlbpfruijrenfofeajcnrtcnqlzhbwdxwglmbkhdfhdyhfinxkwksypafghuoilqofnmbiavcqtjszdtowlqsdienoymvlrhczlysmlokhbvluaelotziotdtcwnvsigjnfjfywkeyalcmxgwyojkjrigvlnoqehmgopgvhntqxvnmxobebiwbzomjracdoerdndvbdygoyeayujwhtoiouxhmdbqusqbmqwnucgbzligimgnaswqbcdjchomvihdwmksltueulypyjsrnjeyoipdfxtveurkuwxatwmawmvrahsgexunjrdzemesmkfxmdzjvqxijdqoabvahbzeklborztczqlicyzbpemqinofcfuvaznakgxaevhcmqgmnescpxghixypxsxcxcqsqpkldvycwkxhkqcwqlqxnpoazsohnoucsztqdizbntfdeteiximtuymuzodlquigwhzoqjezyqahpkifvbyhkibmhslzdwybpojuegpyopwcdigpepmgpgdgdlumhrnfscleimrhriyjxfypdawcybayotfguipljmjvzxixpxugnlzvqemwluzwskegvpmpvrftyrfegxwetstcouotmofsakluqdmliroqiaodhrbvxnqgwrqntenstlhykhjalzlwuqvcmwawfyqojhpymlgycsxyhgqxjvesdbifgxitdikicrtnuzywysuvxrsidvtwisowtvltfyvmeqdpnzhklcvxmygjzmtpfqzezwkgiwfdctpchqfljqenqbxhxuivldilsldfesvtebuxcpqsharzikqnvxudumxqlknkpblcicqjimafnaqbocjmguzcliduealstwhnyqcbypexcnyjndbwgvefjwlbzilcqejkylrwqmbzsxolbvuihmkvyjlwkitvthxsmozyektmnhxifxziytweudfnhipwstdzwqcekmuswolxrvwagpfhlgwqhqsgocwioykxpnlkpcjtzdfwfxnfrdjnpkmfkninbsmpdblqveasiejnqxthdioxfpruxabcjftnkgdphravwvzlcgtonqcftlckmvmxvhojwuzpetwyhzvcrgclxembtiksgkxrnwhpamnrcztbftknzijgsrxwnfxrzhacvfakjapavrbrmdacqhurnqozroebwnqjgmcnpdwkrhzwbrusawknwyglczmewansanujgkljlntcbxeqtuczwnsvawpgkzkzqnruqbnuoepfxylqmqfodorsrlyuhoxtgxqizpzokjqskcapuoctghnhsprjgyayidqelwfaufxvpcqgtbvgltgbrbmtawovsdvsnmjymqdtkjeptmhmcjenmwktbnvmqnjyuceclnpeqktpdhclyvwbszlqlvzbahuktlwyzphaoaftshmvelbhvbqyfatbjmknybdnpjpxtovwodvxzdapgwbekptxputuqwsfrcqyauvegdfcjsjudqnqiqsfzeoevlkdczpkwejcfekodqdcpzqsjfhgkovcjzhtnyosceiknalxljzpcsnqnpvigrmblkflihbrireolvlpmyunynuemvfkmyhryqvwcqrbnryjydnsusbesncslszxjpirhqxbfnsxlwsrbxurvjystorpmeiyxcmgynknfdlzqgatiyhmyfksjbcokchpbgxgjkiafsmzepbfmjzyntzcalnfufqlgqkwynmizavocyqijpuevsjdlvbwmycvepjzvhxznxlyhaeypicgiyfnxwasyukgmiwikmgtkvgwevafmkpnphuvczrjcgqewivjugpikduiofvaeshowxzcuxecemurqieiflobzxbxswciepxwfmhkevjxtngfxgckfvtztjyznqkyiymeauyvkdgspmzgxmxuoztrkpudrdowrysdcozcpbydsygxroclwhldqrzswnldbgjybwhrseljwmclgzabgpmthltqocahrzrnowgpcrzkazcyhxqdknlapzhjyhjsnejbnoeabjvdcxjkgcniokyxyjujkfmtgrxdvwpnbxficmzrbspvozlsmdoxdefbhgmfumuakdxdivrvzjfdngjqxutjeibzahvmktqjvryplivblnetnvukxjmvtgzidxhokfhicoaqvhpmwpoefwgqsznyczfetgnfqtwornmnslycqodunanvrzvtufmxdqubnqfbyzrwcmyteukdskmjhsijkhzqopckiobdabsyzujbxjnymiaroiwafpwbpihqnhlmxsopoxbqrfxhavgqurfpkgskntoavqdbfhqkfyspwmihrtesoemfnbwswyqutsaujcdkepdukawaigywzveizimplsnvalkgrgeuznvbxgeruhwoijvmcazucrvofdmvuqcsyejrmeyclsgafckhcdtpvlvymcvswgfzkphxbmgcdxzlxzqmdwocowclvwrspkurzjsbnxfxiatubjfriasfyxwdejpmsfvmfptijwykizxoubgetmbsogpwqwkqlsfxklopxpwjwrpizgqonplrpfpmqagnmcgcoqgemovxtxrkdnwqugvmyqetbiqchfcmpsunwjnuplmzwjplfj</p>
 ]]></content>
   </entry>
   
@@ -3775,46 +3839,6 @@ done
 <li>月別獲得数</li>
 <li>30,12,4,7,10,19,<strong>27</strong>,9,<strong>37</strong>,5,12,5</li>
 <li>8,2,2,5,8,7,10,7,12,8,10</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[atcoder] 高橋君とパスワード]]></title>
-    <link href="http://cielavenir.github.io/blog/2016/01/14/takahashikun-password/"/>
-    <updated>2016-01-14T01:37:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2016/01/14/takahashikun-password</id>
-    <content type="html"><![CDATA[<p><a href="http://abc032.contest.atcoder.jp/tasks/abc032_b">http://abc032.contest.atcoder.jp/tasks/abc032_b</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>sからk文字取り出して、その部分文字列を連想配列に突っ込んで、重複しない数を答える。</li>
-</ul>
-
-
-<h2>高速解法</h2>
-
-<ul>
-<li>ローリングハッシュを生成する。ローリングハッシュには、<code>hash[a:c] = (hash[a:b]*B**(c-b) + hash[b:c]) % P</code>という性質がある。</li>
-<li>今回はhash[i:i+k]が得られれば良いので、この式を<code>hash[b:c] = ...</code>と変形すれば良い。</li>
-<li>部分ハッシュを得るのは、<code>B**(c-b)</code>を事前に計算しておくことでO(1)とできる。</li>
-<li>また、連想配列がハッシュテーブルならば重複判定もO(1)なので、トータルでO(s)となる。</li>
-<li><a href="http://abc032.contest.atcoder.jp/submissions/608838">http://abc032.contest.atcoder.jp/submissions/608838</a>
-
-<ul>
-<li>※C++98互換のためunordered_setではなくsetを使っているためこの実装はO(slogs)</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>まとめ</h2>
-
-<ul>
-<li>今回の制約では全くの無駄ですので、解法は賢く選びましょう。</li>
-<li>なぜyukicoder復習コンテストのストックにしなかったし。提出後に気づいたので後の祭り。</li>
 </ul>
 
 ]]></content>

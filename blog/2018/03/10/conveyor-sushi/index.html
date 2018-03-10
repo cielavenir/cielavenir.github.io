@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>[atcoder] くるくる寿司 - My Octopress Blog</title>
+  <meta name="author" content="Ciel Avenir">
+
+  
+  <meta name="description" content="">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/03/10/conveyor-sushi">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/syntax/syntax.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/stylesheets/bootstrap/table.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    body {
+      padding-bottom: 40px;
+    }
+    h1 {
+      margin-bottom: 15px;
+    }
+    img {
+      max-width: 100%;
+    }
+    .sharing, .meta, .pager {
+      margin: 20px 0px 20px 0px;
+    }
+    .page-footer p {
+      text-align: center;
+    }
+  </style>
+  <script src="/javascripts/libs/jquery.js"></script>
+  <script src="/javascripts/libs/modernizr-2.0.js"></script>
+  <script src="/javascripts/libs/bootstrap.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <a class="brand" href="/">My Octopress Blog</a>
+
+      <div class="nav-collapse">
+        <ul class="nav">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+
+        <ul class="nav pull-right" data-subscription="rss">
+          <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+          
+        </ul>
+
+        
+          <form class="pull-right navbar-search" action="https://www.google.com/search" method="get">
+            <fieldset role="search">
+              <input type="hidden" name="q" value="site:cielavenir.github.io" />
+              <input class="search-query" type="text" name="q" results="0" placeholder="Search"/>
+            </fieldset>
+          </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+  <div class="container">
+    <div class="row-fluid">
+      
+<article class="hentry span9" role="article">
+
+  
+  <header class="page-header">
+    
+      <h1 class="entry-title">[Atcoder] くるくる寿司</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-03-10T22:16:05+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>概要</h2>
+
+<ul>
+<li>N(=3000)枚の寿司ネタ(a-zの26種類)を連続して流す(文字列Sとする)。</li>
+<li>その中からM(=7)枚の部分列がQ(=30000)個問い合わせられる。ただし場合により部分列は連続していないことがある。</li>
+<li>そのそれぞれに対し、S上でのインデックスを答える。</li>
+</ul>
+
+
+<h2>決定的アルゴリズム</h2>
+
+<p>この問題、D=1とすれば、部分列は連続であることが保証されます。つまり、決定的アルゴリズムを使うことができます。</p>
+
+<ul>
+<li>N枚のうちで連続したM枚についてすべて異なるようにSを生成します。
+
+<ul>
+<li>完全に決定的にするには <a href="https://en.wikipedia.org/wiki/De_Bruijn_sequence">https://en.wikipedia.org/wiki/De_Bruijn_sequence</a> とか使うんですが、少しでもエントロピーを上げたいので、この部分は乱択を使って良いと思います。</li>
+</ul>
+</li>
+<li>すべて異なることがわかっているのだから、M枚の部分文字列を単にSから探すだけで終わりです。</li>
+<li><p>Sの生成さえできれば、1ケースに付き30000点、 <strong>合計300000点を確実に獲得できます。</strong></p></li>
+<li><p>Rubyの事実上初版 <a href="https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2177816">https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2177816</a></p></li>
+</ul>
+
+
+<h2>発展</h2>
+
+<ul>
+<li>この状態であれば、0..Nのそれぞれ(j)に対し、qがS[j,M*3]中にこの順番で入っている数(ただしSの先頭に入っているほど重みを大きくする)が最大となるjをインデックスとして答える実装にすることで、D=2.5程度までは安定してインデックスを求めることができます。
+
+<ul>
+<li>「*3」は、元となる部分文字列の長さはM*3以下であることを期待しています。</li>
+</ul>
+</li>
+<li><p>この「重み」が評価関数の肝になると思うのですが、調整の余地が残っている気がします。</p></li>
+<li><p>C++の(コンテスト後)最終版(381792点) <a href="https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2179945">https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2179945</a></p></li>
+<li><p>なお、コンテスト中は元となる部分文字列の長さがMであり、qの長さがM未満になりうると誤読していました、D=1.5にしかできなかったので324730点どまりでした。無念。</p></li>
+</ul>
+
+
+<h2>記事としての結論</h2>
+
+<ul>
+<li>順位表で、ある点数を取っている人が沢山いる場合は決定的アルゴリズムを疑うのは有用ではないかと思います。</li>
+</ul>
+
+
+<h2>補足</h2>
+
+<ul>
+<li>Sの一例は次のとおりです：</li>
+</ul>
+
+
+<p>kzsbqmuxtqwazgonugucjaouqsihsmgjpvdiwscfaewltvsyolgoenjcmlylyzhqlhgaypshugqlrqfxjigsliujfconzsyrnctoeztichmtznzxfhfkcpytpenkyqxmwxeaihahytbkbqkzxplhdtnzbsnpwhdpzjykrgwoxihvkiqrgmruztplaiuqecvbrvlbkwsbylxgxytyhsyiedtfvkjiylnjmcmhvtlkrmqbafrhngsqrvfbkadbkjshyhbagjoyhqmwipzegzqjkpxoquezkdplxombjqkdtbgnghkdaregkmrxelhpfbfoewbnfewmqvyivwkhfahoryxqvqnoguwpcldzcqlbpfruijrenfofeajcnrtcnqlzhbwdxwglmbkhdfhdyhfinxkwksypafghuoilqofnmbiavcqtjszdtowlqsdienoymvlrhczlysmlokhbvluaelotziotdtcwnvsigjnfjfywkeyalcmxgwyojkjrigvlnoqehmgopgvhntqxvnmxobebiwbzomjracdoerdndvbdygoyeayujwhtoiouxhmdbqusqbmqwnucgbzligimgnaswqbcdjchomvihdwmksltueulypyjsrnjeyoipdfxtveurkuwxatwmawmvrahsgexunjrdzemesmkfxmdzjvqxijdqoabvahbzeklborztczqlicyzbpemqinofcfuvaznakgxaevhcmqgmnescpxghixypxsxcxcqsqpkldvycwkxhkqcwqlqxnpoazsohnoucsztqdizbntfdeteiximtuymuzodlquigwhzoqjezyqahpkifvbyhkibmhslzdwybpojuegpyopwcdigpepmgpgdgdlumhrnfscleimrhriyjxfypdawcybayotfguipljmjvzxixpxugnlzvqemwluzwskegvpmpvrftyrfegxwetstcouotmofsakluqdmliroqiaodhrbvxnqgwrqntenstlhykhjalzlwuqvcmwawfyqojhpymlgycsxyhgqxjvesdbifgxitdikicrtnuzywysuvxrsidvtwisowtvltfyvmeqdpnzhklcvxmygjzmtpfqzezwkgiwfdctpchqfljqenqbxhxuivldilsldfesvtebuxcpqsharzikqnvxudumxqlknkpblcicqjimafnaqbocjmguzcliduealstwhnyqcbypexcnyjndbwgvefjwlbzilcqejkylrwqmbzsxolbvuihmkvyjlwkitvthxsmozyektmnhxifxziytweudfnhipwstdzwqcekmuswolxrvwagpfhlgwqhqsgocwioykxpnlkpcjtzdfwfxnfrdjnpkmfkninbsmpdblqveasiejnqxthdioxfpruxabcjftnkgdphravwvzlcgtonqcftlckmvmxvhojwuzpetwyhzvcrgclxembtiksgkxrnwhpamnrcztbftknzijgsrxwnfxrzhacvfakjapavrbrmdacqhurnqozroebwnqjgmcnpdwkrhzwbrusawknwyglczmewansanujgkljlntcbxeqtuczwnsvawpgkzkzqnruqbnuoepfxylqmqfodorsrlyuhoxtgxqizpzokjqskcapuoctghnhsprjgyayidqelwfaufxvpcqgtbvgltgbrbmtawovsdvsnmjymqdtkjeptmhmcjenmwktbnvmqnjyuceclnpeqktpdhclyvwbszlqlvzbahuktlwyzphaoaftshmvelbhvbqyfatbjmknybdnpjpxtovwodvxzdapgwbekptxputuqwsfrcqyauvegdfcjsjudqnqiqsfzeoevlkdczpkwejcfekodqdcpzqsjfhgkovcjzhtnyosceiknalxljzpcsnqnpvigrmblkflihbrireolvlpmyunynuemvfkmyhryqvwcqrbnryjydnsusbesncslszxjpirhqxbfnsxlwsrbxurvjystorpmeiyxcmgynknfdlzqgatiyhmyfksjbcokchpbgxgjkiafsmzepbfmjzyntzcalnfufqlgqkwynmizavocyqijpuevsjdlvbwmycvepjzvhxznxlyhaeypicgiyfnxwasyukgmiwikmgtkvgwevafmkpnphuvczrjcgqewivjugpikduiofvaeshowxzcuxecemurqieiflobzxbxswciepxwfmhkevjxtngfxgckfvtztjyznqkyiymeauyvkdgspmzgxmxuoztrkpudrdowrysdcozcpbydsygxroclwhldqrzswnldbgjybwhrseljwmclgzabgpmthltqocahrzrnowgpcrzkazcyhxqdknlapzhjyhjsnejbnoeabjvdcxjkgcniokyxyjujkfmtgrxdvwpnbxficmzrbspvozlsmdoxdefbhgmfumuakdxdivrvzjfdngjqxutjeibzahvmktqjvryplivblnetnvukxjmvtgzidxhokfhicoaqvhpmwpoefwgqsznyczfetgnfqtwornmnslycqodunanvrzvtufmxdqubnqfbyzrwcmyteukdskmjhsijkhzqopckiobdabsyzujbxjnymiaroiwafpwbpihqnhlmxsopoxbqrfxhavgqurfpkgskntoavqdbfhqkfyspwmihrtesoemfnbwswyqutsaujcdkepdukawaigywzveizimplsnvalkgrgeuznvbxgeruhwoijvmcazucrvofdmvuqcsyejrmeyclsgafckhcdtpvlvymcvswgfzkphxbmgcdxzlxzqmdwocowclvwrspkurzjsbnxfxiatubjfriasfyxwdejpmsfvmfptijwykizxoubgetmbsogpwqwkqlsfxklopxpwjwrpizgqonplrpfpmqagnmcgcoqgemovxtxrkdnwqugvmyqetbiqchfcmpsunwjnuplmzwjplfj</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Ciel Avenir</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-03-10T22:16:05+09:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/03/10/conveyor-sushi/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/03/10/conveyor-sushi/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    
+    <ul class="pager">
+      
+      <li class="previous"><a class="basic-alignment left"
+        href="/blog/2018/02/24/luckynumber/" title="Previous Post:
+        [yukicoder] E869120 and Lucky Numbers">&laquo; [yukicoder] E869120 and Lucky Numbers</a></li>
+      
+      <li><a href="/blog/archives">Blog Archives</a></li>
+      
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
+        &raquo;</a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+<aside class="sidebar-nav span3">
+  
+    <section class="well">
+  <ul id="recent_posts" class="nav nav-list">
+    <li class="nav-header">Recent Posts</li>
+    
+      <li class="post">
+        <a href="/blog/2038/01/01/personal-stuff/">Personal Stuff</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/03/10/conveyor-sushi/">[atcoder] くるくる寿司</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/02/24/luckynumber/">[yukicoder] E869120 and Lucky Numbers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/02/10/qk/">[yukicoder] ここでちょっとQK！</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/02/10/goodnight/">[yukicoder] おやすみ</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo" class="page-footer"><hr>
+<p>
+  Copyright &copy; 2018 - Ciel Avenir -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
