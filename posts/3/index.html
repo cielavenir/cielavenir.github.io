@@ -98,6 +98,58 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2016/02/29/crossbeats/">CROSS X BEATSをやってみて</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-02-29T23:59:59+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>1/3、何を思ったか研究室から貸与されたiPadにインストール。まあ、共有物ではないし…</li>
+<li>ULC、面白いシステムだと思う。(最後までプレイすることで完了させられるようになったのは最近らしいけど、それを差し置けば)難しい譜面も繰り返しプレイすることでクリアできるようになる点は良い。</li>
+<li>節分キャンペーンを進める。所持していない楽曲はフレンド募集スレッドからプレイさせていただくことを学習する。シェアソングはソーシャル要素の答えの１つだと思った。</li>
+<li>1/15、Break down獲得(RP600突破)。しかし、節分キャンペーンを進めた結果、同時期開催の個人戦報酬を落とす。まあ、ソシャゲを始めた時のイベント報酬が厳しいのと近いので、しかたがない。個人戦の課題曲が全て未所持であることも理由。</li>
+<li>ランダムセレクト祭。ランダム選曲すると過去の曲が常駐するかもしれないというイベント。とりあえずフルコンボ譜面を増やす。</li>
+<li>1/24、Azitate獲得。条件は難しい難易度であるMASTER譜面をULTIMATEで5曲クリアということで、当時はかなりきつい条件だった。ランダムセレクト祭で引き当てたEternallyが5曲目だった。</li>
+<li>期間限定RP曲、未確認XX生命体を購入すれば5曲とも所持することになるので、購入。結果、2/8、RP1000突破。NEXT FRONTIER獲得。簡単な難易度であるSTANDARD譜面の難易度値がかなり高いんですが、慣れれば自然と指が動く面白い譜面。</li>
+<li>2/17、RP1100突破。期間限定RP曲+上位20曲のため、いろいろ埋めないと上がらない。あと、Lobi入れた。</li>
+<li>2/18、バレンタインキャンペーン完走。きつかったのがMake It Fresh HARDフルゲージと最後の1ページ MASTER Sランク。まあ、クリア出来てよかった(節分キャンペーンリバイバルの最後の報酬を諦めた理由がMASTERフルゲージで、それよりは簡単ですし…)。</li>
+<li>2/28、RP1200突破。Touch of Goldと雨の音が虹を呼ぶでMASTER ULTできたのが大きい。</li>
+<li>3/1、期間限定RP曲のうち4曲しか所持していないため、RP1200を割る。</li>
+<li>この進行がハイペースかどうかを訊くのは愚問とのこと。落ち着いて考えればそうなのですが…。ごめんなさい。</li>
+<li>まあ、個人個人自由に楽しむのが第一ですよね。</li>
+<li>あとは、アンロックゲージが溜まったからといってすぐにアンロックチャレンジを開始すべきかという質問も愚問のよう。チケットの消費に慎重な人もいるかもしれないので。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2016/02/11/crossbeats-music/">CROSS X BEATS 取得楽曲</a></h1>
     
     
@@ -1831,64 +1883,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2015/06/15/yukiko-15/">[Yukicoder] ゆきこちゃんの15パズル</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-06-15T01:38:30+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://yukicoder.me/problems/247">http://yukicoder.me/problems/247</a></p>
-
-<p>この問題はシミュレーションとなっていますが、シミュレーションは必要ではないです。</p>
-
-<ul>
-<li>まず、各駒について、完成状態とのマンハッタン距離を取ります。1つでも2以上であれば、その配置は作ることができません。</li>
-<li>次に、その盤面が15パズルの盤面として正しいかを確認します。これは、(空マス以外の転倒数+空マスの上下動数)%2が偶数であれば正しいということが言えます。転倒数については</li>
-<li><a href="https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_">https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_</a>(%E6%95%B0%E5%AD%A6)</li>
-<li><p>を参照して下さい。</p></li>
-<li><p>これらの2条件がそろうとき、問題の配置は正しいと言えます。</p>
-
-<ul>
-<li><a href="http://yukicoder.me/submissions/33252">http://yukicoder.me/submissions/33252</a></li>
-</ul>
-</li>
-<li>今回は転倒数の計算はO(nlogn)ではなくO(n<sup>2</sup>)でよいので、2重ループを書けばよいです。さらに、入力を読み込む途中に適宜転倒数の計算を行うとループの記述が1個消えます。これをまとめると以下のようになります(暫定最短コードです)。
-
-<ul>
-<li><a href="http://yukicoder.me/submissions/33461">http://yukicoder.me/submissions/33461</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="4">&larr; Older</a></li>
@@ -1910,6 +1904,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/04/21/ball/">[atcoder] Ball</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/03/10/conveyor-sushi/">[atcoder] くるくる寿司</a>
       </li>
     
@@ -1919,10 +1917,6 @@
     
       <li class="post">
         <a href="/blog/2018/02/24/luckynumber/">[yukicoder] E869120 and Lucky Numbers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/02/10/qk/">[yukicoder] ここでちょっとQK！</a>
       </li>
     
   </ul>

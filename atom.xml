@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-04-18T08:28:49+09:00</updated>
+  <updated>2018-04-21T23:03:07+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -505,6 +505,46 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[atcoder] Ball]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/04/21/ball/"/>
+    <updated>2018-04-21T22:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/04/21/ball</id>
+    <content type="html"><![CDATA[<p><a href="https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a">https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a</a></p>
+
+<h2>概要</h2>
+
+<p>(現状問題公開されてないですからね…)</p>
+
+<p>1個ずつ数字が書かれた球がA個ある。これを1個ずつ数字が書かれたB個の球にしたい。ただし変換は以下の2種類。</p>
+
+<ul>
+<li>数xと数yが書かれた2個の球を数x * yが書かれた1個の球にする</li>
+<li>数xが書かれた1個の球を、(x%y==0となるような適当なyを選んで)数yと数x / yが書かれた2個の球にする</li>
+</ul>
+
+
+<p>この条件で最終状態を達成できるか？AおよびBは9以下、書かれている数はそれぞれ100以下。</p>
+
+<h2>解法</h2>
+
+<ul>
+<li>探索…は必要ないです。乗算と余りのない除算のみで構成されるということは、素因数です。素因数の組が等しい…つまり、状態Aの数の積と状態Bの数の積が等しければYesです。</li>
+<li>多分、制約は、積がint64に収まるようにってことなんだと思う。</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>気づきづらい。</li>
+<li>本当は「積が等しいかどうか判定せよ」という問題だったけど、がち勢が多かったので難しくしたらしい。</li>
+<li>おかげで体感300点ぐらいでした…つらいよぅorz</li>
 </ul>
 
 ]]></content>
@@ -3100,31 +3140,6 @@ done
 
 
 <p><a href="http://abc042.contest.atcoder.jp/submissions/818591">http://abc042.contest.atcoder.jp/submissions/818591</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[CROSS X BEATSをやってみて]]></title>
-    <link href="http://cielavenir.github.io/blog/2016/02/29/crossbeats/"/>
-    <updated>2016-02-29T23:59:59+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2016/02/29/crossbeats</id>
-    <content type="html"><![CDATA[<ul>
-<li>1/3、何を思ったか研究室から貸与されたiPadにインストール。まあ、共有物ではないし…</li>
-<li>ULC、面白いシステムだと思う。(最後までプレイすることで完了させられるようになったのは最近らしいけど、それを差し置けば)難しい譜面も繰り返しプレイすることでクリアできるようになる点は良い。</li>
-<li>節分キャンペーンを進める。所持していない楽曲はフレンド募集スレッドからプレイさせていただくことを学習する。シェアソングはソーシャル要素の答えの１つだと思った。</li>
-<li>1/15、Break down獲得(RP600突破)。しかし、節分キャンペーンを進めた結果、同時期開催の個人戦報酬を落とす。まあ、ソシャゲを始めた時のイベント報酬が厳しいのと近いので、しかたがない。個人戦の課題曲が全て未所持であることも理由。</li>
-<li>ランダムセレクト祭。ランダム選曲すると過去の曲が常駐するかもしれないというイベント。とりあえずフルコンボ譜面を増やす。</li>
-<li>1/24、Azitate獲得。条件は難しい難易度であるMASTER譜面をULTIMATEで5曲クリアということで、当時はかなりきつい条件だった。ランダムセレクト祭で引き当てたEternallyが5曲目だった。</li>
-<li>期間限定RP曲、未確認XX生命体を購入すれば5曲とも所持することになるので、購入。結果、2/8、RP1000突破。NEXT FRONTIER獲得。簡単な難易度であるSTANDARD譜面の難易度値がかなり高いんですが、慣れれば自然と指が動く面白い譜面。</li>
-<li>2/17、RP1100突破。期間限定RP曲+上位20曲のため、いろいろ埋めないと上がらない。あと、Lobi入れた。</li>
-<li>2/18、バレンタインキャンペーン完走。きつかったのがMake It Fresh HARDフルゲージと最後の1ページ MASTER Sランク。まあ、クリア出来てよかった(節分キャンペーンリバイバルの最後の報酬を諦めた理由がMASTERフルゲージで、それよりは簡単ですし…)。</li>
-<li>2/28、RP1200突破。Touch of Goldと雨の音が虹を呼ぶでMASTER ULTできたのが大きい。</li>
-<li>3/1、期間限定RP曲のうち4曲しか所持していないため、RP1200を割る。</li>
-<li>この進行がハイペースかどうかを訊くのは愚問とのこと。落ち着いて考えればそうなのですが…。ごめんなさい。</li>
-<li>まあ、個人個人自由に楽しむのが第一ですよね。</li>
-<li>あとは、アンロックゲージが溜まったからといってすぐにアンロックチャレンジを開始すべきかという質問も愚問のよう。チケットの消費に慎重な人もいるかもしれないので。</li>
-</ul>
-
 ]]></content>
   </entry>
   

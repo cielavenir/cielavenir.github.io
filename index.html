@@ -622,6 +622,73 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/04/21/ball/">[Atcoder] Ball</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-04-21T22:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a">https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a</a></p>
+
+<h2>概要</h2>
+
+<p>(現状問題公開されてないですからね…)</p>
+
+<p>1個ずつ数字が書かれた球がA個ある。これを1個ずつ数字が書かれたB個の球にしたい。ただし変換は以下の2種類。</p>
+
+<ul>
+<li>数xと数yが書かれた2個の球を数x * yが書かれた1個の球にする</li>
+<li>数xが書かれた1個の球を、(x%y==0となるような適当なyを選んで)数yと数x / yが書かれた2個の球にする</li>
+</ul>
+
+
+<p>この条件で最終状態を達成できるか？AおよびBは9以下、書かれている数はそれぞれ100以下。</p>
+
+<h2>解法</h2>
+
+<ul>
+<li>探索…は必要ないです。乗算と余りのない除算のみで構成されるということは、素因数です。素因数の組が等しい…つまり、状態Aの数の積と状態Bの数の積が等しければYesです。</li>
+<li>多分、制約は、積がint64に収まるようにってことなんだと思う。</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>気づきづらい。</li>
+<li>本当は「積が等しいかどうか判定せよ」という問題だったけど、がち勢が多かったので難しくしたらしい。</li>
+<li>おかげで体感300点ぐらいでした…つらいよぅorz</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/03/10/conveyor-sushi/">[Atcoder] くるくる寿司</a></h1>
     
     
@@ -1474,67 +1541,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2017/06/04/fxunusable/">FXCampusGatePrinterはネットプリントドライバとしても使用できない</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2017-06-04T15:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>背景</h2>
-
-<ul>
-<li>ファミリーマートやローソンの<a href="https://networkprint.ne.jp/">ネットワークプリント</a>はプリンタドライバが存在するが、セブンイレブンの<a href="https://www.printing.ne.jp/">ネットプリント</a>はプリンタドライバが存在しない。</li>
-<li><a href="http://www.ecc.u-tokyo.ac.jp/">ECCS</a>2012(ゼロックス)のプリンタドライバはネットプリントドライバとしても使うことが出来た。</li>
-<li>現在のECCS2016では業者がリコーになったが、ネットプリントドライバ部分はまだ使えるのではないか？</li>
-<li>しかし、使ってみようとすると、<code>接続エラー(320000)</code>となる。</li>
-</ul>
-
-
-<h2>調査</h2>
-
-<ul>
-<li>/Library/Printers/FujiXerox/FXCampusGatePrinter/FXCampusGatePrinter.plist から、</li>
-<li><code>https://sdb.fujixerox.co.jp:443/CGPPrintPortal/Service.svc</code></li>
-<li>という内容が読み取れる。このサーバーは現在停止している。</li>
-<li><strong>したがって、ネットプリントドライバとして使うことも現在は不可能である。</strong></li>
-</ul>
-
-
-<h2>結論</h2>
-
-<ul>
-<li>個人的には当面はネットワークプリントだけを使うことにします…</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1554,6 +1560,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/04/21/ball/">[atcoder] Ball</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/03/10/conveyor-sushi/">[atcoder] くるくる寿司</a>
       </li>
     
@@ -1563,10 +1573,6 @@
     
       <li class="post">
         <a href="/blog/2018/02/24/luckynumber/">[yukicoder] E869120 and Lucky Numbers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/02/10/qk/">[yukicoder] ここでちょっとQK！</a>
       </li>
     
   </ul>
