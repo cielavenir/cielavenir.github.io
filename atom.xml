@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-05-17T23:29:04+09:00</updated>
+  <updated>2018-06-10T03:00:51+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -509,6 +509,34 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] ペアでチームを作ろう]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/06/10/pair-team/"/>
+    <updated>2018-06-10T02:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/06/10/pair-team</id>
+    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/698">https://yukicoder.me/problems/no/698</a></p>
+
+<h2>解法</h2>
+
+<ul>
+<li>bitDPを使うのが一般的な解法ですが、計算量が増えるものの、next_partial_permutationを使うこともできます。</li>
+<li>標準関数ではありませんが、<code>next_permutation(v.begin(), v.end())</code>する直前に<code>reverse(v.begin()+middle, v.end())</code>するだけなので、(next_combinationと違って)インラインで組み込むのは簡単です。</li>
+<li><code>v.begin()</code>から<code>v.begin()+middle</code>までを(<code>middle P size</code>の)部分順列として使います。</li>
+<li>ただし、ループが回るたびに、<code>v.begin()+middle</code>から<code>v.end()</code>まではソートされていることが保証されています。この性質を利用することで、vからsize-middle個選んでから残りのmiddle個を総当たりしたのと同じことになるのです。</li>
+<li>ループ回数は14P7 = 17297280回です。</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++ <a href="https://yukicoder.me/submissions/264420">https://yukicoder.me/submissions/264420</a></li>
+<li>cLay <a href="https://yukicoder.me/submissions/264422">https://yukicoder.me/submissions/264422</a></li>
 </ul>
 
 ]]></content>
@@ -3138,46 +3166,6 @@
 
 <ul>
 <li>解いたらあかんやつ(2回目)</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[iOSのターミナルでIllegal Instruction: 4が表示される]]></title>
-    <link href="http://cielavenir.github.io/blog/2016/08/09/ios-illegal-instruction/"/>
-    <updated>2016-08-09T16:34:42+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2016/08/09/ios-illegal-instruction</id>
-    <content type="html"><![CDATA[<ul>
-<li>先日iPad Air 9.3.2を脱獄してから久しぶりにいろいろ遊んでます。</li>
-<li><a href="http://leafmoon.users.sourceforge.net/cydia/">ech0chrome iPhone Repo on Cydia</a> (昔私がビルドしたソフト群)も一部使えました。ncompressとか(tar.Zとか今は使われてるんでしょうか…)</li>
-<li>しかし、nkfやPuTTY、OpenHSPは「Illegal Instruction: 4」と出て動かない。</li>
-<li>少し調べたところ、<a href="http://theiostream.tumblr.com/post/63923259800/patching-iphone-gcc-binaries-to-armv7s">http://theiostream.tumblr.com/post/63923259800/patching-iphone-gcc-binaries-to-armv7s</a> に行き当たりました。<code>ldr r3, [r3]</code>命令がarmv6/v7専用命令になっていて、armv7sで解釈できないのが原因とのこと。armv7sで解釈できるように手直しすればよいそうです。crt1.oだけがおかしく、原因は不明とのこと。</li>
-</ul>
-
-
-<pre><code>#!/bin/sh
-for file in "$@";do
-sed -i'' 's/\x00\x30\x93\xe4/\x00\x30\x93\xe5/g;s/\x00\x30\xd3\xe4/\x00\x30\xd3\xe5/g;' $file
-ldid -S $file
-done
-</code></pre>
-
-<ul>
-<li>まあ、当時はiPhone 3GSやiPhone 4の時代だったので、v7sのことなんて頭になかったですからねぇ…</li>
-<li>ビルドスクリプト、もしあったら、パッケージ化しようと思います。バックアップは今何処＾＾；(開発機のiPod Touch 3rdはヒューズが飛んだ状態)</li>
-<li><p>てか、私の出してるiOS gccは間違いなく壊れたバイナリを出力するんですが、どうしたもんか。3.1.2用のtoolchainをセルフコンパイル用にポートしただけなので、新たにtoolchainを作る能力は私にはない＾＾；</p></li>
-<li><p>ちなみに、Illegal Instruction: 4はこのパッチで直せますが、mmap error 22は直せません。</p></li>
-<li><a href="https://forums.developer.apple.com/thread/7524">https://forums.developer.apple.com/thread/7524</a> によると、32bit dylibを読み込むにはMach-Oのヘッダがどうこうという話っぽいです。</li>
-</ul>
-
-
-<hr />
-
-<ul>
-<li>話は変わりますが、アプリ領域にアクセスするのが不便なのでapplinkなるソフトを作ってましたが、これもiOS8で使えなくなってた模様。com.apple.mobile.installation.plistがなくなったため。</li>
-<li>突貫工事で新たに作りました。Pythonが必要ではありますが。しかもリンク名がアプリ識別子になる制限付き。</li>
-<li><a href="https://gist.github.com/cielavenir/089ae47301458db8e2e04a67f72132b3">https://gist.github.com/cielavenir/089ae47301458db8e2e04a67f72132b3</a></li>
 </ul>
 
 ]]></content>
