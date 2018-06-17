@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[yukicoder] (P,Q)-サンタと街の子供たち - My Octopress Blog</title>
+  <title>[yukicoder] 中央値を求めよ LIMITED - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/12/14/pq-santa">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/06/18/median">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Yukicoder] (P,Q)-サンタと街の子供たち</h1>
+      <h1 class="entry-title">[Yukicoder] 中央値を求めよ LIMITED</h1>
     
     
       <p class="meta">
@@ -112,53 +112,30 @@
   
 
 
-<time datetime="2015-12-14T23:59:59+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-06-18T00:30:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li>P,Qがどちらも0の場合はX==0とY==0だけを数えます。</li>
-<li>簡単のため、P,Qの最大公約数を単位とする座標系に変換します。X,Yが変換できなければ弾きます。</li>
-<li>ここで、各方向に進む回数をa,b,c,dと置くと、</li>
-</ul>
+<div class="entry-content"><p><a href="https://yukicoder.me/problems/no/702">https://yukicoder.me/problems/no/702</a></p>
 
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(a+b)P+(c+d)Q==X - (1)
-</span><span class='line'>(c-d)P+(a-b)Q==Y - (2)</span></code></pre></td></tr></table></div></figure>
-
+<h2>解法</h2>
 
 <ul>
-<li>となります。</li>
-<li>α=a+b、β=c+dとおきます。</li>
-<li>αP+βQ==1を満たす(α,β)を拡張ユークリッド互除法で求めます。
+<li>一様分布なので、中央付近以外は捨てる方法で解けます。</li>
+<li>ただしqsortはstd::sortよりメモリを若干多く使うため、C言語で解く場合は閾値に注意する必要があります。</li>
+</ul>
+
+
+<h2>解答例</h2>
 
 <ul>
-<li>代表値を(z1,z2)とすると、式(1)を満たすのは、α=z1<em>X+Q</em>n、β=z2<em>X-P</em>nとなります。</li>
-</ul>
-</li>
-<li>式(2)を<code>(β-2d)P+(α-2b)Q==Y</code>と変形し、αとβを代入して、整理します。<code>2*P*d+2*Q*b==(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>となります。</li>
-<li>この不定方程式において、 <strong>整数解(d,b)を持つようなnが存在する</strong> ことが問題が求める条件となります。
-
-<ul>
-<li>ここで、上で媒介変数表示により変数を一個減らしたことが効いてきます。</li>
-</ul>
-</li>
-<li><code>(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>が<code>gcd(2*P,2*Q)</code>の倍数であることが条件ですので、<code>-(z2*X*P+z1*X*Q-Y)%gcd(Q*Q-P*P,gcd(2*P,2*Q))==0</code>を判定します。</li>
-<li>なお、このnを用いてd,bを拡張ユークリッド互除法から求めることで、a,cも求まりますので、原点から何回で目標に到達するかを実際に計算することも可能です。
-
-<ul>
-<li>プログラムにおいてeとfが可変。abs(a)+abs(b)+abs&copy;+abs(d)が最小となるようなe,fを求めるのもまた一興かと(やってませんが)。</li>
-</ul>
-</li>
+<li>C <a href="https://yukicoder.me/submissions/266771">https://yukicoder.me/submissions/266771</a></li>
+<li>C++ <a href="https://yukicoder.me/submissions/266775">https://yukicoder.me/submissions/266775</a></li>
 </ul>
 
-
-<p><a href="http://yukicoder.me/submissions/65751">http://yukicoder.me/submissions/65751</a></p>
 </div>
 
 
@@ -181,7 +158,7 @@
   
 
 
-<time datetime="2015-12-14T23:59:59+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-06-18T00:30:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -189,7 +166,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/12/14/pq-santa/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/12/14/pq-santa/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/06/18/median/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/06/18/median/" >Tweet</a>
   
   
   
@@ -200,13 +177,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2015/12/14/coderunner2015/" title="Previous Post:
-        Code Runner 2015 参加記">&laquo; Code Runner 2015 参加記</a></li>
+        href="/blog/2018/06/10/pair-team/" title="Previous Post:
+        [yukicoder] ペアでチームを作ろう">&laquo; [yukicoder] ペアでチームを作ろう</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2016/01/14/takahashikun-password/"
-        title="Next Post: [atcoder] 高橋君とパスワード">[atcoder] 高橋君とパスワード
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>
