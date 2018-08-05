@@ -98,7 +98,7 @@
       
   <header class="page-header">
     
-      <h1 class="entry-title"><a href="/blog/2016/11/28/mujin-2018/">Mujin Programming Challenge 2018 参加記</a></h1>
+      <h1 class="entry-title"><a href="/blog/2016/11/30/problem-on-tree/">[Atcoder] 木の問題</a></h1>
     
     
       <p class="meta">
@@ -114,143 +114,81 @@
   
 
 
-<time datetime="2016-11-28T22:06:30+09:00" pubdate data-updated="true"></time>
+<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>参加記というより反省会</p>
+  <div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
 
-<h2>昼</h2>
+<h2>概要</h2>
 
 <ul>
-<li>ポケモンGo、フリーザーを25体撃破しLv37にした。あづい。</li>
+<li>問題文がそれなりに読みにくい。</li>
+<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
+<li>答えは木の直径以上になることは容易に想像がつく。</li>
 </ul>
 
 
-<h2>コンテスト</h2>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">時間</th>
-<th style="text-align:left;">言語</th>
-<th style="text-align:left;">問題(A-H)</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">0:01</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A</td>
-<td style="text-align:left;"><strong>AC</strong> 時間がかかったのはペナルティに気をつけるためです。</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:03</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B</td>
-<td style="text-align:left;"><strong>AC</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">0:18</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">D</td>
-<td style="text-align:left;">愚直な循環検出を書いたが、実行間に合わず。</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:29</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">D</td>
-<td style="text-align:left;">C++に移植したがTLE 焦る。</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:46</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">C</td>
-<td style="text-align:left;">下と右のマス数を掛け算。TLE (解説の方針と同じなんです)</td>
-</tr>
-<tr>
-<td style="text-align:left;">1:12</td>
-<td style="text-align:left;">Ruby/C++</td>
-<td style="text-align:left;">D</td>
-<td style="text-align:left;">申し訳ありません。C++の実行結果をzlib圧縮して埋め込みました。<strong>AC</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">1:17</td>
-<td style="text-align:left;">Crystal</td>
-<td style="text-align:left;">C</td>
-<td style="text-align:left;">TLE</td>
-</tr>
-<tr>
-<td style="text-align:left;">1:35</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">C</td>
-<td style="text-align:left;"><strong>AC</strong> ところでvector transposeをライブラリとして持っていたから助かりましたが、持っていなかったらどうなっていたんでしょう。ぞっとします。</td>
-</tr>
-<tr>
-<td style="text-align:left;">1:59</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">E</td>
-<td style="text-align:left;">コストテーブルを作って最短路という方針は思いつきましたが間に合いませんでした。heapqは以前私がAOJにてheapq.pyを移植したのをコピペしました。<br>(あとで確認したらRubyでは間に合わない感じでしたのでどうせ無駄でしたね…)</td>
-</tr>
-<tr>
-<td style="text-align:left;">2:00</td>
-<td style="text-align:left;">264位でした。さすがに雑魚すぎました…</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-
-<h2>ライブ</h2>
-
-<p>拝見しました。山内さんちょくだいさんお疲れ様でした。</p>
-
-<h2>E問題その後</h2>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">言語</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">遷移式が少し間違っていて、<code>1 2 2 LU SG</code>が1ではなく3になっていたorz<br>まあサンプルはそこまで強くなくても文句言えないけど…</td>
-</tr>
-<tr>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">同じ行にSとGがあるときGを検出できていなかったorz</td>
-</tr>
-<tr>
-<td style="text-align:left;">Crystal</td>
-<td style="text-align:left;">TLE</td>
-</tr>
-<tr>
-<td style="text-align:left;">Python</td>
-<td style="text-align:left;">TLE</td>
-</tr>
-<tr>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;"><strong>AC</strong></td>
-</tr>
-</tbody>
-</table>
-
-
-<p>なんでCrystalだといかんのだ。。</p>
-
-<h2>まとめ</h2>
+<h2>考察</h2>
 
 <ul>
-<li>実装遅いのを()</li>
-<li>Crystalを&ndash;releaseでコンパイルしてほしい</li>
+<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
+<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
+<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>  o-o-o
+</span><span class='line'>    |
+</span><span class='line'>    o</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++14
+
+<ul>
+<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
 </ul>
 
 </div>
@@ -2879,6 +2817,10 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2018/08/05/mujin-2018/">Mujin Programming Challenge 2018 参加記</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/07/15/how-can-i-satisfy-thee/">[AOJ] 如何に汝を満足せしめむ？ いざ数え上げむ…</a>
       </li>
     
@@ -2888,10 +2830,6 @@ done
     
       <li class="post">
         <a href="/blog/2018/06/18/median/">[yukicoder] 中央値を求めよ LIMITED</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/06/10/pair-team/">[yukicoder] ペアでチームを作ろう</a>
       </li>
     
   </ul>

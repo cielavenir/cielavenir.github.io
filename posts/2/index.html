@@ -98,6 +98,78 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/02/24/luckynumber/">[Yukicoder] E869120 and Lucky Numbers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-02-24T00:39:40+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>まず、最下位が0,6,7の場合はNoです。後述する状態1/0への移行は十の位以降で発生する必要があります。in06がこのケースです。</p>
+
+<p>それ以外の場合。
+下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
+
+<ul>
+<li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
+
+<ul>
+<li>2,3,4の場合は、繰り上がりがあるので、上の桁から1を引きます。
+
+<ul>
+<li>すでに最上位の場合はNoです。</li>
+<li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
+</ul>
+</li>
+<li>6,7の場合は、状態1に移行します。</li>
+<li>0の場合は、状態0に移行します。</li>
+</ul>
+</li>
+<li>状態1のとき、0,6,7を受け付けます。
+
+<ul>
+<li>0の場合は、状態0に移行します。</li>
+</ul>
+</li>
+<li>状態0のとき、0のみを受け付けます。
+
+<ul>
+<li>ラッキーナンバーが影響し得ないということは、すべての桁が0になっている以外にないです。</li>
+<li>(間に合わなかった)チャレンジでは、612だと、下位の12で6+6と完結しているのに、新たな600が出てきているので、十の位が不合理となるのです。</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="https://yukicoder.me/submissions/238472">https://yukicoder.me/submissions/238472</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/02/10/qk/">[Yukicoder] ここでちょっとQK！</a></h1>
     
     
@@ -1283,111 +1355,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/11/30/problem-on-tree/">[Atcoder] 木の問題</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>問題文がそれなりに読みにくい。</li>
-<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
-<li>答えは木の直径以上になることは容易に想像がつく。</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<ul>
-<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
-<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
-<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>    o</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++14
-
-<ul>
-<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
-<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
-</ul>
-</li>
-<li>Ruby
-
-<ul>
-<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h2>感想</h2>
-
-<ul>
-<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="3">&larr; Older</a></li>
@@ -1409,6 +1376,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/08/05/mujin-2018/">Mujin Programming Challenge 2018 参加記</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/07/15/how-can-i-satisfy-thee/">[AOJ] 如何に汝を満足せしめむ？ いざ数え上げむ…</a>
       </li>
     
@@ -1418,10 +1389,6 @@
     
       <li class="post">
         <a href="/blog/2018/06/18/median/">[yukicoder] 中央値を求めよ LIMITED</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/06/10/pair-team/">[yukicoder] ペアでチームを作ろう</a>
       </li>
     
   </ul>
