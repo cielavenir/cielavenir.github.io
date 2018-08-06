@@ -98,6 +98,314 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2016/12/09/smile/">[Yukicoder] (^^*)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-09T00:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://yukicoder.me/problems/no/457">http://yukicoder.me/problems/no/457</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>間に部分列<code>^^*</code>を含むような(と)の組み合わせの個数を求めよ。
+
+<ul>
+<li><code>reverse.tr('()',')(')</code>なる処理を加えれば右向きを別に考えなくて良くなる。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<h3>O(S<sup>2</sup> logS)</h3>
+
+<ul>
+<li>(と)の組み合わせをすべて求めて、それぞれに対し、<code>^^*</code>が含まれることを判定します。</li>
+<li>まず<code>^^</code>が含まれる一番左の座標を求めます。
+
+<ul>
+<li>その座標までに含まれる<code>^</code>の個数を累積和として持ち、(の座標における累積和+2を2分探索します。</li>
+</ul>
+</li>
+<li>次に、その座標から)の座標までについて、<code>*</code>が含まれるかどうかを2分探索します。</li>
+<li>以上により<code>O(S^2 logS)</code>となり、C++では通すことができます。
+
+<ul>
+<li>本家解説によると愚直解はTLEらしいですが、2分探索に落とし込んだことが功を奏したのでしょうか。</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;vector&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;cstdio&gt;</span>
+</span><span class='line'><span class="cp">#include &lt;cstring&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="kt">int</span> <span class="n">len</span><span class="p">){</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">al</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">ar</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">ah</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">ast</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;(&#39;</span><span class="p">){</span>
+</span><span class='line'>          <span class="n">al</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;)&#39;</span><span class="p">){</span>
+</span><span class='line'>          <span class="n">ar</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;^&#39;</span><span class="p">){</span>
+</span><span class='line'>          <span class="n">ah</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;*&#39;</span><span class="p">){</span>
+</span><span class='line'>          <span class="n">ast</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">ah</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span><span class="n">ah</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">ret</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">r</span><span class="p">:</span><span class="n">ar</span><span class="p">){</span>
+</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+</span><span class='line'>          <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">distance</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="n">hidx</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+</span><span class='line'>          <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
+</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">!=</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;*</span><span class="n">st</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span>
+</span><span class='line'>              <span class="n">ret</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>          <span class="p">}</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">10001</span><span class="p">];</span>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span class='line'>  <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span><span class="n">solve</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">len</span><span class="p">));</span>
+</span><span class='line'>  <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">s</span><span class="o">+</span><span class="n">len</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;)&#39;</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;)&#39;</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;(&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">solve</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">len</span><span class="p">));</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>O(SlogS)</h3>
+
+<ul>
+<li>以下、最も重いループの計算量を減らすことを考えます。</li>
+<li>まず、rは単調増加であるため、<code>st!=ast.end()&amp;&amp;*st&lt;r</code>が一度真になれば、そのループの中では常に真になります。よってキャッシュすることができます。</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="n">f</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">r</span><span class="p">:</span><span class="n">ar</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">){</span><span class="n">ret</span><span class="o">++</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
+</span><span class='line'>      <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">distance</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">hidx</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">!=</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;*</span><span class="n">st</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span>
+</span><span class='line'>          <span class="n">ret</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>          <span class="n">f</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>さらに、hidxおよびstはrに依存しないため、ループrの外で計算しておいて問題ないことがわかります。</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
+</span><span class='line'>  <span class="c1">// if hidx&gt;=r, l&gt;=r is assured because hidx&gt;l.</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">distance</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
+</span><span class='line'>  <span class="c1">// if hidx==ah.size(), st==ast.end() is assured because hidx==len.</span>
+</span><span class='line'>  <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
+</span><span class='line'>  <span class="kt">bool</span> <span class="n">f</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">r</span><span class="p">:</span><span class="n">ar</span><span class="p">){</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">){</span><span class="n">ret</span><span class="o">++</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">!=</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;*</span><span class="n">st</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span>
+</span><span class='line'>          <span class="n">ret</span><span class="o">++</span><span class="p">;</span>
+</span><span class='line'>          <span class="n">f</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>arのループは<code>FF...FFTT...TT</code>のようになるので、このTになる場所を2分探索できます。</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span class='line'>  <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">==</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">ret</span><span class="o">+=</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">-</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ar</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="o">*</span><span class="n">st</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>最後に、範囲を狭めるためのtweakを入れます(必要ではありませんが…)。</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">auto</span> <span class="n">ist</span><span class="o">=</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span class='line'><span class="k">auto</span> <span class="n">ir</span><span class="o">=</span><span class="n">ar</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">l</span><span class="p">,</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span><span class='line'>  <span class="n">ist</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ist</span><span class="p">,</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">ist</span><span class="o">==</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="k">break</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">ret</span><span class="o">+=</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">-</span><span class="p">(</span><span class="n">ir</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="o">*</span><span class="n">ist</span><span class="p">));</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>以上で<code>O(SlogS)</code>となり、Rubyでも通すことができます。
+
+<ul>
+<li>C++ <a href="http://yukicoder.me/submissions/136737">http://yukicoder.me/submissions/136737</a></li>
+<li>Ruby <a href="http://yukicoder.me/submissions/136749">http://yukicoder.me/submissions/136749</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>O(S)</h3>
+
+<ul>
+<li>動的計画法により<code>O(S)</code>に落とせるようです。コードがより短い実装はそうなっているものが多いようです。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2016/11/30/problem-on-tree/">[Atcoder] 木の問題</a></h1>
     
     
@@ -2721,81 +3029,6 @@ done
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2015/12/14/pq-santa/">[Yukicoder] (P,Q)-サンタと街の子供たち</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-12-14T23:59:59+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>P,Qがどちらも0の場合はX==0とY==0だけを数えます。</li>
-<li>簡単のため、P,Qの最大公約数を単位とする座標系に変換します。X,Yが変換できなければ弾きます。</li>
-<li>ここで、各方向に進む回数をa,b,c,dと置くと、</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(a+b)P+(c+d)Q==X - (1)
-</span><span class='line'>(c-d)P+(a-b)Q==Y - (2)</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>となります。</li>
-<li>α=a+b、β=c+dとおきます。</li>
-<li>αP+βQ==1を満たす(α,β)を拡張ユークリッド互除法で求めます。
-
-<ul>
-<li>代表値を(z1,z2)とすると、式(1)を満たすのは、α=z1<em>X+Q</em>n、β=z2<em>X-P</em>nとなります。</li>
-</ul>
-</li>
-<li>式(2)を<code>(β-2d)P+(α-2b)Q==Y</code>と変形し、αとβを代入して、整理します。<code>2*P*d+2*Q*b==(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>となります。</li>
-<li>この不定方程式において、 <strong>整数解(d,b)を持つようなnが存在する</strong> ことが問題が求める条件となります。
-
-<ul>
-<li>ここで、上で媒介変数表示により変数を一個減らしたことが効いてきます。</li>
-</ul>
-</li>
-<li><code>(Q*Q-P*P)*n+z2*X*P+z1*X*Q-Y</code>が<code>gcd(2*P,2*Q)</code>の倍数であることが条件ですので、<code>-(z2*X*P+z1*X*Q-Y)%gcd(Q*Q-P*P,gcd(2*P,2*Q))==0</code>を判定します。</li>
-<li>なお、このnを用いてd,bを拡張ユークリッド互除法から求めることで、a,cも求まりますので、原点から何回で目標に到達するかを実際に計算することも可能です。
-
-<ul>
-<li>プログラムにおいてeとfが可変。abs(a)+abs(b)+abs&copy;+abs(d)が最小となるようなe,fを求めるのもまた一興かと(やってませんが)。</li>
-</ul>
-</li>
-</ul>
-
-
-<p><a href="http://yukicoder.me/submissions/65751">http://yukicoder.me/submissions/65751</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="4">&larr; Older</a></li>
@@ -2817,6 +3050,10 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2018/08/07/die-tertia/">[yukicoder] Die tertia</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/08/05/mujin-2018/">Mujin Programming Challenge 2018 参加記</a>
       </li>
     
@@ -2826,10 +3063,6 @@ done
     
       <li class="post">
         <a href="/blog/2018/07/05/proof-of-knowledge/">[AOJ] 知識の証明</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/06/18/median/">[yukicoder] 中央値を求めよ LIMITED</a>
       </li>
     
   </ul>
