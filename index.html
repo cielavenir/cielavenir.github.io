@@ -638,6 +638,106 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/09/23/codefes/">こどふぇす過去開催情報</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-09-23T00:30:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>備忘録です</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">年</th>
+<th style="text-align:left;">予選</th>
+<th style="text-align:left;">本選会場</th>
+<th style="text-align:left;">THANKS</th>
+<th style="text-align:left;">決勝会場</th>
+<th style="text-align:left;">開催セット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">2013</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">コワーキング・スペースMONO(お台場)</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">マサチューセッツ工科大学</td>
+<td style="text-align:left;">rproconとして開催、本戦のみ</td>
+</tr>
+<tr>
+<td style="text-align:left;">2014</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">3331 Arts Chiyoda(秋葉原)</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">上海交通大学</td>
+<td style="text-align:left;">本戦、エキシビジョン、あさプロ、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2015</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">泉ガーデンギャラリー(六本木)</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">沖縄科学技術大学院大学</td>
+<td style="text-align:left;">本戦、エキシビジョン、あさプロ、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2016</td>
+<td style="text-align:left;">3回</td>
+<td style="text-align:left;">ベルサール汐留</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">マホロバ・マインズ三浦</td>
+<td style="text-align:left;">本戦、エキシビジョン、トーナメント、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2017</td>
+<td style="text-align:left;">3回</td>
+<td style="text-align:left;">秋葉原UDX</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">本戦、エキシビジョン、トーナメント、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2018</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">秋葉原UDX</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">本戦のみ？</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/08/16/shv31/">SHV31</a></h1>
     
     
@@ -1463,73 +1563,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/04/21/ball/">[Atcoder] Ball</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-04-21T22:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a">https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a</a></p>
-
-<h2>概要</h2>
-
-<p>(現状問題公開されてないですからね…)</p>
-
-<p>1個ずつ数字が書かれた球がA個ある。これを1個ずつ数字が書かれたB個の球にしたい。ただし変換は以下の2種類。</p>
-
-<ul>
-<li>数xと数yが書かれた2個の球を数x * yが書かれた1個の球にする</li>
-<li>数xが書かれた1個の球を、(x%y==0となるような適当なyを選んで)数yと数x / yが書かれた2個の球にする</li>
-</ul>
-
-
-<p>この条件で最終状態を達成できるか？AおよびBは9以下、書かれている数はそれぞれ100以下。</p>
-
-<h2>解法</h2>
-
-<ul>
-<li>探索…は必要ないです。乗算と余りのない除算のみで構成されるということは、素因数です。素因数の組が等しい…つまり、状態Aの数の積と状態Bの数の積が等しければYesです。</li>
-<li>多分、制約は、積がint64に収まるようにってことなんだと思う。</li>
-</ul>
-
-
-<h2>感想</h2>
-
-<ul>
-<li>気づきづらい。</li>
-<li>本当は「積が等しいかどうか判定せよ」という問題だったけど、がち勢が多かったので難しくしたらしい。</li>
-<li>おかげで体感300点ぐらいでした…つらいよぅorz</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1549,6 +1582,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/09/23/codefes/">こどふぇす過去開催情報</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/08/16/shv31/">SHV31</a>
       </li>
     
@@ -1558,10 +1595,6 @@
     
       <li class="post">
         <a href="/blog/2018/08/05/mujin-2018/">Mujin Programming Challenge 2018 参加記</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/07/15/how-can-i-satisfy-thee/">[AOJ] 如何に汝を満足せしめむ？ いざ数え上げむ…</a>
       </li>
     
   </ul>

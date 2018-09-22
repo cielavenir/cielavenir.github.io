@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[atcoder] 木の問題 - My Octopress Blog</title>
+  <title>こどふぇす過去開催情報 - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/09/23/codefes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Atcoder] 木の問題</h1>
+      <h1 class="entry-title">こどふぇす過去開催情報</h1>
     
     
       <p class="meta">
@@ -112,82 +112,77 @@
   
 
 
-<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-09-23T00:30:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
+<div class="entry-content"><p>備忘録です</p>
 
-<h2>概要</h2>
-
-<ul>
-<li>問題文がそれなりに読みにくい。</li>
-<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
-<li>答えは木の直径以上になることは容易に想像がつく。</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<ul>
-<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
-<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
-<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>    o</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++14
-
-<ul>
-<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
-<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
-</ul>
-</li>
-<li>Ruby
-
-<ul>
-<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h2>感想</h2>
-
-<ul>
-<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">年</th>
+<th style="text-align:left;">予選</th>
+<th style="text-align:left;">本選会場</th>
+<th style="text-align:left;">THANKS</th>
+<th style="text-align:left;">決勝会場</th>
+<th style="text-align:left;">開催セット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">2013</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">コワーキング・スペースMONO(お台場)</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">マサチューセッツ工科大学</td>
+<td style="text-align:left;">rproconとして開催、本戦のみ</td>
+</tr>
+<tr>
+<td style="text-align:left;">2014</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">3331 Arts Chiyoda(秋葉原)</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">上海交通大学</td>
+<td style="text-align:left;">本戦、エキシビジョン、あさプロ、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2015</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">泉ガーデンギャラリー(六本木)</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">沖縄科学技術大学院大学</td>
+<td style="text-align:left;">本戦、エキシビジョン、あさプロ、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2016</td>
+<td style="text-align:left;">3回</td>
+<td style="text-align:left;">ベルサール汐留</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">マホロバ・マインズ三浦</td>
+<td style="text-align:left;">本戦、エキシビジョン、トーナメント、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2017</td>
+<td style="text-align:left;">3回</td>
+<td style="text-align:left;">秋葉原UDX</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">本戦、エキシビジョン、トーナメント、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2018</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">秋葉原UDX</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">本戦のみ？</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
@@ -211,7 +206,7 @@
   
 
 
-<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-09-23T00:30:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -219,7 +214,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/" data-via="" data-counturl="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/09/23/codefes/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/09/23/codefes/" >Tweet</a>
   
   
   
@@ -230,13 +225,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2016/11/28/code-festival-2016/" title="Previous Post:
-        Code Festival 2016 参加記">&laquo; Code Festival 2016 参加記</a></li>
+        href="/blog/2018/08/16/shv31/" title="Previous Post:
+        SHV31">&laquo; SHV31</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2016/12/09/smile/"
-        title="Next Post: [yukicoder] (^^*)">[yukicoder] (^^*)
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

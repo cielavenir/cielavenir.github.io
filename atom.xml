@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-09-22T22:42:48+09:00</updated>
+  <updated>2018-09-23T00:39:00+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -522,6 +522,79 @@
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[こどふぇす過去開催情報]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/09/23/codefes/"/>
+    <updated>2018-09-23T00:30:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/09/23/codefes</id>
+    <content type="html"><![CDATA[<p>備忘録です</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">年</th>
+<th style="text-align:left;">予選</th>
+<th style="text-align:left;">本選会場</th>
+<th style="text-align:left;">THANKS</th>
+<th style="text-align:left;">決勝会場</th>
+<th style="text-align:left;">開催セット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">2013</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">コワーキング・スペースMONO(お台場)</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">マサチューセッツ工科大学</td>
+<td style="text-align:left;">rproconとして開催、本戦のみ</td>
+</tr>
+<tr>
+<td style="text-align:left;">2014</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">3331 Arts Chiyoda(秋葉原)</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">上海交通大学</td>
+<td style="text-align:left;">本戦、エキシビジョン、あさプロ、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2015</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">泉ガーデンギャラリー(六本木)</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">沖縄科学技術大学院大学</td>
+<td style="text-align:left;">本戦、エキシビジョン、あさプロ、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2016</td>
+<td style="text-align:left;">3回</td>
+<td style="text-align:left;">ベルサール汐留</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">マホロバ・マインズ三浦</td>
+<td style="text-align:left;">本戦、エキシビジョン、トーナメント、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2017</td>
+<td style="text-align:left;">3回</td>
+<td style="text-align:left;">秋葉原UDX</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">本戦、エキシビジョン、トーナメント、リレー</td>
+</tr>
+<tr>
+<td style="text-align:left;">2018</td>
+<td style="text-align:left;">2回</td>
+<td style="text-align:left;">秋葉原UDX</td>
+<td style="text-align:left;">1回</td>
+<td style="text-align:left;">&mdash;</td>
+<td style="text-align:left;">本戦のみ？</td>
+</tr>
+</tbody>
+</table>
 
 ]]></content>
   </entry>
@@ -1850,89 +1923,6 @@
 
 <ul>
 <li>個人的には当面はネットワークプリントだけを使うことにします…</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[atcoder] Tournament]]></title>
-    <link href="http://cielavenir.github.io/blog/2017/01/22/tournament/"/>
-    <updated>2017-01-22T23:10:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2017/01/22/tournament</id>
-    <content type="html"><![CDATA[<p><a href="https://agc009.contest.atcoder.jp/tasks/agc009_b">https://agc009.contest.atcoder.jp/tasks/agc009_b</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>トーナメント戦を行ったところ、1番の選手が優勝した。</li>
-<li>他の選手について、誰に負けたのかが与えられるので、条件をみたすようなトーナメント表の深さの最低値を求めよ。</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<ul>
-<li>ある選手がどの選手を倒したかのグラフを作成し、1番の選手から再帰。</li>
-<li>倒した選手(N人)のそれぞれについてトーナメント表の深さを求めようとする(倒した選手がいなければ0)。</li>
-<li>深さを降順にソートし、これらに1からNまでの数値を割り当てて、足す。</li>
-<li>足した後の配列の最大値が答えである。</li>
-</ul>
-
-
-<h2>再帰の深さ</h2>
-
-<ul>
-<li>単純に実装すると、最悪10万回の再帰が必要になり、スタックオーバーフローになるおそれがある。</li>
-<li>今回、C++は <strong>偶然</strong> 大丈夫であったが、RubyやPythonだと不可であった。
-
-<ul>
-<li>スタック拡張テクを使っても依然として通らない。</li>
-</ul>
-</li>
-<li>今回は場当たり的(テストケース依存)な対応になるが、N/2番の選手から一旦再帰しておくことで再帰の深さをある程度減らすことができる。
-
-<ul>
-<li>この状態でもスタック拡張テクは依然として必要である。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++11
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1077298">http://agc009.contest.atcoder.jp/submissions/1077298</a></li>
-</ul>
-</li>
-<li>Ruby
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1076373">http://agc009.contest.atcoder.jp/submissions/1076373</a></li>
-</ul>
-</li>
-<li>Python
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1077307">http://agc009.contest.atcoder.jp/submissions/1077307</a></li>
-<li>なお、なぜかPyPyでは通らない。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>余談</h2>
-
-<ul>
-<li>木だから本来メモ化は必要なかった。取り除いたらRubyではおまじない不要になった…
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1076974">http://agc009.contest.atcoder.jp/submissions/1076974</a></li>
-</ul>
-</li>
 </ul>
 
 ]]></content>
