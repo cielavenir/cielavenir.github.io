@@ -98,6 +98,64 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2015/06/15/yukiko-15/">[Yukicoder] ゆきこちゃんの15パズル</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-06-15T01:38:30+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://yukicoder.me/problems/247">http://yukicoder.me/problems/247</a></p>
+
+<p>この問題はシミュレーションとなっていますが、シミュレーションは必要ではないです。</p>
+
+<ul>
+<li>まず、各駒について、完成状態とのマンハッタン距離を取ります。1つでも2以上であれば、その配置は作ることができません。</li>
+<li>次に、その盤面が15パズルの盤面として正しいかを確認します。これは、(空マス以外の転倒数+空マスの上下動数)%2が偶数であれば正しいということが言えます。転倒数については</li>
+<li><a href="https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_">https://ja.wikipedia.org/wiki/%E8%BB%A2%E5%80%92_</a>(%E6%95%B0%E5%AD%A6)</li>
+<li><p>を参照して下さい。</p></li>
+<li><p>これらの2条件がそろうとき、問題の配置は正しいと言えます。</p>
+
+<ul>
+<li><a href="http://yukicoder.me/submissions/33252">http://yukicoder.me/submissions/33252</a></li>
+</ul>
+</li>
+<li>今回は転倒数の計算はO(nlogn)ではなくO(n<sup>2</sup>)でよいので、2重ループを書けばよいです。さらに、入力を読み込む途中に適宜転倒数の計算を行うとループの記述が1個消えます。これをまとめると以下のようになります(暫定最短コードです)。
+
+<ul>
+<li><a href="http://yukicoder.me/submissions/33461">http://yukicoder.me/submissions/33461</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2014/11/30/code-festival-2014/">Code Festival 2014 参加記</a></h1>
     
     
@@ -383,6 +441,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/09/30/maimai/">2年前にmaimaiのレーティングが下がったこと</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/09/23/codefes/">こどふぇす過去開催情報</a>
       </li>
     
@@ -392,10 +454,6 @@
     
       <li class="post">
         <a href="/blog/2018/08/07/die-tertia/">[yukicoder] Die tertia</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/08/05/mujin-2018/">Mujin Programming Challenge 2018 参加記</a>
       </li>
     
   </ul>
