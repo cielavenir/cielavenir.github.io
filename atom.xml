@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-10-07T11:35:25+09:00</updated>
+  <updated>2018-10-07T11:39:55+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -544,6 +544,10 @@
 <h2>コメンタリー</h2>
 
 <p><code>(60a-b)x&gt;3600c</code>について60a-bで両辺割ったときの不等号の向きって60a-bの符号で違ったんだっけって少し混乱した^^;;</p>
+
+<h2>コメンタリー2</h2>
+
+<p>「不等式の評価」項はコンテスト後に追記したものです。ご迷惑おかけしました(このために星1.5に上がることとなりました)</p>
 ]]></content>
   </entry>
   
