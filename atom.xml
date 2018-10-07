@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-10-07T11:33:57+09:00</updated>
+  <updated>2018-10-07T11:35:25+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -527,7 +527,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[[yukicoder] Die tertia]]></title>
+    <title type="html"><![CDATA[[yukicoder] Careful Engineer]]></title>
     <link href="http://cielavenir.github.io/blog/2018/10/08/careful-engineer/"/>
     <updated>2018-10-08T11:00:00+09:00</updated>
     <id>http://cielavenir.github.io/blog/2018/10/08/careful-engineer</id>
