@@ -638,6 +638,54 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/10/08/careful-engineer/">[Yukicoder] Die Tertia</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-10-08T11:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/734">https://yukicoder.me/problems/no/734</a></p>
+
+<h2>解法</h2>
+
+<p>本文を噛み砕くと、<code>60ax&gt;bx+3600c</code>なので、「直線 <code>y=(60a-b)x-3600c</code> がx>0でx軸と交わるx座標のceil」を求めれば良いことになります。これは傾きが正の場合のみ成立します。</p>
+
+<h2>不等式の評価</h2>
+
+<p>上にceilと書かれていますが、プログラムを書く場合と書かない場合の合計時間が等しくて良いなら<code>ceil</code>、書く場合の合計時間が小さくならなければならないなら<code>floor+1</code>です。条件設定って難しいorz</p>
+
+<h2>コメンタリー</h2>
+
+<p><code>(60a-b)x&gt;3600c</code>について60a-bで両辺割ったときの不等号の向きって60a-bの符号で違ったんだっけって少し混乱した^^;;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/09/30/maimai/">2年前にmaimaiのレーティングが下がったこと</a></h1>
     
     
@@ -1444,69 +1492,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/06/10/pair-team/">[Yukicoder] ペアでチームを作ろう</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-06-10T02:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/698">https://yukicoder.me/problems/no/698</a></p>
-
-<h2>解法</h2>
-
-<ul>
-<li>bitDPを使うのが一般的な解法ですが、計算量が増えるものの、next_partial_permutationを使うこともできます。</li>
-<li>標準関数ではありませんが、<code>next_permutation(v.begin(), v.end())</code>する直前に<code>reverse(v.begin()+middle, v.end())</code>するだけなので、(next_combinationと違って)インラインで組み込むのは簡単です。</li>
-<li><code>v.begin()</code>から<code>v.begin()+middle</code>までを(<code>middle P size</code>の)部分順列として使います。</li>
-<li>ただし、ループが回るたびに、<code>v.begin()+middle</code>から<code>v.end()</code>まではソートされていることが保証されています。この性質を利用することで、vからsize-middle個選んでから残りのmiddle個を総当たりしたのと同じことになるのです。</li>
-<li>ループ回数は14P7 = 17297280回です。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++ <a href="https://yukicoder.me/submissions/264420">https://yukicoder.me/submissions/264420</a></li>
-<li>cLay <a href="https://yukicoder.me/submissions/264422">https://yukicoder.me/submissions/264422</a></li>
-</ul>
-
-
-<h2>チームを作ろう２</h2>
-
-<ul>
-<li>この解法であればこちらもループ内の加算とxorを入れ替えるだけで容易に解くことができます。</li>
-<li>cLay <a href="https://yukicoder.me/submissions/265093">https://yukicoder.me/submissions/265093</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1526,6 +1511,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/10/08/careful-engineer/">[yukicoder] Die tertia</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/09/30/maimai/">2年前にmaimaiのレーティングが下がったこと</a>
       </li>
     
@@ -1535,10 +1524,6 @@
     
       <li class="post">
         <a href="/blog/2018/08/16/shv31/">SHV31</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/08/07/die-tertia/">[yukicoder] Die tertia</a>
       </li>
     
   </ul>

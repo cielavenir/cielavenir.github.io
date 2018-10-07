@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[atcoder] Ball - My Octopress Blog</title>
+  <title>[yukicoder] Die tertia - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/04/21/ball">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/10/08/careful-engineer">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Atcoder] Ball</h1>
+      <h1 class="entry-title">[Yukicoder] Die Tertia</h1>
     
     
       <p class="meta">
@@ -112,45 +112,26 @@
   
 
 
-<time datetime="2018-04-21T22:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-10-08T11:00:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a">https://bcu30-2018.contest.atcoder.jp/tasks/bcu30_2018_a</a></p>
-
-<h2>概要</h2>
-
-<p>(現状問題公開されてないですからね…)</p>
-
-<p>1個ずつ数字が書かれた球がA個ある。これを1個ずつ数字が書かれたB個の球にしたい。ただし変換は以下の2種類。</p>
-
-<ul>
-<li>数xと数yが書かれた2個の球を数x * yが書かれた1個の球にする</li>
-<li>数xが書かれた1個の球を、(x%y==0となるような適当なyを選んで)数yと数x / yが書かれた2個の球にする</li>
-</ul>
-
-
-<p>この条件で最終状態を達成できるか？AおよびBは9以下、書かれている数はそれぞれ100以下。</p>
+<div class="entry-content"><p><a href="https://yukicoder.me/problems/no/734">https://yukicoder.me/problems/no/734</a></p>
 
 <h2>解法</h2>
 
-<ul>
-<li>探索…は必要ないです。乗算と余りのない除算のみで構成されるということは、素因数です。素因数の組が等しい…つまり、状態Aの数の積と状態Bの数の積が等しければYesです。</li>
-<li>多分、制約は、積がint64に収まるようにってことなんだと思う。</li>
-</ul>
+<p>本文を噛み砕くと、<code>60ax&gt;bx+3600c</code>なので、「直線 <code>y=(60a-b)x-3600c</code> がx>0でx軸と交わるx座標のceil」を求めれば良いことになります。これは傾きが正の場合のみ成立します。</p>
 
+<h2>不等式の評価</h2>
 
-<h2>感想</h2>
+<p>上にceilと書かれていますが、プログラムを書く場合と書かない場合の合計時間が等しくて良いなら<code>ceil</code>、書く場合の合計時間が小さくならなければならないなら<code>floor+1</code>です。条件設定って難しいorz</p>
 
-<ul>
-<li>気づきづらい。</li>
-<li>本当は「積が等しいかどうか判定せよ」という問題だったけど、がち勢が多かったので難しくしたらしい。</li>
-<li>おかげで体感300点ぐらいでした…つらいよぅorz</li>
-</ul>
+<h2>コメンタリー</h2>
 
+<p><code>(60a-b)x&gt;3600c</code>について60a-bで両辺割ったときの不等号の向きって60a-bの符号で違ったんだっけって少し混乱した^^;;</p>
 </div>
 
 
@@ -173,7 +154,7 @@
   
 
 
-<time datetime="2018-04-21T22:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-10-08T11:00:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -181,7 +162,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/04/21/ball/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/04/21/ball/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/10/08/careful-engineer/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/10/08/careful-engineer/" >Tweet</a>
   
   
   
@@ -192,13 +173,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2018/03/10/conveyor-sushi/" title="Previous Post:
-        [atcoder] くるくる寿司">&laquo; [atcoder] くるくる寿司</a></li>
+        href="/blog/2018/09/30/maimai/" title="Previous Post:
+        2年前にmaimaiのレーティングが下がったこと">&laquo; 2年前にmaimaiのレーティングが下がったこと</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2018/05/06/five/"
-        title="Next Post: [atcoder] Five, Five Everywhere">[atcoder] Five, Five Everywhere
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

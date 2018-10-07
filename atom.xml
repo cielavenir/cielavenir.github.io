@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-09-30T23:44:46+09:00</updated>
+  <updated>2018-10-07T11:33:57+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -523,6 +523,27 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] Die tertia]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/10/08/careful-engineer/"/>
+    <updated>2018-10-08T11:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/10/08/careful-engineer</id>
+    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/734">https://yukicoder.me/problems/no/734</a></p>
+
+<h2>解法</h2>
+
+<p>本文を噛み砕くと、<code>60ax&gt;bx+3600c</code>なので、「直線 <code>y=(60a-b)x-3600c</code> がx>0でx軸と交わるx座標のceil」を求めれば良いことになります。これは傾きが正の場合のみ成立します。</p>
+
+<h2>不等式の評価</h2>
+
+<p>上にceilと書かれていますが、プログラムを書く場合と書かない場合の合計時間が等しくて良いなら<code>ceil</code>、書く場合の合計時間が小さくならなければならないなら<code>floor+1</code>です。条件設定って難しいorz</p>
+
+<h2>コメンタリー</h2>
+
+<p><code>(60a-b)x&gt;3600c</code>について60a-bで両辺割ったときの不等号の向きって60a-bの符号で違ったんだっけって少し混乱した^^;;</p>
 ]]></content>
   </entry>
   
@@ -1901,29 +1922,6 @@
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'><span class="nb">p</span> <span class="n">r</span>
 </span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] 夏休みの思い出（１）]]></title>
-    <link href="http://cielavenir.github.io/blog/2017/07/30/summer-task/"/>
-    <updated>2017-07-30T04:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2017/07/30/summer-task</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/550">https://yukicoder.me/problems/no/550</a></p>
-
-<ul>
-<li>解と係数の関係から3因数はCの約数である.</li>
-<li><a href="https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3">https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3</a> によると約数の個数は最大で103680なので、約数の全列挙をすればこの問題を解くには十分である.</li>
-<li><p>なお, Cの最大値は10**18であるが, <del>因数の最大値は10*9であるという制約があるので, Ruby標準ライブラリの素因数分解で問題ない.</del></p>
-
-<ul>
-<li><code>-1999999865 999999864000004607 999999866000004473</code>という入力(出力は<code>-1 999999929 999999937</code>)で死ぬので, 素因数列挙だけで解きたい場合はロー法を使いましょう&hellip;</li>
-</ul>
-</li>
-<li><p>Ruby標準ライブラリ(リジャッジでTLEになる予定) <a href="https://yukicoder.me/submissions/192779">https://yukicoder.me/submissions/192779</a></p></li>
-<li>ロー法 <a href="https://yukicoder.me/submissions/192783">https://yukicoder.me/submissions/192783</a></li>
-</ul>
 
 ]]></content>
   </entry>
