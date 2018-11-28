@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-10-30T22:45:28+09:00</updated>
+  <updated>2018-11-29T08:25:45+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -523,6 +523,45 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DanceRushでFLOWERを解禁するまで]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/11/29/dancerush-flower/"/>
+    <updated>2018-11-29T00:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/11/29/dancerush-flower</id>
+    <content type="html"><![CDATA[<h2>2018/3/23</h2>
+
+<p>確か初日にプレイしたはず。当初はLv5ですら星5(90点)取れなかったんですよ…</p>
+
+<h2>2018/4/2*</h2>
+
+<p>Extra Stage専用楽曲、完走したら解禁可能とかえぐすぎませんか…全然できないんですが…当時はDRSの反応についてよくわかってなかった(反応が悪いとすら思ったこともあります)。</p>
+
+<h2>2018/6/13</h2>
+
+<p>アンロックを進める中で、ようやくImpress易をクリアした(易を完走できれば解禁可能になり普も普通にプレイ可能になる)。
+今でこそLv8の大半の曲は余裕だが、当時はLv7はかなりいっぱいいっぱいだった。がんばったわし。これでFLOWER(易がLv9)に挑戦可能になった。好きな曲だからね。
+<a href="https://twitter.com/cielavenir/status/1006747633925287936">https://twitter.com/cielavenir/status/1006747633925287936</a></p>
+
+<h2>2018/7/19</h2>
+
+<p>この頃は音源を聴き込んでおり、77点に乗せる。しかし、この記録が破られることは3ヶ月間ないのであった…
+<a href="https://twitter.com/cielavenir/status/1019926097524244480">https://twitter.com/cielavenir/status/1019926097524244480</a></p>
+
+<h2>2018/10/24</h2>
+
+<p>あきらめつつも、全曲の解禁作業が終わり、全譜面星5埋めが佳境に差し掛かった頃。
+1曲目：Mandrake普(Lv8)。リズムの刻み方が独特で、Tap/Downが8分で交互に来る箇所がある関係上個人的にLv8最難だと思う。慌てずに着実に踏むことを意識して星5が取れた。
+2曲目：Garuda易(Lv9)。いつもほとんど取れない8小節があるんですが、おちついて取ることができた。これも星5。
+3曲目：調子が良い気がしたので、FLOWER易行くことにした。慌てずにステップを踏み、アウトロまでlife3残した。素晴らしい。が、ここで力が抜けてミスを出し残り1、最後の左足フリックは苦し紛れに入力できました。本当に良かった。もしこの入力ミスってたらどうなっていたの…。
+しかもBad10とか。Tapのミスは9個なので、Downを1個落としていたのかな…。まあアンロックするのが重要なので。いいんじゃないでしょうか&ndash;;;;なにはともあれお疲れ様でした。
+<a href="http://twitter.com/cielavenir/status/1055086630783016960">http://twitter.com/cielavenir/status/1055086630783016960</a></p>
+
+<h2>2018/11/29</h2>
+
+<p>FLOWERを解禁した私ならKACでもそこそこ戦えるはずだ！さあ予選行くぜ(ぉ)</p>
 ]]></content>
   </entry>
   
@@ -1524,35 +1563,6 @@
 <p>あれ、topcoder初出場で撃沈したのは誰だ^^; (SRM 635 Div2 Medやらyukicoder No.413やら)<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
 </ol>
 </div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] 旅館の予約計画]]></title>
-    <link href="http://cielavenir.github.io/blog/2017/10/23/inn-reservation/"/>
-    <updated>2017-10-23T02:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2017/10/23/inn-reservation</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/580">https://yukicoder.me/problems/no/580</a></p>
-
-<ul>
-<li>区間スケジューリング問題の、スロットが複数あるバージョンである。</li>
-<li>基本的な解き方は同じだが、popするスロットは、「部屋iの(出)時刻がdata[i]の入時刻より早い中で最大」のものである。
-
-<ul>
-<li>このスロットを検索するには、multisetを2分探索する以上に効率のよい方法はなさそうである。
-
-<ul>
-<li>勿論普通の区間スケジューリングではこの集合は1個しか無いため定数時間である。</li>
-</ul>
-</li>
-<li>私は最初、最小のものがdata[i]の入時刻より早ければpopする実装にして盛大に間違いました…</li>
-</ul>
-</li>
-<li><p>スロットを線形探索しないため、計算量をnからlognに落とすことができ、合わせてO(m(logm+logn))となる(実際にはn&lt;mだと思われるのでO(mlogm))。</p></li>
-<li><p><a href="https://yukicoder.me/submissions/211209">https://yukicoder.me/submissions/211209</a> (現状の最短時間とのこと)</p></li>
-<li>n&lt;=10000, m&lt;=100000なるHardバージョンを作ろうと思いましたが必要ない気もするのでやめておきます。。</li>
-</ul>
 
 ]]></content>
   </entry>

@@ -638,6 +638,72 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/11/29/dancerush-flower/">DanceRushでFLOWERを解禁するまで</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-11-29T00:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>2018/3/23</h2>
+
+<p>確か初日にプレイしたはず。当初はLv5ですら星5(90点)取れなかったんですよ…</p>
+
+<h2>2018/4/2*</h2>
+
+<p>Extra Stage専用楽曲、完走したら解禁可能とかえぐすぎませんか…全然できないんですが…当時はDRSの反応についてよくわかってなかった(反応が悪いとすら思ったこともあります)。</p>
+
+<h2>2018/6/13</h2>
+
+<p>アンロックを進める中で、ようやくImpress易をクリアした(易を完走できれば解禁可能になり普も普通にプレイ可能になる)。
+今でこそLv8の大半の曲は余裕だが、当時はLv7はかなりいっぱいいっぱいだった。がんばったわし。これでFLOWER(易がLv9)に挑戦可能になった。好きな曲だからね。
+<a href="https://twitter.com/cielavenir/status/1006747633925287936">https://twitter.com/cielavenir/status/1006747633925287936</a></p>
+
+<h2>2018/7/19</h2>
+
+<p>この頃は音源を聴き込んでおり、77点に乗せる。しかし、この記録が破られることは3ヶ月間ないのであった…
+<a href="https://twitter.com/cielavenir/status/1019926097524244480">https://twitter.com/cielavenir/status/1019926097524244480</a></p>
+
+<h2>2018/10/24</h2>
+
+<p>あきらめつつも、全曲の解禁作業が終わり、全譜面星5埋めが佳境に差し掛かった頃。
+1曲目：Mandrake普(Lv8)。リズムの刻み方が独特で、Tap/Downが8分で交互に来る箇所がある関係上個人的にLv8最難だと思う。慌てずに着実に踏むことを意識して星5が取れた。
+2曲目：Garuda易(Lv9)。いつもほとんど取れない8小節があるんですが、おちついて取ることができた。これも星5。
+3曲目：調子が良い気がしたので、FLOWER易行くことにした。慌てずにステップを踏み、アウトロまでlife3残した。素晴らしい。が、ここで力が抜けてミスを出し残り1、最後の左足フリックは苦し紛れに入力できました。本当に良かった。もしこの入力ミスってたらどうなっていたの…。
+しかもBad10とか。Tapのミスは9個なので、Downを1個落としていたのかな…。まあアンロックするのが重要なので。いいんじゃないでしょうか&ndash;;;;なにはともあれお疲れ様でした。
+<a href="http://twitter.com/cielavenir/status/1055086630783016960">http://twitter.com/cielavenir/status/1055086630783016960</a></p>
+
+<h2>2018/11/29</h2>
+
+<p>FLOWERを解禁した私ならKACでもそこそこ戦えるはずだ！さあ予選行くぜ(ぉ)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/10/30/wip-articles/">未完の記事の存在意義について</a></h1>
     
     
@@ -1423,70 +1489,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/07/05/proof-of-knowledge/">[AOJ] 知識の証明</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-07-05T01:50:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2883">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2883</a></p>
-
-<p>構文解析とは何だったのか。</p>
-
-<h2>解法</h2>
-
-<ul>
-<li>例として<code>[+c[+a[^bd]]]</code>を<code>O[c][O[a][X[b][d]]]</code>に変換します。</li>
-<li>O、A、Xはそれぞれ2引数を取りor、and、xorするProcで、カリー化されています。</li>
-<li>変換された文字列は正しいプログラムなので、evalでバッチリです＾＾</li>
-</ul>
-
-
-<h2>Python</h2>
-
-<ul>
-<li>Pythonはfunctools.partialはありますが演算子の形でカリー化することができないので、自前で関数をネストしてカリー化を行います。</li>
-<li>なおPythonはRubyのProcで必要な特別扱いが必要ないので、括弧は丸括弧を使います。</li>
-<li>(ところで答案内のtranslateのインポート方法に癖がありますが、Py2/3対応にするにはやむを得ないものです。)</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>Ruby <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998020">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998020</a></li>
-<li>Python(2/3) <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998054">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998054</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1506,6 +1508,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/11/29/dancerush-flower/">DanceRushでFLOWERを解禁するまで</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/30/wip-articles/">未完の記事の存在意義について</a>
       </li>
     
@@ -1515,10 +1521,6 @@
     
       <li class="post">
         <a href="/blog/2018/09/30/maimai/">2年前にmaimaiのレーティングが下がったこと</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/09/23/codefes/">こどふぇす過去開催情報</a>
       </li>
     
   </ul>

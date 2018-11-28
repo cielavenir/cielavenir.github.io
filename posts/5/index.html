@@ -98,6 +98,495 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2015/11/22/codeeval219/">CodeEval 219 the Tourist</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-22T04:13:10+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>問題文：<a href="https://www.codeeval.com/browse/219/">https://www.codeeval.com/browse/219/</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>探偵が複数の都市を全て回るとき、その距離の合計値の最小を出力する問題。</li>
+<li>こう書くと、巡回セールスマン問題だと思いたいですが、なんと、 <strong>最小全域木</strong> 問題である。やばくないですか。問題文ではHeと <strong>単数形</strong> で書かれていますが…分身できるんですか。</li>
+<li>普通にクラスカル法で解けば良いのでその部分の解説は他に譲ります。もしくは私の解答集を見ても。</li>
+</ul>
+
+
+<h2>注意点</h2>
+
+<ul>
+<li>Falseを出力すべきなのは、
+
+<ul>
+<li>グラフが連結でない場合</li>
+<li><strong>グラフに示されていない点が存在する場合</strong></li>
+</ul>
+</li>
+<li>である。たとえば、<code>1 2 1 | 2 4 1</code>の答えは、2ではなくFalseである。つまり、点番号を詰める必要はないということ。</li>
+<li>多重辺を持つ場合、 <strong>一番後ろの辺を採用</strong> する。例えば、<code>1 2 1 | 2 1 2</code>の場合、点1と点2の間にコスト2の無向辺を張る。</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>公式掲示板の <a href="https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly">https://getsatisfaction.com/codeeval/topics/-the-tourist-challenge-is-not-defined-properly</a> スレッドがなければ解けませんでした。</li>
+<li>解法がミスリードすぎるのは(拙作Rotate Holeの旧問題文以上に)やばいと思います。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/16/code-festival-2015/">Code Festival 2015 参加記</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-16T02:06:30+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>記憶が残っている内に参加記を書いておくことにした。</p>
+
+<h2>予選</h2>
+
+<ul>
+<li>A: D問題、65分で書き終わったが、2分探索がオーバーフローしているのに気付かず、109分でAC。129位。ぎりぎり通過。</li>
+<li>B: 範囲結合で行けると思ったが、微妙にバグらせて、113分でAC。ただ、予選Bは全完が少なかったので、58位。</li>
+</ul>
+
+
+<h2>木曜〜金曜</h2>
+
+<p>短縮王、あなごるにて、とりあえず充足解を出したあと、適当にクロック数を減らす。
+一方、Union-Findは再帰しない答案が通ってしまったが、本番で通らないとまずいので、最初の答案は残しておいた。</p>
+
+<h2>1日目</h2>
+
+<h3>朝</h3>
+
+<ul>
+<li>9:30起床、初のCodeIQパーカーを来て出発。コンビニでおにぎりを買って食べる。こどふぇすで出るおにぎりだけではもたないことがわかっていたので。
+
+<ul>
+<li>去年は(おにぎりが出るのを知らずに)御茶ノ水の日高屋で食べたが、六本木一丁目ではそういうことはできそうにない。</li>
+</ul>
+</li>
+<li>会場で、スタンプラリーを見て戦慄する。適当に参加すれば12〜3個は取れるが、スケジュールが重なっているため、15個取るにはフル参加がほぼ必須である。</li>
+</ul>
+
+
+<h3>本選</h3>
+
+<ul>
+<li>スタンプ1</li>
+<li>パーカーボーダーが6問から5問に減ったと知って喜んだが、その分難易度が左に一個ずれただけなのではという危惧を抱く。</li>
+<li>ネットワークの不具合でやる気の大半が削がれる。<a href="https://empireofcode.com/">Empire of Code</a>やったり。コード川柳のネタが生える(※1)。</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">時間</th>
+<th style="text-align:left;">言語</th>
+<th style="text-align:left;">問題(A-J)</th>
+<th style="text-align:left;">コメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">44秒</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;"><strong>AC</strong> 。<code>a[0].size==5&amp;&amp;a[1].size==7&amp;&amp;a[2].size==5</code>というくそコードを生み出す。<code>gets.split.map(&amp;:size)==[5,7,5]</code>とタイプしていたらFAだった。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:03</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;"><code>[*2..6*N]</code>の中央値でしょ -> WA。焦る。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:09</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">そのまま置けるときは置く、そうでない場合分解が必要かどうか判断する貪欲法。 <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">0:16</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">適当に置換 WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:20</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:25</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">N=1の処理を追加するも WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:30</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">最大被覆-1 WA。rprocon 2013FでnCrの計算式を間違えたり、code festival 2015予選A Dで2分探索がオーバーフローしたりとRHDコンテストには魔が潜む、その魔に今回も喰われるのか。2問で終わるのか。 <em>激しく焦る。胸が痛む。</em></td>
+</tr>
+<tr>
+<td style="text-align:left;">0:33</td>
+<td style="text-align:left;">Python</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">N〜N*6の確率を全部求め、その最大を答えるという酷い実装。<a href="http://www.checkio.org/mission/probably-dice/share/3d723f2165fef2b5dc2b1992ae7eb3e6/">CheckiO probably-dice</a>をコピった。 <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">0:54</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">2**3通り、-10〜10に対しシミュレーションする。WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:55</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:57</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">探索部分のバグを修正成功。 <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">1:20</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">謎なDFSを生やす。WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:38</td>
+<td style="text-align:left;">C++</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">使わないボタンを1個決めて、それぞれに対し最大被覆を計算すれば良いことはわかるんですよ。O(nm)の定数倍で通そうとする無茶。TLE</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:51</td>
+<td style="text-align:left;">C++</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">手持ちのRMQで殴る。<code>rmq=imos(notes);print min(max(rmq.query(1,e.first),rmq.query(e.first,e.second)-1,rmq.query(e.second,10**5+1)) for e in notes)</code>。 <strong>AC</strong> <strong>パーカー確定</strong> 。 <em>胸の痛み、収束する</em>。 かなりやばい。提供されたおにぎりを食べる。</td>
+</tr>
+<tr>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">F〜J</td>
+<td style="text-align:left;">読んだけど方針すら立たない</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:16</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">普通の解き方でAC</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:00</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">116位。仕方がない。パーカーで良しとします。ところで、今年はパーカーが159着出ました。去年の54着に比べるとかなりの大盤振る舞いありがとうございます。</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>夕方</h3>
+
+<ul>
+<li>スケジュールが遅延するも、短縮王の本番環境は予定通り16時に開く。解説を聞きながら適当に通す。Bが通らずやばい。とりあえずC++版を送る。ACDはRuby版とC版を送る。</li>
+<li>スタンプ2: タイピングをやる。残り40体ぐらいで死ぬ。終。</li>
+<li>スタンプ3: ボードゲームをやる。面子みたいなやつ。<a href="https://www.google.co.jp/search?q=%E3%83%93%E3%82%A2%EF%BC%86%E3%83%97%E3%83%AC%E3%83%83%E3%83%84%E3%82%A7%E3%83%AB">ビア＆プレッツェル</a>というらしい。適当にやったら1位だったみたい。終。</li>
+<li>スタンプ4: akensho氏トークライブ。AtCoderの裏側をいろいろ聞けてよかった。</li>
+<li>スタンプ5: 問題解説のスタンプを押し忘れたので戻る。</li>
+<li>スタンプ6: 太鼓の達人。天下一音ゲ祭2014課題曲であるきたさいたま2000は去年やったので、今年は夏祭り(普)。太鼓の反応悪くないですか。終。</li>
+<li>スタンプ7: DDR。Mickey Mouse March。ランクSSSらしい。終。ランカーのプレイは見ずに出る。
+
+<ul>
+<li>どちらも去年と同じマシンなのかな。来年はぜひ新筐体で。DDRにセツナトリップが入ってないというツイートも見かけましたので、ぜひよろしく。</li>
+</ul>
+</li>
+<li>にぎり鮨を5分で流しこむ。 <strong>全く味わっていない。</strong>
+
+<ul>
+<li>でもまあ、太鼓とDDRをやりに行ったからこそ主食締め切りに気づきました。告知が遅かった印象。もし食事を得られていなかったらと思うと悪寒が。</li>
+</ul>
+</li>
+<li>スタンプ8: LayCurse氏トークライブ。ネタ帳大事ですね。あと、細かいポイントのくだり、全部飛ばされたので、Advent Calendar参加を増やすかどうか怪しいです。現状判断できかねますので、スライド公開お願いします。</li>
+<li>コード川柳、できたので投稿。「RE テストケースを 推測だ」今思えば「コーナーケース」のほうが良かったかもしれないが、まあ、表彰とか考えてませんので、これでよし。ちなみに会期中ハッシュタグ検索使ってません。</li>
+<li>スタンプ9: 書道コーディング。(※1)をこちらに消費することに決定(プログラミングあるあるとは少し違うというのもあり)。「回線が 落ちてつらみの Festival」だってFestivalって楽しむものよね？？</li>
+<li>スタンプ10/11: コード川柳・短縮王のスタンプをもらう。ステッカーとバッジをもらう。</li>
+<li>スタンプ12: エキシビション観戦。</li>
+<li>生春巻き・ソースやきそば・おでんを自分の席で食す。 <strong>味わえた。</strong></li>
+<li>エキシビション、去年より難易度上がってませんか。解説聞いても解けるか怪しい。あと短縮王B、C言語版通った。</li>
+<li>あさプロ難易度ボーダーが50位/150位から30位/100位に変更。Easy出るお＾ω＾</li>
+</ul>
+
+
+<h3>夜</h3>
+
+<ul>
+<li>起床フェーズがやばいことは明白だったので、今年も宿泊希望。品川プリンスホテル。</li>
+<li>アミューズメントアイランドセガ、行ってみたが、22時閉店だったっぽい。戦慄を感じる。</li>
+<li>0時まで短縮王で寿命を縮める。</li>
+<li>本選D・E、想定解法で通す。 <strong>それぞれ233Bytes、115Bytes。</strong> びっくり。</li>
+<li>本選HをC++で通す。main関数自体は18行。解説の凄さを感じた。</li>
+<li>yukicoder No.302を通す。</li>
+<li><strong>狭い湯船</strong> に浸かり、就寝</li>
+</ul>
+
+
+<h2>2日目</h2>
+
+<h3>朝</h3>
+
+<ul>
+<li>7:10起床。AC。</li>
+</ul>
+
+
+<h3>あさプロ</h3>
+
+<ul>
+<li>スタンプ13</li>
+</ul>
+
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">時間</th>
+<th style="text-align:left;">言語</th>
+<th style="text-align:left;">問題(A-H)</th>
+<th style="text-align:left;">コメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">52秒</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;"><code>Math.sqrt(n).to_i!=n</code> TLE。今思えば最低ですが、この時は仕方がない。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:03</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">2つに分けて、ハミング距離。 <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">0:07</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;"><code>(1..100).map{e e**2}.bsearch{e e&gt;=n}-n</code>。頭がおかしいですが、やむをえません。 <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">0:10</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">ソートして、上位K個の和が既にR*Kを越えているか、または下を1個減らしたときに足すべき値は何か。WA。焦る。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:11</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">N==1の時、reduce(:+)はnilになる。(0,:+)。WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:13</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">N==Kの時、a[0,K]の要素数はKではなくK-1。下を1個減らす必要はない。 <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">0:20あたり</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">lcsを試すも、サンプルが通らない。スコア計算関数を修正。まだ通らない。切断位置はN/2である必要はないのか。じゃあB問題と違ってN%2の場合分けも要らないな。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:32</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;"><strong>AC</strong> Easy順位確定。7位。</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:08</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">左右に分けて、<code>sum((i+1)*a[i]+1 for i in range(N))</code>。サンプル合わず。</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:15</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">G</td>
+<td style="text-align:left;">各数字の前で切ってソートすればいいんじゃね->&hellip; 1 2 9 3 &hellip;で他の部分を切ってしまい2と9を切らない。間違えました、はい。ソース破棄。</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:21</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">F</td>
+<td style="text-align:left;">高さでソートして貪欲。O(K)。TLE。ちなみにO(N)の答案を書いてわかりましたがこの解法は嘘解法でした。</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:30</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">Middleは77位。3問解きたかったね。仕方ないね。</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li>スタンプ14: 入賞。タンブラー先着順に関してしか利益がないので、うーむ。</li>
+</ul>
+
+
+<h3>昼</h3>
+
+<ul>
+<li>あさプロE 左右にわけられるのは白石の場所のみ。サンプルは通った。しかしTLE。</li>
+<li>今半すき焼き弁当。 <strong>味わえました。</strong></li>
+<li>スタンプ15: chokudai氏トークライブ。そんなにアルゴリズムぽんぽん出てきませんToT</li>
+<li><strong>タンブラー引き換え。</strong> よかった´ω｀</li>
+<li>shinh氏トークライブ。私のコード紹介ありがとうございます。詰めが甘くてすみません。</li>
+<li>なんか係の人が忙しそうだったのでスタンプはいいやと。
+
+<ul>
+<li>ただ、本当は、こういうことを思わせた時点でアウトではある。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>早解きリレー</h3>
+
+<ul>
+<li>ゼッケン、去年はアルファベットだけど、今年整数だ。問題番号なのか解く順番なのかわからないっす。</li>
+<li>順位順で、普通にEを担当。実装は2問目。</li>
+<li>最初、すぐに反転させれば良いと勘違いしてWA。「解けそうだ」とか言ってすみません。h&lt;=6やm&lt;=30のときは待ってから反転させることで0にできますね。AC。途中で戻らずにすみました。</li>
+<li>ちなみに解いた順番の関係でEはFAらしい。</li>
+<li>他は見てるだけになってしまった感が。申し訳ない…</li>
+</ul>
+
+
+<h3>ハッピーアワー</h3>
+
+<ul>
+<li>本来の趣旨から少し外れ、コンテンツ表彰の前の短い歓談時間的扱いになった気がしますが、仕方ないかなと。</li>
+<li>短縮王は、総合2位、しかたないねToT</li>
+<li>コード川柳、kyudenamida氏、「もっと真面目な川柳にいいねするべき」とのことでしたが、Twitterの性質上やむを得ないのかも。</li>
+</ul>
+
+
+<h3>帰路</h3>
+
+<ul>
+<li>電車の中であさプロE AC。<code>sum((i+1)*a[i]+1 for i in range(N))</code>は2段階の和で表せるので、DP可能。</li>
+<li>リレーの問題、通して見ましたが、CとかDとかFとか本番中に解ける気がしない。G・Hなら解けるけど。てかこの問題セットだと思考停止状態で解けるのはB・G・Hだけですわ。Eも考察が必要ですが少しだけなので。E担当でよかった´ω｀</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>1日目夕方を見れば分かる通り、とてつもなくタイトでした。食事を味わえなかったのも残念。</li>
+<li>トークライブ途中退室を推奨しているかのような印象をあたえてしまう恐れ、有ったのでは。21 Completeとか。無茶でしょ</li>
+<li><p>太鼓の達人・DDRは来年こそ新筐体で。あー、まあ、需要過多になる危険があるか…</p></li>
+<li><p>それはそれとして、全体としては、濃い2日間で楽しめました。ありがとうございました。</p></li>
+</ul>
+
+
+<h2>お土産</h2>
+
+<ul>
+<li><a href="https://twitter.com/cielavenir/status/665833405490139136">https://twitter.com/cielavenir/status/665833405490139136</a></li>
+<li>パーカー</li>
+<li>本選Tシャツ、リレーTシャツ(カーネーション?)</li>
+<li>あさプロタオル</li>
+<li>トートバッグ
+
+<ul>
+<li>今回、手提げショルダー両用なので、かなりありがたいです。</li>
+</ul>
+</li>
+<li>リストバンド、ボールペン、メモパッド、ステッカー、缶バッジ、タンブラー</li>
+</ul>
+
+
+<h2>追記(151116)</h2>
+
+<ul>
+<li>ショートコーディングOzy本、電子版が良いけどKindleは専用アプリが必要なのでちょっと、という人はこれを買いましょう。pdfなのでデバイスに依らず閲覧できますよ。</li>
+<li><a href="http://tatsu-zine.com/books/short-cording">http://tatsu-zine.com/books/short-cording</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2015/10/29/many-ameba/">[Yukicoder] アメーバがたくさん・n連勤 (and マスと駒と色塗り)</a></h1>
     
     
@@ -629,6 +1118,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2018/11/29/dancerush-flower/">DanceRushでFLOWERを解禁するまで</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/10/30/wip-articles/">未完の記事の存在意義について</a>
       </li>
     
@@ -638,10 +1131,6 @@
     
       <li class="post">
         <a href="/blog/2018/09/30/maimai/">2年前にmaimaiのレーティングが下がったこと</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/09/23/codefes/">こどふぇす過去開催情報</a>
       </li>
     
   </ul>
