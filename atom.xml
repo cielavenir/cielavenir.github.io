@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2019-01-04T22:26:05+09:00</updated>
+  <updated>2019-01-04T22:28:11+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -527,7 +527,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[クリスマスツリー]]></title>
+    <title type="html"><![CDATA[[yukicoder] クリスマスツリー]]></title>
     <link href="http://cielavenir.github.io/blog/2019/01/04/christmas-tree/"/>
     <updated>2019-01-04T22:00:00+09:00</updated>
     <id>http://cielavenir.github.io/blog/2019/01/04/christmas-tree</id>
@@ -567,7 +567,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[チャンパーノウン定数]]></title>
+    <title type="html"><![CDATA[[yukicoder] チャンパーノウン定数]]></title>
     <link href="http://cielavenir.github.io/blog/2018/12/02/champernowne/"/>
     <updated>2018-12-02T04:00:00+09:00</updated>
     <id>http://cielavenir.github.io/blog/2018/12/02/champernowne</id>
