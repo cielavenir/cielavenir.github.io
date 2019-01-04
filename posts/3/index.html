@@ -98,6 +98,203 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/02/24/luckynumber/">[Yukicoder] E869120 and Lucky Numbers</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-02-24T00:39:40+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>まず、最下位が0,6,7の場合はNoです。後述する状態1/0への移行は十の位以降で発生する必要があります。in06がこのケースです。</p>
+
+<p>それ以外の場合。
+下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
+
+<ul>
+<li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
+
+<ul>
+<li>2,3,4の場合は、繰り上がりがあるので、上の桁から1を引きます。
+
+<ul>
+<li>すでに最上位の場合はNoです。</li>
+<li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
+</ul>
+</li>
+<li>6,7の場合は、状態1に移行します。</li>
+<li>0の場合は、状態0に移行します。</li>
+</ul>
+</li>
+<li>状態1のとき、0,6,7を受け付けます。
+
+<ul>
+<li>0の場合は、状態0に移行します。</li>
+</ul>
+</li>
+<li>状態0のとき、0のみを受け付けます。
+
+<ul>
+<li>ラッキーナンバーが影響し得ないということは、すべての桁が0になっている以外にないです。</li>
+<li>(間に合わなかった)チャレンジでは、612だと、下位の12で6+6と完結しているのに、新たな600が出てきているので、十の位が不合理となるのです。</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a href="https://yukicoder.me/submissions/238472">https://yukicoder.me/submissions/238472</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2018/02/10/qk/">[Yukicoder] ここでちょっとQK！</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-02-10T02:10:16+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/649">https://yukicoder.me/problems/no/649</a></p>
+
+<p>配列の先頭要素からの削除はO(配列長)ですが、dequeを使うと先頭からの削除は速くなります。
+中央からの削除はやはり遅いですが、定数倍の高速化が望めるので、時間制限の設定によっては間に合う可能性があります。</p>
+
+<ul>
+<li><a href="https://yukicoder.me/submissions/235221">https://yukicoder.me/submissions/235221</a></li>
+</ul>
+
+
+<p>なお、マスと駒と色塗りで、範囲管理をvectorでなくdequeでやると通ってしまいます(setでやるのが最善ではあります)。
+- <a href="http://cielavenir.github.io/blog/2015/10/29/many-ameba/">http://cielavenir.github.io/blog/2015/10/29/many-ameba/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2018/02/10/goodnight/">[Yukicoder] おやすみ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-02-10T02:00:16+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/648">https://yukicoder.me/problems/no/648</a></p>
+
+<p>基本的にはむこさんの解説のとおり、<code>(sqrt(8*n+1)-1)/2</code>を出力すれば良いですが、実装上の別解を。</p>
+
+<ol>
+<li>Integer sqrtの利用
+
+<ul>
+<li>sqrtの誤差が問題になるなら、整数での平方根をニュートン法などで計算すればよいでしょう。</li>
+<li>ただし、(LLでないなら)128bit幅の整数が必要になるので注意。</li>
+<li><a href="https://qiita.com/cielavenir/items/2a685d3080862f2c2c47">yhpg「多段階選抜」</a>の復習でライブラリを作っていました。
+
+<ul>
+<li>Ruby <a href="https://yukicoder.me/submissions/205380">https://yukicoder.me/submissions/205380</a></li>
+<li>C <a href="https://yukicoder.me/submissions/205381">https://yukicoder.me/submissions/205381</a></li>
+<li>Python <a href="https://yukicoder.me/submissions/207818">https://yukicoder.me/submissions/207818</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>sqrtlの利用
+
+<ul>
+<li>long doubleの仮数部が64bitであることを思い出せば、sqrtlを使えば解けることは想像に固くありません。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+<li>C <a href="https://yukicoder.me/submissions/206063">https://yukicoder.me/submissions/206063</a></li>
+<li>Python (ctypes) <a href="https://yukicoder.me/submissions/207816">https://yukicoder.me/submissions/207816</a>
+
+<ul>
+<li>intをマーシャリングするときにfloatを経由されるといけないので、sscanfを用いて自力でマーシャリングする必要があります</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>あれ、topcoder初出場で撃沈したのは誰だ^^; (SRM 635 Div2 Medやらyukicoder No.413やら)<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2017/10/23/inn-reservation/">[Yukicoder] 旅館の予約計画</a></h1>
     
     
@@ -904,814 +1101,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/12/09/smile/">[Yukicoder] (^^*)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-12-09T00:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://yukicoder.me/problems/no/457">http://yukicoder.me/problems/no/457</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>間に部分列<code>^^*</code>を含むような(と)の組み合わせの個数を求めよ。
-
-<ul>
-<li><code>reverse.tr('()',')(')</code>なる処理を加えれば右向きを別に考えなくて良くなる。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<h3>O(S<sup>2</sup> logS)</h3>
-
-<ul>
-<li>(と)の組み合わせをすべて求めて、それぞれに対し、<code>^^*</code>が含まれることを判定します。</li>
-<li>まず<code>^^</code>が含まれる一番左の座標を求めます。
-
-<ul>
-<li>その座標までに含まれる<code>^</code>の個数を累積和として持ち、(の座標における累積和+2を2分探索します。</li>
-</ul>
-</li>
-<li>次に、その座標から)の座標までについて、<code>*</code>が含まれるかどうかを2分探索します。</li>
-<li>以上により<code>O(S^2 logS)</code>となり、C++では通すことができます。
-
-<ul>
-<li>本家解説によると愚直解はTLEらしいですが、2分探索に落とし込んだことが功を奏したのでしょうか。</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cp">#include &lt;vector&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;algorithm&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;cstdio&gt;</span>
-</span><span class='line'><span class="cp">#include &lt;cstring&gt;</span>
-</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">s</span><span class="p">,</span><span class="kt">int</span> <span class="n">len</span><span class="p">){</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">al</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">ar</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">ah</span><span class="p">(</span><span class="n">len</span><span class="p">);</span>
-</span><span class='line'>  <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="n">ast</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;(&#39;</span><span class="p">){</span>
-</span><span class='line'>          <span class="n">al</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;)&#39;</span><span class="p">){</span>
-</span><span class='line'>          <span class="n">ar</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;^&#39;</span><span class="p">){</span>
-</span><span class='line'>          <span class="n">ah</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>      <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;*&#39;</span><span class="p">){</span>
-</span><span class='line'>          <span class="n">ast</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">ah</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span><span class="n">ah</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">ret</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">r</span><span class="p">:</span><span class="n">ar</span><span class="p">){</span>
-</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
-</span><span class='line'>          <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">distance</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
-</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="n">hidx</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
-</span><span class='line'>          <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
-</span><span class='line'>          <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">!=</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;*</span><span class="n">st</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span>
-</span><span class='line'>              <span class="n">ret</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>          <span class="p">}</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">10001</span><span class="p">];</span>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-</span><span class='line'>  <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span><span class="n">solve</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">len</span><span class="p">));</span>
-</span><span class='line'>  <span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">s</span><span class="o">+</span><span class="n">len</span><span class="p">);</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;(&#39;</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;)&#39;</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;)&#39;</span><span class="p">)</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="sc">&#39;(&#39;</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">solve</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">len</span><span class="p">));</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>O(SlogS)</h3>
-
-<ul>
-<li>以下、最も重いループの計算量を減らすことを考えます。</li>
-<li>まず、rは単調増加であるため、<code>st!=ast.end()&amp;&amp;*st&lt;r</code>が一度真になれば、そのループの中では常に真になります。よってキャッシュすることができます。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">f</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">r</span><span class="p">:</span><span class="n">ar</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">l</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">){</span><span class="n">ret</span><span class="o">++</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
-</span><span class='line'>      <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">distance</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">hidx</span><span class="o">&gt;=</span><span class="n">r</span><span class="p">)</span><span class="k">continue</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">!=</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;*</span><span class="n">st</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span>
-</span><span class='line'>          <span class="n">ret</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>          <span class="n">f</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>さらに、hidxおよびstはrに依存しないため、ループrの外で計算しておいて問題ないことがわかります。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
-</span><span class='line'>  <span class="c1">// if hidx&gt;=r, l&gt;=r is assured because hidx&gt;l.</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">distance</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">));</span>
-</span><span class='line'>  <span class="c1">// if hidx==ah.size(), st==ast.end() is assured because hidx==len.</span>
-</span><span class='line'>  <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
-</span><span class='line'>  <span class="kt">bool</span> <span class="n">f</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">r</span><span class="p">:</span><span class="n">ar</span><span class="p">){</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">){</span><span class="n">ret</span><span class="o">++</span><span class="p">;</span><span class="k">continue</span><span class="p">;}</span>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">!=</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">&amp;&amp;*</span><span class="n">st</span><span class="o">&lt;</span><span class="n">r</span><span class="p">){</span>
-</span><span class='line'>          <span class="n">ret</span><span class="o">++</span><span class="p">;</span>
-</span><span class='line'>          <span class="n">f</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>arのループは<code>FF...FFTT...TT</code>のようになるので、このTになる場所を2分探索できます。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span><span class='line'>  <span class="k">auto</span> <span class="n">st</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">st</span><span class="o">==</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="k">break</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">ret</span><span class="o">+=</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">-</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ar</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="o">*</span><span class="n">st</span><span class="p">);</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>最後に、範囲を狭めるためのtweakを入れます(必要ではありませんが…)。</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="k">auto</span> <span class="n">ist</span><span class="o">=</span><span class="n">ast</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span><span class='line'><span class="k">auto</span> <span class="n">ir</span><span class="o">=</span><span class="n">ar</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">l</span><span class="p">:</span><span class="n">al</span><span class="p">){</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">hidx</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">l</span><span class="p">,</span><span class="n">ah</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">ah</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">ah</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-</span><span class='line'>  <span class="n">ist</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ist</span><span class="p">,</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">hidx</span><span class="p">);</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">ist</span><span class="o">==</span><span class="n">ast</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="k">break</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">ret</span><span class="o">+=</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="o">-</span><span class="p">(</span><span class="n">ir</span><span class="o">=</span><span class="n">lower_bound</span><span class="p">(</span><span class="n">ir</span><span class="p">,</span><span class="n">ar</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="o">*</span><span class="n">ist</span><span class="p">));</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>以上で<code>O(SlogS)</code>となり、Rubyでも通すことができます。
-
-<ul>
-<li>C++ <a href="http://yukicoder.me/submissions/136737">http://yukicoder.me/submissions/136737</a></li>
-<li>Ruby <a href="http://yukicoder.me/submissions/136749">http://yukicoder.me/submissions/136749</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>O(S)</h3>
-
-<ul>
-<li>動的計画法により<code>O(S)</code>に落とせるようです。コードがより短い実装はそうなっているものが多いようです。</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/11/30/problem-on-tree/">[Atcoder] 木の問題</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-11-30T15:07:16+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k">https://cf16-relay-open.contest.atcoder.jp/tasks/relay_k</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>問題文がそれなりに読みにくい。</li>
-<li>いわんとしていることは、選んだ頂点については2回通ってはならないということである。この状況で選ぶ頂点の数を最大化すれば良い。</li>
-<li>答えは木の直径以上になることは容易に想像がつく。</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<ul>
-<li>枝分かれする(辺が3本以上ある)頂点については、つながっている辺の先にある葉(辺が1本ある頂点)を選んだほうが良いのは明らかである。</li>
-<li>問題は辺がちょうど2本ある頂点であるが、木の直径上にある頂点を選ぶ方法でサンプルは通る。</li>
-<li>しかし、たとえばこういう入力の場合、sub-optimalになってしまう。</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>o-o-o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>  o-o-o
-</span><span class='line'>    |
-</span><span class='line'>    o</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>対処するには、木の直径を求めるコードを変形し、頂点の重みを、辺が2本ある場合のみ1に、それ以外は0とすれば良い。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++14
-
-<ul>
-<li>Based on <a href="http://www.prefield.com/algorithm/graph/tree_diameter.html">Spaghetti Source</a></li>
-<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003862">https://cf16-relay-open.contest.atcoder.jp/submissions/1003862</a></li>
-</ul>
-</li>
-<li>Ruby
-
-<ul>
-<li><a href="https://cf16-relay-open.contest.atcoder.jp/submissions/1003865">https://cf16-relay-open.contest.atcoder.jp/submissions/1003865</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h2>感想</h2>
-
-<ul>
-<li>これを時間内に思いつくのはやはりすごいと思いました…</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/11/28/code-festival-2016/">Code Festival 2016 参加記</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-11-28T22:06:30+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>参加記です。</p>
-
-<h2>予選</h2>
-
-<ul>
-<li>A: C早解きでぎりぎり通過。ただし、剰余のあたりバグらせてしまい若干危うかった。</li>
-<li>B: 本番の時間では参加しませんでしたが、自力で解けたのはBまででした。</li>
-<li>C: (同上)、自力で解けたのはAだけという悲惨さ。</li>
-<li>予選Aで通って本当に良かった…。</li>
-</ul>
-
-
-<h2>11/8</h2>
-
-<ul>
-<li>博士予備審査を通す。まあ、<a href="http://cielavenir.github.io/blog/2016/12/10/retrieve/">退学</a>は予定していましたが、予備審査は通したかったので。</li>
-<li>ちなみに通っていなければ <strong>本選辞退案件</strong> でした…</li>
-</ul>
-
-
-<h2>水曜日〜金曜日</h2>
-
-<ul>
-<li>この時期にバス旅行とか色々とあれ。</li>
-<li>本選ページを見て、パーカーボーダーに愕然とする。ABCD+E部分点が必要。</li>
-<li>実は一回スーツケース(含PC)をホテルに忘れかけそうになった(これも <strong>本選辞退案件</strong> )</li>
-</ul>
-
-
-<h2>1日目</h2>
-
-<h3>朝</h3>
-
-<ul>
-<li>9:50起床、 <strong>Code Festivalの伝統的正装とされるパーカー</strong> を来て出発。汐留のサブウェイで食べようと思ったけど中止。結局昼食は歌舞伎揚げで済ませた。</li>
-<li>スタンプラリー、今年はないみたい。スケジュールを巻かなくてよいので楽。</li>
-<li>席、学年順なんですか？老人を固めるのはやめてくだされ。</li>
-</ul>
-
-
-<h3>本選</h3>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">時間</th>
-<th style="text-align:left;">言語</th>
-<th style="text-align:left;">問題(A-J)</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">0:02</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A</td>
-<td style="text-align:left;">WA</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:07</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B</td>
-<td style="text-align:left;">順番に足していって後で1問だけ消せばいいでしょ <strong>AC</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">0:12</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A</td>
-<td style="text-align:left;">H,Wを逆に取るくそミスに気付く。 <strong>AC</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">0:15</td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;">D</td>
-<td style="text-align:left;"><a href="https://github.com/cielavenir/procon/blob/f17167643ecb6360c986a9ffed37b1524b6683b8/atcoder/tyama_atcodercodefestival2016finalD_TLE.cpp">最大マッチング</a>だと思ったけど、制約がでかすぎるなぁ。</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:30</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">C</td>
-<td style="text-align:left;">言語についてUnion-Findして根の数が1ならいいよね <strong>AC</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">0:45</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">E</td>
-<td style="text-align:left;">個数と速度について幅優先探索。TLE</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:58</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">E</td>
-<td style="text-align:left;">色々手を尽くすも依然TLE</td>
-</tr>
-<tr>
-<td style="text-align:left;">1:02</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">E</td>
-<td style="text-align:left;">枝刈りの仕方を改善。<strong>RE</strong> (部分点制約に合わないなら切腹する意味なのでREでOK)</td>
-</tr>
-<tr>
-<td style="text-align:left;">1:30</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">D</td>
-<td style="text-align:left;">全部のチーを取ってから残りのカードでできるだけポンする。多分嘘解法。<strong>AC</strong> <strong>パーカー確定</strong> 。軽食を取る。</td>
-</tr>
-<tr>
-<td style="text-align:left;">2:45</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">E</td>
-<td style="text-align:left;">unordered_mapいらなかったんや…少しつらい^^;;</td>
-</tr>
-<tr>
-<td style="text-align:left;">3:00</td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;">あとは座るだけ。84位。お疲れ様でした。なおパーカーボーダーは124位。少し減りましたねぇ</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>D問題、嘘解法だと思っていたのが想定解法だったらしく、びっくり。今年も運が良かった。
-
-<ul>
-<li>UTPCの<a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2102">ラミー</a>の<a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=497566">経験</a>が役に立った？</li>
-</ul>
-</li>
-<li><font color="orange">帰宅してから思ったけどDは一般マッチングであって二部グラフじゃないですよね…</font></li>
-</ul>
-
-
-<h3>夕方</h3>
-
-<ul>
-<li>tourist氏トークライブ。
-
-<ul>
-<li>everything <strong>except gifted brain</strong></li>
-<li><a href="http://www.farmanager.com/">FAR Manager</a> (そこか)</li>
-</ul>
-</li>
-<li>体力測定。11ptだった。だめすぎ。</li>
-<li>ペアプロライブ。二人ゲームは難しいです…。でもコードは短いという…
-
-<ul>
-<li><font color="orange"><a href="http://cf16-pair.contest.atcoder.jp/">http://cf16-pair.contest.atcoder.jp/</a> 、公開になりませんか?</font></li>
-</ul>
-</li>
-<li>エキシビション、さらに難易度上がってませんか。
-
-<ul>
-<li>sevenkplus氏が、tourist氏のPCのFAR Managerの使い方がわからず苦戦していた模様(そこか)</li>
-</ul>
-</li>
-<li>リレー顔合わせ。自己紹介(英語)がぐだってしまった。
-
-<ul>
-<li><font color="orange">ショートコードランキングについて。丸写しはまれですが、 <strong>写経はそれなりにしてます。すみません。</strong></font></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>夜</h3>
-
-<ul>
-<li>起床フェーズがやばいことは明白なのに今年は宿泊なしですよ？酷いよ？</li>
-<li>特に理由もなくセガ神楽坂に寄ってから帰宅した。</li>
-</ul>
-
-
-<h2>2日目</h2>
-
-<h3>朝</h3>
-
-<ul>
-<li>7:50起床。 <strong>コンテストはACだけど開会式はTLE</strong> 。</li>
-</ul>
-
-
-<h3>Elimination Tournament</h3>
-
-<h4>Round1 (group19)</h4>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">時間</th>
-<th style="text-align:left;">言語</th>
-<th style="text-align:left;">問題</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">0:11</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B</td>
-<td style="text-align:left;">メモ化再帰。WA</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:26</td>
-<td style="text-align:left;">C++</td>
-<td style="text-align:left;">A</td>
-<td style="text-align:left;">2頂点からPrim法。WA</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:28</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B</td>
-<td style="text-align:left;">off-by-oneエラーだった。 <strong>400点</strong> 1位通過、Round2進出</td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li><font color="orange">A問題、後で確認したら、long long案件だった。これは酷い。</font></li>
-</ul>
-
-
-<h4>Round2 (group10)</h4>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">時間</th>
-<th style="text-align:left;">言語</th>
-<th style="text-align:left;">問題</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">0:01</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A</td>
-<td style="text-align:left;">自明解。 <strong>200点</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">0:09</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B</td>
-<td style="text-align:left;">愚直解。 <strong>200点</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">0:30</td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;">かろうじて逃げ切れました。4位通過、Round3進出</td>
-</tr>
-</tbody>
-</table>
-
-
-<h4>Round3 (group5)</h4>
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">時間</th>
-<th style="text-align:left;">言語</th>
-<th style="text-align:left;">問題</th>
-<th style="text-align:left;">コメント</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">0:08</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">A</td>
-<td style="text-align:left;">最大K個を拾う。当然誤解法。</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:12</td>
-<td style="text-align:left;">Ruby</td>
-<td style="text-align:left;">B</td>
-<td style="text-align:left;"><code>N-S.index('m')</code>個の中の最大を取って、その最小では？ → WA</td>
-</tr>
-<tr>
-<td style="text-align:left;">0:30</td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;"></td>
-<td style="text-align:left;">0点。くそすぎました…</td>
-</tr>
-</tbody>
-</table>
-
-
-<p>まあ、下以外のステッカー、計3枚もらえてうれしかったので、その場で貼ってしまいました。</p>
-
-<h3>昼</h3>
-
-<ul>
-<li>知床鮨。</li>
-<li>LT。きゅうりさんの擬人化の <em>よさみ</em> 。</li>
-<li>休憩時間にちょろっと退出しUFOキャッチャー。まあ、1回のトライではタオルはおろか何も取れるはずはない。ご苦労様でした。</li>
-<li>りんごさんの挑戦状。おもしろかった。</li>
-</ul>
-
-
-<h3>早解きリレー</h3>
-
-<ul>
-<li>W4yneb0t氏のチームでした。</li>
-<li>Tシャツの色、不幸にも去年と同じ色…。あの色を2着というのは厳しい…。</li>
-<li>ゼッケン。アルファベットにしてくれと去年要望出したのにどうしたー。</li>
-<li>順位順でGを担当。思いついた解法がどう考えてもTLEだったが、状態を配列に取っておけばいいことを教えてもらった。実装は一発ACだった。</li>
-<li>9完でFinish。
-
-<ul>
-<li>役に立てなくてすみません。 <strong>W4yneb0tさん、Grand Final優勝おめでとうございます。</strong></li>
-</ul>
-</li>
-<li>Kは、最長パスの接点2の数+葉の数が答えらしい。
-
-<ul>
-<li><font color="orange">実際には</font><a href="http://cielavenir.github.io/blog/2016/11/30/problem-on-tree/">少し違った。</a></li>
-</ul>
-</li>
-</ul>
-
-
-<h3>帰路</h3>
-
-<ul>
-<li>他の人の実装見たりしていた。</li>
-</ul>
-
-
-<h2>まとめ</h2>
-
-<ul>
-<li>ゆっくり楽しめました。ただ、ゆっくりすぎて太鼓やらなかった(でもまあ太鼓はメイン機種じゃないのでいいか…)</li>
-<li>お土産少なくないですか。パーカーあるからいいですが…</li>
-</ul>
-
-
-<h2>お土産</h2>
-
-<ul>
-<li>パーカー
-
-<ul>
-<li>白だと汚れるので家宝として封印かなぁ。</li>
-</ul>
-</li>
-<li>本選Tシャツ、リレーTシャツ(カーネーション?)</li>
-<li>ステッカー(本選、トーナメント3枚)</li>
-<li>トートバッグ
-
-<ul>
-<li>今回も手提げショルダー両用</li>
-</ul>
-</li>
-<li>ボールペン、ノート</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="4">&larr; Older</a></li>
@@ -1733,19 +1122,19 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2019/01/04/christmas-tree/">クリスマスツリー</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/12/02/convolution-sum/">[yukicoder] 畳み込みの和</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2018/12/02/champernowne/">チャンパーノウン定数</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2018/11/29/dancerush-flower/">DanceRushでFLOWERを解禁するまで</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/10/30/wip-articles/">未完の記事の存在意義について</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/10/08/careful-engineer/">[yukicoder] Careful Engineer</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/09/30/maimai/">2年前にmaimaiのレーティングが下がったこと</a>
       </li>
     
   </ul>
@@ -1762,7 +1151,7 @@
   </div>
   <footer role="contentinfo" class="page-footer"><hr>
 <p>
-  Copyright &copy; 2018 - Ciel Avenir -
+  Copyright &copy; 2019 - Ciel Avenir -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

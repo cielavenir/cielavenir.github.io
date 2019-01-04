@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>シンクロニカの公開用IDを得る方法 - My Octopress Blog</title>
+  <title>チャンパーノウン定数 - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2015/07/19/synchronica-id">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/12/02/champernowne">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">シンクロニカの公開用IDを得る方法</h1>
+      <h1 class="entry-title">チャンパーノウン定数</h1>
     
     
       <p class="meta">
@@ -112,7 +112,7 @@
   
 
 
-<time datetime="2015-07-19T16:53:25+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-12-02T04:00:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -120,10 +120,49 @@
 
 
 <div class="entry-content"><ul>
-<li><a href="https://lounge.synchronica.jp/">シンクロニカラウンジ</a>にて、自分のIDを得る方法について</li>
-<li>フレンド検索で自分を検索することはできませんが、「スコアデータ」->「個人プレイ成績」を閲覧すると、URLの末尾に40文字の文字列が見えます。</li>
-<li><p>これを <a href="https://lounge.synchronica.jp/Friend/info/">https://lounge.synchronica.jp/Friend/info/</a> の後ろに付けることで、自分の情報を実際に見ることができます。よって、これを公開用IDとして良いのではないかと思われます。</p></li>
-<li><p>なお、maimaiもフレンドコードを見られませんが、この方法で得ることもできません。なおフレンド申請は「ご近所リストの○番目に申請」という形式で実装されています。</p></li>
+<li><a href="https://yukicoder.me/problems/no/756">https://yukicoder.me/problems/no/756</a></li>
+<li><a href="https://yukicoder.me/problems/no/757">https://yukicoder.me/problems/no/757</a></li>
+</ul>
+
+
+<p>チャンパーノウン定数自体は既出のネタ(例：<a href="https://github.com/cielavenir/procon/blob/f28284db31ff655e0ed4a9ca8241aa9d015aad75/euler/tyama_euler40.c">Project Euler 40</a>)なので、基本的には以下の方針で良い(CodeIQコード銀行「n番目の数字は？」(<a href="https://github.com/cielavenir/codeiq_solutions/tree/master/code_teller/q983">答案</a>)のコメントより)。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>例えば1から999までは以下の様な区間に分割できる。
+</span><span class='line'>1 + 0〜8
+</span><span class='line'>10 + 0〜89
+</span><span class='line'>100 + 0〜899
+</span><span class='line'>各区間に含まれる数字の個数は9、180、2700となる。
+</span><span class='line'>これを1*1*9、2*10*9、3*100*9と表現する(digits*expbase*9)。
+</span><span class='line'>入力値が入る区間が決まったら、それより下の和を入力値から引き(nとする)、
+</span><span class='line'>(digits)桁の数を並べた中のn桁目を求めれば良い。</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで、ビルトイン多倍長整数を使えば<code>10**1000</code>程度まではACできる。ただし、今回は入力が非常に大きいため、下位から順番に処理すると多倍長演算が容易にTLEを招いてしまう(解答例の<code>if false</code>の一部)。
+まず、この<code>1*1*9 + 2*10*9 + 3*100*9 + ...</code>を高速に求めることを考える。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Sn   = 1*1*9 2*10*9 3*100*9 4*1000*9
+</span><span class='line'>10Sn =       1*10*9 2*100*9 3*1000*9  4*10000*9
+</span><span class='line'>-9Sn = 1*1*9 1*10*9 1*100*9 1*1000*9 -4*10000*9
+</span><span class='line'>-9Sn = (10**4-1)                     -4*10000*9</span></code></pre></td></tr></table></div></figure>
+
+
+<p>といった変形により、<code>Si = i*10**i - (10**i-1)/9</code>と定式化できる。これを用いて、digitsを2分探索するか上位から探索するかする。これでTLEを回避できる。</p>
+
+<ul>
+<li>Crystal <a href="https://yukicoder.me/submissions/300755">https://yukicoder.me/submissions/300755</a></li>
+<li>Ruby <a href="https://yukicoder.me/submissions/300934">https://yukicoder.me/submissions/300934</a></li>
 </ul>
 
 </div>
@@ -148,7 +187,7 @@
   
 
 
-<time datetime="2015-07-19T16:53:25+09:00" pubdate data-updated="true"></time>
+<time datetime="2018-12-02T04:00:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -156,7 +195,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2015/07/19/synchronica-id/" data-via="" data-counturl="http://cielavenir.github.io/blog/2015/07/19/synchronica-id/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/12/02/champernowne/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/12/02/champernowne/" >Tweet</a>
   
   
   
@@ -167,13 +206,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2015/06/15/yukiko-15/" title="Previous Post:
-        [yukicoder] ゆきこちゃんの15パズル">&laquo; [yukicoder] ゆきこちゃんの15パズル</a></li>
+        href="/blog/2018/11/29/dancerush-flower/" title="Previous Post:
+        DanceRushでFLOWERを解禁するまで">&laquo; DanceRushでFLOWERを解禁するまで</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2015/10/29/many-ameba/"
-        title="Next Post: [yukicoder] アメーバがたくさん・n連勤 (and マスと駒と色塗り)">[yukicoder] アメーバがたくさん・n連勤 (and マスと駒と色塗り)
+      <li class="next"><a class="basic-alignment right" href="/blog/2018/12/02/convolution-sum/"
+        title="Next Post: [yukicoder] 畳み込みの和">[yukicoder] 畳み込みの和
         &raquo;</a></li>
       
     </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2018-12-31T19:50:36+09:00</updated>
+  <updated>2019-01-04T22:26:05+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -521,6 +521,100 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[クリスマスツリー]]></title>
+    <link href="http://cielavenir.github.io/blog/2019/01/04/christmas-tree/"/>
+    <updated>2019-01-04T22:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2019/01/04/christmas-tree</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://yukicoder.me/problems/no/778">https://yukicoder.me/problems/no/778</a></li>
+</ul>
+
+
+<p><code>__gnu_pbds::tree</code>で倒せます。<a href="https://yukicoder.me/problems/no/649/editorial">ここでちょっとQK！の解説</a>を参照ください。</p>
+
+<ul>
+<li>答案 <a href="https://yukicoder.me/submissions/308223">https://yukicoder.me/submissions/308223</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] 畳み込みの和]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/12/02/convolution-sum/"/>
+    <updated>2018-12-02T22:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/12/02/convolution-sum</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a></li>
+</ul>
+
+
+<p>問題文のサンプル１はこういう意味である。</p>
+
+<ul>
+<li><code>3 + 2x + 2x2 + ...</code> * <code>7 + 0x + 4x2 + ...</code> = <code>21 + 14x + 36x2 + ...</code>となる(2乗まで)。この係数の和(<code>21+14+36</code>)は61である。</li>
+</ul>
+
+
+<p>つまり、(3+2+2)*7 + (3+2)*0 + (3)*4を計算すれば良いことになる。各項の左側について最初に和を取り、後ろから順番に引いていけば良い。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[チャンパーノウン定数]]></title>
+    <link href="http://cielavenir.github.io/blog/2018/12/02/champernowne/"/>
+    <updated>2018-12-02T04:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2018/12/02/champernowne</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://yukicoder.me/problems/no/756">https://yukicoder.me/problems/no/756</a></li>
+<li><a href="https://yukicoder.me/problems/no/757">https://yukicoder.me/problems/no/757</a></li>
+</ul>
+
+
+<p>チャンパーノウン定数自体は既出のネタ(例：<a href="https://github.com/cielavenir/procon/blob/f28284db31ff655e0ed4a9ca8241aa9d015aad75/euler/tyama_euler40.c">Project Euler 40</a>)なので、基本的には以下の方針で良い(CodeIQコード銀行「n番目の数字は？」(<a href="https://github.com/cielavenir/codeiq_solutions/tree/master/code_teller/q983">答案</a>)のコメントより)。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>例えば1から999までは以下の様な区間に分割できる。
+</span><span class='line'>1 + 0〜8
+</span><span class='line'>10 + 0〜89
+</span><span class='line'>100 + 0〜899
+</span><span class='line'>各区間に含まれる数字の個数は9、180、2700となる。
+</span><span class='line'>これを1*1*9、2*10*9、3*100*9と表現する(digits*expbase*9)。
+</span><span class='line'>入力値が入る区間が決まったら、それより下の和を入力値から引き(nとする)、
+</span><span class='line'>(digits)桁の数を並べた中のn桁目を求めれば良い。</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これで、ビルトイン多倍長整数を使えば<code>10**1000</code>程度まではACできる。ただし、今回は入力が非常に大きいため、下位から順番に処理すると多倍長演算が容易にTLEを招いてしまう(解答例の<code>if false</code>の一部)。
+まず、この<code>1*1*9 + 2*10*9 + 3*100*9 + ...</code>を高速に求めることを考える。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Sn   = 1*1*9 2*10*9 3*100*9 4*1000*9
+</span><span class='line'>10Sn =       1*10*9 2*100*9 3*1000*9  4*10000*9
+</span><span class='line'>-9Sn = 1*1*9 1*10*9 1*100*9 1*1000*9 -4*10000*9
+</span><span class='line'>-9Sn = (10**4-1)                     -4*10000*9</span></code></pre></td></tr></table></div></figure>
+
+
+<p>といった変形により、<code>Si = i*10**i - (10**i-1)/9</code>と定式化できる。これを用いて、digitsを2分探索するか上位から探索するかする。これでTLEを回避できる。</p>
+
+<ul>
+<li>Crystal <a href="https://yukicoder.me/submissions/300755">https://yukicoder.me/submissions/300755</a></li>
+<li>Ruby <a href="https://yukicoder.me/submissions/300934">https://yukicoder.me/submissions/300934</a></li>
 </ul>
 
 ]]></content>
@@ -1449,122 +1543,6 @@
 
 
 <p>以上、解説というよりはコメンタリーでした。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] E869120 and Lucky Numbers]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/02/24/luckynumber/"/>
-    <updated>2018-02-24T00:39:40+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/02/24/luckynumber</id>
-    <content type="html"><![CDATA[<p>まず、最下位が0,6,7の場合はNoです。後述する状態1/0への移行は十の位以降で発生する必要があります。in06がこのケースです。</p>
-
-<p>それ以外の場合。
-下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
-
-<ul>
-<li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
-
-<ul>
-<li>2,3,4の場合は、繰り上がりがあるので、上の桁から1を引きます。
-
-<ul>
-<li>すでに最上位の場合はNoです。</li>
-<li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
-</ul>
-</li>
-<li>6,7の場合は、状態1に移行します。</li>
-<li>0の場合は、状態0に移行します。</li>
-</ul>
-</li>
-<li>状態1のとき、0,6,7を受け付けます。
-
-<ul>
-<li>0の場合は、状態0に移行します。</li>
-</ul>
-</li>
-<li>状態0のとき、0のみを受け付けます。
-
-<ul>
-<li>ラッキーナンバーが影響し得ないということは、すべての桁が0になっている以外にないです。</li>
-<li>(間に合わなかった)チャレンジでは、612だと、下位の12で6+6と完結しているのに、新たな600が出てきているので、十の位が不合理となるのです。</li>
-</ul>
-</li>
-</ul>
-
-
-<p><a href="https://yukicoder.me/submissions/238472">https://yukicoder.me/submissions/238472</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] ここでちょっとQK！]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/02/10/qk/"/>
-    <updated>2018-02-10T02:10:16+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/02/10/qk</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/649">https://yukicoder.me/problems/no/649</a></p>
-
-<p>配列の先頭要素からの削除はO(配列長)ですが、dequeを使うと先頭からの削除は速くなります。
-中央からの削除はやはり遅いですが、定数倍の高速化が望めるので、時間制限の設定によっては間に合う可能性があります。</p>
-
-<ul>
-<li><a href="https://yukicoder.me/submissions/235221">https://yukicoder.me/submissions/235221</a></li>
-</ul>
-
-
-<p>なお、マスと駒と色塗りで、範囲管理をvectorでなくdequeでやると通ってしまいます(setでやるのが最善ではあります)。
-- <a href="http://cielavenir.github.io/blog/2015/10/29/many-ameba/">http://cielavenir.github.io/blog/2015/10/29/many-ameba/</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] おやすみ]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/02/10/goodnight/"/>
-    <updated>2018-02-10T02:00:16+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/02/10/goodnight</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/648">https://yukicoder.me/problems/no/648</a></p>
-
-<p>基本的にはむこさんの解説のとおり、<code>(sqrt(8*n+1)-1)/2</code>を出力すれば良いですが、実装上の別解を。</p>
-
-<ol>
-<li>Integer sqrtの利用
-
-<ul>
-<li>sqrtの誤差が問題になるなら、整数での平方根をニュートン法などで計算すればよいでしょう。</li>
-<li>ただし、(LLでないなら)128bit幅の整数が必要になるので注意。</li>
-<li><a href="https://qiita.com/cielavenir/items/2a685d3080862f2c2c47">yhpg「多段階選抜」</a>の復習でライブラリを作っていました。
-
-<ul>
-<li>Ruby <a href="https://yukicoder.me/submissions/205380">https://yukicoder.me/submissions/205380</a></li>
-<li>C <a href="https://yukicoder.me/submissions/205381">https://yukicoder.me/submissions/205381</a></li>
-<li>Python <a href="https://yukicoder.me/submissions/207818">https://yukicoder.me/submissions/207818</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>sqrtlの利用
-
-<ul>
-<li>long doubleの仮数部が64bitであることを思い出せば、sqrtlを使えば解けることは想像に固くありません。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
-<li>C <a href="https://yukicoder.me/submissions/206063">https://yukicoder.me/submissions/206063</a></li>
-<li>Python (ctypes) <a href="https://yukicoder.me/submissions/207816">https://yukicoder.me/submissions/207816</a>
-
-<ul>
-<li>intをマーシャリングするときにfloatを経由されるといけないので、sscanfを用いて自力でマーシャリングする必要があります</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>あれ、topcoder初出場で撃沈したのは誰だ^^; (SRM 635 Div2 Medやらyukicoder No.413やら)<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
 ]]></content>
   </entry>
   
