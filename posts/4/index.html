@@ -98,6 +98,70 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2016/12/10/retrieve/">単位取得退学します</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-12-10T00:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>【<a href="http://www.adventar.org/calendars/1388">http://www.adventar.org/calendars/1388</a> の12/10分です】</p>
+
+<h2>高校</h2>
+
+<p>東大はBランクだったが、記念受験とした結果実力を出し切れたらしい。(現役)</p>
+
+<h2>学部</h2>
+
+<p>今の研究室には学部時代の体験ゼミでお世話になった。生物とコンピュータを両方取り扱う分野ということで興味を持った。
+学部の研究室は、今の研究室の教授から紹介してもらった。割と良い論文が書けた。</p>
+
+<h2>修士</h2>
+
+<p>割と良い論文が書けた、とあるが、これは学士の水準である。これを修士の基準に持っていくのは不可能であった。
+1個目のテーマは論文を書いたが、学士よりも酷い内容だったので捨てた。
+最終的なテーマを決めるのには結局2年半かかった(※1留)ということになり、半年で修士論文を書いた。こちらはまあまあの出来だった。</p>
+
+<h2>博士</h2>
+
+<p>博士号取得要件は、論文を査読付き雑誌に掲載することである。
+修士論文のテーマでは不可能だった。
+結局まともな研究を始めたのは2年秋だった。
+博士3年の初めにfastqの話で論文を書いたが、内容に不備があり、修正叶わず投稿には至っていない。
+予備審査は通して頂けたが、本当にやる気のある学生なら1ヶ月で仕上げられられる内容の研究しかしていない。
+データの不足を痛感しつつも、親の希望により職に就くこととなった。</p>
+
+<hr />
+
+<p>というわけで2017/3を以って単位取得退学となる。まずは3月までに雑誌に投稿できるかが勝負である。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2016/12/09/smile/">[Yukicoder] (^^*)</a></h1>
     
     
@@ -2962,73 +3026,6 @@ done
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/01/14/takahashikun-password/">[Atcoder] 高橋君とパスワード</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-01-14T01:37:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://abc032.contest.atcoder.jp/tasks/abc032_b">http://abc032.contest.atcoder.jp/tasks/abc032_b</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>sからk文字取り出して、その部分文字列を連想配列に突っ込んで、重複しない数を答える。</li>
-</ul>
-
-
-<h2>高速解法</h2>
-
-<ul>
-<li>ローリングハッシュを生成する。ローリングハッシュには、<code>hash[a:c] = (hash[a:b]*B**(c-b) + hash[b:c]) % P</code>という性質がある。</li>
-<li>今回はhash[i:i+k]が得られれば良いので、この式を<code>hash[b:c] = ...</code>と変形すれば良い。</li>
-<li>部分ハッシュを得るのは、<code>B**(c-b)</code>を事前に計算しておくことでO(1)とできる。</li>
-<li>また、連想配列がハッシュテーブルならば重複判定もO(1)なので、トータルでO(s)となる。</li>
-<li><a href="http://abc032.contest.atcoder.jp/submissions/608838">http://abc032.contest.atcoder.jp/submissions/608838</a>
-
-<ul>
-<li>※C++98互換のためunordered_setではなくsetを使っているためこの実装はO(slogs)</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>まとめ</h2>
-
-<ul>
-<li>今回の制約では全くの無駄ですので、解法は賢く選びましょう。</li>
-<li>なぜyukicoder復習コンテストのストックにしなかったし。提出後に気づいたので後の祭り。</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="5">&larr; Older</a></li>
@@ -3050,6 +3047,10 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2019/01/26/various-sushi/">[atcoder] Various Sushi</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/01/04/christmas-tree/">[yukicoder] クリスマスツリー</a>
       </li>
     
@@ -3059,10 +3060,6 @@ done
     
       <li class="post">
         <a href="/blog/2018/12/02/champernowne/">[yukicoder] チャンパーノウン定数</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/11/29/dancerush-flower/">DanceRushでFLOWERを解禁するまで</a>
       </li>
     
   </ul>

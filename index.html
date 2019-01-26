@@ -638,6 +638,63 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2019/01/26/various-sushi/">[Atcoder] Various Sushi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-01-26T17:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p><a href="https://atcoder.jp/contests/abc116/tasks/abc116_d">https://atcoder.jp/contests/abc116/tasks/abc116_d</a></p></li>
+<li><p>持っている寿司のリストLと種類ごとの寿司の個数Cを用意する</p></li>
+<li>おいしさの高い順にソートする</li>
+<li>寿司を順番に見ていく。</li>
+<li>すでに持っている寿司がK皿であるなら、
+
+<ul>
+<li>すでにその種類の寿司を持っているなら無視する。(K皿でない場合は無視してはいけない。)</li>
+<li>Lを後ろから見ていき(j)、C[L[j][種類]]>1となっているものを探す。L[j]を取り除く。C[L[j][種類]]を1減らす。</li>
+</ul>
+</li>
+<li>見ている寿司をLに加える</li>
+</ul>
+
+
+<p>このとき、「後ろから見てい」くインデックスjを最初にK-1で初期化したあとは初期化しないようにする。こうすることで、Lの各要素はたかだか1回しか舐められないことになり、十分高速となる。
+なおjが0未満になったら「順番に見ていく」こと自体を打ち切ることでプログラムが簡潔になる。</p>
+
+<p>最初以外初期化が必要ないのは、あとから追加された寿司を取り除くことは絶対にないからである。</p>
+
+<p><a href="https://atcoder.jp/contests/abc116/submissions/4076962">https://atcoder.jp/contests/abc116/submissions/4076962</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2019/01/04/christmas-tree/">[Yukicoder] クリスマスツリー</a></h1>
     
     
@@ -1131,254 +1188,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/08/16/shv31/">SHV31</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-08-16T23:59:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>事情により必要になるかもなので貼り付けとく</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Processor    : ARMv7 Processor rev 1 (v7l)
-</span><span class='line'>processor : 0
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>processor : 1
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>processor : 2
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>processor : 3
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt 
-</span><span class='line'>CPU implementer   : 0x51
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x2
-</span><span class='line'>CPU part  : 0x06f
-</span><span class='line'>CPU revision  : 1
-</span><span class='line'>
-</span><span class='line'>Hardware  : Qualcomm MSM8974PRO-AB</span></code></pre></td></tr></table></div></figure>
-
-
-<p>SHV38もついでに</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>processor    : 0
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 1
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 2
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 3
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 4
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 5
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 6
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 7
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>Hardware  : Qualcomm Technologies, Inc MSM8952</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1398,6 +1207,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2019/01/26/various-sushi/">[atcoder] Various Sushi</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/01/04/christmas-tree/">[yukicoder] クリスマスツリー</a>
       </li>
     
@@ -1407,10 +1220,6 @@
     
       <li class="post">
         <a href="/blog/2018/12/02/champernowne/">[yukicoder] チャンパーノウン定数</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/11/29/dancerush-flower/">DanceRushでFLOWERを解禁するまで</a>
       </li>
     
   </ul>
