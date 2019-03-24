@@ -98,6 +98,170 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2017/05/01/laplacelink/">LAPLACE LINK</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-05-01T00:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>前説</h2>
+
+<p>LAPLACE LINK。ブラウザでターン制じゃなくてリアルタイム協力バトル。ブラウザゲームとしてはグランブルーファンタジーが一強で、これを超えるゲームはなかなか出てこないだろうと思っていた矢先の発表だったので、cTouchの作者としてはすごく期待していました。</p>
+
+<h2>ゲームデザイン</h2>
+
+<p>で、実際にやってみたところ、まあガチャは仕方ないにせよ、まず装備品がキャラごとなのが割と辛い。あ、その、装備制限はいいんですが、個数制限があるんですね。普通のRPGだと仲間になるキャラなんて10人もいませんからそこまで考えなくてもいいんですが、こちらはたくさんいますからね…。育てたいキャラを変えるには前のキャラから装備品を剥がす必要があるのは面倒でした。グラブルは(得意武器を合わせれば加算攻撃力がブーストされますが)武器編成は編成ごとで、しかも武器のみという潔さ。実は武器が10個も装備できるってどういうことなんだろうと思ったことも昔はあるのですが、現実を求めすぎるとソーシャルゲームの実情に合わなくなるつまりゲームデザイン的な都合だったのでしょうね。デザイン、難しい。あとは肝心のマルチバトルの報酬がころころロール(Attacker/Breaker/Defender/Healer)を切り替えたほうが多くもらえるってどうかしてそう。普通は集中すべき、みたいな。</p>
+
+<h2>戦闘</h2>
+
+<p>戦闘はとりあえず重かったですね。携帯は愚かiPad Proですらさくさくな動作は望めませんでした。専らcTouch入れたSafariからやってました。運営はcTouchを推奨しているのか?と疑うほどだったと思います。</p>
+
+<h2>cTouchの不具合的な</h2>
+
+<p>ただ、cTouchの作者としては思い残すことが1個だけあって、何らかのボタンをおそうとすると2回押されてしまうことがありました。これはタッチイベントの発火順に起因していて詳細は未だに調査中なんですが、FastClickが入っていても同様となります。実際、FastClickが導入されているとうまく動かないゲームがあるので、このモジュールは消すようになっています。しかしながら同様の処理をFastClickなしで実装することも勿論できて、どうすべきかというのが課題として残りました。</p>
+
+<h2>終わりに</h2>
+
+<p>結局何が原因でサービス終了となったのかは謎のままですが、もうちょっと頑張ってほしかったですね。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2017/01/22/tournament/">[Atcoder] Tournament</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-01-22T23:10:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://agc009.contest.atcoder.jp/tasks/agc009_b">https://agc009.contest.atcoder.jp/tasks/agc009_b</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>トーナメント戦を行ったところ、1番の選手が優勝した。</li>
+<li>他の選手について、誰に負けたのかが与えられるので、条件をみたすようなトーナメント表の深さの最低値を求めよ。</li>
+</ul>
+
+
+<h2>考察</h2>
+
+<ul>
+<li>ある選手がどの選手を倒したかのグラフを作成し、1番の選手から再帰。</li>
+<li>倒した選手(N人)のそれぞれについてトーナメント表の深さを求めようとする(倒した選手がいなければ0)。</li>
+<li>深さを降順にソートし、これらに1からNまでの数値を割り当てて、足す。</li>
+<li>足した後の配列の最大値が答えである。</li>
+</ul>
+
+
+<h2>再帰の深さ</h2>
+
+<ul>
+<li>単純に実装すると、最悪10万回の再帰が必要になり、スタックオーバーフローになるおそれがある。</li>
+<li>今回、C++は <strong>偶然</strong> 大丈夫であったが、RubyやPythonだと不可であった。
+
+<ul>
+<li>スタック拡張テクを使っても依然として通らない。</li>
+</ul>
+</li>
+<li>今回は場当たり的(テストケース依存)な対応になるが、N/2番の選手から一旦再帰しておくことで再帰の深さをある程度減らすことができる。
+
+<ul>
+<li>この状態でもスタック拡張テクは依然として必要である。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>解答例</h2>
+
+<ul>
+<li>C++11
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1077298">http://agc009.contest.atcoder.jp/submissions/1077298</a></li>
+</ul>
+</li>
+<li>Ruby
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1076373">http://agc009.contest.atcoder.jp/submissions/1076373</a></li>
+</ul>
+</li>
+<li>Python
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1077307">http://agc009.contest.atcoder.jp/submissions/1077307</a></li>
+<li>なお、なぜかPyPyでは通らない。</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>余談</h2>
+
+<ul>
+<li>木だから本来メモ化は必要なかった。取り除いたらRubyではおまじない不要になった…
+
+<ul>
+<li><a href="http://agc009.contest.atcoder.jp/submissions/1076974">http://agc009.contest.atcoder.jp/submissions/1076974</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2016/12/10/retrieve/">単位取得退学します</a></h1>
     
     
@@ -2144,888 +2308,6 @@ done
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/02/29/crossbeats/">CROSS X BEATSをやってみて</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-02-29T23:59:59+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>1/3、何を思ったか研究室から貸与されたiPadにインストール。まあ、共有物ではないし…</li>
-<li>ULC、面白いシステムだと思う。(最後までプレイすることで完了させられるようになったのは最近らしいけど、それを差し置けば)難しい譜面も繰り返しプレイすることでクリアできるようになる点は良い。</li>
-<li>節分キャンペーンを進める。所持していない楽曲はフレンド募集スレッドからプレイさせていただくことを学習する。シェアソングはソーシャル要素の答えの１つだと思った。</li>
-<li>1/15、Break down獲得(RP600突破)。しかし、節分キャンペーンを進めた結果、同時期開催の個人戦報酬を落とす。まあ、ソシャゲを始めた時のイベント報酬が厳しいのと近いので、しかたがない。個人戦の課題曲が全て未所持であることも理由。</li>
-<li>ランダムセレクト祭。ランダム選曲すると過去の曲が常駐するかもしれないというイベント。とりあえずフルコンボ譜面を増やす。</li>
-<li>1/24、Azitate獲得。条件は難しい難易度であるMASTER譜面をULTIMATEで5曲クリアということで、当時はかなりきつい条件だった。ランダムセレクト祭で引き当てたEternallyが5曲目だった。</li>
-<li>期間限定RP曲、未確認XX生命体を購入すれば5曲とも所持することになるので、購入。結果、2/8、RP1000突破。NEXT FRONTIER獲得。簡単な難易度であるSTANDARD譜面の難易度値がかなり高いんですが、慣れれば自然と指が動く面白い譜面。</li>
-<li>2/17、RP1100突破。期間限定RP曲+上位20曲のため、いろいろ埋めないと上がらない。あと、Lobi入れた。</li>
-<li>2/18、バレンタインキャンペーン完走。きつかったのがMake It Fresh HARDフルゲージと最後の1ページ MASTER Sランク。まあ、クリア出来てよかった(節分キャンペーンリバイバルの最後の報酬を諦めた理由がMASTERフルゲージで、それよりは簡単ですし…)。</li>
-<li>2/28、RP1200突破。Touch of Goldと雨の音が虹を呼ぶでMASTER ULTできたのが大きい。</li>
-<li>3/1、期間限定RP曲のうち4曲しか所持していないため、RP1200を割る。</li>
-<li>この進行がハイペースかどうかを訊くのは愚問とのこと。落ち着いて考えればそうなのですが…。ごめんなさい。</li>
-<li>まあ、個人個人自由に楽しむのが第一ですよね。</li>
-<li>あとは、アンロックゲージが溜まったからといってすぐにアンロックチャレンジを開始すべきかという質問も愚問のよう。チケットの消費に慎重な人もいるかもしれないので。</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/02/11/crossbeats-music/">CROSS X BEATS 取得楽曲</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-02-11T03:57:27+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>CROSS X BEATSを始めて2ヶ月、42曲となりました。(RP以外の)ミッション曲を全部回収したこともあり、今後曲がどんどん増えていくということはないでしょう。</li>
-<li>というわけで、時系列でまとめておきます。</li>
-<li><font color="teal">緑鍵</font></li>
-<li><font color="orange">黄鍵</font></li>
-<li><font color="vermilion">祭曲をラ祭以外の方法で入手</font></li>
-</ul>
-
-
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">曲数</th>
-<th style="text-align:left;">日時</th>
-<th style="text-align:left;">取得楽曲</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">10</td>
-<td style="text-align:left;">1 / 3</td>
-<td style="text-align:left;">Wanna Be Your Special / Touch Of Gold / 雨の音が虹を呼ぶ / DIAMOND SKIN / Wasteland<br>When You Call My Name / キミとMUSIC / Aqualight / Wanyo Wanyo / Lotus Love</td>
-</tr>
-<tr>
-<td style="text-align:left;">13</td>
-<td style="text-align:left;">1 / 5</td>
-<td style="text-align:left;">Loveless / Landing on the moon / Jahacid</td>
-</tr>
-<tr>
-<td style="text-align:left;">16</td>
-<td style="text-align:left;">1 / 6</td>
-<td style="text-align:left;">Freak With Me / ホントのワタシ / Dirty Mouth</td>
-</tr>
-<tr>
-<td style="text-align:left;">18</td>
-<td style="text-align:left;">1 / 8</td>
-<td style="text-align:left;">Hi / Binary Overdrive</td>
-</tr>
-<tr>
-<td style="text-align:left;">19</td>
-<td style="text-align:left;">1 / 9</td>
-<td style="text-align:left;">Anomie</td>
-</tr>
-<tr>
-<td style="text-align:left;">20</td>
-<td style="text-align:left;">1 / 12</td>
-<td style="text-align:left;">Otherside</td>
-</tr>
-<tr>
-<td style="text-align:left;">21</td>
-<td style="text-align:left;">1 / 13</td>
-<td style="text-align:left;">What is Wrong With The World</td>
-</tr>
-<tr>
-<td style="text-align:left;">23</td>
-<td style="text-align:left;">1 / 15</td>
-<td style="text-align:left;">Break down / エアリアル</td>
-</tr>
-<tr>
-<td style="text-align:left;">24</td>
-<td style="text-align:left;">1 / 20</td>
-<td style="text-align:left;">DAZZLING♡SEASON</td>
-</tr>
-<tr>
-<td style="text-align:left;">25</td>
-<td style="text-align:left;">1 / 22</td>
-<td style="text-align:left;"><font color="teal">Eternally</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">26</td>
-<td style="text-align:left;">1 / 23</td>
-<td style="text-align:left;">Giant Killing</td>
-</tr>
-<tr>
-<td style="text-align:left;">28</td>
-<td style="text-align:left;">1 / 24</td>
-<td style="text-align:left;">Azitate / <font color="orange">Cross + Angel</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">29</td>
-<td style="text-align:left;">1 / 26</td>
-<td style="text-align:left;"><font color="teal">everKrack</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">30</td>
-<td style="text-align:left;">1 / 28</td>
-<td style="text-align:left;"><font color="teal">Winter, again</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">31</td>
-<td style="text-align:left;">2 / 7</td>
-<td style="text-align:left;"><strong>未確認XX生命体</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">32</td>
-<td style="text-align:left;">2 / 8</td>
-<td style="text-align:left;"><strong>NEXT FRONTIER</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">33</td>
-<td style="text-align:left;">2 / 11</td>
-<td style="text-align:left;"><strong>The Epic</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">34</td>
-<td style="text-align:left;">2 / 14</td>
-<td style="text-align:left;">How True Is Your Love</td>
-</tr>
-<tr>
-<td style="text-align:left;">36</td>
-<td style="text-align:left;">2 / 15</td>
-<td style="text-align:left;">nightmares / default affinity</td>
-</tr>
-<tr>
-<td style="text-align:left;">37</td>
-<td style="text-align:left;">2 / 19</td>
-<td style="text-align:left;"><font color="teal">JUSTICE from GUILTY</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">38</td>
-<td style="text-align:left;">2 / 20</td>
-<td style="text-align:left;"><font color="teal">Re:Milky way</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">41</td>
-<td style="text-align:left;">2 / 21</td>
-<td style="text-align:left;"><font color="teal">エール</font> / <font color="teal">誘惑</font> / <font color="teal">オーバーラップ</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">42</td>
-<td style="text-align:left;">2 / 22</td>
-<td style="text-align:left;"><font color="teal">Nu Heat</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">44</td>
-<td style="text-align:left;">3 / 10</td>
-<td style="text-align:left;">BASS ANTICS / Doki Blaster</td>
-</tr>
-<tr>
-<td style="text-align:left;">45</td>
-<td style="text-align:left;">3 / 12</td>
-<td style="text-align:left;">BRAND NEW</td>
-</tr>
-<tr>
-<td style="text-align:left;">46</td>
-<td style="text-align:left;">3 / 22</td>
-<td style="text-align:left;"><font color="teal">最後の１ページ</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">48</td>
-<td style="text-align:left;">4 / 8</td>
-<td style="text-align:left;">boule de berlin / cloudstepping</td>
-</tr>
-<tr>
-<td style="text-align:left;">50</td>
-<td style="text-align:left;">4 / 9</td>
-<td style="text-align:left;">残響のアカーシャ / <strong>Impact</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">51</td>
-<td style="text-align:left;">4 / 11</td>
-<td style="text-align:left;">the Last Missile Man</td>
-</tr>
-<tr>
-<td style="text-align:left;">53</td>
-<td style="text-align:left;">4 / 23</td>
-<td style="text-align:left;">光年 / Human Nature</td>
-</tr>
-<tr>
-<td style="text-align:left;">55</td>
-<td style="text-align:left;">5 / 5</td>
-<td style="text-align:left;"><font color="teal">Azitate (Prologue Edition)</font> / <font color="orange">Touch Of Gold (Bongo Mango Remix)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">56</td>
-<td style="text-align:left;">5 / 6</td>
-<td style="text-align:left;"><font color="teal">HEADPHONE PARTY</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">58</td>
-<td style="text-align:left;">5 / 10</td>
-<td style="text-align:left;">イルミナレガロ / Deep Outside</td>
-</tr>
-<tr>
-<td style="text-align:left;">60</td>
-<td style="text-align:left;">5 / 23</td>
-<td style="text-align:left;">Harmony / Flame Up</td>
-</tr>
-<tr>
-<td style="text-align:left;">61</td>
-<td style="text-align:left;">5 / 27</td>
-<td style="text-align:left;"><font color="teal">ツカイステ・デッドワールド</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">62</td>
-<td style="text-align:left;">5 / 28</td>
-<td style="text-align:left;"><font color="orange">最終回STORY</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">63</td>
-<td style="text-align:left;">5 / 29</td>
-<td style="text-align:left;"><font color="teal">Landing on the moon (Inst)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">64</td>
-<td style="text-align:left;">6 / 1</td>
-<td style="text-align:left;"><font color="orange">Into the Cave</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">65</td>
-<td style="text-align:left;">6 / 6</td>
-<td style="text-align:left;"><font color="orange">Wonderful</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">67</td>
-<td style="text-align:left;">6 / 16</td>
-<td style="text-align:left;">Indigo Isle / Free</td>
-</tr>
-<tr>
-<td style="text-align:left;">78</td>
-<td style="text-align:left;">6 / 21</td>
-<td style="text-align:left;">killy killy JOKER / 海色 / 白鳥の湖 / トルコ行進曲 / イジメダメゼッタイ<br>Hopes Bright / いいね！ / Flowerwall / ギミチョコ / サバイバル<br>ヘドバンギャー</td>
-</tr>
-<tr>
-<td style="text-align:left;">80</td>
-<td style="text-align:left;">6 / 24</td>
-<td style="text-align:left;"><font color="teal">Sunny day</font> / <font color="teal">Vespero</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">81</td>
-<td style="text-align:left;">6 / 28</td>
-<td style="text-align:left;"><font color="orange">Anomie (Axiom Style)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">82</td>
-<td style="text-align:left;">6 / 29</td>
-<td style="text-align:left;"><font color="orange">NEXT FRONTIER -TRUE RISE-</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">83</td>
-<td style="text-align:left;">7 / 4</td>
-<td style="text-align:left;"><font color="orange">Murasame</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">85</td>
-<td style="text-align:left;">7 / 5</td>
-<td style="text-align:left;">ソンザイキョウドウタイ / 妄想全開</td>
-</tr>
-<tr>
-<td style="text-align:left;">86</td>
-<td style="text-align:left;">7 / 8</td>
-<td style="text-align:left;">tokyo</td>
-</tr>
-<tr>
-<td style="text-align:left;">88</td>
-<td style="text-align:left;">7 / 21</td>
-<td style="text-align:left;">Bi-Zon Zon Zombi (More) / 光年 Remix</td>
-</tr>
-<tr>
-<td style="text-align:left;">91</td>
-<td style="text-align:left;">7 / 22</td>
-<td style="text-align:left;"><font color="orange">Reseed</font> / <font color="teal">メギツネ</font> / <font color="teal">Dreaming Girl</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">97</td>
-<td style="text-align:left;">7 / 23</td>
-<td style="text-align:left;"><font color="teal">Make It Fresh</font> / <font color="teal">逆転裁判</font> / <font color="orange">Raise Your Handz</font> / <font color="orange">チルドレン・オートマトン</font> / <font color="orange">Designed World</font><br><font color="teal">What is Wrong With The World (Cross)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">98</td>
-<td style="text-align:left;">7 / 24</td>
-<td style="text-align:left;"><font color="orange">Sundrop (Remix)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">101</td>
-<td style="text-align:left;">7 / 25</td>
-<td style="text-align:left;"><font color="teal">RIDE ON NOW</font> / <font color="orange">ロマンシングゲーム</font> / <font color="orange">ロックマン</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">103</td>
-<td style="text-align:left;">7 / 26</td>
-<td style="text-align:left;"><font color="teal">MERCURY</font> / <font color="teal">some day (instrumental)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">105</td>
-<td style="text-align:left;">7 / 27</td>
-<td style="text-align:left;"><font color="teal">Voice Of House</font> / <strong>Z[i]</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">106</td>
-<td style="text-align:left;">7 / 29</td>
-<td style="text-align:left;"><font color="orange">戦国BASARA</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">107</td>
-<td style="text-align:left;">7 / 30</td>
-<td style="text-align:left;"><font color="orange">Virtual Reality Controller</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">109</td>
-<td style="text-align:left;">7 / 31</td>
-<td style="text-align:left;"><font color="orange">ピコラセテ (Inst)</font> / <font color="orange">Sapphire</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">110</td>
-<td style="text-align:left;">8 / 2</td>
-<td style="text-align:left;">Reuniverse</td>
-</tr>
-<tr>
-<td style="text-align:left;">111</td>
-<td style="text-align:left;">8 / 5</td>
-<td style="text-align:left;">VOHリミ</td>
-</tr>
-<tr>
-<td style="text-align:left;">113</td>
-<td style="text-align:left;">8 / 17</td>
-<td style="text-align:left;">Always Thinkg Of You / Machine</td>
-</tr>
-<tr>
-<td style="text-align:left;">114</td>
-<td style="text-align:left;">8 / 18</td>
-<td style="text-align:left;"><font color="orange">Timeless encode</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">115</td>
-<td style="text-align:left;">8 / 20</td>
-<td style="text-align:left;"><font color="teal">Moonrise</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">116</td>
-<td style="text-align:left;">8 / 21</td>
-<td style="text-align:left;"><font color="orange">OKOKUNIKOD</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">117</td>
-<td style="text-align:left;">8 / 23</td>
-<td style="text-align:left;"><font color="orange">ホコロビシロガールズ</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">118</td>
-<td style="text-align:left;">8 / 28</td>
-<td style="text-align:left;">Wanna Be Your Special (Remix)</td>
-</tr>
-<tr>
-<td style="text-align:left;">121</td>
-<td style="text-align:left;">9 / 10</td>
-<td style="text-align:left;">ストレンジ・ディーヴァ / Don&rsquo;t Walk Away / All U Need</td>
-</tr>
-<tr>
-<td style="text-align:left;">132</td>
-<td style="text-align:left;">9 / 13</td>
-<td style="text-align:left;">シュガーソングとビターステップ / Inner Urge / D.O.B. / ViViD / unfinished<br>Break a spell / メモリーズ / WE GO / X-encounter / Light My Fire<br>show</td>
-</tr>
-<tr>
-<td style="text-align:left;">140</td>
-<td style="text-align:left;">9 / 16</td>
-<td style="text-align:left;"><font color="orange">電脳少女</font> / <font color="orange">I.D.</font> / <font color="orange">Sundrop</font> / <font color="orange">some day see you again</font> / <font color="orange">甘い言葉</font><br><font color="orange">Driving story</font> / <font color="orange">覚醒awake</font> / <font color="orange">NIGHT FEELIN</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">143</td>
-<td style="text-align:left;">9 / 17</td>
-<td style="text-align:left;"><font color="orange">大殺界</font> / <font color="orange">現実幻覚スピードスター</font> / <font color="orange">サマ★ラブ</font> / <font color="orange"></font></td>
-</tr>
-<tr>
-<td style="text-align:left;">145</td>
-<td style="text-align:left;">9 / 18</td>
-<td style="text-align:left;"><font color="orange">Addicted</font> / <font color="orange">Break Your World</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">150</td>
-<td style="text-align:left;">9 / 19</td>
-<td style="text-align:left;"><font color="orange">Aqualight (Remix)</font> / <font color="orange">魔界村</font> / <font color="orange">ピコラセテ</font> / <font color="orange">Reanimation</font> / <font color="orange">Omniverse</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">153</td>
-<td style="text-align:left;">9 / 20</td>
-<td style="text-align:left;"><font color="orange">CrossShooter</font> / <font color="orange">Rebellion</font> / <font color="orange">Underworld</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">154</td>
-<td style="text-align:left;">9 / 21</td>
-<td style="text-align:left;"><font color="orange">SUNDAY リベンジ</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">155</td>
-<td style="text-align:left;">9 / 22</td>
-<td style="text-align:left;"><font color="orange">DREAMIN' OF YOU</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">157</td>
-<td style="text-align:left;">10 / 8</td>
-<td style="text-align:left;">Assign / Flame Up (Remix)</td>
-</tr>
-<tr>
-<td style="text-align:left;">159</td>
-<td style="text-align:left;">10 / 19</td>
-<td style="text-align:left;">FUNKYBABY EVOLUTION / SuperLuminalGirl Rebirth</td>
-</tr>
-<tr>
-<td style="text-align:left;">160</td>
-<td style="text-align:left;">10 / 24</td>
-<td style="text-align:left;"><font color="orange">Bi-Zon Zon Zombi</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">162</td>
-<td style="text-align:left;">11 / 10</td>
-<td style="text-align:left;">Burning Inside / Resonance</td>
-</tr>
-<tr>
-<td style="text-align:left;">163</td>
-<td style="text-align:left;">11 / 12</td>
-<td style="text-align:left;">BUZZ Ketos</td>
-</tr>
-<tr>
-<td style="text-align:left;">164</td>
-<td style="text-align:left;">11 / 14</td>
-<td style="text-align:left;"><strong>DYNAMITE SENSATION</strong></td>
-</tr>
-<tr>
-<td style="text-align:left;">165</td>
-<td style="text-align:left;">11 / 19</td>
-<td style="text-align:left;"><font color="orange">Break down (2nd Edition)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">166</td>
-<td style="text-align:left;">11 / 20</td>
-<td style="text-align:left;"><font color="orange">ASTAROTH</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">167</td>
-<td style="text-align:left;">11 / 21</td>
-<td style="text-align:left;"><font color="orange">Another Chance</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">168</td>
-<td style="text-align:left;">11 / 23</td>
-<td style="text-align:left;"><font color="orange">Hisui</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">169</td>
-<td style="text-align:left;">11 / 24</td>
-<td style="text-align:left;"><font color="orange">Designed World (Remix)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">170</td>
-<td style="text-align:left;">11 / 28</td>
-<td style="text-align:left;"><font color="orange">Crystal Ribbon</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">172</td>
-<td style="text-align:left;">11 / 29</td>
-<td style="text-align:left;"><font color="orange">Soda Machine</font> / <font color="orange">Grand Arc (Club Remix)</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">174</td>
-<td style="text-align:left;">12 / 7</td>
-<td style="text-align:left;">Interstellar Plazma / Sangeyasya</td>
-</tr>
-<tr>
-<td style="text-align:left;">175</td>
-<td style="text-align:left;">12 / 21</td>
-<td style="text-align:left;">フォルテシモ</td>
-</tr>
-<tr>
-<td style="text-align:left;">177</td>
-<td style="text-align:left;">12 / 25</td>
-<td style="text-align:left;">Metro Night / ULTRiX</td>
-</tr>
-<tr>
-<td style="text-align:left;">178</td>
-<td style="text-align:left;">1 / 13</td>
-<td style="text-align:left;">Filament Flow</td>
-</tr>
-<tr>
-<td style="text-align:left;">179</td>
-<td style="text-align:left;">1 / 14</td>
-<td style="text-align:left;">The Epic Introduction</td>
-</tr>
-<tr>
-<td style="text-align:left;">180</td>
-<td style="text-align:left;">1 / 23</td>
-<td style="text-align:left;"><font color="orange">DAZZLING♡SEASON Darwin Remix</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">181</td>
-<td style="text-align:left;">1 / 24</td>
-<td style="text-align:left;"><font color="orange">EverWhite</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">182</td>
-<td style="text-align:left;">1 / 26</td>
-<td style="text-align:left;"><font color="orange">Isinglass</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">183</td>
-<td style="text-align:left;">1 / 27</td>
-<td style="text-align:left;"><font color="orange">GARNET HOWL</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">185</td>
-<td style="text-align:left;">1 / 28</td>
-<td style="text-align:left;"><font color="orange">starting station</font> / <font color="orange">SPLASH</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">186</td>
-<td style="text-align:left;">2 / 16</td>
-<td style="text-align:left;">Faraway</td>
-</tr>
-<tr>
-<td style="text-align:left;">187</td>
-<td style="text-align:left;">2 / 26</td>
-<td style="text-align:left;"><font color="orange">Perfectionism</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">188</td>
-<td style="text-align:left;">3 / 14</td>
-<td style="text-align:left;">only L</td>
-</tr>
-<tr>
-<td style="text-align:left;">189</td>
-<td style="text-align:left;">3 / 29</td>
-<td style="text-align:left;"><font color="orange">Take It Back</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">191</td>
-<td style="text-align:left;">4 / 26</td>
-<td style="text-align:left;">Chip Notch Educ@tion / ネコふんじゃった</td>
-</tr>
-<tr>
-<td style="text-align:left;">192</td>
-<td style="text-align:left;">4 / 28</td>
-<td style="text-align:left;"><font color="orange">STARDUST</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">193</td>
-<td style="text-align:left;">4 / 29</td>
-<td style="text-align:left;"><font color="orange">Over The Blue</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">194</td>
-<td style="text-align:left;">5 / 8</td>
-<td style="text-align:left;"><font color="orange">Frgmnts</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">196</td>
-<td style="text-align:left;">5 / 19</td>
-<td style="text-align:left;">Adverse Effect / Planet Calling</td>
-</tr>
-<tr>
-<td style="text-align:left;">200</td>
-<td style="text-align:left;">5 / 25</td>
-<td style="text-align:left;">流星デモクラシー / South wind / The Blade Master / <font color="orange">たゆたい</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">201</td>
-<td style="text-align:left;">5 / 26</td>
-<td style="text-align:left;"><font color="orange">IONIZATION</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">203</td>
-<td style="text-align:left;">6 / 13</td>
-<td style="text-align:left;">Milky Way Trip / Cash</td>
-</tr>
-<tr>
-<td style="text-align:left;">207</td>
-<td style="text-align:left;">6 / 26</td>
-<td style="text-align:left;"><font color="orange">Epiphany of Hardcore</font> / <font color="vermilion">Grand Arc</font> / Ariel / Phoenix</td>
-</tr>
-<tr>
-<td style="text-align:left;">208</td>
-<td style="text-align:left;">6 / 30</td>
-<td style="text-align:left;"><font color="orange">KING STUN</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">212</td>
-<td style="text-align:left;">7 / 16</td>
-<td style="text-align:left;">HDM / Pyromania / 最終列車 / 星達のメロディ</td>
-</tr>
-<tr>
-<td style="text-align:left;">217</td>
-<td style="text-align:left;">7 / 27</td>
-<td style="text-align:left;"><font color="orange">YUKARI</font> / <font color="orange">Days</font> / <font color="orange">勇敢 i tout</font> / <font color="orange">Code Paradiso</font> / <font color="orange">FarthestEnd</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">218</td>
-<td style="text-align:left;">7 / 28</td>
-<td style="text-align:left;"><font color="orange">Curse of Doll</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">219</td>
-<td style="text-align:left;">8 / 5</td>
-<td style="text-align:left;"><font color="orange">Into the Cave Another</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">220</td>
-<td style="text-align:left;">8 / 8</td>
-<td style="text-align:left;"><font color="orange">Come Around</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">221</td>
-<td style="text-align:left;">8 / 10</td>
-<td style="text-align:left;">Silbury Sign</td>
-</tr>
-<tr>
-<td style="text-align:left;">223</td>
-<td style="text-align:left;">8 / 22</td>
-<td style="text-align:left;">カウンターストップ / 未来へのプレリュード</td>
-</tr>
-<tr>
-<td style="text-align:left;">224</td>
-<td style="text-align:left;">8 / 24</td>
-<td style="text-align:left;"><font color="orange">Silverd</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">225</td>
-<td style="text-align:left;">8 / 28</td>
-<td style="text-align:left;"><font color="orange">Sempai Slam</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">228</td>
-<td style="text-align:left;">9 / 1</td>
-<td style="text-align:left;"><font color="orange">S.T.E</font> / Orbital Velocity / Regeneration ray</td>
-</tr>
-<tr>
-<td style="text-align:left;">230</td>
-<td style="text-align:left;">9 / 4</td>
-<td style="text-align:left;"><font color="orange">kaminoko</font> / <font color="orange">Hypersphere</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">232</td>
-<td style="text-align:left;">9 / 15</td>
-<td style="text-align:left;">君と野獣 / アジテーター</td>
-</tr>
-<tr>
-<td style="text-align:left;">234</td>
-<td style="text-align:left;">9 / 20</td>
-<td style="text-align:left;">Life In A Video Game / Lose Your Mind</td>
-</tr>
-<tr>
-<td style="text-align:left;">236</td>
-<td style="text-align:left;">9 / 22</td>
-<td style="text-align:left;">Never Sleep Again / 彼女のModern</td>
-</tr>
-<tr>
-<td style="text-align:left;">237</td>
-<td style="text-align:left;">9 / 28</td>
-<td style="text-align:left;"><font color="orange">Distantmemory</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">239</td>
-<td style="text-align:left;">10 / 10</td>
-<td style="text-align:left;"><font color="orange">Hallucination XXX</font> / <font color="orange">BRAVE</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">243</td>
-<td style="text-align:left;">10 / 13</td>
-<td style="text-align:left;">14th Clock / Hervor / Dark Parashu / <font color="vermilion">Nu Era</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">244</td>
-<td style="text-align:left;">10 / 28</td>
-<td style="text-align:left;"><font color="orange">Keraunos</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">245</td>
-<td style="text-align:left;">10 / 30</td>
-<td style="text-align:left;"><font color="orange">dispel</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">246</td>
-<td style="text-align:left;">11 / 5</td>
-<td style="text-align:left;"><font color="orange">AKATSUKI</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">247</td>
-<td style="text-align:left;">11 / 8</td>
-<td style="text-align:left;"><font color="orange">エスカトロジィ</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">248</td>
-<td style="text-align:left;">11 / 9</td>
-<td style="text-align:left;"><font color="orange">弾丸と星空</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">250</td>
-<td style="text-align:left;">11 / 11</td>
-<td style="text-align:left;">ユメミル船 / Reathythm</td>
-</tr>
-<tr>
-<td style="text-align:left;">253</td>
-<td style="text-align:left;">11 / 28</td>
-<td style="text-align:left;">SW!TCH / 狂乱セレブレーション / <font color="orange">Cloudburst</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">255</td>
-<td style="text-align:left;">11 / 29</td>
-<td style="text-align:left;"><font color="orange">MEGALOMANiA</font> / <font color="orange">HSP</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">257</td>
-<td style="text-align:left;">12 / 1</td>
-<td style="text-align:left;"><font color="orange">RGM</font> / <font color="orange">Buffet survivor</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">259</td>
-<td style="text-align:left;">12 / 3</td>
-<td style="text-align:left;">Raradise Regained / Satellite System</td>
-</tr>
-<tr>
-<td style="text-align:left;">260</td>
-<td style="text-align:left;">12 / 4</td>
-<td style="text-align:left;"><font color="orange">Tooo Many</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">261</td>
-<td style="text-align:left;">12 / 6</td>
-<td style="text-align:left;"><font color="orange">Cosmology</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">263</td>
-<td style="text-align:left;">12 / 19</td>
-<td style="text-align:left;">Rush / data mining</td>
-</tr>
-<tr>
-<td style="text-align:left;">265</td>
-<td style="text-align:left;">12 / 28</td>
-<td style="text-align:left;"><font color="orange">Crisscrosser</font> / <font color="orange">Mechanized Daydream</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">266</td>
-<td style="text-align:left;">12 / 29</td>
-<td style="text-align:left;"><font color="orange">KOTOBUKI</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">269</td>
-<td style="text-align:left;">1 / 1</td>
-<td style="text-align:left;">YEJI / HISTORIA / <font color="orange">Other World</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">270</td>
-<td style="text-align:left;">1 / 2</td>
-<td style="text-align:left;"><font color="orange">AEUG</font> (Hesperides以外全所持)</td>
-</tr>
-<tr>
-<td style="text-align:left;">272</td>
-<td style="text-align:left;">1 / 19</td>
-<td style="text-align:left;">sister&rsquo;s noise / LEVEL5</td>
-</tr>
-<tr>
-<td style="text-align:left;">273</td>
-<td style="text-align:left;">1 / 23</td>
-<td style="text-align:left;">眠れない歌</td>
-</tr>
-<tr>
-<td style="text-align:left;">274</td>
-<td style="text-align:left;">1 / 26</td>
-<td style="text-align:left;"><font color="orange">The King of Pirates</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">276</td>
-<td style="text-align:left;">2 / 2</td>
-<td style="text-align:left;">God knows / Burst The Gravity</td>
-</tr>
-<tr>
-<td style="text-align:left;">278</td>
-<td style="text-align:left;">2 / 16</td>
-<td style="text-align:left;">月鳴 / Perfect laughter</td>
-</tr>
-<tr>
-<td style="text-align:left;">280</td>
-<td style="text-align:left;">2 / 20</td>
-<td style="text-align:left;">Raining Again / Wings of Twilight</td>
-</tr>
-<tr>
-<td style="text-align:left;">281</td>
-<td style="text-align:left;">2 / 25</td>
-<td style="text-align:left;"><font color="orange">Sestea</font></td>
-</tr>
-<tr>
-<td style="text-align:left;">282</td>
-<td style="text-align:left;">3 / 26</td>
-<td style="text-align:left;"><font color="orange">nayuta</font></td>
-</tr>
-</tbody>
-</table>
-
-
-<ul>
-<li>月別獲得数</li>
-<li>30,12,4,7,10,19,<strong>27</strong>,9,<strong>37</strong>,5,12,5</li>
-<li>8,2,2,5,8,7,10,7,12,8,10,11</li>
-<li><p>8,7,1</p></li>
-<li><p>2年半ありがとうございました！</p></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="5">&larr; Older</a></li>
@@ -3047,19 +2329,19 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2019/03/25/well-known/">[yukicoder] well known</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2019/03/25/restrictions/">[yukicoder] Restrictions</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2019/01/26/various-sushi/">[atcoder] Various Sushi</a>
       </li>
     
       <li class="post">
         <a href="/blog/2019/01/04/christmas-tree/">[yukicoder] クリスマスツリー</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/12/02/convolution-sum/">[yukicoder] 畳み込みの和</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2018/12/02/champernowne/">[yukicoder] チャンパーノウン定数</a>
       </li>
     
   </ul>

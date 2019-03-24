@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[yukicoder] おやすみ - My Octopress Blog</title>
+  <title>[yukicoder] Restrictions - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2018/02/10/goodnight">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2019/03/25/restrictions">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Yukicoder] おやすみ</h1>
+      <h1 class="entry-title">[Yukicoder] Restrictions</h1>
     
     
       <p class="meta">
@@ -112,56 +112,19 @@
   
 
 
-<time datetime="2018-02-10T02:00:16+09:00" pubdate data-updated="true"></time>
+<time datetime="2019-03-25T00:00:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="https://yukicoder.me/problems/no/648">https://yukicoder.me/problems/no/648</a></p>
-
-<p>基本的にはむこさんの解説のとおり、<code>(sqrt(8*n+1)-1)/2</code>を出力すれば良いですが、実装上の別解を。</p>
-
-<ol>
-<li>Integer sqrtの利用
-
-<ul>
-<li>sqrtの誤差が問題になるなら、整数での平方根をニュートン法などで計算すればよいでしょう。</li>
-<li>ただし、(LLでないなら)128bit幅の整数が必要になるので注意。</li>
-<li><a href="https://qiita.com/cielavenir/items/2a685d3080862f2c2c47">yhpg「多段階選抜」</a>の復習でライブラリを作っていました。
-
-<ul>
-<li>Ruby <a href="https://yukicoder.me/submissions/205380">https://yukicoder.me/submissions/205380</a></li>
-<li>C <a href="https://yukicoder.me/submissions/205381">https://yukicoder.me/submissions/205381</a></li>
-<li>Python <a href="https://yukicoder.me/submissions/207818">https://yukicoder.me/submissions/207818</a></li>
+<div class="entry-content"><ul>
+<li><a href="https://yukicoder.me/problems/no/795">https://yukicoder.me/problems/no/795</a></li>
 </ul>
-</li>
-</ul>
-</li>
-<li>sqrtlの利用
 
-<ul>
-<li>long doubleの仮数部が64bitであることを思い出せば、sqrtlを使えば解けることは想像に固くありません。<sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
-<li>C <a href="https://yukicoder.me/submissions/206063">https://yukicoder.me/submissions/206063</a></li>
-<li>Python (ctypes) <a href="https://yukicoder.me/submissions/207816">https://yukicoder.me/submissions/207816</a>
 
-<ul>
-<li>intをマーシャリングするときにfloatを経由されるといけないので、sscanfを用いて自力でマーシャリングする必要があります</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>あれ、topcoder初出場で撃沈したのは誰だ^^; (SRM 635 Div2 Medやらyukicoder No.413やら)<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
+<p>テスターの感想としては、April Fool Contest向けの問題だったのではないかと思っています。まる。</p>
 </div>
 
 
@@ -184,7 +147,7 @@
   
 
 
-<time datetime="2018-02-10T02:00:16+09:00" pubdate data-updated="true"></time>
+<time datetime="2019-03-25T00:00:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -192,7 +155,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2018/02/10/goodnight/" data-via="" data-counturl="http://cielavenir.github.io/blog/2018/02/10/goodnight/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2019/03/25/restrictions/" data-via="" data-counturl="http://cielavenir.github.io/blog/2019/03/25/restrictions/" >Tweet</a>
   
   
   
@@ -203,13 +166,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2017/10/23/inn-reservation/" title="Previous Post:
-        [yukicoder] 旅館の予約計画">&laquo; [yukicoder] 旅館の予約計画</a></li>
+        href="/blog/2019/01/26/various-sushi/" title="Previous Post:
+        [atcoder] Various Sushi">&laquo; [atcoder] Various Sushi</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2018/02/10/qk/"
-        title="Next Post: [yukicoder] ここでちょっとQK！">[yukicoder] ここでちょっとQK！
+      <li class="next"><a class="basic-alignment right" href="/blog/2019/03/25/well-known/"
+        title="Next Post: [yukicoder] well known">[yukicoder] well known
         &raquo;</a></li>
       
     </ul>
