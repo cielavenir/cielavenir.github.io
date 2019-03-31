@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[atcoder] Various Sushi - My Octopress Blog</title>
+  <title>Shirokane HGC - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2019/01/26/various-sushi">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2019/03/31/shirokane">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Atcoder] Various Sushi</h1>
+      <h1 class="entry-title">Shirokane HGC</h1>
     
     
       <p class="meta">
@@ -112,35 +112,44 @@
   
 
 
-<time datetime="2019-01-26T17:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2019-03-31T00:00:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><ul>
-<li><p><a href="https://atcoder.jp/contests/abc116/tasks/abc116_d">https://atcoder.jp/contests/abc116/tasks/abc116_d</a></p></li>
-<li><p>持っている寿司のリストLと種類ごとの寿司の個数Cを用意する</p></li>
-<li>おいしさの高い順にソートする</li>
-<li>寿司を順番に見ていく。</li>
-<li>すでに持っている寿司がK皿であるなら、
+<div class="entry-content"><table>
+<thead>
+<tr>
+<th style="text-align:left;">generation</th>
+<th style="text-align:left;">machine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">1</td>
+<td style="text-align:left;">c</td>
+</tr>
+<tr>
+<td style="text-align:left;">2</td>
+<td style="text-align:left;">nc</td>
+</tr>
+<tr>
+<td style="text-align:left;">3</td>
+<td style="text-align:left;">sc</td>
+</tr>
+<tr>
+<td style="text-align:left;">4</td>
+<td style="text-align:left;">yc</td>
+</tr>
+<tr>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">gc</td>
+</tr>
+</tbody>
+</table>
 
-<ul>
-<li>すでにその種類の寿司を持っているなら無視する。(K皿でない場合は無視してはいけない。)</li>
-<li>Lを後ろから見ていき(j)、C[L[j][種類]]>1となっているものを探す。L[j]を取り除く。C[L[j][種類]]を1減らす。</li>
-</ul>
-</li>
-<li>見ている寿司をLに加える</li>
-</ul>
-
-
-<p>このとき、「後ろから見てい」くインデックスjを最初にK-1で初期化したあとは初期化しないようにする。こうすることで、Lの各要素はたかだか1回しか舐められないことになり、十分高速となる。
-なおjが0未満になったら「順番に見ていく」こと自体を打ち切ることでプログラムが簡潔になる。</p>
-
-<p>最初以外初期化が必要ないのは、あとから追加された寿司を取り除くことは絶対にないからである。</p>
-
-<p><a href="https://atcoder.jp/contests/abc116/submissions/4076962">https://atcoder.jp/contests/abc116/submissions/4076962</a></p>
 </div>
 
 
@@ -163,7 +172,7 @@
   
 
 
-<time datetime="2019-01-26T17:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2019-03-31T00:00:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -171,7 +180,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2019/01/26/various-sushi/" data-via="" data-counturl="http://cielavenir.github.io/blog/2019/01/26/various-sushi/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2019/03/31/shirokane/" data-via="" data-counturl="http://cielavenir.github.io/blog/2019/03/31/shirokane/" >Tweet</a>
   
   
   
@@ -182,13 +191,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2019/01/04/christmas-tree/" title="Previous Post:
-        [yukicoder] クリスマスツリー">&laquo; [yukicoder] クリスマスツリー</a></li>
+        href="/blog/2019/03/25/well-known/" title="Previous Post:
+        [yukicoder] well known">&laquo; [yukicoder] well known</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2019/03/25/restrictions/"
-        title="Next Post: [yukicoder] Restrictions">[yukicoder] Restrictions
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>
