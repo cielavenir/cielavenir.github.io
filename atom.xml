@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2019-03-31T16:41:07+09:00</updated>
+  <updated>2019-04-08T01:11:56+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -561,6 +561,26 @@
 </tr>
 </tbody>
 </table>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] cracked]]></title>
+    <link href="http://cielavenir.github.io/blog/2019/03/31/cracked/"/>
+    <updated>2019-03-31T00:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2019/03/31/cracked</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://yukicoder.me/problems/no/3051">https://yukicoder.me/problems/no/3051</a></li>
+</ul>
+
+
+<p>quineを生成して処理するのが一番楽なのでは。なおquine生成エンジンはrobustなもののほうが後処理が楽だと思います。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb">https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb</a></li>
+<li><a href="https://yukicoder.me/submissions/336190">https://yukicoder.me/submissions/336190</a></li>
+</ul>
 
 ]]></content>
   </entry>
@@ -1395,42 +1415,6 @@
 <ul>
 <li>C <a href="https://yukicoder.me/submissions/266771">https://yukicoder.me/submissions/266771</a></li>
 <li>C++ <a href="https://yukicoder.me/submissions/266775">https://yukicoder.me/submissions/266775</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] ペアでチームを作ろう]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/06/10/pair-team/"/>
-    <updated>2018-06-10T02:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/06/10/pair-team</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/698">https://yukicoder.me/problems/no/698</a></p>
-
-<h2>解法</h2>
-
-<ul>
-<li>bitDPを使うのが一般的な解法ですが、計算量が増えるものの、next_partial_permutationを使うこともできます。</li>
-<li>標準関数ではありませんが、<code>next_permutation(v.begin(), v.end())</code>する直前に<code>reverse(v.begin()+middle, v.end())</code>するだけなので、(next_combinationと違って)インラインで組み込むのは簡単です。</li>
-<li><code>v.begin()</code>から<code>v.begin()+middle</code>までを(<code>middle P size</code>の)部分順列として使います。</li>
-<li>ただし、ループが回るたびに、<code>v.begin()+middle</code>から<code>v.end()</code>まではソートされていることが保証されています。この性質を利用することで、vからsize-middle個選んでから残りのmiddle個を総当たりしたのと同じことになるのです。</li>
-<li>ループ回数は14P7 = 17297280回です。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++ <a href="https://yukicoder.me/submissions/264420">https://yukicoder.me/submissions/264420</a></li>
-<li>cLay <a href="https://yukicoder.me/submissions/264422">https://yukicoder.me/submissions/264422</a></li>
-</ul>
-
-
-<h2>チームを作ろう２</h2>
-
-<ul>
-<li>この解法であればこちらもループ内の加算とxorを入れ替えるだけで容易に解くことができます。</li>
-<li>cLay <a href="https://yukicoder.me/submissions/265093">https://yukicoder.me/submissions/265093</a></li>
 </ul>
 
 ]]></content>
