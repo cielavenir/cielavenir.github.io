@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2019-04-08T01:11:56+09:00</updated>
+  <updated>2019-04-08T01:12:15+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -527,6 +527,26 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[[yukicoder] cracked]]></title>
+    <link href="http://cielavenir.github.io/blog/2019/04/08/cracked/"/>
+    <updated>2019-04-08T01:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2019/04/08/cracked</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="https://yukicoder.me/problems/no/3051">https://yukicoder.me/problems/no/3051</a></li>
+</ul>
+
+
+<p>quineを生成して処理するのが一番楽なのでは。なおquine生成エンジンはrobustなもののほうが後処理が楽だと思います。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb">https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb</a></li>
+<li><a href="https://yukicoder.me/submissions/336190">https://yukicoder.me/submissions/336190</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Shirokane HGC]]></title>
     <link href="http://cielavenir.github.io/blog/2019/03/31/shirokane/"/>
     <updated>2019-03-31T00:00:00+09:00</updated>
@@ -561,26 +581,6 @@
 </tr>
 </tbody>
 </table>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] cracked]]></title>
-    <link href="http://cielavenir.github.io/blog/2019/03/31/cracked/"/>
-    <updated>2019-03-31T00:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2019/03/31/cracked</id>
-    <content type="html"><![CDATA[<ul>
-<li><a href="https://yukicoder.me/problems/no/3051">https://yukicoder.me/problems/no/3051</a></li>
-</ul>
-
-
-<p>quineを生成して処理するのが一番楽なのでは。なおquine生成エンジンはrobustなもののほうが後処理が楽だと思います。</p>
-
-<ul>
-<li><a href="https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb">https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb</a></li>
-<li><a href="https://yukicoder.me/submissions/336190">https://yukicoder.me/submissions/336190</a></li>
-</ul>
 
 ]]></content>
   </entry>
