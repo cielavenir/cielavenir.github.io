@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2019-04-08T01:12:15+09:00</updated>
+  <updated>2019-08-03T04:01:21+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -521,6 +521,106 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ingress]]></title>
+    <link href="http://cielavenir.github.io/blog/2019/08/03/ingress/"/>
+    <updated>2019-08-03T02:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2019/08/03/ingress</id>
+    <content type="html"><![CDATA[<h2>現在</h2>
+
+<ul>
+<li>A10 / TL40 / WL15(休業) です</li>
+</ul>
+
+
+<h2>20190211</h2>
+
+<ul>
+<li>Trainer Level 39</li>
+</ul>
+
+
+<h2>20190418</h2>
+
+<ul>
+<li>TL40</li>
+</ul>
+
+
+<h2>20190611</h2>
+
+<ul>
+<li>会社で嘔吐し12・13が有給にww</li>
+</ul>
+
+
+<h2>20190613</h2>
+
+<ul>
+<li>SOV37でポケモンGoをやりつつSHV38でIngressをやるという廃人的行為を思いつく。ただ、周りにIngressをやっている知人は @leafaerosnow 氏のみであるため、陣営は氏と同じENL。<del>ENLでのXMの利用目的から夜間飛行(花)を連想するほど私の頭は逝ってしまっているらしいってのもある</del></li>
+<li>この日はアドベンチャーウィークの都合上50kmのボーナスのため、家から後楽園まで歩いた。ポータルがほとんどENLだったため、適当にリンクを張るだけで <strong>一日でAccess Level 6まで</strong> 上がった。ラッキーだったと思う。</li>
+</ul>
+
+
+<h2>20190614</h2>
+
+<ul>
+<li>13日の時点で実際にはA7一歩手前だったため、A7になった。</li>
+</ul>
+
+
+<h2>20190624</h2>
+
+<ul>
+<li>AP2倍キャンペーンのおかげでA8に。脱初心者。</li>
+</ul>
+
+
+<h2>20190702</h2>
+
+<ul>
+<li>Wizarding Level 3</li>
+</ul>
+
+
+<h2>20190706</h2>
+
+<ul>
+<li>Rechargerメダルが金に。</li>
+</ul>
+
+
+<h2>20190707</h2>
+
+<ul>
+<li>WL10 (ここから急激に伸び悩む。まあゲームシステム的に致し方ない)</li>
+</ul>
+
+
+<h2>20190708</h2>
+
+<ul>
+<li>A9到達。</li>
+</ul>
+
+
+<h2>2019071x</h2>
+
+<ul>
+<li>SpecOpsメダルが金に。</li>
+</ul>
+
+
+<h2>20190801</h2>
+
+<ul>
+<li>WL15。無期休業。</li>
+<li>A10到達。ポータル申請権獲得。</li>
 </ul>
 
 ]]></content>
@@ -1390,31 +1490,6 @@
 <ul>
 <li>Ruby <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998020">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998020</a></li>
 <li>Python(2/3) <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998054">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998054</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] 中央値を求めよ LIMITED]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/06/18/median/"/>
-    <updated>2018-06-18T00:30:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/06/18/median</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/702">https://yukicoder.me/problems/no/702</a></p>
-
-<h2>解法</h2>
-
-<ul>
-<li>一様分布なので、中央付近以外は捨てる方法で解けます。</li>
-<li>ただしqsortはstd::sortよりメモリを若干多く使うため、C言語で解く場合は閾値に注意する必要があります。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C <a href="https://yukicoder.me/submissions/266771">https://yukicoder.me/submissions/266771</a></li>
-<li>C++ <a href="https://yukicoder.me/submissions/266775">https://yukicoder.me/submissions/266775</a></li>
 </ul>
 
 ]]></content>
