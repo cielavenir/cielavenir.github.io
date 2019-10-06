@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2019-08-03T04:01:21+09:00</updated>
+  <updated>2019-10-07T02:43:10+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -527,6 +527,203 @@
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[数学ガールの秘密ノート立ち読み]]></title>
+    <link href="http://cielavenir.github.io/blog/2019/10/05/math-note/"/>
+    <updated>2019-10-05T02:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2019/10/05/math-note</id>
+    <content type="html"><![CDATA[<p>数学ガールの秘密ノートポータル <a href="https://www.hyuki.com/girl/note.html">https://www.hyuki.com/girl/note.html</a></p>
+
+<p>※cakesをブラッシュアップしたものが書籍になります(書籍化完了後の巻については、cakesは雰囲気を掴むための参考。巻によっては章の順序が違う場合すらあります)</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">cakes番号</th>
+<th style="text-align:left;">巻名</th>
+<th style="text-align:left;">URL</th>
+<th style="text-align:left;">立ち読み</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">1</td>
+<td style="text-align:left;">式とグラフ</td>
+<td style="text-align:left;"><a href="https://note1.hyuki.net/">https://note1.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/435">https://cakes.mu/posts/435</a><br>達人出版会のサンプル <a href="http://tatsu-zine.com/books/mathgirl-himitu-formula-graph">http://tatsu-zine.com/books/mathgirl-himitu-formula-graph</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">2</td>
+<td style="text-align:left;">整数で遊ぼう</td>
+<td style="text-align:left;"><a href="https://note2.hyuki.net/">https://note2.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/966">https://cakes.mu/posts/966</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">3</td>
+<td style="text-align:left;">丸い三角関数</td>
+<td style="text-align:left;"><a href="https://note3.hyuki.net/">https://note3.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/1534">https://cakes.mu/posts/1534</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">4</td>
+<td style="text-align:left;">数列の広場</td>
+<td style="text-align:left;"><a href="https://note4.hyuki.net/">https://note4.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/2093">https://cakes.mu/posts/2093</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">5</td>
+<td style="text-align:left;">微分を追いかけて</td>
+<td style="text-align:left;"><a href="https://note5.hyuki.net/">https://note5.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/2658">https://cakes.mu/posts/2658</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">6</td>
+<td style="text-align:left;">ベクトルの真実</td>
+<td style="text-align:left;"><a href="https://note6.hyuki.net/">https://note6.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/3337">https://cakes.mu/posts/3337</a><br>SBクリエイティブ <a href="http://ul.sbcr.jp/MATH-8232-0">http://ul.sbcr.jp/MATH-8232-0</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">7</td>
+<td style="text-align:left;">場合の数</td>
+<td style="text-align:left;"><a href="https://note7.hyuki.net/">https://note7.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/4620">https://cakes.mu/posts/4620</a><br>SBクリエイティブ <a href="http://ul.sbcr.jp/MATH-SJddk">http://ul.sbcr.jp/MATH-SJddk</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">8</td>
+<td style="text-align:left;">(指数と対数)</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/5506">https://cakes.mu/posts/5506</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">9</td>
+<td style="text-align:left;">(フラクタル)</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/6259">https://cakes.mu/posts/6259</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">10</td>
+<td style="text-align:left;">(不等式)</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/7139">https://cakes.mu/posts/7139</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">11</td>
+<td style="text-align:left;">ビットとバイナリー</td>
+<td style="text-align:left;"><a href="https://note11.hyuki.net/">https://note11.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/7990">https://cakes.mu/posts/7990</a><br>SBクリエイティブ <a href="http://ul.sbcr.jp/MATH-oPU7T">http://ul.sbcr.jp/MATH-oPU7T</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">12</td>
+<td style="text-align:left;">行列が描くもの</td>
+<td style="text-align:left;"><a href="https://note10.hyuki.net/">https://note10.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/8952">https://cakes.mu/posts/8952</a><br>SBクリエイティブ <a href="http://ul.sbcr.jp/MATH-PAwkh">http://ul.sbcr.jp/MATH-PAwkh</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">13</td>
+<td style="text-align:left;">やさしい統計</td>
+<td style="text-align:left;"><a href="https://note8.hyuki.net/">https://note8.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/10035">https://cakes.mu/posts/10035</a><br>BOOK WALKER <a href="https://bookwalker.jp/de7becb42b-6efd-45d7-8c23-41b3df8d3995/">https://bookwalker.jp/de7becb42b-6efd-45d7-8c23-41b3df8d3995/</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">14</td>
+<td style="text-align:left;">積分を見つめて</td>
+<td style="text-align:left;"><a href="https://note9.hyuki.net/">https://note9.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/11042">https://cakes.mu/posts/11042</a><br>BOOK WALKER <a href="https://bookwalker.jp/de8a8b19a1-3ae8-4ce0-aeeb-48ddb16f990a/">https://bookwalker.jp/de8a8b19a1-3ae8-4ce0-aeeb-48ddb16f990a/</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">15</td>
+<td style="text-align:left;">波の広がり</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/11927">https://cakes.mu/posts/11927</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">16</td>
+<td style="text-align:left;">数を作る</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/12710">https://cakes.mu/posts/12710</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">17</td>
+<td style="text-align:left;">広がる複素数</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/13400">https://cakes.mu/posts/13400</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">18</td>
+<td style="text-align:left;">論理と証明</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/14173">https://cakes.mu/posts/14173</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">19</td>
+<td style="text-align:left;">いにしえの数学</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/15062">https://cakes.mu/posts/15062</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">20</td>
+<td style="text-align:left;">整数に誘われて</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/16037">https://cakes.mu/posts/16037</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">21</td>
+<td style="text-align:left;">関数を手がかりに</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/17155">https://cakes.mu/posts/17155</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">22</td>
+<td style="text-align:left;">無限を探そう</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/18339">https://cakes.mu/posts/18339</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">23</td>
+<td style="text-align:left;">関数を組み立てよう</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/20592">https://cakes.mu/posts/20592</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">24</td>
+<td style="text-align:left;">群とシンメトリー</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/21961">https://cakes.mu/posts/21961</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">25</td>
+<td style="text-align:left;">学ぶための対話</td>
+<td style="text-align:left;"><a href="https://note12.hyuki.net/">https://note12.hyuki.net/</a></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/23227">https://cakes.mu/posts/23227</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">26</td>
+<td style="text-align:left;">確率の冒険</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/24645">https://cakes.mu/posts/24645</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">27</td>
+<td style="text-align:left;">分数を極める</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/25944">https://cakes.mu/posts/25944</a></td>
+</tr>
+<tr>
+<td style="text-align:left;">28</td>
+<td style="text-align:left;">放物線をつかまえて</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">cakes <a href="https://cakes.mu/posts/27403">https://cakes.mu/posts/27403</a></td>
+</tr>
+</tbody>
+</table>
+
+
+<hr />
+
+<p>まあ、cakes番号と書籍番号の対照表を(私が)ほしかっただけなんですけどね&ndash;;;;</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Ingress]]></title>
     <link href="http://cielavenir.github.io/blog/2019/08/03/ingress/"/>
     <updated>2019-08-03T02:00:00+09:00</updated>
@@ -534,7 +731,7 @@
     <content type="html"><![CDATA[<h2>現在</h2>
 
 <ul>
-<li>A10 / TL40 / WL15(休業) です</li>
+<li>A11 / TL40 / WL15(休業) です</li>
 </ul>
 
 
@@ -621,6 +818,28 @@
 <ul>
 <li>WL15。無期休業。</li>
 <li>A10到達。ポータル申請権獲得。</li>
+</ul>
+
+
+<h2>20190811</h2>
+
+<ul>
+<li>Sojournerメダルが金に。</li>
+</ul>
+
+
+<h2>20190914</h2>
+
+<ul>
+<li>Trekkerメダルが金に。山梨バス旅行中のできごとであった^^;;</li>
+</ul>
+
+
+<p> ## 20190915</p>
+
+<ul>
+<li>A11到達。100日未満での達成成功。</li>
+<li>ExplorerとTranlatorで取る予定としますか…。</li>
 </ul>
 
 ]]></content>
@@ -1453,43 +1672,6 @@
 
 <ul>
 <li><a href="http://cielavenir.github.io/blog/2018/07/05/proof-of-knowledge/">知識の証明</a>の時点ではPythonが公式に使えるようになっていたので、下手な構文解析を出すと言語機能で突破されかねませんよって話。この問題は当時Pythonが使えなかったから許されたんだと思う。</li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[AOJ] 知識の証明]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/07/05/proof-of-knowledge/"/>
-    <updated>2018-07-05T01:50:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/07/05/proof-of-knowledge</id>
-    <content type="html"><![CDATA[<p><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2883">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=2883</a></p>
-
-<p>構文解析とは何だったのか。</p>
-
-<h2>解法</h2>
-
-<ul>
-<li>例として<code>[+c[+a[^bd]]]</code>を<code>O[c][O[a][X[b][d]]]</code>に変換します。</li>
-<li>O、A、Xはそれぞれ2引数を取りor、and、xorするProcで、カリー化されています。</li>
-<li>変換された文字列は正しいプログラムなので、evalでバッチリです＾＾</li>
-</ul>
-
-
-<h2>Python</h2>
-
-<ul>
-<li>Pythonはfunctools.partialはありますが演算子の形でカリー化することができないので、自前で関数をネストしてカリー化を行います。</li>
-<li>なおPythonはRubyのProcで必要な特別扱いが必要ないので、括弧は丸括弧を使います。</li>
-<li>(ところで答案内のtranslateのインポート方法に癖がありますが、Py2/3対応にするにはやむを得ないものです。)</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>Ruby <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998020">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998020</a></li>
-<li>Python(2/3) <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998054">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=2998054</a></li>
 </ul>
 
 ]]></content>
