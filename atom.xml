@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2020-02-16T20:15:17+09:00</updated>
+  <updated>2020-05-03T22:41:12+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -951,7 +951,7 @@
     <content type="html"><![CDATA[<h2>現在</h2>
 
 <ul>
-<li>A12 / TL40 / WL15(休業) です</li>
+<li>A13 / TL40 / WL21 です</li>
 </ul>
 
 
@@ -1093,6 +1093,77 @@
 
 <ul>
 <li>神田明神を徘徊し、Pioneerメダルが金に。これで15までは確定。Sojournerを黒にできれば終わりなんですがどうですかねぇ^^;</li>
+</ul>
+
+
+<h2>2020011x</h2>
+
+<ul>
+<li>いつでも冒険モード実装につきWizards Unite仮復帰。</li>
+</ul>
+
+
+<h2>20200401</h2>
+
+<ul>
+<li>NL1331 Meetupが銅に。</li>
+</ul>
+
+
+<h2>20200418</h2>
+
+<ul>
+<li>コミュニティ・デイ中にWL20達成。</li>
+</ul>
+
+
+<h2>20200422</h2>
+
+<ul>
+<li>某公園が一面青だったためAPEXを適用しつつ焼き尽くしました(約70万AP獲得)。すみません。これでA13到達。</li>
+<li>今こそAGにとって書き入れ時とかほざいたんは誰や苦笑
+
+<ul>
+<li>まあ弊社はテレワークじゃないんで通勤途中はある意味しかたないが。</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First Saturday 初参加記(杉戸)]]></title>
+    <link href="http://cielavenir.github.io/blog/2019/05/03/first-saturday/"/>
+    <updated>2019-05-03T21:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2019/05/03/first-saturday</id>
+    <content type="html"><![CDATA[<h2>準備</h2>
+
+<ul>
+<li>5/1(金)23時にふと思い立って参加登録。今回現地に行く必要はありませんでしたが、場所は埼玉杉戸を選択しました。家(山手線内)から一番近いからってのが理由ですが。なんとなくです。</li>
+<li>AGの必需品であるTelegramですが、まだ登録していなかったことが判明。TelegramのSMS認証メールが来なくて焦った。一旦iPadから母の回線で登録。私の方は <strong>携帯を再起動してから再認証</strong> で事なきを得ましたが、準備だけは早めにやっておきましょうってことですね…。</li>
+</ul>
+
+
+<h2>当日</h2>
+
+<ul>
+<li>開始時statsをgoogle formに入力して、リチャージしました。ポータルキーは400個ほどありましたが、パワーキューブが尽きかけてしまいました。。</li>
+<li>statsが指定の値に一番近かった人にプレゼントする企画がありました。</li>
+<li>終了時statsを入力。実は <strong>「回答を編集」用のフォームのURLを消さないようにすることが一番大変でした</strong> &ndash;;;;
+
+<ul>
+<li>人によっては反映に時間がかかったみたいですが、私はどういうわけか1分以内で反映されてました。</li>
+</ul>
+</li>
+<li>デコードチャレンジがかなり遅れて到着。16進数asciiコード列を読むだけという内容でした。</li>
+</ul>
+
+
+<h2>終わりに</h2>
+
+<ul>
+<li>どういったイベントなのかある程度把握できたので、場所が合えば行けそうです〜</li>
 </ul>
 
 ]]></content>
@@ -1722,38 +1793,6 @@
 
 
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] Die tertia]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/08/07/die-tertia/"/>
-    <updated>2018-08-07T01:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/08/07/die-tertia</id>
-    <content type="html"><![CDATA[<p><a href="https://yukicoder.me/problems/no/721">https://yukicoder.me/problems/no/721</a></p>
-
-<h2>解法</h2>
-
-<ul>
-<li>mktimeとlocaltime_rを使います。</li>
-<li>C <a href="https://yukicoder.me/submissions/277099">https://yukicoder.me/submissions/277099</a></li>
-</ul>
-
-
-<h2>余談</h2>
-
-<ul>
-<li>AOJ0261 Mayan Crucial Prediction</li>
-<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0261">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0261</a></li>
-<li>も同様のやり方で解けます。</li>
-<li>(64bit限定です。初期のAOJは32bitだったため通らないのですがご愛嬌)</li>
-<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=585882">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=585882</a></li>
-</ul>
-
-
-<h2>余談2</h2>
-
-<p>テスター当時はRuby版しか答案作ってませんでしたが解説のためにC版を急遽作りました。。</p>
 ]]></content>
   </entry>
   

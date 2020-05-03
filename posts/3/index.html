@@ -98,6 +98,65 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/08/07/die-tertia/">[Yukicoder] Die Tertia</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-08-07T01:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/721">https://yukicoder.me/problems/no/721</a></p>
+
+<h2>解法</h2>
+
+<ul>
+<li>mktimeとlocaltime_rを使います。</li>
+<li>C <a href="https://yukicoder.me/submissions/277099">https://yukicoder.me/submissions/277099</a></li>
+</ul>
+
+
+<h2>余談</h2>
+
+<ul>
+<li>AOJ0261 Mayan Crucial Prediction</li>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0261">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0261</a></li>
+<li>も同様のやり方で解けます。</li>
+<li>(64bit限定です。初期のAOJは32bitだったため通らないのですがご愛嬌)</li>
+<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=585882">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=585882</a></li>
+</ul>
+
+
+<h2>余談2</h2>
+
+<p>テスター当時はRuby版しか答案作ってませんでしたが解説のためにC版を急遽作りました。。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/08/05/mujin-2018/">Mujin Programming Challenge 2018 参加記</a></h1>
     
     
@@ -814,78 +873,6 @@
 
 
 <p>以上、解説というよりはコメンタリーでした。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/02/24/luckynumber/">[Yukicoder] E869120 and Lucky Numbers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-02-24T00:39:40+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>まず、最下位が0,6,7の場合はNoです。後述する状態1/0への移行は十の位以降で発生する必要があります。in06がこのケースです。</p>
-
-<p>それ以外の場合。
-下の桁から順番に見ていきます。3つの状態があるので適切に管理します。</p>
-
-<ul>
-<li>状態2(私のソースコードに生えた数字ですが、まあ「2つのラッキーナンバーが影響している」とでも考えて下さい)のとき、2,3,4,0,6,7を受け付けます。
-
-<ul>
-<li>2,3,4の場合は、繰り上がりがあるので、上の桁から1を引きます。
-
-<ul>
-<li>すでに最上位の場合はNoです。</li>
-<li>(最上位でないが上位桁が0の場合、次の桁で弾かれるため、無理やり引いても通ります。)</li>
-</ul>
-</li>
-<li>6,7の場合は、状態1に移行します。</li>
-<li>0の場合は、状態0に移行します。</li>
-</ul>
-</li>
-<li>状態1のとき、0,6,7を受け付けます。
-
-<ul>
-<li>0の場合は、状態0に移行します。</li>
-</ul>
-</li>
-<li>状態0のとき、0のみを受け付けます。
-
-<ul>
-<li>ラッキーナンバーが影響し得ないということは、すべての桁が0になっている以外にないです。</li>
-<li>(間に合わなかった)チャレンジでは、612だと、下位の12で6+6と完結しているのに、新たな600が出てきているので、十の位が不合理となるのです。</li>
-</ul>
-</li>
-</ul>
-
-
-<p><a href="https://yukicoder.me/submissions/238472">https://yukicoder.me/submissions/238472</a></p>
 </div>
   
   

@@ -1162,7 +1162,7 @@
   <div class="entry-content"><h2>現在</h2>
 
 <ul>
-<li>A12 / TL40 / WL15(休業) です</li>
+<li>A13 / TL40 / WL21 です</li>
 </ul>
 
 
@@ -1304,6 +1304,104 @@
 
 <ul>
 <li>神田明神を徘徊し、Pioneerメダルが金に。これで15までは確定。Sojournerを黒にできれば終わりなんですがどうですかねぇ^^;</li>
+</ul>
+
+
+<h2>2020011x</h2>
+
+<ul>
+<li>いつでも冒険モード実装につきWizards Unite仮復帰。</li>
+</ul>
+
+
+<h2>20200401</h2>
+
+<ul>
+<li>NL1331 Meetupが銅に。</li>
+</ul>
+
+
+<h2>20200418</h2>
+
+<ul>
+<li>コミュニティ・デイ中にWL20達成。</li>
+</ul>
+
+
+<h2>20200422</h2>
+
+<ul>
+<li>某公園が一面青だったためAPEXを適用しつつ焼き尽くしました(約70万AP獲得)。すみません。これでA13到達。</li>
+<li>今こそAGにとって書き入れ時とかほざいたんは誰や苦笑
+
+<ul>
+<li>まあ弊社はテレワークじゃないんで通勤途中はある意味しかたないが。</li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2019/05/03/first-saturday/">First Saturday 初参加記(杉戸)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-05-03T21:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>準備</h2>
+
+<ul>
+<li>5/1(金)23時にふと思い立って参加登録。今回現地に行く必要はありませんでしたが、場所は埼玉杉戸を選択しました。家(山手線内)から一番近いからってのが理由ですが。なんとなくです。</li>
+<li>AGの必需品であるTelegramですが、まだ登録していなかったことが判明。TelegramのSMS認証メールが来なくて焦った。一旦iPadから母の回線で登録。私の方は <strong>携帯を再起動してから再認証</strong> で事なきを得ましたが、準備だけは早めにやっておきましょうってことですね…。</li>
+</ul>
+
+
+<h2>当日</h2>
+
+<ul>
+<li>開始時statsをgoogle formに入力して、リチャージしました。ポータルキーは400個ほどありましたが、パワーキューブが尽きかけてしまいました。。</li>
+<li>statsが指定の値に一番近かった人にプレゼントする企画がありました。</li>
+<li>終了時statsを入力。実は <strong>「回答を編集」用のフォームのURLを消さないようにすることが一番大変でした</strong> &ndash;;;;
+
+<ul>
+<li>人によっては反映に時間がかかったみたいですが、私はどういうわけか1分以内で反映されてました。</li>
+</ul>
+</li>
+<li>デコードチャレンジがかなり遅れて到着。16進数asciiコード列を読むだけという内容でした。</li>
+</ul>
+
+
+<h2>終わりに</h2>
+
+<ul>
+<li>どういったイベントなのかある程度把握できたので、場所が合えば行けそうです〜</li>
 </ul>
 
 </div>
@@ -1508,63 +1606,6 @@
 <li>なおくそまじめな実装は <a href="https://yukicoder.me/submissions/328688">https://yukicoder.me/submissions/328688</a> です(筈)。</li>
 </ul>
 
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2019/01/26/various-sushi/">[Atcoder] Various Sushi</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2019-01-26T17:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li><p><a href="https://atcoder.jp/contests/abc116/tasks/abc116_d">https://atcoder.jp/contests/abc116/tasks/abc116_d</a></p></li>
-<li><p>持っている寿司のリストLと種類ごとの寿司の個数Cを用意する</p></li>
-<li>おいしさの高い順にソートする</li>
-<li>寿司を順番に見ていく。</li>
-<li>すでに持っている寿司がK皿であるなら、
-
-<ul>
-<li>すでにその種類の寿司を持っているなら無視する。(K皿でない場合は無視してはいけない。)</li>
-<li>Lを後ろから見ていき(j)、C[L[j][種類]]>1となっているものを探す。L[j]を取り除く。C[L[j][種類]]を1減らす。</li>
-</ul>
-</li>
-<li>見ている寿司をLに加える</li>
-</ul>
-
-
-<p>このとき、「後ろから見てい」くインデックスjを最初にK-1で初期化したあとは初期化しないようにする。こうすることで、Lの各要素はたかだか1回しか舐められないことになり、十分高速となる。
-なおjが0未満になったら「順番に見ていく」こと自体を打ち切ることでプログラムが簡潔になる。</p>
-
-<p>最初以外初期化が必要ないのは、あとから追加された寿司を取り除くことは絶対にないからである。</p>
-
-<p><a href="https://atcoder.jp/contests/abc116/submissions/4076962">https://atcoder.jp/contests/abc116/submissions/4076962</a></p>
 </div>
   
   

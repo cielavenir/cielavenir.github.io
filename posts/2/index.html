@@ -98,6 +98,63 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2019/01/26/various-sushi/">[Atcoder] Various Sushi</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-01-26T17:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><p><a href="https://atcoder.jp/contests/abc116/tasks/abc116_d">https://atcoder.jp/contests/abc116/tasks/abc116_d</a></p></li>
+<li><p>持っている寿司のリストLと種類ごとの寿司の個数Cを用意する</p></li>
+<li>おいしさの高い順にソートする</li>
+<li>寿司を順番に見ていく。</li>
+<li>すでに持っている寿司がK皿であるなら、
+
+<ul>
+<li>すでにその種類の寿司を持っているなら無視する。(K皿でない場合は無視してはいけない。)</li>
+<li>Lを後ろから見ていき(j)、C[L[j][種類]]>1となっているものを探す。L[j]を取り除く。C[L[j][種類]]を1減らす。</li>
+</ul>
+</li>
+<li>見ている寿司をLに加える</li>
+</ul>
+
+
+<p>このとき、「後ろから見てい」くインデックスjを最初にK-1で初期化したあとは初期化しないようにする。こうすることで、Lの各要素はたかだか1回しか舐められないことになり、十分高速となる。
+なおjが0未満になったら「順番に見ていく」こと自体を打ち切ることでプログラムが簡潔になる。</p>
+
+<p>最初以外初期化が必要ないのは、あとから追加された寿司を取り除くことは絶対にないからである。</p>
+
+<p><a href="https://atcoder.jp/contests/abc116/submissions/4076962">https://atcoder.jp/contests/abc116/submissions/4076962</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2019/01/04/christmas-tree/">[Yukicoder] クリスマスツリー</a></h1>
     
     
@@ -832,65 +889,6 @@
 
 
 
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/08/07/die-tertia/">[Yukicoder] Die Tertia</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-08-07T01:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/721">https://yukicoder.me/problems/no/721</a></p>
-
-<h2>解法</h2>
-
-<ul>
-<li>mktimeとlocaltime_rを使います。</li>
-<li>C <a href="https://yukicoder.me/submissions/277099">https://yukicoder.me/submissions/277099</a></li>
-</ul>
-
-
-<h2>余談</h2>
-
-<ul>
-<li>AOJ0261 Mayan Crucial Prediction</li>
-<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0261">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0261</a></li>
-<li>も同様のやり方で解けます。</li>
-<li>(64bit限定です。初期のAOJは32bitだったため通らないのですがご愛嬌)</li>
-<li><a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=585882">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=585882</a></li>
-</ul>
-
-
-<h2>余談2</h2>
-
-<p>テスター当時はRuby版しか答案作ってませんでしたが解説のためにC版を急遽作りました。。</p>
 </div>
   
   
