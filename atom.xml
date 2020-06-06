@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2020-05-04T14:40:11+09:00</updated>
+  <updated>2020-06-06T20:33:35+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -521,6 +521,216 @@
 
 <ul>
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[第三回 アルゴリズム実技検定 参加記(リアルタイム)]]></title>
+    <link href="http://cielavenir.github.io/blog/2020/06/06/past3/"/>
+    <updated>2020-06-06T20:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2020/06/06/past3</id>
+    <content type="html"><![CDATA[<p>本記事は5/23に下書きを作成、6/6 18時に提出履歴を確認して微修正、公開されました。</p>
+
+<h2>はじめに</h2>
+
+<p><a href="https://past.atcoder.jp/">アルゴリズム実技検定(PAST)</a>。atcoderが最近始めた検定試験である。「新型コロナウィルス感染症対策で外出自粛が続く状況を鑑みて、第三回アルゴリズム実技検定の受験資格を無償で提供いたします。」とのことなので、とりあえず受けてみようと思った。せっかくならチェックマークがつくリアルタイム受験で。</p>
+
+<h2>5/6</h2>
+
+<ul>
+<li>シリアルコードを取得</li>
+<li>受験登録ページでシリアルコードを入力</li>
+<li>「検定期間開始前～リアルタイム受験終了後では、自動的にリアルタイム受験の登録となり、それ以降は、いつでも受験開始可能な通常受験となります。」とのことなので一旦入力を削除</li>
+</ul>
+
+
+<h2>検定</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">時間</th>
+<th style="text-align:left;">言語</th>
+<th style="text-align:left;">問題(A-O)</th>
+<th style="text-align:left;">コメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">-0:10</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">受験登録ページでシリアルコードを再入力</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:00</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">この時点ではスマホ。 <strong>問題が見られないトラブル発生。</strong> twitter検索してもだれも報告していない。やばい。一過性のものか？床屋の用事があったので済ませる。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:30</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">床屋は終わったけどまだ見られへん。やばい。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:50</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">PASTはログインしてたけどatcoderはログインしてなかっただけじゃんToT</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:58</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">A</td>
+<td style="text-align:left;">やるだけですね(String#upcaseを使うと楽) <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">1:00</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">Bのくせに制約おかしくないですか？</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:06</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">C</td>
+<td style="text-align:left;">場合分けだけ気をつければやるだけですね <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">1:45</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">問題数は少ないんじゃん。。WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:51</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">F</td>
+<td style="text-align:left;">配列のintersectionが楽に取れる点でRubyは強い <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">2:00</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">帰宅。ここまでスマホここからPC</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:02</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">B</td>
+<td style="text-align:left;">入力値の扱いが間違ってた <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">2:07</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">D</td>
+<td style="text-align:left;">RubyのDATAハンドルが活用できる <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">2:17</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">E</td>
+<td style="text-align:left;">Nが多いが制約的に2乗にはならん、大丈夫だ <strong>AC</strong> ここまで前座(7点以上の問題は全完)。</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:29</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">G</td>
+<td style="text-align:left;">普通の幅優先だけど無限グリッドか…探索上限決め打ちでいいかな WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:32</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">G</td>
+<td style="text-align:left;">障害物座標に制約があるんなら探索上限決め打ちなんていらない <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">2:40</td>
+<td style="text-align:left;">Python</td>
+<td style="text-align:left;">J</td>
+<td style="text-align:left;">ヒープか? -> 誤読だった</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:01</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">H</td>
+<td style="text-align:left;">普通のDPか WA</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:03</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">H</td>
+<td style="text-align:left;">定番のoff-by-oneだった(ジャンプ中にゴールする場合の)。これ系の問題はデバッグ難ですよね <strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">3:05</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">M</td>
+<td style="text-align:left;">あと1問で中級かぁ。あ、M問題、<a href="https://qiita.com/cielavenir/items/33aaf548b14bcae386a2">CodeIQで既出</a>やん。でもアダプタ実装がそこそこ面倒なのよね…</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:15</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">I</td>
+<td style="text-align:left;">行列自体じゃなくて、行と列の配列だけを持とう サンプル合わず</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:16</td>
+<td style="text-align:left;">Ruby</td>
+<td style="text-align:left;">I</td>
+<td style="text-align:left;">転置する場合は(以降の)出力クエリの行と列だけじゃなくて、その時点での行と列の配列自体も交換しないといけないのね <strong>AC</strong> これで中級。激冷えを回避！</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:24</td>
+<td style="text-align:left;">C++</td>
+<td style="text-align:left;">N</td>
+<td style="text-align:left;">愚直解を出しとけ TLE</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:41</td>
+<td style="text-align:left;">C++</td>
+<td style="text-align:left;">N</td>
+<td style="text-align:left;"><a href="https://qiita.com/EmuraDaisuke/items/fbcfbdae8e0477693331">颯式</a>を出してみろ TLE</td>
+</tr>
+<tr>
+<td style="text-align:left;">4:16</td>
+<td style="text-align:left;">C++</td>
+<td style="text-align:left;">M</td>
+<td style="text-align:left;">がんばって実装した。<strong>AC</strong></td>
+</tr>
+<tr>
+<td style="text-align:left;">4:30</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">もうやれる問題ないわ(1問だけ解いても級は変わりませんしねぇ)。。投了。</td>
+</tr>
+<tr>
+<td style="text-align:left;">5:00</td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;"></td>
+<td style="text-align:left;">70点・中級でした。お疲れ様でした。</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>開始ぎりぎりまでシリアルコードは入力するな</li>
+<li>現状atcoder本体へのログインをお忘れなく(要望は出しておきましたが…)w</li>
+<li>解いた順番ACFBDEGHIMとか面白いですねw</li>
+<li>序盤はスマホでもいけるがやっぱりPCは必要w</li>
+<li><p>競プロが鈍っていても初級までは確実に取れそう</p></li>
+<li><p>Fは個人的に(通常でいう)200点的な印象だった。(BとFを交換しても良いぐらい)</p></li>
+<li>Iは個人的に行列の数的構造に感動した。</li>
+<li>颯式、std::sortよりも少しだけ速いっぽい。</li>
+<li><p>既出が出たのはすこしびっくりだった。でもまあ、問題がかぶることなんてありえる話ですよね</p></li>
+<li><p>楽しかったです(が、通常8800円は高めだなぁ)</p></li>
 </ul>
 
 ]]></content>
@@ -1584,227 +1794,6 @@
 </tr>
 </tbody>
 </table>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[SHV31]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/08/16/shv31/"/>
-    <updated>2018-08-16T23:59:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/08/16/shv31</id>
-    <content type="html"><![CDATA[<p>事情により必要になるかもなので貼り付けとく</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Processor    : ARMv7 Processor rev 1 (v7l)
-</span><span class='line'>processor : 0
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>processor : 1
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>processor : 2
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>processor : 3
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt 
-</span><span class='line'>CPU implementer   : 0x51
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x2
-</span><span class='line'>CPU part  : 0x06f
-</span><span class='line'>CPU revision  : 1
-</span><span class='line'>
-</span><span class='line'>Hardware  : Qualcomm MSM8974PRO-AB</span></code></pre></td></tr></table></div></figure>
-
-
-<p>SHV38もついでに</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>processor    : 0
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 1
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 2
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 3
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 4
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 5
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 6
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>processor : 7
-</span><span class='line'>model name    : ARMv7 Processor rev 4 (v7l)
-</span><span class='line'>BogoMIPS  : 38.40
-</span><span class='line'>Features  : swp half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 evtstrm 
-</span><span class='line'>CPU implementer   : 0x41
-</span><span class='line'>CPU architecture: 7
-</span><span class='line'>CPU variant   : 0x0
-</span><span class='line'>CPU part  : 0xd03
-</span><span class='line'>CPU revision  : 4
-</span><span class='line'>
-</span><span class='line'>Hardware  : Qualcomm Technologies, Inc MSM8952</span></code></pre></td></tr></table></div></figure>
-
-
 
 ]]></content>
   </entry>

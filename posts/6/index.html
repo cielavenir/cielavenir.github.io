@@ -98,6 +98,73 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2016/01/14/takahashikun-password/">[Atcoder] 高橋君とパスワード</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-01-14T01:37:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://abc032.contest.atcoder.jp/tasks/abc032_b">http://abc032.contest.atcoder.jp/tasks/abc032_b</a></p>
+
+<h2>概要</h2>
+
+<ul>
+<li>sからk文字取り出して、その部分文字列を連想配列に突っ込んで、重複しない数を答える。</li>
+</ul>
+
+
+<h2>高速解法</h2>
+
+<ul>
+<li>ローリングハッシュを生成する。ローリングハッシュには、<code>hash[a:c] = (hash[a:b]*B**(c-b) + hash[b:c]) % P</code>という性質がある。</li>
+<li>今回はhash[i:i+k]が得られれば良いので、この式を<code>hash[b:c] = ...</code>と変形すれば良い。</li>
+<li>部分ハッシュを得るのは、<code>B**(c-b)</code>を事前に計算しておくことでO(1)とできる。</li>
+<li>また、連想配列がハッシュテーブルならば重複判定もO(1)なので、トータルでO(s)となる。</li>
+<li><a href="http://abc032.contest.atcoder.jp/submissions/608838">http://abc032.contest.atcoder.jp/submissions/608838</a>
+
+<ul>
+<li>※C++98互換のためunordered_setではなくsetを使っているためこの実装はO(slogs)</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>まとめ</h2>
+
+<ul>
+<li>今回の制約では全くの無駄ですので、解法は賢く選びましょう。</li>
+<li>なぜyukicoder復習コンテストのストックにしなかったし。提出後に気づいたので後の祭り。</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2015/12/14/pq-santa/">[Yukicoder] (P,Q)-サンタと街の子供たち</a></h1>
     
     
@@ -1294,43 +1361,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2014/10/14/launched-github-pages/">GitHub Pages始めました</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-14T17:30:58+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>始めてみました。</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
+    
+    <li class="previous"><a href="7">&larr; Older</a></li>
     
     <li><a href="/blog/archives">Blog Archives</a></li>
     
@@ -1349,6 +1382,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2020/05/03/first-saturday/">Ingress First Saturday 初参加記(杉戸)</a>
       </li>
     
@@ -1358,10 +1395,6 @@
     
       <li class="post">
         <a href="/blog/2019/10/12/sametoro/">[yukicoder] サメトロ</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2019/10/05/math-note/">数学ガールの秘密ノート立ち読み</a>
       </li>
     
   </ul>
