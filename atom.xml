@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2020-08-30T16:39:11+09:00</updated>
+  <updated>2020-08-30T16:46:46+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -618,7 +618,7 @@
 </tr>
 <tr>
 <td style="text-align:left;">3:15</td>
-<td style="text-align:left;">num_factorの評価が誤っていた(value/(num_claim*num_factor+1)とするべきところを(value/((num_claim+1)/num_factor)としていた)。最後の60分は走らせるだけにすべきなのにそこで修正かい&ndash;;</td>
+<td style="text-align:left;">num_factorの評価が誤っていた(value/(num_claim<em>num_factor+1)とするべきところを(value/((num_claim+1)</em>num_factor)としていた)。最後の60分は走らせるだけにすべきなのにそこで修正かい&ndash;;</td>
 </tr>
 <tr>
 <td style="text-align:left;">3:45</td>
