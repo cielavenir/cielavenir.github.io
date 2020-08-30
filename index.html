@@ -265,7 +265,7 @@
 </tr>
 <tr>
 <td style="text-align:left;">yukicoder</td>
-<td style="text-align:left;">Lv 73</td>
+<td style="text-align:left;">最高Lv 73</td>
 </tr>
 <tr>
 <td style="text-align:left;">AOJ</td>
@@ -347,6 +347,10 @@
 <td style="text-align:left;">BattleConferenceU30 2018</td>
 <td style="text-align:left;">プログラミングバトル 本選5位/80</td>
 </tr>
+<tr>
+<td style="text-align:left;">天下一 GameBattleContest 2020</td>
+<td style="text-align:left;">20位(入賞)/100</td>
+</tr>
 </tbody>
 </table>
 
@@ -381,6 +385,11 @@
 <td style="text-align:left;">maimai</td>
 <td style="text-align:left;"></td>
 <td style="text-align:left;"><a href="http://maimai-log.net/cielavenir"><strong>10.70</strong></a></td>
+</tr>
+<tr>
+<td style="text-align:left;">maimax dx</td>
+<td style="text-align:left;">2032702787413</td>
+<td style="text-align:left;"><a href="https://mai-score.com/user/cielavenir"><strong>7124(銀)</strong></a></td>
 </tr>
 <tr>
 <td style="text-align:left;">chunithm</td>
@@ -455,7 +464,7 @@
 <tr>
 <td style="text-align:left;">jubeat festo</td>
 <td style="text-align:left;">60930001629309</td>
-<td style="text-align:left;"><a href="https://cycr.net/jubeat/festo/data.php?id=60930001629309&amp;sort=d-pseudolity&amp;ex=pseudolity">_</a></td>
+<td style="text-align:left;"><a href="https://cycr.net/jubeat/festo/data.php?id=60930001629309&amp;sort=d-pseudolity&amp;ex=pseudolity">VIOLET 4165.7</a></td>
 </tr>
 <tr>
 <td style="text-align:left;">Reflec Beat</td>
@@ -617,6 +626,12 @@
 <li>修正済み</li>
 </ul>
 </li>
+<li>Enigmail
+
+<ul>
+<li>Decrypt to folderの挙動が一部誤っていた</li>
+</ul>
+</li>
 </ul>
 
 
@@ -626,6 +641,160 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
+      <h1 class="entry-title"><a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2020-08-30T16:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>2019OBT</h2>
+
+<p><a href="https://tenka1.klab.jp/2019-obt/">https://tenka1.klab.jp/2019-obt/</a></p>
+
+<p><a href="http://www.nikkan.co.jp/brand/irex/2019/">IREX2019</a>に行く前に豊洲で参加した。CodeRunner以来だったのでとても楽しかった。</p>
+
+<h2>2020</h2>
+
+<p><a href="https://tenka1.klab.jp/2020/">https://tenka1.klab.jp/2020/</a></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">時間</th>
+<th style="text-align:left;">コメント</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">-2:00</td>
+<td style="text-align:left;">特に理由もないが、過去プログラムをpractice sessionに流したりしてた。非公開リポジトリに新しいトークンを書き込むためってのはある。</td>
+</tr>
+<tr>
+<td style="text-align:left;">-1:00</td>
+<td style="text-align:left;">非公開リポジトリ(のcoderunnerディレクトリ)の整理とかやってた。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:00</td>
+<td style="text-align:left;">今回もPythonのサンプルコードをいじりましょうかね。</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:05</td>
+<td style="text-align:left;">とりあえず全マス取得するコードを作って裏で回し始める</td>
+</tr>
+<tr>
+<td style="text-align:left;">0:30</td>
+<td style="text-align:left;">1x1〜5x5の領域で一番点数が高いものを取るが、どうにも点数が伸びない</td>
+</tr>
+<tr>
+<td style="text-align:left;">1:40</td>
+<td style="text-align:left;">ミスが判明。同じ領域を何度も取得してしまっていた。取得する領域が重ならないようにサンプルコードのループを活用するようにした(領域を取得するたびに現在状況を取得するようにした)。</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:10</td>
+<td style="text-align:left;">誤読。(私の方針では)一度取った領域の上下左右のマスは取ってはいけないことが判明した。my_claimマスだけでなく上下左右にmy_claimがあったら価値を0にするようにした。<br>この時点で方針の8割は固まった(大体55秒前後で取得したいマスは取得し終わるようになった)。</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:20</td>
+<td style="text-align:left;">順位を上げ始めた。この時点で40位ぐらい。</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:30</td>
+<td style="text-align:left;">点数が高い領域を計算する際、そのマスを取得した人数を考慮するようにした(num_factor)</td>
+</tr>
+<tr>
+<td style="text-align:left;">2:45</td>
+<td style="text-align:left;">点数を比較する際、同様な点数ならサイズが小さいものを拾うようにした(でもうまくいかなかったのでやめた)</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:00</td>
+<td style="text-align:left;">23位ぐらいをうろつく。ぎりぎり賞金圏外かな。。</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:05</td>
+<td style="text-align:left;">num_factorは他の参加者が強くなると下げないといけないので、微調整。</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:10</td>
+<td style="text-align:left;">それにしても順位の入れ替わりが激しいなぁ。さっき圏内だった人が落ちとるよ。。</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:15</td>
+<td style="text-align:left;">num_factorの評価が誤っていた(value/(num_claim*num_factor+1)とするべきところを(value/((num_claim+1)/num_factor)としていた)。最後の60分は走らせるだけにすべきなのにそこで修正かい&ndash;;</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:45</td>
+<td style="text-align:left;">ポケモンGOのレイドをやりに外出(今考えるとCodeRunner系では功を奏しうる選択だったと思う)</td>
+</tr>
+<tr>
+<td style="text-align:left;">3:55</td>
+<td style="text-align:left;">帰宅。なんと20位に浮上。このまま逃げ切ってくれ。。</td>
+</tr>
+<tr>
+<td style="text-align:left;">4:00</td>
+<td style="text-align:left;">20位キープ。賞金！！</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>感想</h2>
+
+<ul>
+<li>実は1ゲームごとの順位で20位に入れたほうが少ないんですが、総合的にはコンスタントに点数を取るほうが大事だったのかもしれない。
+
+<ul>
+<li>いきなりコードを動かすなというのがこれ系のコンテストの定石だが、今回21位との点差が14万点だったこともあり、やはり塵も積もれば山となることを痛感した。ただ、CodeRunnerと違って、1ゲームごとにステートが独立だからってのはあるかもしれない。</li>
+</ul>
+</li>
+<li></li>
+<li>BCU30 2018が最後の賞金をとりうるコンテストだと思っていたが、<a href="http://cielavenir.github.io/blog/2018/04/21/ball/">A問題で時間を食ってしまい</a>5位となり、賞金を逃してしまった(3位まで賞金)。もう賞金はもらえないだろうと思っていたが、今回思いがけず賞金を得られることとなり、本当にありがたいです。</li>
+<li>プログラミングコンテストで賞金を得られたのは初だったので、今までプログラミングを続けてきてよかったなという気持ちです。
+
+<ul>
+<li>正確にはキャリフルのCodeSCOREで賞金もらってるんですが、あれは実務知識…とは名ばかりのぐぐらびりてぃコンテストでしたからね。(CodeIQの方が懇親会にていわく、あれはβ版で本バージョンは試験時間が大幅に短くなったらしい)</li>
+</ul>
+</li>
+<li>OBTは「始点から終点までの辺の最大流」であり、始点から終点までつながなければ点数は一切入らなかったが、今回は「領域の連結成分」であるので、領域を取得さえすれば点数が入るようになったのはよかった。</li>
+<li>(領域)取得完了できる時間が十分短い場合は待ってからokを返す仕様はありがたかった。CodeRunnerはリトライの時間調整に苦慮するところがあったので。</li>
+<li>長方形を取得できるようになればもう少し点を伸ばせたかもしれないが、取得自体が正方形しかできない以上、長方形を取得するには正方形に分割して複数回取得を繰り返さねばならず、分割が面倒だったので実装しなかった。</li>
+</ul>
+
+
+<h2>最後に</h2>
+
+<p>本当にありがとうございました！</p>
+
+<p><img src="https://i.imgur.com/c0uUVSpl.png" alt="tenka1_portal" />
+<img src="https://i.imgur.com/dDgnChal.png" alt="tenka1_result" /></p>
 </div>
   
   
@@ -1774,49 +1943,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2019/03/25/well-known/">[Yukicoder] Well Known</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2019-03-25T00:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li><p><a href="https://yukicoder.me/problems/no/796">https://yukicoder.me/problems/no/796</a></p></li>
-<li><p>和を3で割ったあまりが1で、数列のうち1要素が3…</p></li>
-<li>っていうか1から100000までの和って312456超えますし…</li>
-<li>よく見たら <strong>相異なるって書いてない</strong> じゃん</li>
-<li><code>[1]+[3]*(N-1)</code>でいいのか。これ、国語の問題ですよね…</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1836,6 +1962,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
       </li>
     
@@ -1845,10 +1975,6 @@
     
       <li class="post">
         <a href="/blog/2019/11/17/lncrna-cite/">how to cite mcmanuslab long noncoding rna article</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2019/10/12/sametoro/">[yukicoder] サメトロ</a>
       </li>
     
   </ul>

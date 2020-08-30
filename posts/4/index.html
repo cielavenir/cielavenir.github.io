@@ -98,6 +98,99 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/03/10/conveyor-sushi/">[Atcoder] くるくる寿司</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-03-10T22:16:50+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>概要</h2>
+
+<ul>
+<li>N(=3000)枚の寿司ネタ(a-zの26種類)を連続して流す(文字列Sとする)。</li>
+<li>その中からM(=7)枚の部分列がQ(=30000)個問い合わせられる。ただし場合により部分列は連続していないことがある。</li>
+<li>そのそれぞれに対し、S上でのインデックスを答える。</li>
+</ul>
+
+
+<h2>決定的アルゴリズム</h2>
+
+<p>この問題、D=1とすれば、部分列は連続であることが保証されます。つまり、決定的アルゴリズムを使うことができます。</p>
+
+<ul>
+<li>N枚のうちで連続したM枚についてすべて異なるようにSを生成します。
+
+<ul>
+<li>完全に決定的にするには <a href="https://en.wikipedia.org/wiki/De_Bruijn_sequence">https://en.wikipedia.org/wiki/De_Bruijn_sequence</a> とか使うんですが、発展のために少しでもエントロピーを上げたいので、この部分は乱択を使って良いと思います。</li>
+</ul>
+</li>
+<li>すべて異なることがわかっているのだから、M枚の部分文字列を単にSから探すだけで終わりです。</li>
+<li><p>Sの生成さえできれば、1ケースに付き30000点、 <strong>合計300000点を確実に獲得できます。</strong></p></li>
+<li><p>Rubyの事実上初版 <a href="https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2177816">https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2177816</a></p></li>
+</ul>
+
+
+<h2>発展</h2>
+
+<ul>
+<li>この状態であれば、0..Nのそれぞれ(j)に対し、qがS[j,M*3]中にこの順番で入っている数(ただしSの先頭に入っているほど重みを大きくする)が最大となるjをインデックスとして答える実装にすることで、D=2.5程度までは安定してインデックスを求めることができます。
+
+<ul>
+<li>「*3」は、元となる部分文字列の長さはM*3以下であることを期待しています。</li>
+</ul>
+</li>
+<li><p>この「重み」が評価関数の肝になると思うのですが、調整の余地が残っている気がします。</p></li>
+<li><p>C++の(コンテスト後)最終版(381792点) <a href="https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2179945">https://rco-contest-2018-final-open.contest.atcoder.jp/submissions/2179945</a></p></li>
+<li><p>なお、コンテスト中は元となる部分文字列の長さがMであり、qの長さがM未満になりうると誤読していました、D=1.5にしかできなかったので324730点どまりでした。無念。</p></li>
+</ul>
+
+
+<h2>記事としての結論</h2>
+
+<ul>
+<li>順位表で、ある点数を取っている人が沢山いる場合は決定的アルゴリズムを疑うのは有用ではないかと思います。</li>
+</ul>
+
+
+<h2>補足</h2>
+
+<ul>
+<li>Sの一例は次のとおりです：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>kzsbqmuxtqwazgonugucjaouqsihsmgjpvdiwscfaewltvsyolgoenjcmlylyzhqlhgaypshugqlrqfxjigsliujfconzsyrnctoeztichmtznzxfhfkcpytpenkyqxmwxeaihahytbkbqkzxplhdtnzbsnpwhdpzjykrgwoxihvkiqrgmruztplaiuqecvbrvlbkwsbylxgxytyhsyiedtfvkjiylnjmcmhvtlkrmqbafrhngsqrvfbkadbkjshyhbagjoyhqmwipzegzqjkpxoquezkdplxombjqkdtbgnghkdaregkmrxelhpfbfoewbnfewmqvyivwkhfahoryxqvqnoguwpcldzcqlbpfruijrenfofeajcnrtcnqlzhbwdxwglmbkhdfhdyhfinxkwksypafghuoilqofnmbiavcqtjszdtowlqsdienoymvlrhczlysmlokhbvluaelotziotdtcwnvsigjnfjfywkeyalcmxgwyojkjrigvlnoqehmgopgvhntqxvnmxobebiwbzomjracdoerdndvbdygoyeayujwhtoiouxhmdbqusqbmqwnucgbzligimgnaswqbcdjchomvihdwmksltueulypyjsrnjeyoipdfxtveurkuwxatwmawmvrahsgexunjrdzemesmkfxmdzjvqxijdqoabvahbzeklborztczqlicyzbpemqinofcfuvaznakgxaevhcmqgmnescpxghixypxsxcxcqsqpkldvycwkxhkqcwqlqxnpoazsohnoucsztqdizbntfdeteiximtuymuzodlquigwhzoqjezyqahpkifvbyhkibmhslzdwybpojuegpyopwcdigpepmgpgdgdlumhrnfscleimrhriyjxfypdawcybayotfguipljmjvzxixpxugnlzvqemwluzwskegvpmpvrftyrfegxwetstcouotmofsakluqdmliroqiaodhrbvxnqgwrqntenstlhykhjalzlwuqvcmwawfyqojhpymlgycsxyhgqxjvesdbifgxitdikicrtnuzywysuvxrsidvtwisowtvltfyvmeqdpnzhklcvxmygjzmtpfqzezwkgiwfdctpchqfljqenqbxhxuivldilsldfesvtebuxcpqsharzikqnvxudumxqlknkpblcicqjimafnaqbocjmguzcliduealstwhnyqcbypexcnyjndbwgvefjwlbzilcqejkylrwqmbzsxolbvuihmkvyjlwkitvthxsmozyektmnhxifxziytweudfnhipwstdzwqcekmuswolxrvwagpfhlgwqhqsgocwioykxpnlkpcjtzdfwfxnfrdjnpkmfkninbsmpdblqveasiejnqxthdioxfpruxabcjftnkgdphravwvzlcgtonqcftlckmvmxvhojwuzpetwyhzvcrgclxembtiksgkxrnwhpamnrcztbftknzijgsrxwnfxrzhacvfakjapavrbrmdacqhurnqozroebwnqjgmcnpdwkrhzwbrusawknwyglczmewansanujgkljlntcbxeqtuczwnsvawpgkzkzqnruqbnuoepfxylqmqfodorsrlyuhoxtgxqizpzokjqskcapuoctghnhsprjgyayidqelwfaufxvpcqgtbvgltgbrbmtawovsdvsnmjymqdtkjeptmhmcjenmwktbnvmqnjyuceclnpeqktpdhclyvwbszlqlvzbahuktlwyzphaoaftshmvelbhvbqyfatbjmknybdnpjpxtovwodvxzdapgwbekptxputuqwsfrcqyauvegdfcjsjudqnqiqsfzeoevlkdczpkwejcfekodqdcpzqsjfhgkovcjzhtnyosceiknalxljzpcsnqnpvigrmblkflihbrireolvlpmyunynuemvfkmyhryqvwcqrbnryjydnsusbesncslszxjpirhqxbfnsxlwsrbxurvjystorpmeiyxcmgynknfdlzqgatiyhmyfksjbcokchpbgxgjkiafsmzepbfmjzyntzcalnfufqlgqkwynmizavocyqijpuevsjdlvbwmycvepjzvhxznxlyhaeypicgiyfnxwasyukgmiwikmgtkvgwevafmkpnphuvczrjcgqewivjugpikduiofvaeshowxzcuxecemurqieiflobzxbxswciepxwfmhkevjxtngfxgckfvtztjyznqkyiymeauyvkdgspmzgxmxuoztrkpudrdowrysdcozcpbydsygxroclwhldqrzswnldbgjybwhrseljwmclgzabgpmthltqocahrzrnowgpcrzkazcyhxqdknlapzhjyhjsnejbnoeabjvdcxjkgcniokyxyjujkfmtgrxdvwpnbxficmzrbspvozlsmdoxdefbhgmfumuakdxdivrvzjfdngjqxutjeibzahvmktqjvryplivblnetnvukxjmvtgzidxhokfhicoaqvhpmwpoefwgqsznyczfetgnfqtwornmnslycqodunanvrzvtufmxdqubnqfbyzrwcmyteukdskmjhsijkhzqopckiobdabsyzujbxjnymiaroiwafpwbpihqnhlmxsopoxbqrfxhavgqurfpkgskntoavqdbfhqkfyspwmihrtesoemfnbwswyqutsaujcdkepdukawaigywzveizimplsnvalkgrgeuznvbxgeruhwoijvmcazucrvofdmvuqcsyejrmeyclsgafckhcdtpvlvymcvswgfzkphxbmgcdxzlxzqmdwocowclvwrspkurzjsbnxfxiatubjfriasfyxwdejpmsfvmfptijwykizxoubgetmbsogpwqwkqlsfxklopxpwjwrpizgqonplrpfpmqagnmcgcoqgemovxtxrkdnwqugvmyqetbiqchfcmpsunwjnuplmzwjplfj</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/03/03/tetranacci/">[Yukicoder] テトラナッチ数列 (Hard)</a></h1>
     
     
@@ -983,116 +1076,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2017/01/22/tournament/">[Atcoder] Tournament</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2017-01-22T23:10:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://agc009.contest.atcoder.jp/tasks/agc009_b">https://agc009.contest.atcoder.jp/tasks/agc009_b</a></p>
-
-<h2>概要</h2>
-
-<ul>
-<li>トーナメント戦を行ったところ、1番の選手が優勝した。</li>
-<li>他の選手について、誰に負けたのかが与えられるので、条件をみたすようなトーナメント表の深さの最低値を求めよ。</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<ul>
-<li>ある選手がどの選手を倒したかのグラフを作成し、1番の選手から再帰。</li>
-<li>倒した選手(N人)のそれぞれについてトーナメント表の深さを求めようとする(倒した選手がいなければ0)。</li>
-<li>深さを降順にソートし、これらに1からNまでの数値を割り当てて、足す。</li>
-<li>足した後の配列の最大値が答えである。</li>
-</ul>
-
-
-<h2>再帰の深さ</h2>
-
-<ul>
-<li>単純に実装すると、最悪10万回の再帰が必要になり、スタックオーバーフローになるおそれがある。</li>
-<li>今回、C++は <strong>偶然</strong> 大丈夫であったが、RubyやPythonだと不可であった。
-
-<ul>
-<li>スタック拡張テクを使っても依然として通らない。</li>
-</ul>
-</li>
-<li>今回は場当たり的(テストケース依存)な対応になるが、N/2番の選手から一旦再帰しておくことで再帰の深さをある程度減らすことができる。
-
-<ul>
-<li>この状態でもスタック拡張テクは依然として必要である。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++11
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1077298">http://agc009.contest.atcoder.jp/submissions/1077298</a></li>
-</ul>
-</li>
-<li>Ruby
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1076373">http://agc009.contest.atcoder.jp/submissions/1076373</a></li>
-</ul>
-</li>
-<li>Python
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1077307">http://agc009.contest.atcoder.jp/submissions/1077307</a></li>
-<li>なお、なぜかPyPyでは通らない。</li>
-</ul>
-</li>
-</ul>
-
-
-<h2>余談</h2>
-
-<ul>
-<li>木だから本来メモ化は必要なかった。取り除いたらRubyではおまじない不要になった…
-
-<ul>
-<li><a href="http://agc009.contest.atcoder.jp/submissions/1076974">http://agc009.contest.atcoder.jp/submissions/1076974</a></li>
-</ul>
-</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="5">&larr; Older</a></li>
@@ -1114,6 +1097,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
       </li>
     
@@ -1123,10 +1110,6 @@
     
       <li class="post">
         <a href="/blog/2019/11/17/lncrna-cite/">how to cite mcmanuslab long noncoding rna article</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2019/10/12/sametoro/">[yukicoder] サメトロ</a>
       </li>
     
   </ul>
