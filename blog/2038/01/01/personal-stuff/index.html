@@ -589,25 +589,31 @@
 
 <ul>
 <li>ODBCドライバにおいて、(MicrosoftAccessと違い)DBQ引数が取れない</li>
-<li>ODBCドライバでマルチバイト文字列が扱えない</li>
+<li><a href="https://github.com/mdbtools/mdbtools/pull/9">ODBCドライバでマルチバイト文字列が扱えない</a></li>
 </ul>
 </li>
 <li>ExGame (モバゲーのFlashランタイム)
 
 <ul>
-<li>Android Chrome/iOS6で文字が表示できない</li>
+<li>Android Chrome/iOS6で文字が表示できない
+
+<ul>
+<li>報告自体はcTouchのユーザーから(まあ当時はChromeが入れられるAndroid 4の端末は少なかったですからね…)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>RVM
 
 <ul>
-<li>古いMac(本来i386だがboot.efiハックでx86_64化が可能なモデル)をMountain Lionにアップデートした時に、カーネルがx86_64に切り替わるが、libyaml.dylibがi386のまま正しく読み込まれず、x86_64用にリビルドもされない</li>
+<li><a href="https://github.com/rvm/rvm/pull/1257">古いMac(本来i386だがboot.efiハックでx86_64化が可能なモデル)をMountain Lionにアップデートした時に、カーネルがx86_64に切り替わるが、libyaml.dylibがi386のまま正しく読み込まれず、x86_64用にリビルドもされない</a></li>
 </ul>
 </li>
 <li>Google Chrome
 
 <ul>
 <li>filesystem APIのクオータ要求時に警告バーが出るが、この要求を機能拡張のポップアップ画面内で行うと警告バーが出る代わりに(親ごと)クラッシュする</li>
+<li>Issue 149804: Chromium crashes when window.webkitStorageInfo.requestQuota(PERSISTENT,&hellip;) is fired from POPUP window</li>
 </ul>
 </li>
 <li>嫁コレ
@@ -627,7 +633,7 @@
 <li>Enigmail
 
 <ul>
-<li>Decrypt to folderの挙動が一部誤っていた</li>
+<li><a href="https://gitlab.com/enigmail/enigmail/-/merge_requests/47">Decrypt to folderの挙動が一部誤っていた</a></li>
 </ul>
 </li>
 </ul>
