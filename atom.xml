@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2020-08-30T16:46:46+09:00</updated>
+  <updated>2020-09-05T18:56:27+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -195,7 +195,7 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left;">(少なくとも表彰式が)オンサイトの大会</th>
+<th style="text-align:left;">(少なくとも表彰式が)オンサイト、もしくは賞金を得た大会</th>
 <th style="text-align:left;">(成績)</th>
 </tr>
 </thead>
@@ -658,6 +658,10 @@
 <li>長方形を取得できるようになればもう少し点を伸ばせたかもしれないが、取得自体が正方形しかできない以上、長方形を取得するには正方形に分割して複数回取得を繰り返さねばならず、分割が面倒だったので実装しなかった。</li>
 </ul>
 
+
+<h2>答案</h2>
+
+<p>coderunner系は <a href="https://github.com/cielavenir/coderunner">https://github.com/cielavenir/coderunner</a> に格納されます(今後もその予定)</p>
 
 <h2>最後に</h2>
 
