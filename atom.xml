@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2020-09-05T19:10:51+09:00</updated>
+  <updated>2021-01-15T01:11:15+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -544,6 +544,28 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PSARDumper on PCの夢を見た]]></title>
+    <link href="http://cielavenir.github.io/blog/2021/01/15/psardumper-failed/"/>
+    <updated>2021-01-15T01:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2021/01/15/psardumper-failed</id>
+    <content type="html"><![CDATA[<p>PSPの暗号化の大部分はkirk-engineというものが担っており、これは解析されたものが<a href="https://code.google.com/archive/p/kirk-engine/">公開</a>されている。さて、kirk-engine (on PC)のユーザー的使いみちは2つある。</p>
+
+<ol>
+<li>セーブデータ復号化・暗号化</li>
+<li>Homebrew署名(これによりkernel modeを必要としなければOFWで動作する)</li>
+</ol>
+
+
+<p>しかし、PSPのCFW環境構築で最も重いもの(の一つ)はpopsloaderであろう。POPSというのはPS1エミュレータで、過去バージョンのものを使えば互換性が少し上がるかもというものである。過去バージョンのものを使うということは種々のバージョンのファームウェアを展開しなければならない。
+実機を使うと処理が重いのでできればPCでやりたいが、前提条件として、kirk-engineのkirk7_CMD55が必要であり、これは不明であったため、実現には至らなかった。</p>
+
+<hr />
+
+<p>ここまでは前座であるが、最近、kirk7_CMD55が公開されたらしい。早速トライしてみたが、第２段階のキー識別子は0x0e000000であった。このデータを復号するには(少なくとも1.50/6.61ファームウェアにおいて)sceMesgd_driver_102DC8AF関数が必要であり、この関数は不詳である。PSARDumper on PCはまだ届かない(というかもし動くなら誰かがすでにやっとる)。</p>
 ]]></content>
   </entry>
   
@@ -1840,40 +1862,6 @@
 <h2>コメンタリー2</h2>
 
 <p>「不等式の評価」項はコンテスト後に追記したものです。ご迷惑おかけしました(このために星1.5に上がることとなりました)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[2年前にmaimaiのレーティングが下がったこと]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/09/30/maimai/"/>
-    <updated>2018-09-30T23:30:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/09/30/maimai</id>
-    <content type="html"><![CDATA[<h2>背景等</h2>
-
-<ul>
-<li>紫稼働時に私のレーティングは9.74から9.22に下落することとなった。これはかなり私のモチベーションを削ることとなった(笑)</li>
-<li>それからというもの長らく遠ざかっていたが。オンゲキやチュウニズムのレート算出プログラムを書いたので、せっかくなのでmaimaiのプログラムも書くことにした(利用権延長するために今日久々にプレイした)。内部Lvは未入力だが傾向はわかるはずだ。</li>
-<li>で、できたものが <a href="https://docs.google.com/spreadsheets/d/1EcodNpPUgAtNFboMd1l-8fo9TJRYsbx8Ho-vVJV-5Fs/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1EcodNpPUgAtNFboMd1l-8fo9TJRYsbx8Ho-vVJV-5Fs/edit?usp=sharing</a> だ。</li>
-</ul>
-
-
-<h2>考察</h2>
-
-<ul>
-<li>実はレートが落ちた主要因はS-AAAの壁ではなく、history枠の存在であることが判明した。</li>
-<li>現在のhistory枠平均は3.36であり、これはざっくりと到達可能レーティングの95%程度しかいきませんよということを意味する。全体レーティングの0.5は大きい数字である。</li>
-<li>今はまだ119曲しかレート7.5に到達していないが、これを520曲で行えばレーティングは9.6程度まで回復する。</li>
-<li>ただ、挑戦する難易度としては、Lv11以上に挑戦するか、7〜8をSSにするかが良いようだ。Masterを解禁するには9をSにする必要も生じるだろうが、効率がよくなさそうだ。キャンペーンでMasterが期間限定解禁されているタイミングを狙ったほうが得策かもしれない。</li>
-</ul>
-
-
-<h2>結論</h2>
-
-<ul>
-<li>未プレイ291曲…？ちょっとこれはきついですね…。結果的にはますますモチベを削ることになったようですorz</li>
-<li>全埋めする以外に計る方法はなかったのでしょうか…。</li>
-</ul>
-
 ]]></content>
   </entry>
   

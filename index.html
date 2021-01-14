@@ -659,6 +659,55 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2021-01-15T01:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>PSPの暗号化の大部分はkirk-engineというものが担っており、これは解析されたものが<a href="https://code.google.com/archive/p/kirk-engine/">公開</a>されている。さて、kirk-engine (on PC)のユーザー的使いみちは2つある。</p>
+
+<ol>
+<li>セーブデータ復号化・暗号化</li>
+<li>Homebrew署名(これによりkernel modeを必要としなければOFWで動作する)</li>
+</ol>
+
+
+<p>しかし、PSPのCFW環境構築で最も重いもの(の一つ)はpopsloaderであろう。POPSというのはPS1エミュレータで、過去バージョンのものを使えば互換性が少し上がるかもというものである。過去バージョンのものを使うということは種々のバージョンのファームウェアを展開しなければならない。
+実機を使うと処理が重いのでできればPCでやりたいが、前提条件として、kirk-engineのkirk7_CMD55が必要であり、これは不明であったため、実現には至らなかった。</p>
+
+<hr />
+
+<p>ここまでは前座であるが、最近、kirk7_CMD55が公開されたらしい。早速トライしてみたが、第２段階のキー識別子は0x0e000000であった。このデータを復号するには(少なくとも1.50/6.61ファームウェアにおいて)sceMesgd_driver_102DC8AF関数が必要であり、この関数は不詳である。PSARDumper on PCはまだ届かない(というかもし動くなら誰かがすでにやっとる)。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a></h1>
     
     
@@ -1887,72 +1936,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2019/03/31/shirokane/">Shirokane HGC</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2019-03-31T00:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><table>
-<thead>
-<tr>
-<th style="text-align:left;">generation</th>
-<th style="text-align:left;">machine</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">1</td>
-<td style="text-align:left;">c</td>
-</tr>
-<tr>
-<td style="text-align:left;">2</td>
-<td style="text-align:left;">nc</td>
-</tr>
-<tr>
-<td style="text-align:left;">3</td>
-<td style="text-align:left;">sc</td>
-</tr>
-<tr>
-<td style="text-align:left;">4</td>
-<td style="text-align:left;">yc</td>
-</tr>
-<tr>
-<td style="text-align:left;">5</td>
-<td style="text-align:left;">gc</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1972,6 +1955,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
       </li>
     
@@ -1981,10 +1968,6 @@
     
       <li class="post">
         <a href="/blog/2020/05/03/first-saturday/">Ingress First Saturday 初参加記(杉戸)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2019/11/17/lncrna-cite/">how to cite mcmanuslab long noncoding rna article</a>
       </li>
     
   </ul>
@@ -2001,7 +1984,7 @@
   </div>
   <footer role="contentinfo" class="page-footer"><hr>
 <p>
-  Copyright &copy; 2020 - Ciel Avenir -
+  Copyright &copy; 2021 - Ciel Avenir -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
