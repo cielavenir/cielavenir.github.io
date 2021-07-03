@@ -98,6 +98,49 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/10/30/wip-articles/">未完の記事の存在意義について</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-10-30T22:45:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://qiita.com/HiromuMasuda0228/items/a71dea7ef4d77a30b118">こちら</a>や<a href="https://qiita.com/akira_/items/c8881dcde93d4cb035c7">こちら</a>で触れられているとおり、エンジニアにとってアウトプットは重要である。</p>
+
+<p>問題になるのは記事の質であろう。質をいつも保つことは難しい場合もあると思う。
+私の場合は、例えば<a href="https://qiita.com/cielavenir/items/683ebb10fa8083b3e6b4">WIP 意図せぬMerge Hellを防ぐ</a>が未完のまま公開された記事の例である。[^1]</p>
+
+<p>そういう場合、少なくとも自分の中で形にするまでは公開すべきでないという<a href="https://twitter.com/angel_p_57/status/1049597665804091392">意見も聞く</a>が、私としては、間違った情報でない限りは公開しても良いと思う。特に少ない情報の場合は断片だけでも助かる人はいると思うし、そこから話が広がる可能性もあるからだ。</p>
+
+<p>[^1] 私事だが、(弊社にはモジュールのリポジトリの他にシステムとしての管理リポジトリがあるのだが)管理リポジトリに私の個人ブランチが3個も存在している。はっきり言って糞だが、解決策がまだ見つかっていない以上しかたがない。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/10/08/careful-engineer/">[Yukicoder] Careful Engineer</a></h1>
     
     
@@ -956,69 +999,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/06/10/pair-team/">[Yukicoder] ペアでチームを作ろう</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-06-10T02:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/698">https://yukicoder.me/problems/no/698</a></p>
-
-<h2>解法</h2>
-
-<ul>
-<li>bitDPを使うのが一般的な解法ですが、計算量が増えるものの、next_partial_permutationを使うこともできます。</li>
-<li>標準関数ではありませんが、<code>next_permutation(v.begin(), v.end())</code>する直前に<code>reverse(v.begin()+middle, v.end())</code>するだけなので、(next_combinationと違って)インラインで組み込むのは簡単です。</li>
-<li><code>v.begin()</code>から<code>v.begin()+middle</code>までを(<code>middle P size</code>の)部分順列として使います。</li>
-<li>ただし、ループが回るたびに、<code>v.begin()+middle</code>から<code>v.end()</code>まではソートされていることが保証されています。この性質を利用することで、vからsize-middle個選んでから残りのmiddle個を総当たりしたのと同じことになるのです。</li>
-<li>ループ回数は14P7 = 17297280回です。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>C++ <a href="https://yukicoder.me/submissions/264420">https://yukicoder.me/submissions/264420</a></li>
-<li>cLay <a href="https://yukicoder.me/submissions/264422">https://yukicoder.me/submissions/264422</a></li>
-</ul>
-
-
-<h2>チームを作ろう２</h2>
-
-<ul>
-<li>この解法であればこちらもループ内の加算とxorを入れ替えるだけで容易に解くことができます。</li>
-<li>cLay <a href="https://yukicoder.me/submissions/265093">https://yukicoder.me/submissions/265093</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="4">&larr; Older</a></li>
@@ -1044,15 +1024,15 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2021/06/05/ctf/">[yukicoder] CTFっぽいの</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
       <li class="post">
         <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
       </li>
     
   </ul>

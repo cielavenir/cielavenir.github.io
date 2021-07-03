@@ -98,6 +98,56 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2017/07/30/summer-task/">[Yukicoder] 夏休みの思い出（１）</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2017-07-30T04:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/550">https://yukicoder.me/problems/no/550</a></p>
+
+<ul>
+<li>解と係数の関係から3因数はCの約数である.</li>
+<li><a href="https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3">https://gist.github.com/pekempey/9eddf9342f65552a92845e035960e8a3</a> によると約数の個数は最大で103680なので、約数の全列挙をすればこの問題を解くには十分である.</li>
+<li><p>なお, Cの最大値は10**18であるが, <del>因数の最大値は10*9であるという制約があるので, Ruby標準ライブラリの素因数分解で問題ない.</del></p>
+
+<ul>
+<li><code>-1999999865 999999864000004607 999999866000004473</code>という入力(出力は<code>-1 999999929 999999937</code>)で死ぬので, 素因数列挙だけで解きたい場合はロー法を使いましょう&hellip;</li>
+</ul>
+</li>
+<li><p>Ruby標準ライブラリ(リジャッジでTLEになる予定) <a href="https://yukicoder.me/submissions/192779">https://yukicoder.me/submissions/192779</a></p></li>
+<li>ロー法 <a href="https://yukicoder.me/submissions/192783">https://yukicoder.me/submissions/192783</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2017/06/04/fxunusable/">FXCampusGatePrinterはネットプリントドライバとしても使用できない</a></h1>
     
     
@@ -2221,73 +2271,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2016/08/09/ios-illegal-instruction/">iOSのターミナルでIllegal Instruction: 4が表示される</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-08-09T16:34:42+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>先日iPad Air 9.3.2を脱獄してから久しぶりにいろいろ遊んでます。</li>
-<li><a href="http://leafmoon.users.sourceforge.net/cydia/">ech0chrome iPhone Repo on Cydia</a> (昔私がビルドしたソフト群)も一部使えました。ncompressとか(tar.Zとか今は使われてるんでしょうか…)</li>
-<li>しかし、nkfやPuTTY、OpenHSPは「Illegal Instruction: 4」と出て動かない。</li>
-<li>少し調べたところ、<a href="http://theiostream.tumblr.com/post/63923259800/patching-iphone-gcc-binaries-to-armv7s">http://theiostream.tumblr.com/post/63923259800/patching-iphone-gcc-binaries-to-armv7s</a> に行き当たりました。<code>ldr r3, [r3]</code>命令がarmv6/v7専用命令になっていて、armv7sで解釈できないのが原因とのこと。armv7sで解釈できるように手直しすればよいそうです。crt1.oだけがおかしく、原因は不明とのこと。</li>
-</ul>
-
-
-<pre><code>#!/bin/sh
-for file in "$@";do
-sed -i'' 's/\x00\x30\x93\xe4/\x00\x30\x93\xe5/g;s/\x00\x30\xd3\xe4/\x00\x30\xd3\xe5/g;' $file
-ldid -S $file
-done
-</code></pre>
-
-<ul>
-<li>まあ、当時はiPhone 3GSやiPhone 4の時代だったので、v7sのことなんて頭になかったですからねぇ…</li>
-<li>ビルドスクリプト、もしあったら、パッケージ化しようと思います。バックアップは今何処＾＾；(開発機のiPod Touch 3rdはヒューズが飛んだ状態)</li>
-<li><p>てか、私の出してるiOS gccは間違いなく壊れたバイナリを出力するんですが、どうしたもんか。3.1.2用のtoolchainをセルフコンパイル用にポートしただけなので、新たにtoolchainを作る能力は私にはない＾＾；</p></li>
-<li><p>ちなみに、Illegal Instruction: 4はこのパッチで直せますが、mmap error 22は直せません。</p></li>
-<li><a href="https://forums.developer.apple.com/thread/7524">https://forums.developer.apple.com/thread/7524</a> によると、32bit dylibを読み込むにはMach-Oのヘッダがどうこうという話っぽいです。</li>
-</ul>
-
-
-<hr />
-
-<ul>
-<li>話は変わりますが、アプリ領域にアクセスするのが不便なのでapplinkなるソフトを作ってましたが、これもiOS8で使えなくなってた模様。com.apple.mobile.installation.plistがなくなったため。</li>
-<li>突貫工事で新たに作りました。Pythonが必要ではありますが。しかもリンク名がアプリ識別子になる制限付き。</li>
-<li><a href="https://gist.github.com/cielavenir/089ae47301458db8e2e04a67f72132b3">https://gist.github.com/cielavenir/089ae47301458db8e2e04a67f72132b3</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="6">&larr; Older</a></li>
@@ -2313,15 +2296,15 @@ done
       </li>
     
       <li class="post">
+        <a href="/blog/2021/06/05/ctf/">[yukicoder] CTFっぽいの</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
       <li class="post">
         <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
       </li>
     
   </ul>

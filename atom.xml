@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2021-07-04T00:52:31+09:00</updated>
+  <updated>2021-07-04T01:41:05+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -556,6 +556,16 @@
 Detect Music Keyの解説は <a href="https://github.com/cielavenir/codeiq_problems/blob/master/q548/editorial.md">https://github.com/cielavenir/codeiq_problems/blob/master/q548/editorial.md</a> にあります.</p>
 
 <p>提出：<a href="https://yukicoder.me/submissions/663945">https://yukicoder.me/submissions/663945</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[yukicoder] CTFっぽいの]]></title>
+    <link href="http://cielavenir.github.io/blog/2021/06/05/ctf/"/>
+    <updated>2021-06-05T03:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2021/06/05/ctf</id>
+    <content type="html"><![CDATA[<p>Kernel.sendで突破可能です.
+<a href="https://yukicoder.me/submissions/457020">https://yukicoder.me/submissions/457020</a></p>
 ]]></content>
   </entry>
   
@@ -1837,22 +1847,6 @@ Detect Music Keyの解説は <a href="https://github.com/cielavenir/codeiq_probl
 
 <p>FLOWERを解禁した私ならKACでもそこそこ戦えるはずだ！<del>さあ予選行くぜ</del>無理よぅこれorz
 <a href="https://twitter.com/cielavenir/status/1068135718751326208">https://twitter.com/cielavenir/status/1068135718751326208</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[未完の記事の存在意義について]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/10/30/wip-articles/"/>
-    <updated>2018-10-30T22:45:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/10/30/wip-articles</id>
-    <content type="html"><![CDATA[<p><a href="https://qiita.com/HiromuMasuda0228/items/a71dea7ef4d77a30b118">こちら</a>や<a href="https://qiita.com/akira_/items/c8881dcde93d4cb035c7">こちら</a>で触れられているとおり、エンジニアにとってアウトプットは重要である。</p>
-
-<p>問題になるのは記事の質であろう。質をいつも保つことは難しい場合もあると思う。
-私の場合は、例えば<a href="https://qiita.com/cielavenir/items/683ebb10fa8083b3e6b4">WIP 意図せぬMerge Hellを防ぐ</a>が未完のまま公開された記事の例である。[^1]</p>
-
-<p>そういう場合、少なくとも自分の中で形にするまでは公開すべきでないという<a href="https://twitter.com/angel_p_57/status/1049597665804091392">意見も聞く</a>が、私としては、間違った情報でない限りは公開しても良いと思う。特に少ない情報の場合は断片だけでも助かる人はいると思うし、そこから話が広がる可能性もあるからだ。</p>
-
-<p>[^1] 私事だが、(弊社にはモジュールのリポジトリの他にシステムとしての管理リポジトリがあるのだが)管理リポジトリに私の個人ブランチが3個も存在している。はっきり言って糞だが、解決策がまだ見つかっていない以上しかたがない。</p>
 ]]></content>
   </entry>
   

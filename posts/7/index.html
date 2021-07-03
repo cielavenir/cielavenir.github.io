@@ -98,6 +98,152 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2015/10/29/many-ameba/">[Yukicoder] アメーバがたくさん・n連勤 (and マスと駒と色塗り)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-29T01:40:16+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>アメーバがたくさん</h2>
+
+<h3>問題</h3>
+
+<ul>
+<li><a href="http://yukicoder.me/problems/6">http://yukicoder.me/problems/6</a></li>
+</ul>
+
+
+<h3>前処理</h3>
+
+<ul>
+<li>まず、N,D,Tを取得した後、アメーバの初期位置(e)を取得し、(e%D+D)%D(=mod)ごとに分けます。</li>
+<li>「modごとに分け」て以降にDを考慮しなくても良いよう、分けられたアメーバは、その中で [(e-mod)/D-T,(e-mod)/D+T] という範囲(閉区間)に分裂するとします。</li>
+<li>※言語によってはeが負だとバグるので、mod計算はきちんとやったほうが良いでしょう。
+
+<ul>
+<li>Ruby/Pythonだとe//D-TでACですが、C++ではそうではない。</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>解法</h3>
+
+<ul>
+<li>ここからが本題で、現在yukicoderに上がっている解説ですと、範囲集合を事前にソートするとしていますが、それは必ずしも必要ではありません。逐一マージすれば良いからです。</li>
+<li>マージするには、二分探索で右側を求め、左側と重なっているかチェックして、右側はいくつ先まで重なっているかもチェック。それらを消して、新しい範囲を挿入すればよいです。
+
+<ul>
+<li>Python2/3 <a href="http://yukicoder.me/submissions/4190">http://yukicoder.me/submissions/4190</a></li>
+<li>Ruby <a href="http://yukicoder.me/submissions/56062">http://yukicoder.me/submissions/56062</a></li>
+<li>C++
+
+<ul>
+<li>vector <a href="http://yukicoder.me/submissions/56075">http://yukicoder.me/submissions/56075</a></li>
+<li>deque &lt;<a href="http://yukicoder.me/submissions/56074">http://yukicoder.me/submissions/56074</a></li>
+<li>set <a href="http://yukicoder.me/submissions/56079">http://yukicoder.me/submissions/56079</a></li>
+<li>dequeはvectorと比較しておおよそ定数倍の高速化が望めます。(cf: CODE FESTIVAL 2014 あさぷろD 枕決め)</li>
+<li>この問題はNが小さいので実行時間の差があまり出ませんが、Nが大きいとvector > deque > setの順番に時間がかかることが如実にわかります。</li>
+<li>順序が重要ですので、当然ながらunordered_setは使えないことに注意して下さい。</li>
+</ul>
+</li>
+<li>Crystal <a href="https://yukicoder.me/submissions/227018">https://yukicoder.me/submissions/227018</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>発展</h3>
+
+<ul>
+<li>事前にソートしない利点として、以下のように変形した問題も容易に解けることが上げられます。</li>
+<li>「N個の初期位置が与えられる。あなたは与えられた順番通りにN匹のアメーバを数直線上に配置する。配置されたアメーバは、分裂を開始してT秒後に停止する。停止するまで次のアメーバを配置することはない。さて、i番目のアメーバが停止した時点で合計何匹のアメーバが数直線上に存在するか？」</li>
+</ul>
+
+
+<h2>マスと駒と色塗り</h2>
+
+<h3>問題</h3>
+
+<ul>
+<li>CODE FESTIVAL 2015 予選B D問題</li>
+<li><a href="http://code-festival-2015-qualb.contest.atcoder.jp/tasks/codefestival_2015_qualB_d">http://code-festival-2015-qualb.contest.atcoder.jp/tasks/codefestival_2015_qualB_d</a></li>
+</ul>
+
+
+<h3>解答例</h3>
+
+<ul>
+<li>先述の発展の考え方で解けますが、この問題は制約が大きいため、Ruby/PythonだとTLEします。C++でもset解法だと100ms切れますが、deque解法だとぎりぎりなので、Crystalも厳しそうです。(ちなみにvectorは<del>40</del>75点)</li>
+<li>あと、<code>if(l&lt;=left-&gt;second+1)</code>の「+1」は必須。</li>
+<li>set gcc <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077679">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077679</a></li>
+<li>set clang <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077677">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077677</a></li>
+<li>deque gcc <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077680">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077680</a></li>
+<li>deque clang <a href="https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077670">https://code-festival-2015-qualb.contest.atcoder.jp/submissions/2077670</a></li>
+</ul>
+
+
+<h2>Painting Wall</h2>
+
+<ul>
+<li>CheckiO</li>
+<li><a href="http://www.checkio.org/mission/painting-wall/share/8a0e0061de3ff95664776d904d309e57/">http://www.checkio.org/mission/painting-wall/share/8a0e0061de3ff95664776d904d309e57/</a></li>
+<li>こちらも逐一マージが想定解です。</li>
+</ul>
+
+
+<h2>n連勤</h2>
+
+<h3>問題</h3>
+
+<ul>
+<li><a href="https://yukicoder.me/problems/no/674">https://yukicoder.me/problems/no/674</a></li>
+</ul>
+
+
+<h3>解答例</h3>
+
+<ul>
+<li>右に接する場合もマージしないといけないので、<code>while(right!=se.end() &amp;&amp; right-&gt;first-1&lt;=r)</code>の「-1」は必須となります。
+
+<ul>
+<li>逆にマスと駒と色塗りでは右に接する場合はマージしてはいけないことに注意してください。</li>
+</ul>
+</li>
+<li>set <a href="https://yukicoder.me/submissions/252271">https://yukicoder.me/submissions/252271</a></li>
+<li>deque <a href="https://yukicoder.me/submissions/252272">https://yukicoder.me/submissions/252272</a></li>
+<li>vector <a href="https://yukicoder.me/submissions/252273">https://yukicoder.me/submissions/252273</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2015/07/19/synchronica-id/">シンクロニカの公開用IDを得る方法</a></h1>
     
     
@@ -487,15 +633,15 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2021/06/05/ctf/">[yukicoder] CTFっぽいの</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
       <li class="post">
         <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
       </li>
     
   </ul>
