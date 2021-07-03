@@ -98,6 +98,123 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/05/06/five/">[Atcoder] Five, Five Everywhere</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-05-06T02:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://abc096.contest.atcoder.jp/tasks/abc096_d">https://abc096.contest.atcoder.jp/tasks/abc096_d</a></p>
+
+<h2>出力</h2>
+
+<ul>
+<li>AGC001以降のAtCoderでは、区切りは空白区切り改行区切りのどちらでも構いません(trailing spaceも可)。</li>
+<li>よって<code>puts arr*' '</code>は<code>puts arr</code>、ひいては<code>p *arr</code>でokです。以下では後者を使います。</li>
+</ul>
+
+
+<h2>解法</h2>
+
+<ul>
+<li>5で割ってあまりが1になる整数の集合から5個選んだ合計は5で割り切れます。</li>
+<li>素数を列挙していき、1の位が1であるものをN個拾えば良いです。
+
+<ul>
+<li>実際には1の位は(統一していれば)1,3,7,9のいずれも大丈夫です。以下の答案では9を採用しています。</li>
+<li>64bytes</li>
+</ul>
+</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">require</span><span class="s1">&#39;prime&#39;</span><span class="p">;</span><span class="nb">p</span> <span class="o">*</span><span class="no">Prime</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="mi">1499</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="n">e</span><span class="o">%</span><span class="mi">5</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">}</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">gets</span><span class="o">.</span><span class="n">to_i</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>1の位がX(奇数、以下の答案では3)である整数を全て列挙し、素数をN個拾うようにすると以下のようになります。</li>
+<li>62bytes</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">require</span><span class="s1">&#39;prime&#39;</span><span class="p">;</span><span class="nb">p</span> <span class="o">*</span><span class="mi">3</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="mi">1499</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:prime?</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">gets</span><span class="o">.</span><span class="n">to_i</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>フェルマーテスト</h3>
+
+<ul>
+<li><code>require'prime'</code>をカットすることで字数の節約にはなりますが、<code>Integer#prime?</code>は使えなくなるので、別の素数判定が必要になります。そこで、フェルマーテストを用います。</li>
+<li>[1]に載っている式、<code>2**i%i==2</code>を使います。なおこの素数判定の場合stepの初期値を1にすることはできなくなるので注意してください(3,7,9は可)。</li>
+<li>51bytes</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">p</span> <span class="o">*</span><span class="mi">3</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="mi">1499</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">select</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="p">}</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="nb">gets</span><span class="o">.</span><span class="n">to_i</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>redo</h3>
+
+<ul>
+<li>[2]では、ループカウンタをインクリメントしないよう、条件を満たさない場合はredoを使っています。これはPerlだけでなくRubyでも有用なテクニックです。</li>
+<li><a href="https://abc096.contest.atcoder.jp/submissions/2470406">https://abc096.contest.atcoder.jp/submissions/2470406</a> (最終答案)</li>
+<li>46bytes</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="nb">gets</span><span class="o">.</span><span class="n">to_i</span><span class="o">.</span><span class="n">times</span><span class="p">{</span><span class="n">i</span><span class="o">+=</span><span class="mi">5</span><span class="p">;</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">2</span><span class="o">?</span><span class="p">(</span><span class="nb">p</span> <span class="n">i</span><span class="p">)</span><span class="ss">:redo</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>discussion</h2>
+
+<ul>
+<li>フェルマーテストやredoの実践例を挙げることができました。どちらもゴルフには有用であると思われます。</li>
+</ul>
+
+
+<h2>reference</h2>
+
+<ol>
+<li>cojnaさん <a href="https://abc096.contest.atcoder.jp/submissions/2465874">https://abc096.contest.atcoder.jp/submissions/2465874</a></li>
+<li>%20さん <a href="https://abc096.contest.atcoder.jp/submissions/2467541">https://abc096.contest.atcoder.jp/submissions/2467541</a></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/04/21/ball/">[Atcoder] Ball</a></h1>
     
     
@@ -1033,67 +1150,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2017/06/04/fxunusable/">FXCampusGatePrinterはネットプリントドライバとしても使用できない</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2017-06-04T15:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>背景</h2>
-
-<ul>
-<li>ファミリーマートやローソンの<a href="https://networkprint.ne.jp/">ネットワークプリント</a>はプリンタドライバが存在するが、セブンイレブンの<a href="https://www.printing.ne.jp/">ネットプリント</a>はプリンタドライバが存在しない。</li>
-<li><a href="http://www.ecc.u-tokyo.ac.jp/">ECCS</a>2012(ゼロックス)のプリンタドライバはネットプリントドライバとしても使うことが出来た。</li>
-<li>現在のECCS2016では業者がリコーになったが、ネットプリントドライバ部分はまだ使えるのではないか？</li>
-<li>しかし、使ってみようとすると、<code>接続エラー(320000)</code>となる。</li>
-</ul>
-
-
-<h2>調査</h2>
-
-<ul>
-<li>/Library/Printers/FujiXerox/FXCampusGatePrinter/FXCampusGatePrinter.plist から、</li>
-<li><code>https://sdb.fujixerox.co.jp:443/CGPPrintPortal/Service.svc</code></li>
-<li>という内容が読み取れる。このサーバーは現在停止している。</li>
-<li><strong>したがって、ネットプリントドライバとして使うことも現在は不可能である。</strong></li>
-</ul>
-
-
-<h2>結論</h2>
-
-<ul>
-<li>個人的には当面はネットワークプリントだけを使うことにします…</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="5">&larr; Older</a></li>
@@ -1115,6 +1171,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2021/06/05/music-key/">[yukicoder] 調の判定</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
@@ -1124,10 +1184,6 @@
     
       <li class="post">
         <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/05/03/first-saturday/">Ingress First Saturday 初参加記(杉戸)</a>
       </li>
     
   </ul>

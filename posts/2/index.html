@@ -98,6 +98,53 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2019/04/08/cracked/">[Yukicoder] Cracked</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-04-08T01:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="https://yukicoder.me/problems/no/3051">https://yukicoder.me/problems/no/3051</a></li>
+</ul>
+
+
+<p>quineを生成して処理するのが一番楽なのでは。なおquine生成エンジンはrobustなもののほうが後処理が楽だと思います。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb">https://github.com/cielavenir/procon/blob/816728f5d9832f7adbcbb76f5668a36f7c4cd502/00genquine.rb</a></li>
+<li><a href="https://yukicoder.me/submissions/336190">https://yukicoder.me/submissions/336190</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2019/03/31/shirokane/">Shirokane HGC</a></h1>
     
     
@@ -590,58 +637,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/10/08/careful-engineer/">[Yukicoder] Careful Engineer</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-10-08T11:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://yukicoder.me/problems/no/734">https://yukicoder.me/problems/no/734</a></p>
-
-<h2>解法</h2>
-
-<p>本文を噛み砕くと、<code>60ax&gt;bx+3600c</code>なので、「直線 <code>y=(60a-b)x-3600c</code> がx>0でx軸と交わるx座標のceil」を求めれば良いことになります。これは傾きが正の場合のみ成立します。</p>
-
-<h2>不等式の評価</h2>
-
-<p>上にceilと書かれていますが、プログラムを書く場合と書かない場合の合計時間が等しくて良いなら<code>ceil</code>、書く場合の合計時間が小さくならなければならないなら<code>floor+1</code>です。条件設定って難しいorz</p>
-
-<h2>コメンタリー</h2>
-
-<p><code>(60a-b)x&gt;3600c</code>について60a-bで両辺割ったときの不等号の向きって60a-bの符号で違ったんだっけって少し混乱した^^;;</p>
-
-<h2>コメンタリー2</h2>
-
-<p>「不等式の評価」項はコンテスト後に追記したものです。ご迷惑おかけしました(このために星1.5に上がることとなりました)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="3">&larr; Older</a></li>
@@ -663,6 +658,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2021/06/05/music-key/">[yukicoder] 調の判定</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
@@ -672,10 +671,6 @@
     
       <li class="post">
         <a href="/blog/2020/06/06/past3/">第三回 アルゴリズム実技検定 参加記(リアルタイム)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/05/03/first-saturday/">Ingress First Saturday 初参加記(杉戸)</a>
       </li>
     
   </ul>
