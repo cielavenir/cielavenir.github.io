@@ -1,4 +1,7 @@
+User-agent: Megalodon
+Disallow: /
+
 User-agent: *
-Disallow: 
+Disallow:
 
 Sitemap: http://cielavenir.github.io/sitemap.xml 
