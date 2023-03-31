@@ -98,6 +98,224 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2019/10/12/sametoro/">[Yukicoder] サメトロ</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-10-12T02:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://yukicoder.me/problems/2699">https://yukicoder.me/problems/2699</a></p>
+
+<p>まず、pekempeyさんの解説にある以下の条件</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>0&lt;=a1
+</span><span class='line'>0&lt;=b1
+</span><span class='line'>a1+...+an==b1+...+bn
+</span><span class='line'>ai+bi&lt;=a1+...+an for all i</span></code></pre></td></tr></table></div></figure>
+
+
+<p>をコードに落とし込むと以下のようになる。なお、<code>a1==x, b1==y==x+sa-sb</code>とする。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">n</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">to_i</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">to_i</span><span class="p">}</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">transpose</span>
+</span><span class='line'><span class="n">sa</span><span class="p">,</span><span class="n">sb</span><span class="o">=[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">].</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">sum</span>
+</span><span class='line'><span class="nb">p</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">x</span><span class="o">+</span><span class="n">sa</span><span class="o">-</span><span class="n">sb</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">&lt;=</span><span class="n">sb</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">all?</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]&lt;=</span><span class="n">x</span><span class="o">+</span><span class="n">sa</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>このコードを効率化したいわけだが、今回、範囲が</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="kp">false</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'><span class="kp">false</span>
+</span><span class='line'><span class="kp">true</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'><span class="kp">true</span>
+</span><span class='line'><span class="kp">false</span>
+</span><span class='line'><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>のようであるため、二分探索は使えない。別の方法で効率化を図る。</p>
+
+<p>まず、少し移項すると以下のようになる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">n</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">to_i</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">to_i</span><span class="p">}</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">transpose</span>
+</span><span class='line'><span class="n">sa</span><span class="p">,</span><span class="n">sb</span><span class="o">=[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">].</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">sum</span>
+</span><span class='line'><span class="nb">p</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">sb</span><span class="o">-</span><span class="n">sa</span><span class="o">&lt;=</span><span class="n">x</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="o">&lt;=</span><span class="n">sb</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">all?</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]-</span><span class="n">sa</span><span class="o">&lt;=</span><span class="n">x</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>sb-sa&lt;=x &amp;&amp; x&lt;=sb</code>はxの範囲を示すから、これを使う。また、<code>a[i]+b[i]-sa</code>は不変量なので、条件を整理する。すると、以下のようになる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">n</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">to_i</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">to_i</span><span class="p">}</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">transpose</span>
+</span><span class='line'><span class="n">sa</span><span class="p">,</span><span class="n">sb</span><span class="o">=[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">].</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">sum</span>
+</span><span class='line'><span class="nb">p</span> <span class="p">(</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="n">sb</span><span class="o">-</span><span class="n">sa</span><span class="o">].</span><span class="n">max</span><span class="o">.</span><span class="n">.sb</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]-</span><span class="n">sa</span><span class="p">}</span><span class="o">.</span><span class="n">max</span><span class="o">&lt;=</span><span class="n">x</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>これもxの範囲となるため、最終的に以下のようになる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">n</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">to_i</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">to_i</span><span class="p">}</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">transpose</span>
+</span><span class='line'><span class="n">sa</span><span class="p">,</span><span class="n">sb</span><span class="o">=[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">].</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">sum</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">sb</span><span class="o">-[</span><span class="mi">0</span><span class="p">,</span><span class="n">sb</span><span class="o">-</span><span class="n">sa</span><span class="p">,(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">}</span><span class="o">.</span><span class="n">max</span><span class="o">-</span><span class="n">sa</span><span class="o">].</span><span class="n">max</span><span class="o">+</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ここまで最適化されていれば、Rubyでも十分ACできる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="c1">#!/usr/bin/ruby</span>
+</span><span class='line'><span class="n">n</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">to_i</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="vg">$&lt;</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:to_i</span><span class="p">}</span><span class="o">.</span><span class="n">transpose</span>
+</span><span class='line'><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="o">=[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">].</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:sum</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">d</span><span class="o">-[</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="o">*</span><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span><span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">]+</span><span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]-</span><span class="n">c</span><span class="p">}</span><span class="o">].</span><span class="n">max</span><span class="o">+</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>重複を減らすと以下のようになる。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">gets</span>
+</span><span class='line'><span class="n">m</span><span class="o">=</span><span class="mi">0</span>
+</span><span class='line'><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="vg">$&lt;</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:to_i</span><span class="p">)</span><span class="o">.</span><span class="n">tap</span><span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">|</span><span class="n">m</span><span class="o">=[</span><span class="n">m</span><span class="p">,</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">].</span><span class="n">max</span><span class="p">}}</span><span class="o">.</span><span class="n">transpose</span>
+</span><span class='line'><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="o">=[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">].</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:sum</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">d</span><span class="o">-[</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="n">m</span><span class="o">-</span><span class="n">c</span><span class="o">].</span><span class="n">max</span><span class="o">+</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>そもそも配列を取っておく必要はなかったようだ。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="nb">gets</span>
+</span><span class='line'><span class="n">m</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="mi">0</span>
+</span><span class='line'><span class="vg">$&lt;</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">e</span><span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">e</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:to_i</span><span class="p">;</span><span class="n">m</span><span class="o">=[</span><span class="n">m</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">].</span><span class="n">max</span><span class="p">;</span><span class="n">c</span><span class="o">+=</span><span class="n">x</span><span class="p">;</span><span class="n">d</span><span class="o">+=</span><span class="n">y</span><span class="p">}</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">d</span><span class="o">-[</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="n">m</span><span class="o">-</span><span class="n">c</span><span class="o">].</span><span class="n">max</span><span class="o">+</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Crystalも一応書き換えておく。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="n">n</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">to_i</span><span class="o">-</span><span class="mi">1</span>
+</span><span class='line'><span class="n">m</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="n">d</span><span class="o">=</span><span class="mi">0</span>
+</span><span class='line'><span class="n">n</span><span class="o">.</span><span class="n">times</span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="nb">gets</span><span class="o">.</span><span class="n">not_nil!</span><span class="o">.</span><span class="n">split</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;.</span><span class="n">to_i</span><span class="p">;</span><span class="n">m</span><span class="o">=[</span><span class="n">m</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">].</span><span class="n">max</span><span class="p">;</span><span class="n">c</span><span class="o">+=</span><span class="n">x</span><span class="p">;</span><span class="n">d</span><span class="o">+=</span><span class="n">y</span><span class="p">}</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">d</span><span class="o">-[</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="o">-</span><span class="n">c</span><span class="p">,</span><span class="n">m</span><span class="o">-</span><span class="n">c</span><span class="o">].</span><span class="n">max</span><span class="o">+</span><span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最終的に関数型っぽいことはしなくても良くなったので、C言語でも書ける。以下のようになる。勿論ifはfmaxで書き換えても良いだろう。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">m</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;</span>
+</span><span class='line'><span class="n">main</span><span class="p">(){</span>
+</span><span class='line'><span class="k">for</span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">);</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">x</span><span class="p">,</span><span class="o">&amp;</span><span class="n">y</span><span class="p">);</span><span class="n">c</span><span class="o">+=</span><span class="n">x</span><span class="p">,</span><span class="n">d</span><span class="o">+=</span><span class="n">y</span><span class="p">)</span><span class="k">if</span><span class="p">(</span><span class="n">m</span><span class="o">&lt;</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="n">m</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span>
+</span><span class='line'><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">d</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="n">x</span><span class="o">=</span><span class="n">d</span><span class="o">-</span><span class="n">c</span><span class="p">;</span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">a</span><span class="o">-</span><span class="n">c</span><span class="p">)</span><span class="n">x</span><span class="o">=</span><span class="n">a</span><span class="o">-</span><span class="n">c</span><span class="p">;</span>
+</span><span class='line'><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">d</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以上、不変量を見つけてまとめることで計算量が減ってコードも短くなる過程を楽しんでいただけたなら幸いです。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2019/10/05/math-note/">数学ガールの秘密ノート立ち読み</a></h1>
     
     
@@ -886,87 +1104,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/12/02/champernowne/">[Yukicoder] チャンパーノウン定数</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-12-02T04:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li><a href="https://yukicoder.me/problems/no/756">https://yukicoder.me/problems/no/756</a></li>
-<li><a href="https://yukicoder.me/problems/no/757">https://yukicoder.me/problems/no/757</a></li>
-</ul>
-
-
-<p>チャンパーノウン定数自体は既出のネタ(例：<a href="https://github.com/cielavenir/procon/blob/f28284db31ff655e0ed4a9ca8241aa9d015aad75/euler/tyama_euler40.c">Project Euler 40</a>)なので、基本的には以下の方針で良い(CodeIQコード銀行「n番目の数字は？」(<a href="https://github.com/cielavenir/codeiq_solutions/tree/master/code_teller/q983">答案</a>)のコメントより)。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>例えば1から999までは以下の様な区間に分割できる。
-</span><span class='line'>1 + 0〜8
-</span><span class='line'>10 + 0〜89
-</span><span class='line'>100 + 0〜899
-</span><span class='line'>各区間に含まれる数字の個数は9、180、2700となる。
-</span><span class='line'>これを1*1*9、2*10*9、3*100*9と表現する(digits*expbase*9)。
-</span><span class='line'>入力値が入る区間が決まったら、それより下の和を入力値から引き(nとする)、
-</span><span class='line'>(digits)桁の数を並べた中のn桁目を求めれば良い。</span></code></pre></td></tr></table></div></figure>
-
-
-<p>これで、ビルトイン多倍長整数を使えば<code>10**1000</code>程度まではACできる。ただし、今回は入力が非常に大きいため、下位から順番に処理すると多倍長演算が容易にTLEを招いてしまう(解答例の<code>if false</code>の一部)。
-まず、この<code>1*1*9 + 2*10*9 + 3*100*9 + ...</code>を高速に求めることを考える。</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Sn   = 1*1*9 2*10*9 3*100*9 4*1000*9
-</span><span class='line'>10Sn =       1*10*9 2*100*9 3*1000*9  4*10000*9
-</span><span class='line'>-9Sn = 1*1*9 1*10*9 1*100*9 1*1000*9 -4*10000*9
-</span><span class='line'>-9Sn = (10**4-1)                     -4*10000*9</span></code></pre></td></tr></table></div></figure>
-
-
-<p>といった変形により、<code>Si = i*10**i - (10**i-1)/9</code>と定式化できる。これを用いて、digitsを2分探索するか上位から探索するかする。これでTLEを回避できる。</p>
-
-<ul>
-<li>Crystal <a href="https://yukicoder.me/submissions/300755">https://yukicoder.me/submissions/300755</a></li>
-<li>Ruby <a href="https://yukicoder.me/submissions/300934">https://yukicoder.me/submissions/300934</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="3">&larr; Older</a></li>
@@ -988,6 +1125,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2023/04/01/vac3/">(2022年初頭に)3回目のコロナワクチンを接種した</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2021/12/25/completion/">満期退学してから修了するまで</a>
       </li>
     
@@ -997,10 +1138,6 @@
     
       <li class="post">
         <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2020/08/30/tenka1-gbc/">天下一 GameBattleContest 2020 参加記</a>
       </li>
     
   </ul>
@@ -1017,7 +1154,7 @@
   </div>
   <footer role="contentinfo" class="page-footer"><hr>
 <p>
-  Copyright &copy; 2022 - Ciel Avenir -
+  Copyright &copy; 2023 - Ciel Avenir -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
