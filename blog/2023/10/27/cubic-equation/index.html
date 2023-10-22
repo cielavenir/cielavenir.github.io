@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>[yukicoder] 旅館の予約計画 - My Octopress Blog</title>
+  <title>[AOJ] The Number of the Real Roots of a Cubic Equation (3次方程式の解の正負) / [PG BATTLE] 3次方程式 - My Octopress Blog</title>
   <meta name="author" content="Ciel Avenir">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://cielavenir.github.io/blog/2017/10/23/inn-reservation">
+  <link rel="canonical" href="http://cielavenir.github.io/blog/2023/10/27/cubic-equation">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/bootstrap/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/bootstrap/responsive.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -96,7 +96,7 @@
   
   <header class="page-header">
     
-      <h1 class="entry-title">[Yukicoder] 旅館の予約計画</h1>
+      <h1 class="entry-title">[AOJ] the Number of the Real Roots of a Cubic Equation (3次方程式の解の正負) / [PG BATTLE] 3次方程式</h1>
     
     
       <p class="meta">
@@ -112,34 +112,53 @@
   
 
 
-<time datetime="2017-10-23T02:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2023-10-27T00:00:00+09:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><a href="https://yukicoder.me/problems/no/580">https://yukicoder.me/problems/no/580</a></p>
+<div class="entry-content"><p><a href="https://pastebin.com/ABmvkjJj">https://pastebin.com/ABmvkjJj</a> / <a href="https://twitter.com/cielavenir/status/281868241964519424">https://twitter.com/cielavenir/status/281868241964519424</a> からコピー(pastebinだとあとで自分が検索できないと思うので…実際私もこのpastebin検索するの時間かかった)。</p>
+
+<p>例として、f(x)=-2x<sup>3</sup>-7x<sup>2</sup>+9x-1=0の解の正負。</p>
 
 <ul>
-<li>区間スケジューリング問題の、スロットが複数あるバージョンである。</li>
-<li>基本的な解き方は同じだが、popするスロットは、「部屋iの(出)時刻がdata[i]の入時刻より早い中で最大」のものである。
+<li>f(x)=2x<sup>3</sup>+7x<sup>2</sup>-9x+1としても(f(x)=0の解の正負については)一般性を失わない</li>
+<li>f'(x)=6x<sup>2</sup>+14x-9</li>
+<li>f'(x)=0の判別式をDと置くと、</li>
+<li>D=14*14+4*6*9>0よりf(x)は極大値と極小値を持つ</li>
+<li>x1=(-7-sqrt(103))/6,x2=(-7+sqrt(103))/6</li>
+<li>y1=37.20992,y2=-1.506219</li>
+<li>y1*y2&lt;0よりf(x)はx軸と3点で交わる</li>
+<li>x1&lt;0、0&lt;x2より3点のうち1点は負、もう1点は正</li>
+<li>f(x)はy軸と正の座標で交わるから、(グラフの概形より)もう1点は正となる</li>
+<li>従ってf(x)=0の解の1つは負、2つは正である</li>
+</ul>
+
+
+<p>のようなことを適切に場合分けしてコードに落とし込めば良い。</p>
 
 <ul>
-<li>このスロットを検索するには、multisetを2分探索する以上に効率のよい方法はなさそうである。
+<li><a href="https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.c">https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.c</a></li>
+</ul>
+
+
+<hr />
+
+<p>(以下は新規に書いた部分)</p>
+
+<p>場合分けの方法だと、極大値・極小値以外の部分は整数で処理できるが、解を求めてから条件に当てはまるかどうか確認する解法だと解を出力する問題の系とすることが可能である。
+極大・極小を取るxの値はわかっているので、そこから2分探索すれば良い。</p>
+
+<p>小数2分探索は <a href="https://qiita.com/cielavenir/items/3d2e16ab87d8ddba44b0">https://qiita.com/cielavenir/items/3d2e16ab87d8ddba44b0</a> の手法を使えばEPSを気にしなくて良い。</p>
 
 <ul>
-<li>勿論普通の区間スケジューリングではこの集合は1個しか無いため定数時間である。</li>
-</ul>
-</li>
-<li>私は最初、最小のものがdata[i]の入時刻より早ければpopする実装にして盛大に間違いました…</li>
-</ul>
-</li>
-<li><p>スロットを線形探索しないため、計算量をnからlognに落とすことができ、合わせてO(m(logm+logn))となる(実際にはn&lt;mだと思われるのでO(mlogm))。</p></li>
-<li><p><a href="https://yukicoder.me/submissions/211209">https://yukicoder.me/submissions/211209</a> (現状の最短時間とのこと)</p></li>
-<li>n&lt;=10000, m&lt;=100000なるHardバージョンを作ろうと思いましたが必要ない気もするのでやめておきます。。</li>
+<li><a href="https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.cpp">https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.cpp</a></li>
 </ul>
 
+
+<p>tyama_aizu2220.cpp は <a href="https://github.com/cielavenir/procon/blob/8f8752552f55a6bac0e660c8963e0d38e2eefb98/topsic/pgbattle2023/3-1.cpp">https://github.com/cielavenir/procon/blob/8f8752552f55a6bac0e660c8963e0d38e2eefb98/topsic/pgbattle2023/3-1.cpp</a> からコードを引用しています(逆に言うと、PG BATTLEの方はunverifiedだがAOJでおそらくverifyされていると言えると思います)</p>
 </div>
 
 
@@ -162,7 +181,7 @@
   
 
 
-<time datetime="2017-10-23T02:00:00+09:00" pubdate data-updated="true"></time>
+<time datetime="2023-10-27T00:00:00+09:00" pubdate data-updated="true"></time>
       
 
 
@@ -170,7 +189,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2017/10/23/inn-reservation/" data-via="" data-counturl="http://cielavenir.github.io/blog/2017/10/23/inn-reservation/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://cielavenir.github.io/blog/2023/10/27/cubic-equation/" data-via="" data-counturl="http://cielavenir.github.io/blog/2023/10/27/cubic-equation/" >Tweet</a>
   
   
   
@@ -181,13 +200,13 @@
     <ul class="pager">
       
       <li class="previous"><a class="basic-alignment left"
-        href="/blog/2017/09/03/convexscore/" title="Previous Post:
-        [atcoder] ConvexScore">&laquo; [atcoder] ConvexScore</a></li>
+        href="/blog/2023/04/01/vac3/" title="Previous Post:
+        (2022年初頭に)3回目のコロナワクチンを接種した">&laquo; (2022年初頭に)3回目のコロナワクチンを接種した</a></li>
       
       <li><a href="/blog/archives">Blog Archives</a></li>
       
-      <li class="next"><a class="basic-alignment right" href="/blog/2018/02/10/goodnight/"
-        title="Next Post: [yukicoder] おやすみ">[yukicoder] おやすみ
+      <li class="next"><a class="basic-alignment right" href="/blog/2038/01/01/personal-stuff/"
+        title="Next Post: Personal Stuff">Personal Stuff
         &raquo;</a></li>
       
     </ul>

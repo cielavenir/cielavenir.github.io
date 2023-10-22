@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://cielavenir.github.io/atom.xml" rel="self"/>
   <link href="http://cielavenir.github.io/"/>
-  <updated>2023-04-01T02:01:11+09:00</updated>
+  <updated>2023-10-22T22:14:36+09:00</updated>
   <id>http://cielavenir.github.io/</id>
   <author>
     <name><![CDATA[Ciel Avenir]]></name>
@@ -561,6 +561,54 @@
 <li>deviantART (私のtwitterアイコン原画等。限定公開)</li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[AOJ] The Number of the Real Roots of a Cubic Equation (3次方程式の解の正負) / [PG BATTLE] 3次方程式]]></title>
+    <link href="http://cielavenir.github.io/blog/2023/10/27/cubic-equation/"/>
+    <updated>2023-10-27T00:00:00+09:00</updated>
+    <id>http://cielavenir.github.io/blog/2023/10/27/cubic-equation</id>
+    <content type="html"><![CDATA[<p><a href="https://pastebin.com/ABmvkjJj">https://pastebin.com/ABmvkjJj</a> / <a href="https://twitter.com/cielavenir/status/281868241964519424">https://twitter.com/cielavenir/status/281868241964519424</a> からコピー(pastebinだとあとで自分が検索できないと思うので…実際私もこのpastebin検索するの時間かかった)。</p>
+
+<p>例として、f(x)=-2x<sup>3</sup>-7x<sup>2</sup>+9x-1=0の解の正負。</p>
+
+<ul>
+<li>f(x)=2x<sup>3</sup>+7x<sup>2</sup>-9x+1としても(f(x)=0の解の正負については)一般性を失わない</li>
+<li>f'(x)=6x<sup>2</sup>+14x-9</li>
+<li>f'(x)=0の判別式をDと置くと、</li>
+<li>D=14*14+4*6*9>0よりf(x)は極大値と極小値を持つ</li>
+<li>x1=(-7-sqrt(103))/6,x2=(-7+sqrt(103))/6</li>
+<li>y1=37.20992,y2=-1.506219</li>
+<li>y1*y2&lt;0よりf(x)はx軸と3点で交わる</li>
+<li>x1&lt;0、0&lt;x2より3点のうち1点は負、もう1点は正</li>
+<li>f(x)はy軸と正の座標で交わるから、(グラフの概形より)もう1点は正となる</li>
+<li>従ってf(x)=0の解の1つは負、2つは正である</li>
+</ul>
+
+
+<p>のようなことを適切に場合分けしてコードに落とし込めば良い。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.c">https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.c</a></li>
+</ul>
+
+
+<hr />
+
+<p>(以下は新規に書いた部分)</p>
+
+<p>場合分けの方法だと、極大値・極小値以外の部分は整数で処理できるが、解を求めてから条件に当てはまるかどうか確認する解法だと解を出力する問題の系とすることが可能である。
+極大・極小を取るxの値はわかっているので、そこから2分探索すれば良い。</p>
+
+<p>小数2分探索は <a href="https://qiita.com/cielavenir/items/3d2e16ab87d8ddba44b0">https://qiita.com/cielavenir/items/3d2e16ab87d8ddba44b0</a> の手法を使えばEPSを気にしなくて良い。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.cpp">https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.cpp</a></li>
+</ul>
+
+
+<p>tyama_aizu2220.cpp は <a href="https://github.com/cielavenir/procon/blob/8f8752552f55a6bac0e660c8963e0d38e2eefb98/topsic/pgbattle2023/3-1.cpp">https://github.com/cielavenir/procon/blob/8f8752552f55a6bac0e660c8963e0d38e2eefb98/topsic/pgbattle2023/3-1.cpp</a> からコードを引用しています(逆に言うと、PG BATTLEの方はunverifiedだがAOJでおそらくverifyされていると言えると思います)</p>
 ]]></content>
   </entry>
   
@@ -2192,27 +2240,6 @@ Detect Music Keyの解説は <a href="https://github.com/cielavenir/codeiq_probl
 <li>答案 <a href="https://yukicoder.me/submissions/308223">https://yukicoder.me/submissions/308223</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[yukicoder] 畳み込みの和]]></title>
-    <link href="http://cielavenir.github.io/blog/2018/12/02/convolution-sum/"/>
-    <updated>2018-12-02T22:00:00+09:00</updated>
-    <id>http://cielavenir.github.io/blog/2018/12/02/convolution-sum</id>
-    <content type="html"><![CDATA[<ul>
-<li><a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a></li>
-</ul>
-
-
-<p>問題文のサンプル１はこういう意味である。</p>
-
-<ul>
-<li><code>3 + 2x + 2x2 + ...</code> * <code>7 + 0x + 4x2 + ...</code> = <code>21 + 14x + 36x2 + ...</code>となる(2乗まで)。この係数の和(<code>21+14+36</code>)は61である。</li>
-</ul>
-
-
-<p>つまり、(3+2+2)*7 + (3+2)*0 + (3)*4を計算すれば良いことになる。各項の左側について最初に和を取り、後ろから順番に引いていけば良い。</p>
 ]]></content>
   </entry>
   

@@ -676,6 +676,81 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2023/10/27/cubic-equation/">[AOJ] the Number of the Real Roots of a Cubic Equation (3次方程式の解の正負) / [PG BATTLE] 3次方程式</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2023-10-27T00:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://pastebin.com/ABmvkjJj">https://pastebin.com/ABmvkjJj</a> / <a href="https://twitter.com/cielavenir/status/281868241964519424">https://twitter.com/cielavenir/status/281868241964519424</a> からコピー(pastebinだとあとで自分が検索できないと思うので…実際私もこのpastebin検索するの時間かかった)。</p>
+
+<p>例として、f(x)=-2x<sup>3</sup>-7x<sup>2</sup>+9x-1=0の解の正負。</p>
+
+<ul>
+<li>f(x)=2x<sup>3</sup>+7x<sup>2</sup>-9x+1としても(f(x)=0の解の正負については)一般性を失わない</li>
+<li>f'(x)=6x<sup>2</sup>+14x-9</li>
+<li>f'(x)=0の判別式をDと置くと、</li>
+<li>D=14*14+4*6*9>0よりf(x)は極大値と極小値を持つ</li>
+<li>x1=(-7-sqrt(103))/6,x2=(-7+sqrt(103))/6</li>
+<li>y1=37.20992,y2=-1.506219</li>
+<li>y1*y2&lt;0よりf(x)はx軸と3点で交わる</li>
+<li>x1&lt;0、0&lt;x2より3点のうち1点は負、もう1点は正</li>
+<li>f(x)はy軸と正の座標で交わるから、(グラフの概形より)もう1点は正となる</li>
+<li>従ってf(x)=0の解の1つは負、2つは正である</li>
+</ul>
+
+
+<p>のようなことを適切に場合分けしてコードに落とし込めば良い。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.c">https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.c</a></li>
+</ul>
+
+
+<hr />
+
+<p>(以下は新規に書いた部分)</p>
+
+<p>場合分けの方法だと、極大値・極小値以外の部分は整数で処理できるが、解を求めてから条件に当てはまるかどうか確認する解法だと解を出力する問題の系とすることが可能である。
+極大・極小を取るxの値はわかっているので、そこから2分探索すれば良い。</p>
+
+<p>小数2分探索は <a href="https://qiita.com/cielavenir/items/3d2e16ab87d8ddba44b0">https://qiita.com/cielavenir/items/3d2e16ab87d8ddba44b0</a> の手法を使えばEPSを気にしなくて良い。</p>
+
+<ul>
+<li><a href="https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.cpp">https://github.com/cielavenir/procon/blob/master/aizu/tyama_aizu2220.cpp</a></li>
+</ul>
+
+
+<p>tyama_aizu2220.cpp は <a href="https://github.com/cielavenir/procon/blob/8f8752552f55a6bac0e660c8963e0d38e2eefb98/topsic/pgbattle2023/3-1.cpp">https://github.com/cielavenir/procon/blob/8f8752552f55a6bac0e660c8963e0d38e2eefb98/topsic/pgbattle2023/3-1.cpp</a> からコードを引用しています(逆に言うと、PG BATTLEの方はunverifiedだがAOJでおそらくverifyされていると言えると思います)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2023/04/01/vac3/">(2022年初頭に)3回目のコロナワクチンを接種した</a></h1>
     
     
@@ -1769,62 +1844,6 @@ Detect Music Keyの解説は <a href="https://github.com/cielavenir/codeiq_probl
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2019/11/17/lncrna-cite/">How to Cite Mcmanuslab Long Noncoding Rna Article</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2019-11-17T20:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h2>Background</h2>
-
-<p><a href="https://mcmanuslab.ucsf.edu/node/251">https://mcmanuslab.ucsf.edu/node/251</a> is a very useful information source about long non-coding RNA. Also, it is cited sometimes. However the citation format does not seem to be established.</p>
-
-<h2>Result</h2>
-
-<h3>Title</h3>
-
-<p><code>The Dark Matter of the Genome</code> or <code>Long Noncoding RNA The Dark Matter of the Genome</code>.</p>
-
-<h3>Author</h3>
-
-<p>The author should be Megan McSweeney as it is written in the slide.</p>
-
-<h3>Year</h3>
-
-<p>The slide says BMS265. According to <a href="https://mcmanuslab.ucsf.edu/rnas,">https://mcmanuslab.ucsf.edu/rnas,</a> it seems to be a course number in University of California San Francisco. BMS means Biomedical Sciences Graduate Program (<a href="https://bms.ucsf.edu/course-list">https://bms.ucsf.edu/course-list</a>). And there seemed to be BMS265 RNA wiki course around 2009 May. So the year should be 2009.</p>
-
-<h2>Conclusion</h2>
-
-<p>Megan McSweeney, Long Noncoding RNA The Dark Matter of the Genome, 2009</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="2">&larr; Older</a></li>
@@ -1844,6 +1863,10 @@ Detect Music Keyの解説は <a href="https://github.com/cielavenir/codeiq_probl
       </li>
     
       <li class="post">
+        <a href="/blog/2023/10/27/cubic-equation/">[AOJ] The Number of the Real Roots of a Cubic Equation (3次方程式の解の正負) / [PG BATTLE] 3次方程式</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2023/04/01/vac3/">(2022年初頭に)3回目のコロナワクチンを接種した</a>
       </li>
     
@@ -1853,10 +1876,6 @@ Detect Music Keyの解説は <a href="https://github.com/cielavenir/codeiq_probl
     
       <li class="post">
         <a href="/blog/2021/06/05/music-key/">[yukicoder] 調の判定</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
   </ul>

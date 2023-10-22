@@ -98,6 +98,54 @@
       
   <header class="page-header">
     
+      <h1 class="entry-title"><a href="/blog/2018/12/02/convolution-sum/">[Yukicoder] 畳み込みの和</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2018-12-02T22:00:00+09:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li><a href="https://yukicoder.me/problems/no/754">https://yukicoder.me/problems/no/754</a></li>
+</ul>
+
+
+<p>問題文のサンプル１はこういう意味である。</p>
+
+<ul>
+<li><code>3 + 2x + 2x2 + ...</code> * <code>7 + 0x + 4x2 + ...</code> = <code>21 + 14x + 36x2 + ...</code>となる(2乗まで)。この係数の和(<code>21+14+36</code>)は61である。</li>
+</ul>
+
+
+<p>つまり、(3+2+2)*7 + (3+2)*0 + (3)*4を計算すれば良いことになる。各項の左側について最初に和を取り、後ろから順番に引いていけば良い。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header class="page-header">
+    
       <h1 class="entry-title"><a href="/blog/2018/12/02/champernowne/">[Yukicoder] チャンパーノウン定数</a></h1>
     
     
@@ -971,66 +1019,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header class="page-header">
-    
-      <h1 class="entry-title"><a href="/blog/2018/07/15/how-can-i-satisfy-thee/">[AOJ] 如何に汝を満足せしめむ？ いざ数え上げむ…</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2018-07-15T09:00:00+09:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1155">http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1155</a></p>
-
-<p>構文解析とは何だったのか(2回目)</p>
-
-<h2>解法</h2>
-
-<ul>
-<li>Ternaryクラスを用意してevalに投げ込みます。</li>
-</ul>
-
-
-<h2>解答例</h2>
-
-<ul>
-<li>Ruby <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3027477">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3027477</a></li>
-<li>Python(2/3) <a href="http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3027488">http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3027488</a></li>
-</ul>
-
-
-<h2>感想</h2>
-
-<ul>
-<li><a href="http://cielavenir.github.io/blog/2018/07/05/proof-of-knowledge/">知識の証明</a>の時点ではPythonが公式に使えるようになっていたので、下手な構文解析を出すと言語機能で突破されかねませんよって話。この問題は当時Pythonが使えなかったから許されたんだと思う。</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <ul class="pager">
     
     <li class="previous"><a href="4">&larr; Older</a></li>
@@ -1052,6 +1040,10 @@
       </li>
     
       <li class="post">
+        <a href="/blog/2023/10/27/cubic-equation/">[AOJ] The Number of the Real Roots of a Cubic Equation (3次方程式の解の正負) / [PG BATTLE] 3次方程式</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2023/04/01/vac3/">(2022年初頭に)3回目のコロナワクチンを接種した</a>
       </li>
     
@@ -1061,10 +1053,6 @@
     
       <li class="post">
         <a href="/blog/2021/06/05/music-key/">[yukicoder] 調の判定</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2021/01/15/psardumper-failed/">PSARDumper on PCの夢を見た</a>
       </li>
     
   </ul>
